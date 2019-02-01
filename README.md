@@ -1,0 +1,2 @@
+# genix
+Genix Core Wallet
