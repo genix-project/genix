@@ -36,14 +36,14 @@ Instructions: Homebrew
 
 NOTE: Building with Qt4 is still supported, however, doing so could result in a broken UI. Therefore, building with Qt5 is recommended. Be aware that Qt5 5.7+ requires C++11 compiler support.
 
-### Building GENIX Core
+### Building Genix Core
 
 1. Clone the GitHub tree to get the source code and go into the directory.
 
         git clone https://github.com/genixcrypto/genix.git
         cd genix
 
-2.  Build GENIX Core:
+2.  Build Genix Core:
     This will configure and build the headless genix binaries as well as the gui (if Qt is found).
     You can disable the gui build by passing `--without-gui` to configure.
 
@@ -79,9 +79,9 @@ Creating a release build
 ------------------------
 You can ignore this section if you are building `genixd` for your own use.
 
-genixd/genix-cli binaries are not included in the GENIX-Qt.app bundle.
+genixd/genix-cli binaries are not included in the Genix-Qt.app bundle.
 
-If you are building `genixd` or `GENIX Core` for others, your build machine should be set up
+If you are building `genixd` or `Genix Core` for others, your build machine should be set up
 as follows for maximum compatibility:
 
 All dependencies should be compiled with these flags:
@@ -90,7 +90,7 @@ All dependencies should be compiled with these flags:
  -arch x86_64
  -isysroot $(xcode-select --print-path)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk
 
-Once dependencies are compiled, see [doc/release-process.md](release-process.md) for how the GENIX Core
+Once dependencies are compiled, see [doc/release-process.md](release-process.md) for how the Genix Core
 bundle is packaged and signed to create the .dmg disk image that is distributed.
 
 Running
