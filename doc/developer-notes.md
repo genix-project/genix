@@ -211,7 +211,7 @@ Development guidelines
 ============================
 
 A few non-style-related recommendations for developers, as well as points to
-pay attention to for reviewers of GENIX Core code.
+pay attention to for reviewers of Genix Core code.
 
 General GENIX Core
 ----------------------
