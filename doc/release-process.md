@@ -1,7 +1,7 @@
 Release Process
 ====================
 
-* Update translations, see [translation_process.md](https://github.com/genixcrypto/genix/blob/master/doc/translation_process.md#syncing-with-transifex)
+* Update translations, see [translation_process.md](https://github.com/pathto/genixrepo/blob/master/doc/translation_process.md#syncing-with-transifex)
 * Update hardcoded [seeds](/contrib/seeds)
 
 * * *
@@ -15,7 +15,7 @@ Check out the source code in the following directory hierarchy.
 	git clone https://github.com/devrandom/gitian-builder.git
 	git clone https://github.com/genixcrypto/genix.git
 
-### GENIX Core maintainers/release engineers, update (commit) version in sources
+### Genix Core maintainers/release engineers, update (commit) version in sources
 
 	pushd ./genix
 	contrib/verifysfbinaries/verify.sh
@@ -188,15 +188,7 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
 - Announce the release:
 
-  - Release on GENIX forum: https://www.genix.org/forum/topic/official-announcements.54/
-
-  - GENIX-development mailing list
-
-  - Update title of #genixcrypto on Freenode IRC
-
-  - Optionally reddit /r/genixcrypto, ... but this will usually sort out itself
-
-- Notify flare so that he can start building [the PPAs](https://launchpad.net/~genix.org/+archive/ubuntu/genix)
+  - Release on GENIX discord: https://discord.gg/w5nVprh
 
 - Add release notes for the new version to the directory `doc/release-notes` in git master
 
