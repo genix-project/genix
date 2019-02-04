@@ -41,7 +41,7 @@ Debian Linux was chosen as the host distribution because it has a lightweight in
 Any kind of virtualization can be used, for example:
 - [VirtualBox](https://www.virtualbox.org/) (covered by this guide)
 - [KVM](http://www.linux-kvm.org/page/Main_Page)
-- [LXC](https://linuxcontainers.org/), see also [Gitian host docker container](https://github.com/gdm85/tenku/tree/master/docker/gitian-genix-host/README.md).
+- [LXC](https://linuxcontainers.org/)
 
 You can also install Gitian on actual hardware instead of using virtualization.
 
@@ -304,7 +304,7 @@ Clone the git repositories for Genix Core and Gitian.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/GENIX/REPO/PATH
+git clone https://github.com/genix-project/genix.git
 ```
 
 Setting up the Gitian image
@@ -394,7 +394,7 @@ and inputs.
 
 For example:
 ```bash
-URL=https://github.com/crowning-/genix.git
+URL=https://github.com/CORS1ER/genix.git
 COMMIT=b616fb8ef0d49a919b72b0388b091aaec5849b96
 ./bin/gbuild --commit genix=${COMMIT} --url genix=${URL} ../genix/contrib/gitian-descriptors/gitian-linux.yml
 ./bin/gbuild --commit genix=${COMMIT} --url genix=${URL} ../genix/contrib/gitian-descriptors/gitian-win.yml
@@ -444,7 +444,7 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 ```bash
 
 cd /some/root/path/
-git clone https://github.com/genixcrypto/genix-detached-sigs.git
+git clone https://github.com/genix-project/genix-detached-sigs.git
 
 GENIXPATH=/some/root/path/genix.git
 SIGPATH=/some/root/path/genix-detached-sigs.git
@@ -476,6 +476,6 @@ Uploading signatures (not yet implemented)
 ---------------------
 
 In the future it will be possible to push your signatures (both the `.assert` and `.assert.sig` files) to the
-[genix/gitian.sigs](https://github.com/genixcrypto/gitian.sigs/) repository, or if that's not possible to create a pull
+[genix/gitian.sigs](https://github.com/genix-project/gitian.sigs/) repository, or if that's not possible to create a pull
 request.
 There will be an official announcement when this repository is online.
