@@ -30,7 +30,7 @@ Download the source:
     
     mkdir genix
     cd genix
-    git clone https://github.com/GenixCoinX/GenixCoin.git
+    git clone https://github.com/genix-project/genix.git
     
 
 To build executables for Windows 32-bit:
