@@ -1,7 +1,7 @@
 Genix Core 
 ==========
 
-Release will be available from:
+Release is now available from:
 
   <https://genix.cx/downloads/>
 
@@ -10,7 +10,7 @@ improvements.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/pathto/genixrepo/issues>
+  <https://github.com/genix-project/genix/issues>
 
 
 Upgrading and downgrading
