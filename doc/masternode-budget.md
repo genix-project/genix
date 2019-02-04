@@ -4,7 +4,10 @@ NOTE : 12.1 -- REWRITE
 Masternode Budget API
 =======================
 
-GENIX now supports full decentralized budgets that are paid directly from the blockchain via superblocks once per month.
+Genix now supports full decentralized budgets that are paid directly from the blockchain via superblocks once per month.
+
+NB: This function is available to Genix Core, however it is not implemented from genesis. 
+    Budget API will remain dormant unless consensus is reached regarding its use in the future.
 
 Budgets go through a series of stages before being paid:
  * prepare - create a special transaction that destroys coins in order to make a proposal
