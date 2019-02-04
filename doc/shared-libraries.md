@@ -36,3 +36,9 @@ The interface is defined in the C header `genixconsensus.h` located in  `src/scr
 - `genixconsensus_ERR_TX_INDEX` - An invalid index for `txTo`
 - `genixconsensus_ERR_TX_SIZE_MISMATCH` - `txToLen` did not match with the size of `txTo`
 - `genixconsensus_ERR_DESERIALIZE` - An error deserializing `txTo`
+
+### Example Implementations
+- [NGENIX](https://github.com/NicolasDorier/NGENIX/blob/master/NGENIX/Script.cs#L814) (.NET Bindings)
+- [node-libgenixconsensus](https://github.com/bitpay/node-libgenixconsensus) (Node.js Bindings)
+- [java-libgenixconsensus](https://github.com/dexX7/java-libgenixconsensus) (Java Bindings)
+- [genixconsensus-php](https://github.com/Bit-Wasp/genixconsensus-php) (PHP Bindings)
