@@ -120,7 +120,7 @@ that run in -regtest mode.
 
 **DEBUG_LOCKORDER**
 
-GENIX Core is a multithreaded application, and deadlocks or other multithreading bugs
+Genix Core is a multithreaded application, and deadlocks or other multithreading bugs
 can be very difficult to track down. Compiling with -DDEBUG_LOCKORDER (configure
 CXXFLAGS="-DDEBUG_LOCKORDER -g") inserts run-time checks to keep track of which locks
 are held, and adds warnings to the debug.log file if inconsistencies are detected.
@@ -169,7 +169,7 @@ Threads
 
 - ThreadRPCServer : Remote procedure call handler, listens on port 3385 for connections and services them.
 
-- GENIXMiner : Generates coins (if wallet is enabled).
+- GenixMiner : Generates coins (if wallet is enabled).
 
 - ThreadCheckDarkSendPool : Runs masternode list and sync data update loops
 
@@ -181,7 +181,7 @@ Ignoring IDE/editor files
 In closed-source environments in which everyone uses the same IDE it is common
 to add temporary files it produces to the project-wide `.gitignore` file.
 
-However, in open source software such as GENIX Core, where everyone uses
+However, in open source software such as Genix Core, where everyone uses
 their own editors/IDE/tools, it is less common. Only you know what files your
 editor produces and this may change from version to version. The canonical way
 to do this is thus to create your local gitignore. Add this to `~/.gitconfig`:
@@ -213,7 +213,7 @@ Development guidelines
 A few non-style-related recommendations for developers, as well as points to
 pay attention to for reviewers of Genix Core code.
 
-General GENIX Core
+General Genix Core
 ----------------------
 
 - New features should be exposed on RPC first, then can be made available in the GUI
@@ -324,7 +324,7 @@ Strings and formatting
 
 - For `strprintf`, `LogPrint`, `LogPrintf` formatting characters don't need size specifiers
 
-  - *Rationale*: GENIX Core uses tinyformat, which is type safe. Leave them out to avoid confusion
+  - *Rationale*: Genix Core uses tinyformat, which is type safe. Leave them out to avoid confusion
 
 Threads and synchronization
 ----------------------------
