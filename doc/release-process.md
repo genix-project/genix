@@ -1,7 +1,7 @@
 Release Process
 ====================
 
-* Update translations, see [translation_process.md](https://github.com/pathto/genixrepo/blob/master/doc/translation_process.md#syncing-with-transifex)
+* Update translations, see [translation_process.md](https://github.com/genix-project/genix/blob/master/doc/translation_process.md#syncing-with-transifex)
 * Update hardcoded [seeds](/contrib/seeds)
 
 * * *
@@ -10,10 +10,10 @@ Release Process
 Check out the source code in the following directory hierarchy.
 
 	cd /path/to/your/toplevel/build
-	git clone https://github.com/genixcrypto/gitian.sigs.git
-	git clone https://github.com/genixcrypto/genix-detached-sigs.git
+	git clone https://github.com/genix-project/gitian.sigs.git
+	git clone https://github.com/genix-project/genix-detached-sigs.git
 	git clone https://github.com/devrandom/gitian-builder.git
-	git clone https://github.com/genixcrypto/genix.git
+	git clone https://github.com/genix-project/genix.git
 
 ### Genix Core maintainers/release engineers, update (commit) version in sources
 
