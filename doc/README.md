@@ -1,7 +1,7 @@
-GENIX Core 0.12.1
+Genix Core
 =====================
 
-This is the official reference wallet for GENIX digital currency and comprises the backbone of the GENIX peer-to-peer network. You can [download GENIX Core](https://www.genix.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Genix digital currency and comprises the backbone of the Genix Ecosystem. You can [download Genix Core](https://genix.cx/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
@@ -24,8 +24,6 @@ Drag GENIX-Qt to your applications folder, and then run GENIX-Qt.
 
 ### Need Help?
 
-* See the [GENIX documentation](https://dashpay.atlassian.net/wiki/display/DOC)
-for help and more information.
 * Ask for help on the [BitcoinTalk](https://bitcointalk.org/) forums.
 
 Building
@@ -40,7 +38,7 @@ The following are developer notes on how to build GENIX Core on your native plat
 
 Development
 ---------------------
-The GENIX Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Genix Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -56,8 +54,7 @@ The GENIX Core repo's [root README](/README.md) contains relevant information on
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on the [GENIXTalk](https://genixtalk.org/) forums, in the Development & Technical Discussion board.
-* Discuss on [#genixcrypto](http://webchat.freenode.net/?channels=genixcrypto) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=genixcrypto).
+* Discuss on the [Genix Discord](https://discord.gg/w5nVprh)
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

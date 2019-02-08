@@ -3,7 +3,7 @@ Shared Libraries
 
 ## genixconsensus
 
-The purpose of this library is to make the verification functionality that is critical to GENIX's consensus available to other applications, e.g. to language bindings.
+The purpose of this library is to make the verification functionality that is critical to Genix's consensus available to other applications, e.g. to language bindings.
 
 ### API
 
