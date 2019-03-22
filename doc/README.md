@@ -24,7 +24,8 @@ Drag GENIX-Qt to your applications folder, and then run GENIX-Qt.
 
 ### Need Help?
 
-* Ask for help on the [BitcoinTalk](https://bitcointalk.org/) forums.
+* Ask for help on our [BitcoinTalk](https://bitcointalk.org/index.php?topic=5119926) forum thread. 
+* You can also ask for help in our [Discord](https://discord.gg/w5nVprh)
 
 Building
 ---------------------
