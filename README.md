@@ -1,9 +1,9 @@
 Genix Core
 ===============================
 
-Website: https://genix.cx/
-Explorer: http://explorer.genix.cx
-Discord: https://discordapp.com/invite/w5nVprh
+* Website: https://genix.cx/
+* Explorer: http://explorer.genix.cx
+* Discord: https://discordapp.com/invite/w5nVprh
 
 What is Genix?
 ----------------
