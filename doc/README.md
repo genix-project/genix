@@ -55,6 +55,7 @@ The Genix Core repo's [root README](/README.md) contains relevant information on
 
 ### Resources
 * Discuss on the [Genix Discord](https://discord.gg/w5nVprh)
+* [Genix Explorer](http://explorer.genix.cx)
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
