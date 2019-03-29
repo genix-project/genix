@@ -24,7 +24,8 @@ Drag GENIX-Qt to your applications folder, and then run GENIX-Qt.
 
 ### Need Help?
 
-* Ask for help on the [BitcoinTalk](https://bitcointalk.org/) forums.
+* Ask for help on our [BitcoinTalk](https://bitcointalk.org/index.php?topic=5119926) forum thread. 
+* You can also ask for help in our [Discord](https://discord.gg/w5nVprh)
 
 Building
 ---------------------
@@ -55,6 +56,7 @@ The Genix Core repo's [root README](/README.md) contains relevant information on
 
 ### Resources
 * Discuss on the [Genix Discord](https://discord.gg/w5nVprh)
+* [Genix Explorer](http://explorer.genix.cx)
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
