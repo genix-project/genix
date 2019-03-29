@@ -289,7 +289,7 @@ RES_ICONS = \
   qt/res/icons/light/add.png \
   qt/res/icons/light/address-book.png \
   qt/res/icons/light/browse.png \
-  qt/res/icons/light/chevron-right.png \ 
+  qt/res/icons/light/chevron-right.png \
   qt/res/icons/light/clock1.png \
   qt/res/icons/light/clock2.png \
   qt/res/icons/light/clock3.png \
