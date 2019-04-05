@@ -79,7 +79,7 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 518400; // Note: actual number of blocks per calendar year with DGW v3 is ~200700 (for example 449750 - 249050)
-        consensus.nMasternodePaymentsStartBlock = 2500; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
+        consensus.nMasternodePaymentsStartBlock = 780; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 100001; // Block 100,001 Approx 1 year
         consensus.nMasternodePaymentsIncreasePeriod = 100001; // Block 100,001 Approx 1 year
         consensus.nInstantSendKeepLock = 24;
@@ -95,8 +95,8 @@ public:
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
-        consensus.BIP34Height = 788;
-        consensus.BIP34Hash = uint256S("0x000000000014083100488e4d54b0a69717877836fcac39a50cc694f601a26013");
+        consensus.BIP34Height = 1;
+        consensus.BIP34Hash = uint256S("0x000005c44e04128d9953a742860dbe3c10fb527a3605462cb6bd3e36dd6a285a");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
 
         consensus.nZawyLwmaAveragingWindow = 65;
@@ -206,6 +206,8 @@ public:
         vSeeds.push_back(CDNSSeedData("104.238.164.138", "104.238.164.138")); // Twinky
         vSeeds.push_back(CDNSSeedData("104.207.142.141", "104.207.142.141")); // Twinky
         vSeeds.push_back(CDNSSeedData("45.63.95.253", "45.63.95.253")); // Twinky
+		vSeeds.push_back(CDNSSeedData("198.12.95.122", "198.12.95.122")); // Twinky
+		vSeeds.push_back(CDNSSeedData("45.77.125.15", "45.77.125.15")); // Twinky
      //   vSeeds.push_back(CDNSSeedData(""));
         // vFixedSeeds.clear();
         // vSeeds.clear();
