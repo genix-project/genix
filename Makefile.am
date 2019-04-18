@@ -209,7 +209,7 @@ cov: test_genix.coverage/.dirstamp total.coverage/.dirstamp
 endif
 
 # GENIX: disable the test until upstream switches from convoluted comparison tool
-# Ref https://github.com/genix/genix/issues/4545
+# 
 if USE_COMPARISON_TOOL
 check-local:
 	## $(MKDIR_P) qa/tmp
