@@ -1293,7 +1293,7 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
     // Until tiers implementation, MN gets 60% from block reward
-    if (nHeight > 100 && nHeight < 2882) {
+    if (nHeight > 100 && nHeight < 882) {
 	return blockValue * 0.2;
 	}
     return blockValue * 0.6;
