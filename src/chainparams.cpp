@@ -56,7 +56,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     const char* pszTimestamp = "GenixMain";
-    const CScript genesisOutputScript = CScript() << ParseHex("03289c0933f7ed53fc996de0c252cd6bbf9e9b8161dcda7615c2503dbd5d48f02bdb72bd216af26b6815e0b2f50381100916a7eb7b1a88aeb8debb0803250d8401") << OP_CHECKSIG;
+    const CScript genesisOutputScript = CScript() << ParseHex("03289c0933f7ed53fc996de0c252cd6bbf9e9b8161dcda7615c2503dbd5d48f02bdb72bd216af26b6815e0b2f50381100916a7eb7b1a88aeb8debb0803250d8802") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -78,58 +78,58 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 518400; // Note: actual number of blocks per calendar year with DGW v3 is ~200700 (for example 449750 - 249050)
-        consensus.nMasternodePaymentsStartBlock = 780; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
-        consensus.nMasternodePaymentsIncreaseBlock = 100001; // Block 100,001 Approx 5 Months
-        consensus.nMasternodePaymentsIncreasePeriod = 100001; // Block 100,001 Approx 5 Months
+        consensus.nSubsidyHalvingInterval = 25000; // Note: actual number of blocks per calendar year with DGW v3 is ~200700 (for example 449750 - 249050)
+        consensus.nMasternodePaymentsStartBlock = 120; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
+        consensus.nMasternodePaymentsIncreaseBlock = 1001; // Block 100,001 Approx 5 Months
+        consensus.nMasternodePaymentsIncreasePeriod = 1001; // Block 100,001 Approx 5 Months
         consensus.nInstantSendKeepLock = 24;
-        consensus.nBudgetPaymentsStartBlock = 100000; // Block 100,000
-        consensus.nBudgetPaymentsCycleBlocks = 14414; // 14,414
-        consensus.nBudgetPaymentsWindowBlocks = 100; 
-        consensus.nBudgetProposalEstablishingTime = 96*60*60; // 4 Days
-        consensus.nSuperblockStartBlock = 100001; // Block 100,001
-        consensus.nSuperblockCycle = 21915; // 720 (Block per day) x 365.25 (Days per year) / 12 = 21,915
+        consensus.nBudgetPaymentsStartBlock = 1000; // Block 100,000
+        consensus.nBudgetPaymentsCycleBlocks = 200; // 14,414
+        consensus.nBudgetPaymentsWindowBlocks = 10; 
+        consensus.nBudgetProposalEstablishingTime = 2*60*60; // 4 Days
+        consensus.nSuperblockStartBlock = 1001; // Block 100,001
+        consensus.nSuperblockCycle = 200; // 720 (Block per day) x 365.25 (Days per year) / 12 = 21,915
         consensus.nGovernanceMinQuorum = 10;
         consensus.nGovernanceFilterElements = 20000;
-        consensus.nMasternodeMinimumConfirmations = 15;
-        consensus.nMajorityEnforceBlockUpgrade = 750;
-        consensus.nMajorityRejectBlockOutdated = 950;
+        consensus.nMasternodeMinimumConfirmations = 5;
+        consensus.nMajorityEnforceBlockUpgrade = 75;
+        consensus.nMajorityRejectBlockOutdated = 95;
         consensus.nMajorityWindow = 1000;
-        consensus.BIP34Height = 1;
-        consensus.BIP34Hash = uint256S("0x000005c44e04128d9953a742860dbe3c10fb527a3605462cb6bd3e36dd6a285a");
+        consensus.BIP34Height = 0;
+        consensus.BIP34Hash = uint256S("0x0000001328dc3c8ade2c183dd39b58c97e7477065ca9a0fbd74d7588d051ee19");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
 
-        consensus.nZawyLwmaAveragingWindow = 65;
-        consensus.nZawyLwmaAjustedWeight = 3927;
+        consensus.nZawyLwmaAveragingWindow = 6;
+        consensus.nZawyLwmaAjustedWeight = 39;
 
         consensus.nPowTargetTimespan = 1 * 60; // GENIX: 1 hour
-        consensus.nPowTargetSpacing = 2 * 60; // GENIX: 2 minutes
+        consensus.nPowTargetSpacing = 0.5 * 60; // GENIX: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.useDarkGravityWave = true;
-        consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nRuleChangeActivationThreshold = 19; // 95% of 2016
+        consensus.nMinerConfirmationWindow = 20; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1555135200; // Apr 13th, 2019 06:00AM
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1586757600; // Apr 13th, 2020 06:00AM
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1556287167; // Apr 13th, 2019 06:00AM
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1587909567; // Apr 13th, 2020 06:00AM
 
         // Deployment of DIP0001
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1555135200; // Apr 13th, 2019 06:00AM
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 1586757600; // Apr 13th, 2020 06:00AM
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 4032;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1556287167; // Apr 13th, 2019 06:00AM
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 1587909567; // Apr 13th, 2020 06:00AM
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 40;
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 32; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000002f49b9d8da9b13"); // 9,619
+        consensus.nMinimumChainWork = uint256S("0x00"); // 9,619
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0000000000d1667659951f749c691a9a7c061756d8b15d82f9ffe29a33184bd0"); // 9,619
+        consensus.defaultAssumeValid = uint256S("0x0000001328dc3c8ade2c183dd39b58c97e7477065ca9a0fbd74d7588d051ee19"); // 9,619
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -140,12 +140,12 @@ public:
         pchMessageStart[1] = 0x4e;
         pchMessageStart[2] = 0x3b;
         pchMessageStart[3] = 0x49;
-        nDefaultPort = 43649;
+        nDefaultPort = 32538;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time
         nDelayGetHeadersTime = 24 * 60 * 60;
-        nPruneAfterHeight = 100000;
+        nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1551279600, 2084647557, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1556164194, 504365040, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
    /*
 	 //////////////
@@ -188,24 +188,11 @@ public:
                 }
                 std::cout << std::string("Finished calculating Mainnet Genesis Block:\n");
      */
-        assert(consensus.hashGenesisBlock == uint256S("0000038977617c01646209e33e354174ef916df8284346b29aecfbc98fa43dd0"));
-        assert(genesis.hashMerkleRoot == uint256S("93113cc5a2df97b20bbe91731578c6722080355be0b4b83b60c6b9ac535d5d15"));
+        assert(consensus.hashGenesisBlock == uint256S("0000001328dc3c8ade2c183dd39b58c97e7477065ca9a0fbd74d7588d051ee19"));
+        assert(genesis.hashMerkleRoot == uint256S("30ebac054ec191fc15b25099016e3e8839f182bea9130de438d94ab7007afb8d"));
 
         vSeeds.push_back(CDNSSeedData("161.43.201.255", "161.43.201.255")); // farsider350
-        vSeeds.push_back(CDNSSeedData("104.156.239.75", "104.156.239.75")); // farsider350
-        vSeeds.push_back(CDNSSeedData("104.156.233.160", "104.156.233.160")); // farsider350
-        vSeeds.push_back(CDNSSeedData("45.32.244.142", "45.32.244.142")); // farsider350
-        vSeeds.push_back(CDNSSeedData("45.76.112.118", "45.76.112.118")); // farsider350
-        vSeeds.push_back(CDNSSeedData("108.61.23.207", "108.61.23.207")); // farsider350
-        vSeeds.push_back(CDNSSeedData("107.191.40.176", "107.191.40.176")); // farsider350
-        vSeeds.push_back(CDNSSeedData("144.202.30.204", "144.202.30.204")); // farsider350
-        vSeeds.push_back(CDNSSeedData("207.148.85.226", "207.148.85.226")); // farsider350
-        vSeeds.push_back(CDNSSeedData("173.199.119.100", "173.199.119.100")); // Twinky
-        vSeeds.push_back(CDNSSeedData("104.238.164.138", "104.238.164.138")); // Twinky
-        vSeeds.push_back(CDNSSeedData("104.207.142.141", "104.207.142.141")); // Twinky
-        vSeeds.push_back(CDNSSeedData("45.63.95.253", "45.63.95.253")); // Twinky
-		vSeeds.push_back(CDNSSeedData("198.12.95.122", "198.12.95.122")); // Twinky
-		vSeeds.push_back(CDNSSeedData("45.77.125.15", "45.77.125.15")); // Twinky
+        
      //   vSeeds.push_back(CDNSSeedData(""));
         // vFixedSeeds.clear();
         // vSeeds.clear();
@@ -238,8 +225,8 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  8412, uint256S("0x00000000005ae70f519f5f0f780c665e830cc4bf36ac8494b3e38f0d3361b829")),
-            1555416111, // * UNIX timestamp of last checkpoint block
+            (  0, uint256S("0x0000001328dc3c8ade2c183dd39b58c97e7477065ca9a0fbd74d7588d051ee19")),
+            1556164194, // * UNIX timestamp of last checkpoint block
                 // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             25        // * estimated number of transactions per day after checkpoint
