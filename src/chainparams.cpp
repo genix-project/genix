@@ -198,9 +198,9 @@ public:
         // vSeeds.clear();
 
         // GENIX addresses start with 'G'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,98);
         // GENIX script addresses start with '6'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,13);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,11);
         // GENIX private keys start with 't'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,127);
         // GENIX BIP32 pubkeys start with 'xpub' (GENIX defaults)
@@ -213,7 +213,7 @@ public:
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = true;
+        fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
