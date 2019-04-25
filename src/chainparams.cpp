@@ -55,8 +55,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "GenixMain";
-    const CScript genesisOutputScript = CScript() << ParseHex("03289c0933f7ed53fc996de0c252cd6bbf9e9b8161dcda7615c2503dbd5d48f02bdb72bd216af26b6815e0b2f50381100916a7eb7b1a88aeb8debb0803250d8802") << OP_CHECKSIG;
+    const char* pszTimestamp = "Junior";
+    const CScript genesisOutputScript = CScript() << ParseHex("03289c0933f7ed53fc996de0c252cd6bbf9e9b8161dcda7615c2503dbd5d48f02bdb72bd216af26b6815e0b2f50381100916a7eb7b1a88aeb8debb0803250d8401") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -96,7 +96,7 @@ public:
         consensus.nMajorityRejectBlockOutdated = 95;
         consensus.nMajorityWindow = 1000;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x0000001328dc3c8ade2c183dd39b58c97e7477065ca9a0fbd74d7588d051ee19");
+        consensus.BIP34Hash = uint256S("0x000006874678aa53f78b7676ced0f443cd22ae8917199b5ec14d0b7b7df7b93d");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
 
         consensus.nZawyLwmaAveragingWindow = 6;
@@ -129,7 +129,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x00"); // 9,619
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0000001328dc3c8ade2c183dd39b58c97e7477065ca9a0fbd74d7588d051ee19"); // 9,619
+        consensus.defaultAssumeValid = uint256S("0x000006874678aa53f78b7676ced0f443cd22ae8917199b5ec14d0b7b7df7b93d");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -145,7 +145,7 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1556164194, 504365040, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1549043100, 2084844903, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
    /*
 	 //////////////
@@ -188,8 +188,8 @@ public:
                 }
                 std::cout << std::string("Finished calculating Mainnet Genesis Block:\n");
      */
-        assert(consensus.hashGenesisBlock == uint256S("0000001328dc3c8ade2c183dd39b58c97e7477065ca9a0fbd74d7588d051ee19"));
-        assert(genesis.hashMerkleRoot == uint256S("30ebac054ec191fc15b25099016e3e8839f182bea9130de438d94ab7007afb8d"));
+        assert(consensus.hashGenesisBlock == uint256S("000006874678aa53f78b7676ced0f443cd22ae8917199b5ec14d0b7b7df7b93d"));
+        assert(genesis.hashMerkleRoot == uint256S("3ed2fa1e72f3c4160cc9b4870cc91aa8e8b90db08274d2fec8565ed5c8e87311"));
 
         vSeeds.push_back(CDNSSeedData("161.43.201.255", "161.43.201.255")); // farsider350
         
@@ -225,11 +225,11 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  0, uint256S("0x0000001328dc3c8ade2c183dd39b58c97e7477065ca9a0fbd74d7588d051ee19")),
-            1556164194, // * UNIX timestamp of last checkpoint block
-                // * total number of transactions between genesis and last checkpoint
+            (  0, uint256S("000006874678aa53f78b7676ced0f443cd22ae8917199b5ec14d0b7b7df7b93d")),
+            1549043100, // * UNIX timestamp of last checkpoint block
+            0,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            25        // * estimated number of transactions per day after checkpoint
+            250        // * estimated number of transactions per day after checkpoint
         };
     }
 };
@@ -263,7 +263,7 @@ public:
         consensus.nMajorityRejectBlockOutdated = 75;
         consensus.nMajorityWindow = 100;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x000006874678aa53f78b7676ced0f443cd22ae8917199b5ec14d0b7b7df7b93d");
+        consensus.BIP34Hash = uint256S("0x0000001328dc3c8ade2c183dd39b58c97e7477065ca9a0fbd74d7588d051ee19");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
 
         consensus.nZawyLwmaAveragingWindow = 65;
@@ -439,7 +439,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("000006874678aa53f78b7676ced0f443cd22ae8917199b5ec14d0b7b7df7b93d")),
+            ( 0, uint256S("0000001328dc3c8ade2c183dd39b58c97e7477065ca9a0fbd74d7588d051ee19")),
             1549043100,
             0,
             0
