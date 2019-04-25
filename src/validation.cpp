@@ -1238,23 +1238,23 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     }
 
     // Supply and Reward Halvings
-    if (nPrevHeight <= 100000) {
+    if (nPrevHeight <= 1000) {
         return 500 * COIN;
-    } else if (nPrevHeight <= 200000) {
+    } else if (nPrevHeight <= 8000) {
 	return 250 * COIN;
-       } else if (nPrevHeight <= 300000) {
+       } else if (nPrevHeight <= 13000) {
         return 125 * COIN;
-   } else if (nPrevHeight <= 400000) {
+   } else if (nPrevHeight <= 24000) {
         return 62 * COIN;
-   } else if (nPrevHeight <= 500000) {
+   } else if (nPrevHeight <= 50000) {
         return 31 * COIN;
-   } else if (nPrevHeight <= 600000) {
+   } else if (nPrevHeight <= 100000) {
         return 15 * COIN;
-   } else if (nPrevHeight <= 700000) {
+   } else if (nPrevHeight <= 200000) {
         return 8 * COIN;
-   } else if (nPrevHeight <= 800000) {
+   } else if (nPrevHeight <= 300000) {
         return 4 * COIN;
-   } else if (nPrevHeight <= 2600000) {
+   } else if (nPrevHeight <= 600000) {
         return 2 * COIN;
    } else  {
 	return 0.0000001 * COIN;
