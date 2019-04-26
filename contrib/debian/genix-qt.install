@@ -1,6 +1,0 @@
-usr/local/bin/genix-qt usr/bin
-share/pixmaps/genix32.xpm usr/share/pixmaps
-share/pixmaps/genix16.xpm usr/share/pixmaps
-share/pixmaps/genix128.png usr/share/pixmaps
-debian/genix-qt.desktop usr/share/applications
-debian/genix-qt.protocol usr/share/kde4/services/
