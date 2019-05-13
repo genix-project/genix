@@ -80,8 +80,8 @@ public:
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 518400; // Note: actual number of blocks per calendar year with DGW v3 is ~200700 (for example 449750 - 249050)
         consensus.nMasternodePaymentsStartBlock = 780; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
-        consensus.nMasternodePaymentsIncreaseBlock = 100001; // Block 100,001 Approx 1 year
-        consensus.nMasternodePaymentsIncreasePeriod = 100001; // Block 100,001 Approx 1 year
+        consensus.nMasternodePaymentsIncreaseBlock = 100001; // Block 100,001 Approx 5 Months
+        consensus.nMasternodePaymentsIncreasePeriod = 100001; // Block 100,001 Approx 5 Months
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = 9999999999; // Disabled
         consensus.nBudgetPaymentsCycleBlocks = 9999999999; // Disabled
@@ -132,10 +132,10 @@ public:
         //consensus.defaultAssumeValid = uint256S("0x000000000000001c172f518793c3b9e83f202284615592f87fe3506ce964dcd4"); // 782700
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000016bdaaa43");
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000604a31aa50fd8a");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000007f658c1cdaeacb36b7f75894b42fb534c227685dbe660de13a27eca23");
+        consensus.defaultAssumeValid = uint256S("0x000000000129de87fb064e34b13eaa23426d3f6474ce4f43f7fe180921d19962");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -240,8 +240,8 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  50, uint256S("0x000000f82126fb70bd87ea67545a6992b913c47457ce41bf5822b781de94fbfb")),
-            1553774919, // * UNIX timestamp of last checkpoint block
+            (  27182, uint256S("0x000000000129de87fb064e34b13eaa23426d3f6474ce4f43f7fe180921d19962")),
+            1557782819, // * UNIX timestamp of last checkpoint block
                 // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             25        // * estimated number of transactions per day after checkpoint
