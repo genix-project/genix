@@ -157,10 +157,10 @@ public:
         //////////////
                 // MAINNET IS TESTNET IN THIS BRANCH DUE TO CONFLICTING PSZ TIMESTAMPS FOR GENESIS
      */
-        assert(consensus.hashGenesisBlock == uint256S("000006874678aa53f78b7676ced0f443cd22ae8917199b5ec14d0b7b7df7b93d"));
-        assert(genesis.hashMerkleRoot == uint256S("3ed2fa1e72f3c4160cc9b4870cc91aa8e8b90db08274d2fec8565ed5c8e87311"));
+    //    assert(consensus.hashGenesisBlock == uint256S("000006874678aa53f78b7676ced0f443cd22ae8917199b5ec14d0b7b7df7b93d"));
+    //    assert(genesis.hashMerkleRoot == uint256S("3ed2fa1e72f3c4160cc9b4870cc91aa8e8b90db08274d2fec8565ed5c8e87311"));
 
-        vSeeds.push_back(CDNSSeedData("161.43.201.255", "161.43.201.255")); // farsider350
+    //    vSeeds.push_back(CDNSSeedData("161.43.201.255", "161.43.201.255")); 
         
      //   vSeeds.push_back(CDNSSeedData(""));
         // vFixedSeeds.clear();
@@ -287,7 +287,7 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("000006874678aa53f78b7676ced0f443cd22ae8917199b5ec14d0b7b7df7b93d"));
         assert(genesis.hashMerkleRoot == uint256S("3ed2fa1e72f3c4160cc9b4870cc91aa8e8b90db08274d2fec8565ed5c8e87311"));
 
-        vSeeds.push_back(CDNSSeedData("161.43.201.255", "161.43.201.255")); // farsider350
+        vSeeds.push_back(CDNSSeedData("161.43.201.255", "161.43.201.255")); 
         
      //   vSeeds.push_back(CDNSSeedData(""));
         // vFixedSeeds.clear();
