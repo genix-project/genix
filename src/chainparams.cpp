@@ -108,7 +108,7 @@ public:
         consensus.fPowNoRetargeting = false;
         consensus.useDarkGravityWave = true;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing * 67.2
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -132,7 +132,7 @@ public:
         //consensus.defaultAssumeValid = uint256S("0x000000000000001c172f518793c3b9e83f202284615592f87fe3506ce964dcd4"); // 782700
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000016bdaaa43");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000080874736ed6cd2");
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x00000007f658c1cdaeacb36b7f75894b42fb534c227685dbe660de13a27eca23");
@@ -240,8 +240,8 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  50, uint256S("0x000000f82126fb70bd87ea67545a6992b913c47457ce41bf5822b781de94fbfb")),
-            1553774919, // * UNIX timestamp of last checkpoint block
+            (  58382, uint256S("0x000000000029aec185b7462e1661e726bef920b41f1b728a1879c5d7527aae6d")),
+            1561717114, // * UNIX timestamp of last checkpoint block
                 // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             25        // * estimated number of transactions per day after checkpoint
