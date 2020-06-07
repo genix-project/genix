@@ -194,8 +194,8 @@ public:
                 }
                 std::cout << std::string("Finished calculating Mainnet Genesis Block:\n");
      */
-        assert(consensus.hashGenesisBlock == uint256S("0000038977617c01646209e33e354174ef916df8284346b29aecfbc98fa43dd0"));
-        assert(genesis.hashMerkleRoot == uint256S("93113cc5a2df97b20bbe91731578c6722080355be0b4b83b60c6b9ac535d5d15"));
+        // assert(consensus.hashGenesisBlock == uint256S("0000038977617c01646209e33e354174ef916df8284346b29aecfbc98fa43dd0"));
+        // assert(genesis.hashMerkleRoot == uint256S("93113cc5a2df97b20bbe91731578c6722080355be0b4b83b60c6b9ac535d5d15"));
 
         vSeeds.push_back(CDNSSeedData("161.43.201.255", "161.43.201.255")); // farsider350
         vSeeds.push_back(CDNSSeedData("104.156.239.75", "104.156.239.75")); // farsider350
@@ -236,7 +236,7 @@ public:
 
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
-        strSporkPubKey = "0207768ba840e023b0cca0200474e20f5892dc2916b66f29b3bfed1b73ad1904eb";
+        // strSporkPubKey = "0207768ba840e023b0cca0200474e20f5892dc2916b66f29b3bfed1b73ad1904eb";
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
@@ -260,14 +260,14 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 21600;
-        consensus.nMasternodePaymentsStartBlock = 2000; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
-        consensus.nMasternodePaymentsIncreaseBlock = 9999;
-        consensus.nMasternodePaymentsIncreasePeriod = 9999;
+        consensus.nSubsidyHalvingInterval = 210240;
+        consensus.nMasternodePaymentsStartBlock = 2100; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
+        consensus.nMasternodePaymentsIncreaseBlock = 4030;
+        consensus.nMasternodePaymentsIncreasePeriod = 10;
         consensus.nInstantSendKeepLock = 6;
-        consensus.nBudgetPaymentsStartBlock = 9999999999; // Disabled
-        consensus.nBudgetPaymentsCycleBlocks = 9999999999; // Disabled
-        consensus.nBudgetPaymentsWindowBlocks = 9999999999; // Disabled
+        consensus.nBudgetPaymentsStartBlock = 4100; //
+        consensus.nBudgetPaymentsCycleBlocks = 50; //
+        consensus.nBudgetPaymentsWindowBlocks = 10; //
         consensus.nBudgetProposalEstablishingTime = 60*20*9999999999; // Disabled
         consensus.nSuperblockStartBlock = 99999999999; // Disabled
         consensus.nSuperblockCycle = 9999999999; // Disabled
@@ -278,17 +278,17 @@ public:
         consensus.nMajorityRejectBlockOutdated = 75;
         consensus.nMajorityWindow = 100;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x000006874678aa53f78b7676ced0f443cd22ae8917199b5ec14d0b7b7df7b93d");
+        consensus.BIP34Hash = uint256S("0x0000038977617c01646209e33e354174ef916df8284346b29aecfbc98fa43dd0");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
 
         consensus.nZawyLwmaAveragingWindow = 65;
         consensus.nZawyLwmaAjustedWeight = 3927;
 
         consensus.nPowTargetTimespan = 30 * 60 * 2; // GENIX: 1 hour
-        consensus.nPowTargetSpacing = 2 * 60; // GENIX: 2 minutes
+        consensus.nPowTargetSpacing = 1 * 30; // GENIX: 30 sec
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
-        consensus.useDarkGravityWave = false;
+        consensus.useDarkGravityWave = true;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
@@ -313,43 +313,44 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x00");
 
-        pchMessageStart[0] = 0xb1;
-        pchMessageStart[1] = 0xfb;
-        pchMessageStart[2] = 0xea;
-        pchMessageStart[3] = 0x75;
+        pchMessageStart[0] = 0xcf;
+        pchMessageStart[1] = 0x4e;
+        pchMessageStart[2] = 0x3b;
+        pchMessageStart[3] = 0x49;
      //   vAlertPubKey = ParseHex("046e05270f6d736f006cb682c9e15998e3505e6185475f7e1a9bc5a4965984b6933ed8988336006ad07d0b5ae408bf5805183c5a94ab376d0e50f0c51ab30f6662");
-        nDefaultPort = 1979;
+        nDefaultPort = 32538;
         nMaxTipAge = 0x7fffffff; // allow mining on top of old blocks for testnet
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1549043100, 2084844903, 0x1e0ffff0, 1, 150000 * COIN);
+        genesis = CreateGenesisBlock(1551279600, 2084647557, 0x1e0ffff0, 1, 50 * COIN);
+
         consensus.hashGenesisBlock = genesis.GetHash();
-       // assert(consensus.hashGenesisBlock == uint256S("0x00000ba049e5c1f95474ea3fc62d5f1b1632a294c20c22fea701134a43cf3068"));
-        //assert(genesis.hashMerkleRoot == uint256S("0xd5dec0980d7b84cc1c048eb8706afe68bbbdb07fdefab76de8d176dfcb858ae8"));
+        assert(consensus.hashGenesisBlock == uint256S("0000038977617c01646209e33e354174ef916df8284346b29aecfbc98fa43dd0"));
+        assert(genesis.hashMerkleRoot == uint256S("93113cc5a2df97b20bbe91731578c6722080355be0b4b83b60c6b9ac535d5d15"));
 
      //   vSeeds.push_back(CDNSSeedData("testnet.genixproject.org", "testnet.seed.genixproject.org"));
       //  vSeeds.push_back(CDNSSeedData("fixed-seeds.genixproject.org", "testnet.fixed-seeds.genixproject.org"));
         // vFixedSeeds.clear();
         // vSeeds.clear();
 
-        // Testnet GENIX addresses start with 'm'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,110);
-        // Testnet GENIX script addresses start with '9'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,21);
-        // Testnet private keys start with '9' or 'c' (GENIX defaults)
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
+        // Testnet GENIX addresses start with 'g'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,98);
+        // Testnet GENIX script addresses start with '6'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,11);
+        // Testnet private keys start with 't' (GENIX defaults)
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,127);
         // Testnet GENIX BIP32 pubkeys start with 'tpub' (GENIX defaults)
-        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         // Testnet GENIX BIP32 prvkeys start with 'tprv' (GENIX defaults)
-        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
         // Testnet GENIX BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
-        fMiningRequiresPeers = true;
+        fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
         fMineBlocksOnDemand = false;
@@ -357,7 +358,7 @@ public:
 
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
-      //  strSporkPubKey = "03289c0933f7ed53fc996de0c252cd6bbf9e9b8161dcda7615c2503dbd5d48f02bdb72bd216af26b6815e0b2f50381100916a7eb7b1a88aeb8debb0803250d8401";
+        // strSporkPubKey = "03289c0933f7ed53fc996de0c252cd6bbf9e9b8161dcda7615c2503dbd5d48f02bdb72bd216af26b6815e0b2f50381100916a7eb7b1a88aeb8debb0803250d8401";
 
         // checkpointData = (CCheckpointData) {
         //     boost::assign::map_list_of
