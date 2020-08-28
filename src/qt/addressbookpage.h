@@ -2,13 +2,12 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_QT_ADDRESSBOOKPAGE_H
-#define GENIX_QT_ADDRESSBOOKPAGE_H
+#ifndef BITCOIN_QT_ADDRESSBOOKPAGE_H
+#define BITCOIN_QT_ADDRESSBOOKPAGE_H
 
 #include <QDialog>
 
 class AddressTableModel;
-class OptionsModel;
 class PlatformStyle;
 
 namespace Ui {
@@ -20,7 +19,6 @@ class QItemSelection;
 class QMenu;
 class QModelIndex;
 class QSortFilterProxyModel;
-class QTableView;
 QT_END_NAMESPACE
 
 /** Widget that shows a list of sending or receiving addresses.
@@ -71,6 +69,8 @@ private Q_SLOTS:
     void onCopyLabelAction();
     /** Edit currently selected address entry (no button) */
     void onEditAction();
+    /** Show QR code for the currently selected address */
+    void on_showAddressQRCode_clicked();
     /** Export button clicked */
     void on_exportButton_clicked();
 
@@ -85,4 +85,4 @@ Q_SIGNALS:
     void sendCoins(QString addr);
 };
 
-#endif // GENIX_QT_ADDRESSBOOKPAGE_H
+#endif // BITCOIN_QT_ADDRESSBOOKPAGE_H

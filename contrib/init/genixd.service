@@ -1,5 +1,5 @@
 [Unit]
-Description=GENIX's distributed currency daemon
+Description=genix's distributed currency daemon
 After=network.target
 
 [Service]

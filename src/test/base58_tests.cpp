@@ -15,7 +15,6 @@
 #include "utilstrencodings.h"
 #include "test/test_genix.h"
 
-#include <boost/foreach.hpp>
 #include <boost/test/unit_test.hpp>
 
 #include <univalue.h>
@@ -39,7 +38,7 @@ BOOST_AUTO_TEST_CASE(base58_EncodeBase58)
         std::vector<unsigned char> sourcedata = ParseHex(test[0].get_str());
         std::string base58string = test[1].get_str();
         BOOST_CHECK_MESSAGE(
-                    EncodeBase58(begin_ptr(sourcedata), end_ptr(sourcedata)) == base58string,
+                    EncodeBase58(sourcedata.data(), sourcedata.data() + sourcedata.size()) == base58string,
                     strTest);
     }
 }
@@ -79,7 +78,7 @@ class TestAddrTypeVisitor : public boost::static_visitor<bool>
 private:
     std::string exp_addrType;
 public:
-    TestAddrTypeVisitor(const std::string &exp_addrType) : exp_addrType(exp_addrType) { }
+    TestAddrTypeVisitor(const std::string &_exp_addrType) : exp_addrType(_exp_addrType) { }
     bool operator()(const CKeyID &id) const
     {
         return (exp_addrType == "pubkey");
@@ -100,7 +99,7 @@ class TestPayloadVisitor : public boost::static_visitor<bool>
 private:
     std::vector<unsigned char> exp_payload;
 public:
-    TestPayloadVisitor(std::vector<unsigned char> &exp_payload) : exp_payload(exp_payload) { }
+    TestPayloadVisitor(std::vector<unsigned char> &_exp_payload) : exp_payload(_exp_payload) { }
     bool operator()(const CKeyID &id) const
     {
         uint160 exp_key(exp_payload);
@@ -121,9 +120,8 @@ public:
 BOOST_AUTO_TEST_CASE(base58_keys_valid_parse)
 {
     UniValue tests = read_json(std::string(json_tests::base58_keys_valid, json_tests::base58_keys_valid + sizeof(json_tests::base58_keys_valid)));
-    std::vector<unsigned char> result;
-    CGENIXSecret secret;
-    CGENIXAddress addr;
+    CBitcoinSecret secret;
+    CBitcoinAddress addr;
     SelectParams(CBaseChainParams::MAIN);
 
     for (unsigned int idx = 0; idx < tests.size(); idx++) {
@@ -147,7 +145,7 @@ BOOST_AUTO_TEST_CASE(base58_keys_valid_parse)
         {
             bool isCompressed = find_value(metadata, "isCompressed").get_bool();
             // Must be valid private key
-            // Note: CGENIXSecret::SetString tests isValid, whereas CGENIXAddress does not!
+            // Note: CBitcoinSecret::SetString tests isValid, whereas CBitcoinAddress does not!
             BOOST_CHECK_MESSAGE(secret.SetString(exp_base58string), "!SetString:"+ strTest);
             BOOST_CHECK_MESSAGE(secret.IsValid(), "!IsValid:" + strTest);
             CKey privkey = secret.GetKey();
@@ -179,7 +177,6 @@ BOOST_AUTO_TEST_CASE(base58_keys_valid_parse)
 BOOST_AUTO_TEST_CASE(base58_keys_valid_gen)
 {
     UniValue tests = read_json(std::string(json_tests::base58_keys_valid, json_tests::base58_keys_valid + sizeof(json_tests::base58_keys_valid)));
-    std::vector<unsigned char> result;
 
     for (unsigned int idx = 0; idx < tests.size(); idx++) {
         UniValue test = tests[idx];
@@ -204,7 +201,7 @@ BOOST_AUTO_TEST_CASE(base58_keys_valid_gen)
             CKey key;
             key.Set(exp_payload.begin(), exp_payload.end(), isCompressed);
             assert(key.IsValid());
-            CGENIXSecret secret;
+            CBitcoinSecret secret;
             secret.SetKey(key);
             BOOST_CHECK_MESSAGE(secret.ToString() == exp_base58string, "result mismatch: " + strTest);
         }
@@ -229,14 +226,14 @@ BOOST_AUTO_TEST_CASE(base58_keys_valid_gen)
                 BOOST_ERROR("Bad addrtype: " << strTest);
                 continue;
             }
-            CGENIXAddress addrOut;
+            CBitcoinAddress addrOut;
             BOOST_CHECK_MESSAGE(addrOut.Set(dest), "encode dest: " + strTest);
             BOOST_CHECK_MESSAGE(addrOut.ToString() == exp_base58string, "mismatch: " + strTest);
         }
     }
 
     // Visiting a CNoDestination must fail
-    CGENIXAddress dummyAddr;
+    CBitcoinAddress dummyAddr;
     CTxDestination nodest = CNoDestination();
     BOOST_CHECK(!dummyAddr.Set(nodest));
 
@@ -247,9 +244,8 @@ BOOST_AUTO_TEST_CASE(base58_keys_valid_gen)
 BOOST_AUTO_TEST_CASE(base58_keys_invalid)
 {
     UniValue tests = read_json(std::string(json_tests::base58_keys_invalid, json_tests::base58_keys_invalid + sizeof(json_tests::base58_keys_invalid))); // Negative testcases
-    std::vector<unsigned char> result;
-    CGENIXSecret secret;
-    CGENIXAddress addr;
+    CBitcoinSecret secret;
+    CBitcoinAddress addr;
 
     for (unsigned int idx = 0; idx < tests.size(); idx++) {
         UniValue test = tests[idx];

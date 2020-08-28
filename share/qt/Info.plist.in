@@ -3,7 +3,7 @@
 <plist version="0.9">
 <dict>
   <key>LSMinimumSystemVersion</key>
-  <string>10.7.0</string>
+  <string>10.8.0</string>
 
   <key>LSArchitecturePriority</key>
   <array>
@@ -11,34 +11,31 @@
   </array>
 
   <key>CFBundleIconFile</key>
-  <string>genix.icns</string>
+  <string>bitcoin.icns</string>
 
   <key>CFBundlePackageType</key>
   <string>APPL</string>
 
-  <key>CFBundleGetInfoString</key>
-  <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@, Copyright © 2009-@COPYRIGHT_YEAR@ The Bitcoin Core developers, 2014-@COPYRIGHT_YEAR@ The Bitcoin Core developers</string>
-
   <key>CFBundleShortVersionString</key>
-  <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@</string>
+  <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@.@CLIENT_VERSION_BUILD@</string>
 
   <key>CFBundleVersion</key>
-  <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@</string>
+  <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@.@CLIENT_VERSION_BUILD@</string>
 
   <key>CFBundleSignature</key>
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>GENIX-Qt</string>
-  
+  <string>genix-Qt</string>
+
   <key>CFBundleName</key>
-  <string>GENIX-Qt</string>
+  <string>genix-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.genix.GENIX-Qt</string>
+  <string>org.genix.genix-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,7 +43,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.genix.genixcryptoment</string>
+      <string>org.genix.genixPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>genix</string>
@@ -60,7 +57,7 @@
       <key>UTTypeIdentifier</key>
       <string>org.genix.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>GENIX payment request</string>
+      <string>genix payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -71,7 +68,7 @@
         <string>application/x-genix-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>genixcryptomentrequest</string>
+          <string>genixpaymentrequest</string>
         </array>
       </dict>
     </dict>
@@ -97,9 +94,12 @@
   <key>NSHighResolutionCapable</key>
     <string>True</string>
 
-  <key>LSAppNapIsDisabled</key>
+  <key>NSRequiresAquaSystemAppearance</key>
     <string>True</string>
-  
+
+  <key>NSHumanReadableCopyright</key>
+  <string>Copyright © 2009-@COPYRIGHT_YEAR@ The Bitcoin Core developers, 2014-@COPYRIGHT_YEAR@ @COPYRIGHT_HOLDERS_FINAL@</string>
+
   <key>LSApplicationCategoryType</key>
     <string>public.app-category.finance</string>
 </dict>

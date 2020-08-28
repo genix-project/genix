@@ -28,12 +28,12 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_Main">
        <item>
-        <widget class="QCheckBox" name="genixAtStartup">
+        <widget class="QCheckBox" name="bitcoinAtStartup">
          <property name="toolTip">
-          <string>Automatically start Genix Core after logging in to the system.</string>
+          <string>Automatically start %1 after logging in to the system.</string>
          </property>
          <property name="text">
-          <string>&amp;Start Genix Core on system login</string>
+          <string>&amp;Start %1 on system login</string>
          </property>
         </widget>
        </item>
@@ -174,6 +174,16 @@
            </widget>
           </item>
           <item>
+           <widget class="QCheckBox" name="showPrivateSendPopups">
+            <property name="toolTip">
+             <string>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</string>
+            </property>
+            <property name="text">
+             <string>Show popups for PrivateSend transactions</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QCheckBox" name="lowKeysWarning">
             <property name="toolTip">
              <string>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</string>
@@ -211,7 +221,7 @@
          <item>
           <widget class="QLabel" name="label">
            <property name="toolTip">
-            <string>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</string>
+            <string>This setting determines the amount of individual masternodes that an input will be mixed through.&lt;br/&gt;More rounds of mixing gives a higher degree of privacy, but also costs more in fees.</string>
            </property>
            <property name="text">
             <string>PrivateSend rounds to use</string>
@@ -224,7 +234,7 @@
             <number>2</number>
            </property>
            <property name="maximum">
-            <number>8</number>
+            <number>16</number>
            </property>
            <property name="value">
             <number>4</number>
@@ -253,7 +263,7 @@
             <string notr="true"/>
            </property>
            <property name="text">
-            <string>Amount of GENIX to keep anonymized</string>
+            <string>Target PrivateSend balance</string>
            </property>
           </widget>
          </item>
@@ -298,7 +308,7 @@
        <item>
         <widget class="QCheckBox" name="mapPortUpnp">
          <property name="toolTip">
-          <string>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</string>
+          <string>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</string>
          </property>
          <property name="text">
           <string>Map port using &amp;UPnP</string>
@@ -318,7 +328,7 @@
        <item>
         <widget class="QCheckBox" name="connectSocks">
          <property name="toolTip">
-          <string>Connect to the Genix network through a SOCKS5 proxy.</string>
+          <string>Connect to the genix network through a SOCKS5 proxy.</string>
          </property>
          <property name="text">
           <string>&amp;Connect through SOCKS5 proxy (default proxy):</string>
@@ -424,7 +434,7 @@
             <bool>false</bool>
            </property>
            <property name="toolTip">
-            <string>Shows, if the supplied default SOCKS5 proxy is used to reach peers via this network type.</string>
+            <string>Shows if the supplied default SOCKS5 proxy is used to reach peers via this network type.</string>
            </property>
            <property name="text">
             <string/>
@@ -447,7 +457,7 @@
             <bool>false</bool>
            </property>
            <property name="toolTip">
-            <string>Shows, if the supplied default SOCKS5 proxy is used to reach peers via this network type.</string>
+            <string>Shows if the supplied default SOCKS5 proxy is used to reach peers via this network type.</string>
            </property>
            <property name="text">
             <string/>
@@ -470,7 +480,7 @@
             <bool>false</bool>
            </property>
            <property name="toolTip">
-            <string>Shows, if the supplied default SOCKS5 proxy is used to reach peers via this network type.</string>
+            <string>Shows if the supplied default SOCKS5 proxy is used to reach peers via this network type.</string>
            </property>
            <property name="text">
             <string/>
@@ -505,7 +515,7 @@
        <item>
         <widget class="QCheckBox" name="connectSocksTor">
          <property name="toolTip">
-          <string>Connect to the Genix network through a separate SOCKS5 proxy for Tor hidden services.</string>
+          <string>Connect to the genix network through a separate SOCKS5 proxy for Tor hidden services.</string>
          </property>
          <property name="text">
           <string>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</string>
@@ -681,7 +691,7 @@
          <item>
           <widget class="QValueComboBox" name="lang">
            <property name="toolTip">
-            <string>The user interface language can be set here. This setting will take effect after restarting Genix Core.</string>
+            <string>The user interface language can be set here. This setting will take effect after restarting %1.</string>
            </property>
           </widget>
          </item>

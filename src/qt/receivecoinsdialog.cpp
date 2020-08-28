@@ -7,7 +7,7 @@
 
 #include "addressbookpage.h"
 #include "addresstablemodel.h"
-#include "genixunits.h"
+#include "bitcoinunits.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
 #include "platformstyle.h"
@@ -22,32 +22,25 @@
 #include <QScrollBar>
 #include <QTextDocument>
 
-ReceiveCoinsDialog::ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidget *parent, QWidget *walletview) :
+ReceiveCoinsDialog::ReceiveCoinsDialog(const PlatformStyle *_platformStyle, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ReceiveCoinsDialog),
     columnResizingFixer(0),
     model(0),
-    platformStyle(platformStyle)
+    platformStyle(_platformStyle)
 {
     ui->setupUi(this);
-    QString theme = GUIUtil::getThemeName();
     
-    if (!platformStyle->getImagesOnButtons()) {
+    if (!_platformStyle->getImagesOnButtons()) {
         ui->clearButton->setIcon(QIcon());
         ui->receiveButton->setIcon(QIcon());
         ui->showRequestButton->setIcon(QIcon());
         ui->removeRequestButton->setIcon(QIcon());
     } else {
-        ui->clearButton->setIcon(QIcon(":/icons/" + theme + "/remove"));
-        ui->clearButton->setIconSize(QSize(32, 32));
-        ui->receiveButton->setIcon(QIcon(":/icons/" + theme + "/receiving_addresses"));
-        ui->receiveButton->setIconSize(QSize(32, 32));
-        ui->showRequestButton->setIcon(QIcon(":/icons/" + theme + "/edit-disabled"));
-        ui->showRequestButton->setIconSize(QSize(32, 32));
-        ui->removeRequestButton->setIcon(QIcon(":/icons/" + theme + "/remove-disabled"));
-        ui->removeRequestButton->setIconSize(QSize(32, 32));
-        ui->receivingAddressesButton->setIcon(QIcon(":/icons/" + theme + "/address-book"));
-        ui->receivingAddressesButton->setIconSize(QSize(32, 32));
+        ui->clearButton->setIcon(QIcon(":/icons/remove"));
+        ui->receiveButton->setIcon(QIcon(":/icons/receiving_addresses"));
+        ui->showRequestButton->setIcon(QIcon(":/icons/edit"));
+        ui->removeRequestButton->setIcon(QIcon(":/icons/remove"));
     }
 
     // context menu actions
@@ -71,47 +64,30 @@ ReceiveCoinsDialog::ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidg
     connect(copyAmountAction, SIGNAL(triggered()), this, SLOT(copyAmount()));
 
     connect(ui->clearButton, SIGNAL(clicked()), this, SLOT(clear()));
-
-    connect(ui->receivingAddressesButton, SIGNAL(clicked()), walletview, SLOT(usedReceivingAddresses()));
-
-    ui->frameHistory->setVisible(false);
 }
 
-void ReceiveCoinsDialog::updateRequestView(int count)
+void ReceiveCoinsDialog::setModel(WalletModel *_model)
 {
-    LogPrintf("RCD::updaterequest %d", count);
-    ui->frameHistory->setVisible(count > 0);
-    if (count > 0) {
-        ui->verticalLayout->setStretch(3, 0);
-        ui->verticalLayout->setStretch(4, 1);
-    } else {
-        ui->verticalLayout->setStretch(3, 1);
-        ui->verticalLayout->setStretch(4, 0);
-    }
-}
+    this->model = _model;
 
-void ReceiveCoinsDialog::setModel(WalletModel *model)
-{
-    this->model = model;
-
-    if(model && model->getOptionsModel())
+    if(_model && _model->getOptionsModel())
     {
-        model->getRecentRequestsTableModel()->sort(RecentRequestsTableModel::Date, Qt::DescendingOrder);
-        connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
+        _model->getRecentRequestsTableModel()->sort(RecentRequestsTableModel::Date, Qt::DescendingOrder);
+        connect(_model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
         updateDisplayUnit();
 
         QTableView* tableView = ui->recentRequestsView;
 
         tableView->verticalHeader()->hide();
         tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        tableView->setModel(model->getRecentRequestsTableModel());
+        tableView->setModel(_model->getRecentRequestsTableModel());
         tableView->setAlternatingRowColors(true);
         tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
         tableView->setSelectionMode(QAbstractItemView::ContiguousSelection);
         tableView->setColumnWidth(RecentRequestsTableModel::Date, DATE_COLUMN_WIDTH);
         tableView->setColumnWidth(RecentRequestsTableModel::Label, LABEL_COLUMN_WIDTH);
-        updateRequestView(model->getRecentRequestsTableModel()->count());
-        connect(model->getRecentRequestsTableModel(), SIGNAL(countChanged(int)), this, SLOT(updateRequestView(int)));
+        tableView->setColumnWidth(RecentRequestsTableModel::Amount, AMOUNT_MINIMUM_COLUMN_WIDTH);
+
         connect(tableView->selectionModel(),
             SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this,
             SLOT(recentRequestsView_selectionChanged(QItemSelection, QItemSelection)));
@@ -180,7 +156,6 @@ void ReceiveCoinsDialog::on_receiveButton_clicked()
     }
     SendCoinsRecipient info(address, label,
         ui->reqAmount->value(), ui->reqMessage->text());
-    info.fUseInstantSend = ui->checkUseInstantSend->isChecked();
     ReceiveRequestDialog *dialog = new ReceiveRequestDialog(this);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->setModel(model->getOptionsModel());
@@ -208,13 +183,6 @@ void ReceiveCoinsDialog::recentRequestsView_selectionChanged(const QItemSelectio
     bool enable = !ui->recentRequestsView->selectionModel()->selectedRows().isEmpty();
     ui->showRequestButton->setEnabled(enable);
     ui->removeRequestButton->setEnabled(enable);
-    if (!enable) {
-        ui->showRequestButton->setIcon(QIcon(":icons/light/edit-disabled"));
-        ui->removeRequestButton->setIcon(QIcon(":icons/light/remove-disabled"));
-    } else {
-         ui->showRequestButton->setIcon(QIcon(":icons/light/edit"));
-        ui->removeRequestButton->setIcon(QIcon(":icons/light/remove"));
-    }
 }
 
 void ReceiveCoinsDialog::on_showRequestButton_clicked()
@@ -223,7 +191,7 @@ void ReceiveCoinsDialog::on_showRequestButton_clicked()
         return;
     QModelIndexList selection = ui->recentRequestsView->selectionModel()->selectedRows();
 
-    Q_FOREACH (const QModelIndex& index, selection) {
+    for (const QModelIndex& index : selection) {
         on_recentRequestsView_doubleClicked(index);
     }
 }
@@ -238,7 +206,6 @@ void ReceiveCoinsDialog::on_removeRequestButton_clicked()
     // correct for selection mode ContiguousSelection
     QModelIndex firstIndex = selection.at(0);
     model->getRecentRequestsTableModel()->removeRows(firstIndex.row(), selection.length(), firstIndex.parent());
-    updateRequestView(model->getRecentRequestsTableModel()->count());
 }
 
 // We override the virtual resizeEvent of the QWidget to adjust tables column
@@ -305,7 +272,7 @@ void ReceiveCoinsDialog::copyURI()
     }
 
     const RecentRequestsTableModel * const submodel = model->getRecentRequestsTableModel();
-    const QString uri = GUIUtil::formatGENIXURI(submodel->entry(sel.row()).recipient);
+    const QString uri = GUIUtil::formatBitcoinURI(submodel->entry(sel.row()).recipient);
     GUIUtil::setClipboard(uri);
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en">
+<TS version="2.1" language="en">
 <context>
     <name>AddressBookPage</name>
     <message>
@@ -30,6 +30,16 @@
     </message>
     <message>
         <location line="+10"/>
+        <source>Show QR code for the currently selected address</source>
+        <translation>Show QR code for the currently selected address</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Show QR code</source>
+        <translation>&amp;Show QR code</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Delete the currently selected address from the list</source>
         <translation>Delete the currently selected address from the list</translation>
     </message>
@@ -54,7 +64,7 @@
         <translation>C&amp;lose</translation>
     </message>
     <message>
-        <location filename="../addressbookpage.cpp" line="+51"/>
+        <location filename="../addressbookpage.cpp" line="+53"/>
         <source>Choose the address to send coins to</source>
         <translation>Choose the address to send coins to</translation>
     </message>
@@ -80,13 +90,13 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your GENIX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>These are your GENIX addresses for sending payments. Always check the amount and the receiving address before sending coins.</translation>
+        <source>These are your genix addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>These are your genix addresses for sending payments. Always check the amount and the receiving address before sending coins.</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>These are your GENIX addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>These are your GENIX addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</translation>
+        <source>These are your genix addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>These are your genix addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -104,7 +114,17 @@
         <translation>&amp;Edit</translation>
     </message>
     <message>
-        <location line="+193"/>
+        <location line="+1"/>
+        <source>&amp;Show address QR code</source>
+        <translation>&amp;Show address QR code</translation>
+    </message>
+    <message>
+        <location line="+148"/>
+        <source>QR code</source>
+        <translation>QR code</translation>
+    </message>
+    <message>
+        <location line="+66"/>
         <source>Export Address List</source>
         <translation>Export Address List</translation>
     </message>
@@ -127,7 +147,7 @@
 <context>
     <name>AddressTableModel</name>
     <message>
-        <location filename="../addresstablemodel.cpp" line="+171"/>
+        <location filename="../addresstablemodel.cpp" line="+170"/>
         <source>Label</source>
         <translation>Label</translation>
     </message>
@@ -165,17 +185,7 @@
         <translation>Repeat new passphrase</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
-        <translation>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Only for mixing via PrivateSend</source>
-        <translation>Only for mixing via PrivateSend</translation>
-    </message>
-    <message>
-        <location filename="../askpassphrasedialog.cpp" line="+43"/>
+        <location filename="../askpassphrasedialog.cpp" line="+47"/>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</translation>
     </message>
@@ -185,12 +195,18 @@
         <translation>Encrypt wallet</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+3"/>
+        <location line="+8"/>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
         <translation>This operation needs your wallet passphrase to unlock the wallet.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-3"/>
+        <source>Unlock wallet for mixing only</source>
+        <translation>Unlock wallet for mixing only</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Unlock wallet</source>
         <translation>Unlock wallet</translation>
     </message>
@@ -221,8 +237,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR GENIX&lt;/b&gt;!</source>
-        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR GENIX&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR genix&lt;/b&gt;!</source>
+        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR genix&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -230,23 +246,30 @@
         <translation>Are you sure you wish to encrypt your wallet?</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <location line="+59"/>
+        <location line="+10"/>
+        <location line="+12"/>
+        <location line="+60"/>
         <source>Wallet encrypted</source>
         <translation>Wallet encrypted</translation>
     </message>
     <message>
-        <location line="-57"/>
-        <source>GENIX Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your genixs from being stolen by malware infecting your computer.</source>
-        <translation>GENIX Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your genixs from being stolen by malware infecting your computer.</translation>
+        <location line="-70"/>
+        <location line="+12"/>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your funds from being stolen by malware infecting your computer.</source>
+        <translation>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your funds from being stolen by malware infecting your computer.</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="-8"/>
+        <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. Previous backups of the unencrypted wallet file contain the same HD seed and still have full access to all your funds just like the new, encrypted wallet.</source>
+        <translation>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. Previous backups of the unencrypted wallet file contain the same HD seed and still have full access to all your funds just like the new, encrypted wallet.</translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
         <translation>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
         <location line="+7"/>
         <location line="+43"/>
         <location line="+6"/>
@@ -307,20 +330,19 @@
     </message>
 </context>
 <context>
-    <name>GENIXGUI</name>
+    <name>BitcoinGUI</name>
     <message>
-        <location filename="../genix.cpp" line="+542"/>
-        <source>A fatal error occurred. GENIX Core can no longer continue safely and will quit.</source>
-        <translation>A fatal error occurred. GENIX Core can no longer continue safely and will quit.</translation>
+        <location filename="../genix.cpp" line="+567"/>
+        <source>A fatal error occurred. genix Core can no longer continue safely and will quit.</source>
+        <translation>A fatal error occurred. genix Core can no longer continue safely and will quit.</translation>
     </message>
     <message>
-        <location filename="../genixgui.cpp" line="+130"/>
-        <location line="+988"/>
-        <source>GENIX Core</source>
-        <translation>GENIX Core</translation>
+        <location filename="../bitcoingui.cpp" line="+1164"/>
+        <source>genix Core</source>
+        <translation>genix Core</translation>
     </message>
     <message>
-        <location line="-979"/>
+        <location line="-1016"/>
         <source>Wallet</source>
         <translation>Wallet</translation>
     </message>
@@ -330,7 +352,7 @@
         <translation>Node</translation>
     </message>
     <message>
-        <location line="+147"/>
+        <location line="+169"/>
         <source>&amp;Overview</source>
         <translation>&amp;Overview</translation>
     </message>
@@ -346,8 +368,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Send coins to a GENIX address</source>
-        <translation>Send coins to a GENIX address</translation>
+        <source>Send coins to a genix address</source>
+        <translation>Send coins to a genix address</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -390,14 +412,9 @@
         <translation>Quit application</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>&amp;About GENIX Core</source>
-        <translation>&amp;About GENIX Core</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show information about GENIX Core</source>
-        <translation>Show information about GENIX Core</translation>
+        <location line="+4"/>
+        <source>Show information about genix Core</source>
+        <translation>Show information about genix Core</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -415,9 +432,14 @@
         <translation>&amp;Options...</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Modify configuration options for GENIX Core</source>
-        <translation>Modify configuration options for GENIX Core</translation>
+        <location line="-7"/>
+        <source>&amp;About %1</source>
+        <translation>&amp;About %1</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Modify configuration options for %1</source>
+        <translation>Modify configuration options for %1</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -481,8 +503,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Sign messages with your GENIX addresses to prove you own them</source>
-        <translation>Sign messages with your GENIX addresses to prove you own them</translation>
+        <source>Sign messages with your genix addresses to prove you own them</source>
+        <translation>Sign messages with your genix addresses to prove you own them</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -491,8 +513,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Verify messages to ensure they were signed with specified GENIX addresses</source>
-        <translation>Verify messages to ensure they were signed with specified GENIX addresses</translation>
+        <source>Verify messages to ensure they were signed with specified genix addresses</source>
+        <translation>Verify messages to ensure they were signed with specified genix addresses</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -556,16 +578,6 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Open &amp;Masternode Configuration File</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Open Masternode configuration file</source>
-        <translation>Open Masternode configuration file</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Show Automatic &amp;Backups</source>
         <translation>Show Automatic &amp;Backups</translation>
     </message>
@@ -611,11 +623,16 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>Show the GENIX Core help message to get a list with possible GENIX Core command-line options</source>
-        <translation>Show the GENIX Core help message to get a list with possible GENIX Core command-line options</translation>
+        <source>Show the %1 help message to get a list with possible genix command-line options</source>
+        <translation>Show the %1 help message to get a list with possible genix command-line options</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+298"/>
+        <source>%1 client</source>
+        <translation>%1 client</translation>
+    </message>
+    <message>
+        <location line="-296"/>
         <source>&amp;PrivateSend information</source>
         <translation>&amp;PrivateSend information</translation>
     </message>
@@ -625,7 +642,7 @@
         <translation>Show the PrivateSend basic information</translation>
     </message>
     <message>
-        <location line="+62"/>
+        <location line="+61"/>
         <source>&amp;File</source>
         <translation>&amp;File</translation>
     </message>
@@ -640,26 +657,21 @@
         <translation>&amp;Tools</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+11"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+13"/>
         <source>Tabs toolbar</source>
         <translation>Tabs toolbar</translation>
     </message>
-    <message>
-        <location line="+168"/>
-        <source>GENIX Core client</source>
-        <translation>GENIX Core client</translation>
-    </message>
     <message numerus="yes">
-        <location line="+200"/>
-        <source>%n active connection(s) to GENIX network</source>
+        <location line="+375"/>
+        <source>%n active connection(s) to genix network</source>
         <translation>
-            <numerusform>%n active connection to GENIX network</numerusform>
-            <numerusform>%n active connections to GENIX network</numerusform>
+            <numerusform>%n active connection to genix network</numerusform>
+            <numerusform>%n active connections to genix network</numerusform>
         </translation>
     </message>
     <message>
@@ -673,7 +685,7 @@
         <translation>Syncing Headers (%1%)...</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+39"/>
         <source>Synchronizing with network...</source>
         <translation>Synchronizing with network...</translation>
     </message>
@@ -706,7 +718,7 @@
         </translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+24"/>
         <source>%1 behind</source>
         <translation>%1 behind</translation>
     </message>
@@ -751,7 +763,36 @@
         <translation>Information</translation>
     </message>
     <message>
-        <location line="+89"/>
+        <location line="+136"/>
+        <source>Received and sent multiple transactions</source>
+        <translation>Received and sent multiple transactions</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Sent multiple transactions</source>
+        <translation>Sent multiple transactions</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Received multiple transactions</source>
+        <translation>Received multiple transactions</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Sent Amount: %1
+</source>
+        <translation>Sent Amount: %1
+</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Received Amount: %1
+</source>
+        <translation>Received Amount: %1
+</translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>Date: %1
 </source>
         <translation>Date: %1
@@ -806,7 +847,7 @@
         <translation>HD key generation is &lt;b&gt;disabled&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+21"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</translation>
     </message>
@@ -819,19 +860,6 @@
         <location line="+10"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>ClientModel</name>
-    <message>
-        <location filename="../clientmodel.cpp" line="+83"/>
-        <source>Total: %1 (PS compatible: %2 / Enabled: %3)</source>
-        <translation>Total: %1 (PS compatible: %2 / Enabled: %3)</translation>
-    </message>
-    <message>
-        <location line="+116"/>
-        <source>Network Alert</source>
-        <translation>Network Alert</translation>
     </message>
 </context>
 <context>
@@ -937,7 +965,7 @@
         <translation>Confirmed</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="+54"/>
+        <location filename="../coincontroldialog.cpp" line="+60"/>
         <source>Copy address</source>
         <translation>Copy address</translation>
     </message>
@@ -998,14 +1026,14 @@
         <translation>Copy change</translation>
     </message>
     <message>
-        <location line="+159"/>
+        <location line="+147"/>
         <source>Please switch to &quot;List mode&quot; to use this function.</source>
         <translation>Please switch to &quot;List mode&quot; to use this function.</translation>
     </message>
     <message>
-        <location line="+198"/>
-        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-nonymized inputs first and then check PrivateSend checkbox again.</source>
-        <translation>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-nonymized inputs first and then check PrivateSend checkbox again.</translation>
+        <location line="+195"/>
+        <source>Non-mixed input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-mixed inputs first and then check the PrivateSend checkbox again.</source>
+        <translation>Non-mixed input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-mixed inputs first and then check the PrivateSend checkbox again.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1013,7 +1041,7 @@
         <translation>(%1 locked)</translation>
     </message>
     <message>
-        <location line="+179"/>
+        <location line="+149"/>
         <source>yes</source>
         <translation>yes</translation>
     </message>
@@ -1028,12 +1056,12 @@
         <translation>This label turns red if any recipient receives an amount smaller than the current dust threshold.</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+5"/>
         <source>Can vary +/- %1 duff(s) per input.</source>
         <translation>Can vary +/- %1 duff(s) per input.</translation>
     </message>
     <message>
-        <location line="+43"/>
+        <location line="+41"/>
         <location line="+56"/>
         <source>(no label)</source>
         <translation>(no label)</translation>
@@ -1052,91 +1080,6 @@
         <location line="+26"/>
         <source>n/a</source>
         <translation>n/a</translation>
-    </message>
-</context>
-<context>
-    <name>DarksendConfig</name>
-    <message>
-        <location filename="../forms/darksendconfig.ui" line="+14"/>
-        <source>Configure PrivateSend</source>
-        <translation>Configure PrivateSend</translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <source>Basic Privacy</source>
-        <translation>Basic Privacy</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>High Privacy</source>
-        <translation>High Privacy</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Maximum Privacy</source>
-        <translation>Maximum Privacy</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Please select a privacy level.</source>
-        <translation>Please select a privacy level.</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Use 2 separate masternodes to mix funds up to 1000 GENIX</source>
-        <translation>Use 2 separate masternodes to mix funds up to 1000 GENIX</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Use 8 separate masternodes to mix funds up to 1000 GENIX</source>
-        <translation>Use 8 separate masternodes to mix funds up to 1000 GENIX</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Use 16 separate masternodes</source>
-        <translation>Use 16 separate masternodes</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>This option is the quickest and will cost about ~0.025 GENIX to anonymize 1000 GENIX</source>
-        <translation>This option is the quickest and will cost about ~0.025 GENIX to anonymize 1000 GENIX</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>This option is moderately fast and will cost about 0.05 GENIX to anonymize 1000 GENIX</source>
-        <translation>This option is moderately fast and will cost about 0.05 GENIX to anonymize 1000 GENIX</translation>
-    </message>
-    <message>
-        <location line="+26"/>
-        <source>0.1 GENIX per 1000 GENIX you anonymize.</source>
-        <translation>0.1 GENIX per 1000 GENIX you anonymize.</translation>
-    </message>
-    <message>
-        <location line="-13"/>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>This is the slowest and most secure option. Using maximum anonymity will cost</translation>
-    </message>
-    <message>
-        <location filename="../darksendconfig.cpp" line="+43"/>
-        <location line="+15"/>
-        <location line="+15"/>
-        <source>PrivateSend Configuration</source>
-        <translation>PrivateSend Configuration</translation>
-    </message>
-    <message>
-        <location line="-29"/>
-        <source>PrivateSend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening GENIX&apos;s configuration screen.</source>
-        <translation>PrivateSend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening GENIX&apos;s configuration screen.</translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>PrivateSend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening GENIX&apos;s configuration screen.</source>
-        <translation>PrivateSend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening GENIX&apos;s configuration screen.</translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>PrivateSend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening GENIX&apos;s configuration screen.</source>
-        <translation>PrivateSend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening GENIX&apos;s configuration screen.</translation>
     </message>
 </context>
 <context>
@@ -1188,8 +1131,8 @@
     </message>
     <message>
         <location line="+71"/>
-        <source>The entered address &quot;%1&quot; is not a valid GENIX address.</source>
-        <translation>The entered address &quot;%1&quot; is not a valid GENIX address.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid genix address.</source>
+        <translation>The entered address &quot;%1&quot; is not a valid genix address.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1210,7 +1153,7 @@
 <context>
     <name>FreespaceChecker</name>
     <message>
-        <location filename="../intro.cpp" line="+75"/>
+        <location filename="../intro.cpp" line="+77"/>
         <source>A new data directory will be created.</source>
         <translation>A new data directory will be created.</translation>
     </message>
@@ -1238,12 +1181,7 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <location filename="../utilitydialog.cpp" line="+37"/>
-        <source>GENIX Core</source>
-        <translation>GENIX Core</translation>
-    </message>
-    <message>
-        <location line="+0"/>
+        <location filename="../utilitydialog.cpp" line="+42"/>
         <source>version</source>
         <translation>version</translation>
     </message>
@@ -1255,8 +1193,8 @@
     </message>
     <message>
         <location line="+5"/>
-        <source>About GENIX Core</source>
-        <translation>About GENIX Core</translation>
+        <source>About %1</source>
+        <translation>About %1</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -1309,14 +1247,14 @@
         <translation>Reset all settings changed in the GUI</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+41"/>
         <source>PrivateSend information</source>
         <translation>PrivateSend information</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the GENIX in your wallet is comprised of different &quot;inputs&quot; which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times..&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type=&quot;1&quot;&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.01 GENIX, 0.1 GENIX, 1 GENIX and 10 GENIX -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called &quot;masternodes.&quot; These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know &quot;who&quot; you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users&apos; wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it&apos;s called a &quot;round.&quot; Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these &quot;change addresses.&quot; Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;         </source>
-        <translation>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the GENIX in your wallet is comprised of different &quot;inputs&quot; which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times..&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type=&quot;1&quot;&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.01 GENIX, 0.1 GENIX, 1 GENIX and 10 GENIX -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called &quot;masternodes.&quot; These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know &quot;who&quot; you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users&apos; wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it&apos;s called a &quot;round.&quot; Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these &quot;change addresses.&quot; Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;         </translation>
+        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the genix in your wallet is comprised of different &quot;inputs&quot; which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type=&quot;1&quot;&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 genix, 0.01 genix, 0.1 genix, 1 genix and 10 genix -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called &quot;masternodes.&quot; These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know &quot;who&quot; you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users&apos; wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it&apos;s called a &quot;round.&quot; Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be mixed. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these &quot;change addresses.&quot; Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href=&quot;https://docs.genix.org/en/stable/wallets/genixcore/privatesend-instantsend.html&quot;&gt;PrivateSend documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the genix in your wallet is comprised of different &quot;inputs&quot; which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type=&quot;1&quot;&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 genix, 0.01 genix, 0.1 genix, 1 genix and 10 genix -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called &quot;masternodes.&quot; These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know &quot;who&quot; you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users&apos; wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it&apos;s called a &quot;round.&quot; Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be mixed. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these &quot;change addresses.&quot; Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href=&quot;https://docs.genix.org/en/stable/wallets/genixcore/privatesend-instantsend.html&quot;&gt;PrivateSend documentation&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -1328,21 +1266,31 @@
     </message>
     <message>
         <location line="+9"/>
-        <source>Welcome to GENIX Core.</source>
-        <translation>Welcome to GENIX Core.</translation>
+        <source>Welcome to %1.</source>
+        <translation>Welcome to %1.</translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>As this is the first time the program is launched, you can choose where GENIX Core will store its data.</source>
-        <translation>As this is the first time the program is launched, you can choose where GENIX Core will store its data.</translation>
+        <source>As this is the first time the program is launched, you can choose where %1 will store its data.</source>
+        <translation>As this is the first time the program is launched, you can choose where %1 will store its data.</translation>
+    </message>
+    <message>
+        <location line="+157"/>
+        <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
+        <translation>When you click OK, %1 will begin to download and process the full %4 block chain (%2GB) starting with the earliest transactions in %3 when %4 initially launched.</translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>GENIX Core will download and store a copy of the GENIX block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>GENIX Core will download and store a copy of the GENIX block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</translation>
+        <source>This initial synchronisation is very demanding, and may expose hardware problems with your computer that had previously gone unnoticed. Each time you run %1, it will continue downloading where it left off.</source>
+        <translation>This initial synchronisation is very demanding, and may expose hardware problems with your computer that had previously gone unnoticed. Each time you run %1, it will continue downloading where it left off.</translation>
     </message>
     <message>
         <location line="+10"/>
+        <source>If you have chosen to limit block chain storage (pruning), the historical data must still be downloaded and processed, but will be deleted afterward to keep your disk usage low.</source>
+        <translation>If you have chosen to limit block chain storage (pruning), the historical data must still be downloaded and processed, but will be deleted afterward to keep your disk usage low.</translation>
+    </message>
+    <message>
+        <location line="-160"/>
         <source>Use the default data directory</source>
         <translation>Use the default data directory</translation>
     </message>
@@ -1352,17 +1300,32 @@
         <translation>Use a custom data directory:</translation>
     </message>
     <message>
-        <location filename="../intro.cpp" line="+88"/>
-        <source>GENIX Core</source>
-        <translation>GENIX Core</translation>
+        <location filename="../intro.cpp" line="+26"/>
+        <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
+        <translation>At least %1 GB of data will be stored in this directory, and it will grow over time.</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+5"/>
+        <source>Approximately %1 GB of data will be stored in this directory.</source>
+        <translation>Approximately %1 GB of data will be stored in this directory.</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>%1 will download and store a copy of the genix block chain.</source>
+        <translation>%1 will download and store a copy of the genix block chain.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The wallet will also be stored in this directory.</source>
+        <translation>The wallet will also be stored in this directory.</translation>
+    </message>
+    <message>
+        <location line="+72"/>
         <source>Error: Specified data directory &quot;%1&quot; cannot be created.</source>
         <translation>Error: Specified data directory &quot;%1&quot; cannot be created.</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+26"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -1385,94 +1348,17 @@
         <translation>Form</translation>
     </message>
     <message>
-        <location line="+40"/>
-        <source>My Masternodes</source>
-        <translation>My Masternodes</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your masternode should be running but you still do not see &quot;ENABLED&quot; in &quot;Status&quot; field.</source>
-        <translation>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your masternode should be running but you still do not see &quot;ENABLED&quot; in &quot;Status&quot; field.</translation>
-    </message>
-    <message>
-        <location line="+37"/>
-        <source>Alias</source>
-        <translation>Alias</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <location line="+123"/>
-        <source>Address</source>
-        <translation>Address</translation>
-    </message>
-    <message>
-        <location line="-118"/>
-        <location line="+123"/>
-        <source>Protocol</source>
-        <translation>Protocol</translation>
-    </message>
-    <message>
-        <location line="-118"/>
-        <location line="+123"/>
+        <location line="+120"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location line="-118"/>
-        <location line="+123"/>
-        <source>Active</source>
-        <translation>Active</translation>
-    </message>
-    <message>
-        <location line="-118"/>
-        <location line="+123"/>
-        <source>Last Seen</source>
-        <translation>Last Seen</translation>
-    </message>
-    <message>
-        <location line="-118"/>
-        <location line="+123"/>
-        <source>Payee</source>
-        <translation>Payee</translation>
-    </message>
-    <message>
-        <location line="-110"/>
-        <source>S&amp;tart alias</source>
-        <translation>S&amp;tart alias</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Start &amp;all</source>
-        <translation>Start &amp;all</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Start &amp;MISSING</source>
-        <translation>Start &amp;MISSING</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>&amp;Update status</source>
-        <translation>&amp;Update status</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Status will be updated automatically in (sec):</source>
-        <translation>Status will be updated automatically in (sec):</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <location line="+122"/>
+        <location line="-33"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location line="-97"/>
-        <source>All Masternodes</source>
-        <translation>All Masternodes</translation>
-    </message>
-    <message>
-        <location line="+63"/>
+        <location line="-44"/>
         <source>Filter List:</source>
         <translation>Filter List:</translation>
     </message>
@@ -1482,54 +1368,122 @@
         <translation>Filter masternode list</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+30"/>
         <source>Node Count:</source>
         <translation>Node Count:</translation>
     </message>
     <message>
-        <location filename="../masternodelist.cpp" line="+50"/>
-        <source>Start alias</source>
-        <translation>Start alias</translation>
+        <location line="-23"/>
+        <source>Show only masternodes this wallet has keys for.</source>
+        <translation>Show only masternodes this wallet has keys for.</translation>
     </message>
     <message>
-        <location line="+278"/>
-        <source>Confirm masternode start</source>
-        <translation>Confirm masternode start</translation>
+        <location line="+3"/>
+        <source>My masternodes only</source>
+        <translation>My masternodes only</translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>Service</source>
+        <translation>Service</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>PoSe Score</source>
+        <translation>PoSe Score</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Registered</source>
+        <translation>Registered</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Last Paid</source>
+        <translation>Last Paid</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Next Payment</source>
+        <translation>Next Payment</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Payout Address</source>
+        <translation>Payout Address</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Operator Reward</source>
+        <translation>Operator Reward</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Collateral Address</source>
+        <translation>Collateral Address</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Owner Address</source>
+        <translation>Owner Address</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Voting Address</source>
+        <translation>Voting Address</translation>
+    </message>
+    <message>
+        <location filename="../masternodelist.cpp" line="+77"/>
+        <source>Copy ProTx Hash</source>
+        <translation>Copy ProTx Hash</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Are you sure you want to start masternode %1?</source>
-        <translation>Are you sure you want to start masternode %1?</translation>
+        <source>Copy Collateral Outpoint</source>
+        <translation>Copy Collateral Outpoint</translation>
     </message>
     <message>
+        <location line="+135"/>
+        <source>ENABLED</source>
+        <translation>ENABLED</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>POSE_BANNED</source>
+        <translation>POSE_BANNED</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <location line="+4"/>
+        <location line="+3"/>
         <location line="+23"/>
-        <source>Confirm all masternodes start</source>
-        <translation>Confirm all masternodes start</translation>
+        <source>UNKNOWN</source>
+        <translation>UNKNOWN</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Are you sure you want to start ALL masternodes?</source>
-        <translation>Are you sure you want to start ALL masternodes?</translation>
+        <location line="-10"/>
+        <source>to %1</source>
+        <translation>to %1</translation>
     </message>
     <message>
-        <location line="+24"/>
-        <source>Command is not available right now</source>
-        <translation>Command is not available right now</translation>
+        <location line="+2"/>
+        <source>to UNKNOWN</source>
+        <translation>to UNKNOWN</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>You can&apos;t use this command until masternode list is synced</source>
-        <translation>You can&apos;t use this command until masternode list is synced</translation>
+        <location line="+3"/>
+        <source>but not claimed</source>
+        <translation>but not claimed</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Confirm missing masternodes start</source>
-        <translation>Confirm missing masternodes start</translation>
+        <location line="-12"/>
+        <source>NONE</source>
+        <translation>NONE</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Are you sure you want to start MISSING masternodes?</source>
-        <translation>Are you sure you want to start MISSING masternodes?</translation>
+        <location line="+120"/>
+        <source>Additional information for DIP3 Masternode %1</source>
+        <translation>Additional information for DIP3 Masternode %1</translation>
     </message>
 </context>
 <context>
@@ -1541,13 +1495,13 @@
     </message>
     <message>
         <location line="+117"/>
-        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the GENIX network, as detailed below.</source>
-        <translation>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the GENIX network, as detailed below.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the genix network, as detailed below.</source>
+        <translation>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the genix network, as detailed below.</translation>
     </message>
     <message>
         <location line="+19"/>
-        <source>Attempting to spend GENIX that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Attempting to spend GENIX that are affected by not-yet-displayed transactions will not be accepted by the network.</translation>
+        <source>Attempting to spend genix that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Attempting to spend genix that are affected by not-yet-displayed transactions will not be accepted by the network.</translation>
     </message>
     <message>
         <location line="+63"/>
@@ -1572,12 +1526,7 @@
         <translation>Progress</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>~</source>
-        <translation>~</translation>
-    </message>
-    <message>
-        <location line="+25"/>
+        <location line="+34"/>
         <source>Progress increase per hour</source>
         <translation>Progress increase per hour</translation>
     </message>
@@ -1664,27 +1613,12 @@
         <translation>(0 = auto, &lt;0 = leave that many cores free)</translation>
     </message>
     <message>
-        <location line="+155"/>
-        <source>Amount of GENIX to keep anonymized</source>
-        <translation>Amount of GENIX to keep anonymized</translation>
-    </message>
-    <message>
-        <location line="-119"/>
+        <location line="+36"/>
         <source>W&amp;allet</source>
         <translation>W&amp;allet</translation>
     </message>
     <message>
-        <location line="-104"/>
-        <source>Automatically start GENIX Core after logging in to the system.</source>
-        <translation>Automatically start GENIX Core after logging in to the system.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Start GENIX Core on system login</source>
-        <translation>&amp;Start GENIX Core on system login</translation>
-    </message>
-    <message>
-        <location line="+123"/>
+        <location line="+22"/>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
         <translation>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</translation>
     </message>
@@ -1704,7 +1638,7 @@
         <translation>Enable advanced PrivateSend interface</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+17"/>
         <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
         <translation>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</translation>
     </message>
@@ -1739,24 +1673,19 @@
         <translation>This amount acts as a threshold to turn off PrivateSend once it&apos;s reached.</translation>
     </message>
     <message>
-        <location line="+60"/>
-        <source>Automatically open the GENIX Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the GENIX Core client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <location line="+15"/>
+        <source>Target PrivateSend balance</source>
+        <translation>Target PrivateSend balance</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>Accept connections from outside</source>
-        <translation>Accept connections from outside</translation>
+        <location line="+45"/>
+        <source>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Allow incoming connections</source>
-        <translation>Allow incoming connections</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Connect to the GENIX network through a SOCKS5 proxy.</source>
-        <translation>Connect to the GENIX network through a SOCKS5 proxy.</translation>
+        <location line="+20"/>
+        <source>Connect to the genix network through a SOCKS5 proxy.</source>
+        <translation>Connect to the genix network through a SOCKS5 proxy.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1764,48 +1693,70 @@
         <translation>&amp;Connect through SOCKS5 proxy (default proxy):</translation>
     </message>
     <message>
-        <location line="+315"/>
+        <location line="+103"/>
+        <location line="+23"/>
+        <location line="+23"/>
+        <source>Shows if the supplied default SOCKS5 proxy is used to reach peers via this network type.</source>
+        <translation>Shows if the supplied default SOCKS5 proxy is used to reach peers via this network type.</translation>
+    </message>
+    <message>
+        <location line="+166"/>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</source>
         <translation>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</translation>
     </message>
     <message>
-        <location line="+45"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting GENIX Core.</source>
-        <translation>The user interface language can be set here. This setting will take effect after restarting GENIX Core.</translation>
-    </message>
-    <message>
-        <location line="+99"/>
+        <location line="+144"/>
         <location line="+13"/>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items.&lt;br/&gt;%s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
         <translation>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items.&lt;br/&gt;%s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</translation>
     </message>
     <message>
-        <location line="-653"/>
+        <location line="-663"/>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <location line="+71"/>
-        <source>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</source>
-        <translation>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</translation>
-    </message>
-    <message>
-        <location line="-65"/>
+        <location line="+6"/>
         <source>Whether to show coin control features or not.</source>
         <translation>Whether to show coin control features or not.</translation>
     </message>
     <message>
+        <location line="-116"/>
+        <source>Automatically start %1 after logging in to the system.</source>
+        <translation>Automatically start %1 after logging in to the system.</translation>
+    </message>
+    <message>
         <location line="+3"/>
+        <source>&amp;Start %1 on system login</source>
+        <translation>&amp;Start %1 on system login</translation>
+    </message>
+    <message>
+        <location line="+116"/>
         <source>Enable coin &amp;control features</source>
         <translation>Enable coin &amp;control features</translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+27"/>
+        <source>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
+        <translation>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Show popups for PrivateSend transactions</source>
+        <translation>Show popups for PrivateSend transactions</translation>
+    </message>
+    <message>
+        <location line="+30"/>
         <source>&amp;Spend unconfirmed change</source>
         <translation>&amp;Spend unconfirmed change</translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+12"/>
+        <source>This setting determines the amount of individual masternodes that an input will be mixed through.&lt;br/&gt;More rounds of mixing gives a higher degree of privacy, but also costs more in fees.</source>
+        <translation>This setting determines the amount of individual masternodes that an input will be mixed through.&lt;br/&gt;More rounds of mixing gives a higher degree of privacy, but also costs more in fees.</translation>
+    </message>
+    <message>
+        <location line="+81"/>
         <source>&amp;Network</source>
         <translation>&amp;Network</translation>
     </message>
@@ -1815,7 +1766,17 @@
         <translation>Map port using &amp;UPnP</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+7"/>
+        <source>Accept connections from outside</source>
+        <translation>Accept connections from outside</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Allow incoming connections</source>
+        <translation>Allow incoming connections</translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+187"/>
         <source>Proxy &amp;IP:</source>
         <translation>Proxy &amp;IP:</translation>
@@ -1844,14 +1805,7 @@
         <translation>Used for reaching peers via:</translation>
     </message>
     <message>
-        <location line="+13"/>
         <location line="+23"/>
-        <location line="+23"/>
-        <source>Shows, if the supplied default SOCKS5 proxy is used to reach peers via this network type.</source>
-        <translation>Shows, if the supplied default SOCKS5 proxy is used to reach peers via this network type.</translation>
-    </message>
-    <message>
-        <location line="-36"/>
         <source>IPv4</source>
         <translation>IPv4</translation>
     </message>
@@ -1867,8 +1821,8 @@
     </message>
     <message>
         <location line="+25"/>
-        <source>Connect to the GENIX network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Connect to the GENIX network through a separate SOCKS5 proxy for Tor hidden services.</translation>
+        <source>Connect to the genix network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Connect to the genix network through a separate SOCKS5 proxy for Tor hidden services.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1916,7 +1870,12 @@
         <translation>User Interface &amp;language:</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+13"/>
+        <source>The user interface language can be set here. This setting will take effect after restarting %1.</source>
+        <translation>The user interface language can be set here. This setting will take effect after restarting %1.</translation>
+    </message>
+    <message>
+        <location line="+21"/>
         <source>Language missing or translation incomplete? Help contributing translations here:
 https://www.transifex.com/projects/p/genix/</source>
         <translation>Language missing or translation incomplete? Help contributing translations here:
@@ -1973,7 +1932,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>&amp;Cancel</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+100"/>
+        <location filename="../optionsdialog.cpp" line="+105"/>
         <source>default</source>
         <translation>default</translation>
     </message>
@@ -1983,28 +1942,28 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>none</translation>
     </message>
     <message>
-        <location line="+84"/>
+        <location line="+85"/>
         <source>Confirm options reset</source>
         <translation>Confirm options reset</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+45"/>
+        <location line="+48"/>
         <source>Client restart required to activate changes.</source>
         <translation>Client restart required to activate changes.</translation>
     </message>
     <message>
-        <location line="-45"/>
+        <location line="-48"/>
         <source>Client will be shut down. Do you want to proceed?</source>
         <translation>Client will be shut down. Do you want to proceed?</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+52"/>
         <source>This change would require a client restart.</source>
         <translation>This change would require a client restart.</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+28"/>
         <source>The supplied proxy address is invalid.</source>
         <translation>The supplied proxy address is invalid.</translation>
     </message>
@@ -2018,13 +1977,13 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+53"/>
-        <location line="+355"/>
-        <location line="+258"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the GENIX network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the GENIX network after a connection is established, but this process has not completed yet.</translation>
+        <location line="+352"/>
+        <location line="+200"/>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the genix network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the genix network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
-        <location line="-364"/>
+        <location line="-306"/>
         <source>Available:</source>
         <translation>Available:</translation>
     </message>
@@ -2054,12 +2013,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Mined balance that has not yet matured</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-157"/>
         <source>Balances</source>
         <translation>Balances</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+49"/>
         <source>Unconfirmed transactions to watch-only addresses</source>
         <translation>Unconfirmed transactions to watch-only addresses</translation>
     </message>
@@ -2100,18 +2059,17 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+35"/>
-        <location filename="../overviewpage.cpp" line="+501"/>
+        <location filename="../overviewpage.cpp" line="+500"/>
         <location line="+12"/>
         <location line="+8"/>
-        <location line="+61"/>
-        <location line="+15"/>
+        <location line="+53"/>
         <location line="+9"/>
         <location line="+14"/>
         <source>PrivateSend</source>
         <translation>PrivateSend</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+46"/>
         <source>Status:</source>
         <translation>Status:</translation>
     </message>
@@ -2126,34 +2084,14 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Completion:</translation>
     </message>
     <message>
-        <location line="+109"/>
-        <source>Try to manually submit a PrivateSend request.</source>
-        <translation>Try to manually submit a PrivateSend request.</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>Reset the current status of PrivateSend (can interrupt PrivateSend if it&apos;s in the process of Mixing, which can cost you money!)</source>
-        <translation>Reset the current status of PrivateSend (can interrupt PrivateSend if it&apos;s in the process of Mixing, which can cost you money!)</translation>
-    </message>
-    <message>
-        <location line="+19"/>
-        <source>Information about PrivateSend and Mixing</source>
-        <translation>Information about PrivateSend and Mixing</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Info</source>
-        <translation>Info</translation>
-    </message>
-    <message>
-        <location line="-107"/>
+        <location line="+40"/>
         <source>Amount and Rounds:</source>
         <translation>Amount and Rounds:</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>0 GENIX / 0 Rounds</source>
-        <translation>0 GENIX / 0 Rounds</translation>
+        <source>0 genix / 0 Rounds</source>
+        <translation>0 genix / 0 Rounds</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2166,12 +2104,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>n/a</translation>
     </message>
     <message>
-        <location line="+131"/>
+        <location line="+76"/>
         <source>Recent transactions</source>
         <translation>Recent transactions</translation>
     </message>
     <message>
-        <location line="-101"/>
+        <location line="-46"/>
         <source>Start/Stop Mixing</source>
         <translation>Start/Stop Mixing</translation>
     </message>
@@ -2191,42 +2129,32 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>(Last Message)</translation>
     </message>
     <message>
-        <location line="+37"/>
-        <source>Try Mix</source>
-        <translation>Try Mix</translation>
-    </message>
-    <message>
-        <location line="+19"/>
-        <source>Reset</source>
-        <translation>Reset</translation>
-    </message>
-    <message>
-        <location filename="../overviewpage.cpp" line="-471"/>
+        <location filename="../overviewpage.cpp" line="-449"/>
         <location line="+1"/>
         <location line="+1"/>
         <source>out of sync</source>
         <translation>out of sync</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+15"/>
         <source>Automatic backups are disabled, no mixing available!</source>
         <translation>Automatic backups are disabled, no mixing available!</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+308"/>
-        <location line="+155"/>
+        <location line="+310"/>
+        <location line="+132"/>
         <source>Start Mixing</source>
         <translation>Start Mixing</translation>
     </message>
     <message>
-        <location line="-461"/>
-        <location line="+464"/>
+        <location line="-440"/>
+        <location line="+443"/>
         <source>Stop Mixing</source>
         <translation>Stop Mixing</translation>
     </message>
     <message>
-        <location line="-295"/>
+        <location line="-269"/>
         <location line="+6"/>
         <source>No inputs detected</source>
         <translation>No inputs detected</translation>
@@ -2263,13 +2191,13 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Mixed</source>
-        <translation>Mixed</translation>
+        <source>Partially mixed</source>
+        <translation>Partially mixed</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Anonymized</source>
-        <translation>Anonymized</translation>
+        <source>Mixed</source>
+        <translation>Mixed</translation>
     </message>
     <message numerus="yes">
         <location line="+1"/>
@@ -2280,22 +2208,20 @@ https://www.transifex.com/projects/p/genix/</translation>
         </translation>
     </message>
     <message>
-        <location line="+35"/>
+        <location line="+32"/>
         <source>keys left: %1</source>
         <translation>keys left: %1</translation>
     </message>
     <message>
         <location line="+15"/>
         <location line="+48"/>
-        <location line="+140"/>
-        <location line="+1"/>
-        <location line="+1"/>
+        <location line="+108"/>
         <location line="+3"/>
         <source>Disabled</source>
         <translation>Disabled</translation>
     </message>
     <message>
-        <location line="-180"/>
+        <location line="-146"/>
         <source>Very low number of keys left since last automatic backup!</source>
         <translation>Very low number of keys left since last automatic backup!</translation>
     </message>
@@ -2306,8 +2232,8 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Note: You turn this message off in options.</source>
-        <translation>Note: You turn this message off in options.</translation>
+        <source>Note: You can turn this message off in options.</source>
+        <translation>Note: You can turn this message off in options.</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -2349,17 +2275,7 @@ https://www.transifex.com/projects/p/genix/</translation>
 </translation>
     </message>
     <message>
-        <location line="+8"/>
-        <source>N/A</source>
-        <translation>N/A</translation>
-    </message>
-    <message>
         <location line="+16"/>
-        <source>PrivateSend was successfully reset.</source>
-        <translation>PrivateSend was successfully reset.</translation>
-    </message>
-    <message>
-        <location line="+15"/>
         <source>If you don&apos;t want to see internal PrivateSend fees/transactions select &quot;Most Common&quot; as Type on the &quot;Transactions&quot; tab.</source>
         <translation>If you don&apos;t want to see internal PrivateSend fees/transactions select &quot;Most Common&quot; as Type on the &quot;Transactions&quot; tab.</translation>
     </message>
@@ -2410,8 +2326,8 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+8"/>
-        <source>URI cannot be parsed! This can be caused by an invalid GENIX address or malformed URI parameters.</source>
-        <translation>URI cannot be parsed! This can be caused by an invalid GENIX address or malformed URI parameters.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid genix address or malformed URI parameters.</source>
+        <translation>URI cannot be parsed! This can be caused by an invalid genix address or malformed URI parameters.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -2526,50 +2442,22 @@ https://www.transifex.com/projects/p/genix/</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../genix.cpp" line="+86"/>
-        <location line="+7"/>
-        <location line="+15"/>
-        <location line="+19"/>
-        <source>GENIX Core</source>
-        <translation>GENIX Core</translation>
+        <location filename="../genix.cpp" line="+182"/>
+        <source>%1 didn&apos;t yet exit safely...</source>
+        <translation>%1 didn&apos;t yet exit safely...</translation>
     </message>
     <message>
-        <location line="-40"/>
-        <source>Error: Specified data directory &quot;%1&quot; does not exist.</source>
-        <translation>Error: Specified data directory &quot;%1&quot; does not exist.</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
-        <translation>Error: Cannot parse configuration file: %1. Only use key=value syntax.</translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Error: %1</source>
-        <translation>Error: %1</translation>
-    </message>
-    <message>
-        <location line="+20"/>
-        <source>Error reading masternode configuration file: %1</source>
-        <translation>Error reading masternode configuration file: %1</translation>
-    </message>
-    <message>
-        <location line="+48"/>
-        <source>GENIX Core didn&apos;t yet exit safely...</source>
-        <translation>GENIX Core didn&apos;t yet exit safely...</translation>
-    </message>
-    <message>
-        <location filename="../genixunits.cpp" line="+233"/>
+        <location filename="../bitcoinunits.cpp" line="+233"/>
         <source>Amount</source>
         <translation>Amount</translation>
     </message>
     <message>
-        <location filename="../guiutil.cpp" line="+120"/>
-        <source>Enter a GENIX address (e.g. %1)</source>
-        <translation>Enter a GENIX address (e.g. %1)</translation>
+        <location filename="../guiutil.cpp" line="+183"/>
+        <source>Enter a genix address (e.g. %1)</source>
+        <translation>Enter a genix address (e.g. %1)</translation>
     </message>
     <message>
-        <location line="+855"/>
+        <location line="+788"/>
         <source>%1 d</source>
         <translation>%1 d</translation>
     </message>
@@ -2585,7 +2473,7 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+44"/>
+        <location line="+47"/>
         <source>%1 s</source>
         <translation>%1 s</translation>
     </message>
@@ -2665,6 +2553,70 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
 </context>
 <context>
+    <name>QObject::QObject</name>
+    <message>
+        <location filename="../genix.cpp" line="-86"/>
+        <source>Error: Specified data directory &quot;%1&quot; does not exist.</source>
+        <translation>Error: Specified data directory &quot;%1&quot; does not exist.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
+        <translation>Error: Cannot parse configuration file: %1. Only use key=value syntax.</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Error: %1</source>
+        <translation>Error: %1</translation>
+    </message>
+</context>
+<context>
+    <name>QRDialog</name>
+    <message>
+        <location filename="../forms/qrdialog.ui" line="+23"/>
+        <source>QR-Code Title</source>
+        <translation>QR-Code Title</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>QR Code</source>
+        <translation>QR Code</translation>
+    </message>
+    <message>
+        <location line="+46"/>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Save Image...</translation>
+    </message>
+    <message>
+        <location filename="../qrdialog.cpp" line="+153"/>
+        <source>Error creating QR Code.</source>
+        <translation>Error creating QR Code.</translation>
+    </message>
+</context>
+<context>
+    <name>QRGeneralImageWidget</name>
+    <message>
+        <location line="-117"/>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Save Image...</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Copy Image</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>Save QR Code</source>
+        <translation>Save QR Code</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>PNG Image (*.png)</source>
+        <translation>PNG Image (*.png)</translation>
+    </message>
+</context>
+<context>
     <name>QRImageWidget</name>
     <message>
         <location filename="../receiverequestdialog.cpp" line="+36"/>
@@ -2705,30 +2657,25 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>General</translation>
     </message>
     <message>
-        <location line="+167"/>
+        <location line="+144"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location line="-160"/>
-        <source>Client name</source>
-        <translation>Client name</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <location line="+23"/>
+        <location line="-127"/>
         <location line="+26"/>
         <location line="+26"/>
         <location line="+23"/>
         <location line="+26"/>
         <location line="+36"/>
         <location line="+23"/>
-        <location line="+20"/>
-        <location line="+30"/>
         <location line="+23"/>
         <location line="+36"/>
         <location line="+23"/>
-        <location line="+659"/>
+        <location line="+36"/>
+        <location line="+23"/>
+        <location line="+76"/>
+        <location line="+612"/>
         <location line="+23"/>
         <location line="+23"/>
         <location line="+23"/>
@@ -2750,17 +2697,17 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>N/A</translation>
     </message>
     <message>
-        <location line="-1195"/>
+        <location line="-1233"/>
         <source>Number of connections</source>
         <translation>Number of connections</translation>
     </message>
     <message>
-        <location line="+183"/>
+        <location line="+192"/>
         <source>&amp;Open</source>
         <translation>&amp;Open</translation>
     </message>
     <message>
-        <location line="-242"/>
+        <location line="-251"/>
         <source>Startup time</source>
         <translation>Startup time</translation>
     </message>
@@ -2770,7 +2717,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Network</translation>
     </message>
     <message>
-        <location line="+103"/>
+        <location line="+112"/>
         <source>Last block time</source>
         <translation>Last block time</translation>
     </message>
@@ -2785,7 +2732,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Current number of blocks</translation>
     </message>
     <message>
-        <location line="-210"/>
+        <location line="-219"/>
         <source>Client version</source>
         <translation>Client version</translation>
     </message>
@@ -2795,17 +2742,17 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Using BerkeleyDB version</translation>
     </message>
     <message>
-        <location line="+154"/>
+        <location line="+163"/>
         <source>Block chain</source>
         <translation>Block chain</translation>
     </message>
     <message>
-        <location line="-20"/>
+        <location line="-29"/>
         <source>Number of Masternodes</source>
         <translation>Number of Masternodes</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+88"/>
         <source>Memory Pool</source>
         <translation>Memory Pool</translation>
     </message>
@@ -2820,12 +2767,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Memory usage</translation>
     </message>
     <message>
-        <location line="+48"/>
-        <source>Open the GENIX Core debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open the GENIX Core debug log file from the current data directory. This can take a few seconds for large log files.</translation>
-    </message>
-    <message>
-        <location line="+29"/>
+        <location line="+100"/>
         <source>&amp;Console</source>
         <translation>&amp;Console</translation>
     </message>
@@ -2840,41 +2782,36 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>&amp;Network Traffic</translation>
     </message>
     <message>
-        <location line="+52"/>
-        <source>&amp;Clear</source>
-        <translation>&amp;Clear</translation>
-    </message>
-    <message>
-        <location line="+16"/>
+        <location line="+68"/>
         <source>Totals</source>
         <translation>Totals</translation>
     </message>
     <message>
         <location line="+64"/>
-        <location line="+554"/>
+        <location line="+560"/>
         <source>Received</source>
         <translation>Received</translation>
     </message>
     <message>
-        <location line="-474"/>
-        <location line="+451"/>
+        <location line="-480"/>
+        <location line="+457"/>
         <source>Sent</source>
         <translation>Sent</translation>
     </message>
     <message>
-        <location line="-410"/>
+        <location line="-416"/>
         <source>&amp;Peers</source>
         <translation>&amp;Peers</translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+53"/>
         <source>Banned peers</source>
         <translation>Banned peers</translation>
     </message>
     <message>
-        <location line="+59"/>
-        <location filename="../rpcconsole.cpp" line="+309"/>
-        <location line="+756"/>
+        <location line="+62"/>
+        <location filename="../rpcconsole.cpp" line="+500"/>
+        <location line="+808"/>
         <source>Select a peer to view detailed information.</source>
         <translation>Select a peer to view detailed information.</translation>
     </message>
@@ -2914,18 +2851,28 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Wallet Path</translation>
     </message>
     <message>
-        <location line="-1623"/>
-        <location line="+997"/>
+        <location line="-1661"/>
+        <location line="+1035"/>
         <source>User Agent</source>
         <translation>User Agent</translation>
     </message>
     <message>
-        <location line="-945"/>
+        <location line="-983"/>
         <source>Datadir</source>
         <translation>Datadir</translation>
     </message>
     <message>
-        <location line="+333"/>
+        <location line="+274"/>
+        <source>Open the %1 debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open the %1 debug log file from the current data directory. This can take a few seconds for large log files.</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>InstantSend locks</source>
+        <translation>InstantSend locks</translation>
+    </message>
+    <message>
+        <location line="+63"/>
         <source>Decrease font size</source>
         <translation>Decrease font size</translation>
     </message>
@@ -2935,7 +2882,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Increase font size</translation>
     </message>
     <message>
-        <location line="+606"/>
+        <location line="+179"/>
+        <source>&amp;Reset</source>
+        <translation>&amp;Reset</translation>
+    </message>
+    <message>
+        <location line="+433"/>
         <source>Services</source>
         <translation>Services</translation>
     </message>
@@ -3060,7 +3012,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>-reindex: Rebuild block chain index from current blk000??.dat files.</translation>
     </message>
     <message>
-        <location filename="../rpcconsole.cpp" line="-661"/>
+        <location filename="../rpcconsole.cpp" line="-711"/>
         <source>&amp;Disconnect</source>
         <translation>&amp;Disconnect</translation>
     </message>
@@ -3098,22 +3050,27 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>&amp;Unban</translation>
     </message>
     <message>
-        <location line="+188"/>
-        <source>Welcome to the GENIX Core RPC console.</source>
-        <translation>Welcome to the GENIX Core RPC console.</translation>
+        <location line="+195"/>
+        <source>Welcome to the %1 RPC console.</source>
+        <translation>Welcome to the %1 RPC console.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="-1"/>
+        <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
+        <translation>Use up and down arrows to navigate history, and %1 to clear screen.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
+        <translation>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</translation>
+    </message>
+    <message>
+        <location line="+32"/>
         <source>In:</source>
         <translation>In:</translation>
     </message>
@@ -3128,7 +3085,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Network activity disabled</translation>
     </message>
     <message>
-        <location line="+126"/>
+        <location line="+33"/>
+        <source>Total: %1 (Enabled: %2)</source>
+        <translation>Total: %1 (Enabled: %2)</translation>
+    </message>
+    <message>
+        <location line="+132"/>
         <source>%1 B</source>
         <translation>%1 B</translation>
     </message>
@@ -3204,8 +3166,8 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the GENIX network.</source>
-        <translation>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the GENIX network.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the genix network.</source>
+        <translation>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the genix network.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3220,8 +3182,8 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="-14"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the GENIX network.</source>
-        <translation>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the GENIX network.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the genix network.</source>
+        <translation>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the genix network.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3260,12 +3222,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Clear</translation>
     </message>
     <message>
-        <location line="+32"/>
-        <source>Request InstantSend</source>
-        <translation>Request InstantSend</translation>
-    </message>
-    <message>
-        <location line="+49"/>
+        <location line="+71"/>
         <source>Requested payments history</source>
         <translation>Requested payments history</translation>
     </message>
@@ -3290,7 +3247,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Remove</translation>
     </message>
     <message>
-        <location filename="../receivecoinsdialog.cpp" line="+48"/>
+        <location filename="../receivecoinsdialog.cpp" line="+47"/>
         <source>Copy URI</source>
         <translation>Copy URI</translation>
     </message>
@@ -3368,21 +3325,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Message</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Yes</source>
-        <translation>Yes</translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>No</source>
-        <translation>No</translation>
-    </message>
-    <message>
         <location line="+10"/>
         <source>Resulting URI too long, try to reduce the text for label / message.</source>
         <translation>Resulting URI too long, try to reduce the text for label / message.</translation>
@@ -3396,7 +3338,7 @@ https://www.transifex.com/projects/p/genix/</translation>
 <context>
     <name>RecentRequestsTableModel</name>
     <message>
-        <location filename="../recentrequeststablemodel.cpp" line="+29"/>
+        <location filename="../recentrequeststablemodel.cpp" line="+28"/>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -3411,7 +3353,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Message</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+39"/>
         <source>(no label)</source>
         <translation>(no label)</translation>
     </message>
@@ -3422,20 +3364,20 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+8"/>
-        <source>(no amount)</source>
-        <translation>(no amount)</translation>
+        <source>(no amount requested)</source>
+        <translation>(no amount requested)</translation>
     </message>
     <message>
         <location line="+42"/>
-        <source>Amount</source>
-        <translation>Amount</translation>
+        <source>Requested</source>
+        <translation>Requested</translation>
     </message>
 </context>
 <context>
     <name>SendCoinsDialog</name>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="+14"/>
-        <location filename="../sendcoinsdialog.cpp" line="+656"/>
+        <location filename="../sendcoinsdialog.cpp" line="+686"/>
         <source>Send Coins</source>
         <translation>Send Coins</translation>
     </message>
@@ -3447,7 +3389,7 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <location line="+20"/>
         <source>Inputs...</source>
-        <translation>GENIX Inputs...</translation>
+        <translation>Inputs...</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -3515,53 +3457,53 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Choose...</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+69"/>
         <source>collapse fee-settings</source>
         <translation>collapse fee-settings</translation>
     </message>
     <message>
-        <location line="+520"/>
+        <location line="+237"/>
+        <source>Confirmation time target:</source>
+        <translation>Confirmation time target:</translation>
+    </message>
+    <message>
+        <location line="+175"/>
         <source>PrivateSend</source>
         <translation>PrivateSend</translation>
     </message>
     <message>
-        <location line="+19"/>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
-    </message>
-    <message>
-        <location line="-488"/>
+        <location line="-361"/>
         <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 duffs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 duffs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
     </message>
     <message>
-        <location line="+16"/>
-        <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 duffs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 duffs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
-    </message>
-    <message>
-        <location line="+33"/>
+        <location line="+30"/>
         <location line="+13"/>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for genix transactions than the network can process.</source>
         <translation>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for genix transactions than the network can process.</translation>
     </message>
     <message>
-        <location line="-59"/>
+        <location line="-40"/>
         <source>per kilobyte</source>
         <translation>per kilobyte</translation>
     </message>
     <message>
-        <location line="-51"/>
+        <location line="-101"/>
+        <source>Using the fallbackfee can result in sending a transaction that will take several hours or days (or never) to confirm. Consider choosing your fee manually or wait until you have validated the complete chain.</source>
+        <translation>Using the fallbackfee can result in sending a transaction that will take several hours or days (or never) to confirm. Consider choosing your fee manually or wait until you have validated the complete chain.</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Note: Not enough data for fee estimation, using the fallback fee instead.</source>
+        <translation>Note: Not enough data for fee estimation, using the fallback fee instead.</translation>
+    </message>
+    <message>
+        <location line="+41"/>
         <source>Hide</source>
         <translation>Hide</translation>
     </message>
     <message>
-        <location line="+67"/>
-        <source>total at least</source>
-        <translation>total at least</translation>
-    </message>
-    <message>
-        <location line="+46"/>
+        <location line="+94"/>
         <source>(read the tooltip)</source>
         <translation>(read the tooltip)</translation>
     </message>
@@ -3581,32 +3523,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>(Smart fee not initialized yet. This usually takes a few blocks...)</translation>
     </message>
     <message>
-        <location line="+29"/>
-        <source>Confirmation time:</source>
-        <translation>Confirmation time:</translation>
-    </message>
-    <message>
-        <location line="+60"/>
-        <source>normal</source>
-        <translation>normal</translation>
-    </message>
-    <message>
-        <location line="+20"/>
-        <source>fast</source>
-        <translation>fast</translation>
-    </message>
-    <message>
-        <location line="+38"/>
-        <source>Send as zero-fee transaction if possible</source>
-        <translation>Send as zero-fee transaction if possible</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>(confirmation may take longer)</source>
-        <translation>(confirmation may take longer)</translation>
-    </message>
-    <message>
-        <location line="+67"/>
+        <location line="+132"/>
         <source>Confirm the send action</source>
         <translation>Confirm the send action</translation>
     </message>
@@ -3636,12 +3553,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Add &amp;Recipient</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+44"/>
         <source>Balance:</source>
         <translation>Balance:</translation>
     </message>
     <message>
-        <location filename="../sendcoinsdialog.cpp" line="-562"/>
+        <location filename="../sendcoinsdialog.cpp" line="-565"/>
         <source>Copy quantity</source>
         <translation>Copy quantity</translation>
     </message>
@@ -3676,35 +3593,18 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Copy change</translation>
     </message>
     <message>
-        <location line="+153"/>
-        <location line="+6"/>
-        <location line="+9"/>
+        <location line="+76"/>
+        <source>%1 (%2 blocks)</source>
+        <translation>%1 (%2 blocks)</translation>
+    </message>
+    <message>
+        <location line="+178"/>
+        <location line="+2"/>
         <source>using</source>
         <translation>using</translation>
     </message>
     <message>
-        <location line="-15"/>
-        <location line="+6"/>
-        <source>anonymous funds</source>
-        <translation>anonymous funds</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>(privatesend requires this amount to be rounded up to the nearest %1).</source>
-        <translation>(privatesend requires this amount to be rounded up to the nearest %1).</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>any available funds (not anonymous)</source>
-        <translation>any available funds (not anonymous)</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>and InstantSend</source>
-        <translation>and InstantSend</translation>
-    </message>
-    <message>
-        <location line="+67"/>
+        <location line="-42"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+4"/>
@@ -3712,32 +3612,70 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>%1 to %2</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+19"/>
         <source>Are you sure you want to send?</source>
         <translation>Are you sure you want to send?</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+27"/>
         <source>are added as transaction fee</source>
         <translation>are added as transaction fee</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+41"/>
         <source>Total Amount = &lt;b&gt;%1&lt;/b&gt;&lt;br /&gt;= %2</source>
         <translation>Total Amount = &lt;b&gt;%1&lt;/b&gt;&lt;br /&gt;= %2</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="-53"/>
         <source>&lt;b&gt;(%1 of %2 entries displayed)&lt;/b&gt;</source>
         <translation>&lt;b&gt;(%1 of %2 entries displayed)&lt;/b&gt;</translation>
     </message>
     <message>
+        <location line="-8"/>
+        <source>PrivateSend funds only</source>
+        <translation>PrivateSend funds only</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>any available funds</source>
+        <translation>any available funds</translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>(PrivateSend transactions have higher fees usually due to no change output being allowed)</source>
+        <translation>(PrivateSend transactions have higher fees usually due to no change output being allowed)</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Transaction size: %1</source>
+        <translation>Transaction size: %1</translation>
+    </message>
+    <message>
         <location line="+3"/>
+        <source>Fee rate: %1</source>
+        <translation>Fee rate: %1</translation>
+    </message>
+    <message numerus="yes">
+        <location line="+6"/>
+        <source>This transaction will consume %n input(s)</source>
+        <translation>
+            <numerusform>This transaction will consume %n input</numerusform>
+            <numerusform>This transaction will consume %n inputs</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Warning: Using PrivateSend with %1 or more inputs can harm your privacy and is not recommended</source>
+        <translation>Warning: Using PrivateSend with %1 or more inputs can harm your privacy and is not recommended</translation>
+    </message>
+    <message>
+        <location line="+21"/>
         <source>Confirm send coins</source>
         <translation>Confirm send coins</translation>
     </message>
     <message>
-        <location line="+212"/>
+        <location line="+204"/>
         <source>The recipient address is not valid. Please recheck.</source>
         <translation>The recipient address is not valid. Please recheck.</translation>
     </message>
@@ -3768,8 +3706,8 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</translation>
+        <source>The transaction was rejected with the following reason: %1</source>
+        <translation>The transaction was rejected with the following reason: %1</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3782,12 +3720,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Payment request expired.</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+66"/>
         <source>Pay only the required fee of %1</source>
         <translation>Pay only the required fee of %1</translation>
     </message>
     <message numerus="yes">
-        <location line="+25"/>
+        <location line="+37"/>
         <source>Estimated to begin confirmation within %n block(s).</source>
         <translation>
             <numerusform>Estimated to begin confirmation within %n block.</numerusform>
@@ -3795,17 +3733,27 @@ https://www.transifex.com/projects/p/genix/</translation>
         </translation>
     </message>
     <message>
-        <location line="+100"/>
-        <source>Warning: Invalid GENIX address</source>
-        <translation>Warning: Invalid GENIX address</translation>
+        <location line="+101"/>
+        <source>Warning: Invalid genix address</source>
+        <translation>Warning: Invalid genix address</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+6"/>
         <source>Warning: Unknown change address</source>
         <translation>Warning: Unknown change address</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+3"/>
+        <source>Confirm custom change address</source>
+        <translation>Confirm custom change address</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?</source>
+        <translation>The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?</translation>
+    </message>
+    <message>
+        <location line="+21"/>
         <source>(no label)</source>
         <translation>(no label)</translation>
     </message>
@@ -3824,8 +3772,8 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The GENIX address to send the payment to</source>
-        <translation>The GENIX address to send the payment to</translation>
+        <source>The genix address to send the payment to</source>
+        <translation>The genix address to send the payment to</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3873,8 +3821,8 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="-1046"/>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of GENIX than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of GENIX than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of genix than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of genix than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3888,8 +3836,8 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>A message that was attached to the genix: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the GENIX network.</source>
-        <translation>A message that was attached to the genix: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the GENIX network.</translation>
+        <source>A message that was attached to the genix: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the genix network.</source>
+        <translation>A message that was attached to the genix: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the genix network.</translation>
     </message>
     <message>
         <location line="+433"/>
@@ -3920,11 +3868,20 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
 </context>
 <context>
+    <name>SendConfirmationDialog</name>
+    <message>
+        <location filename="../sendcoinsdialog.cpp" line="+85"/>
+        <location line="+5"/>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+</context>
+<context>
     <name>ShutdownWindow</name>
     <message>
         <location filename="../utilitydialog.cpp" line="+71"/>
-        <source>GENIX Core is shutting down...</source>
-        <translation>GENIX Core is shutting down...</translation>
+        <source>%1 is shutting down...</source>
+        <translation>%1 is shutting down...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3946,13 +3903,13 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>You can sign messages/agreements with your addresses to prove you can receive GENIX sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>You can sign messages/agreements with your addresses to prove you can receive GENIX sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive genix sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>You can sign messages/agreements with your addresses to prove you can receive genix sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The GENIX address to sign the message with</source>
-        <translation>The GENIX address to sign the message with</translation>
+        <source>The genix address to sign the message with</source>
+        <translation>The genix address to sign the message with</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3993,8 +3950,8 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+17"/>
-        <source>Sign the message to prove you own this GENIX address</source>
-        <translation>Sign the message to prove you own this GENIX address</translation>
+        <source>Sign the message to prove you own this genix address</source>
+        <translation>Sign the message to prove you own this genix address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4024,13 +3981,13 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The GENIX address the message was signed with</source>
-        <translation>The GENIX address the message was signed with</translation>
+        <source>The genix address the message was signed with</source>
+        <translation>The genix address the message was signed with</translation>
     </message>
     <message>
         <location line="+33"/>
-        <source>Verify the message to ensure it was signed with the specified GENIX address</source>
-        <translation>Verify the message to ensure it was signed with the specified GENIX address</translation>
+        <source>Verify the message to ensure it was signed with the specified genix address</source>
+        <translation>Verify the message to ensure it was signed with the specified genix address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4048,7 +4005,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Click &quot;Sign Message&quot; to generate signature</translation>
     </message>
     <message>
-        <location line="+104"/>
+        <location line="+102"/>
         <location line="+80"/>
         <source>The entered address is invalid.</source>
         <translation>The entered address is invalid.</translation>
@@ -4117,35 +4074,20 @@ https://www.transifex.com/projects/p/genix/</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <location filename="../networkstyle.cpp" line="+21"/>
+        <location filename="../networkstyle.cpp" line="+24"/>
         <source>[testnet]</source>
         <translation>[testnet]</translation>
     </message>
     <message>
-        <location filename="../splashscreen.cpp" line="+45"/>
-        <source>GENIX Core</source>
-        <translation>GENIX Core</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location filename="../splashscreen.cpp" line="+50"/>
         <source>Version %1</source>
         <translation>Version %1</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>The GENIX Core developers</source>
-        <translation>The GENIX Core developers</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>The GENIX Core developers</source>
-        <translation>The GENIX Core developers</translation>
     </message>
 </context>
 <context>
     <name>TrafficGraphWidget</name>
     <message>
-        <location filename="../trafficgraphwidget.cpp" line="+92"/>
+        <location filename="../trafficgraphwidget.cpp" line="+95"/>
         <source>KB/s</source>
         <translation>KB/s</translation>
     </message>
@@ -4153,7 +4095,7 @@ https://www.transifex.com/projects/p/genix/</translation>
 <context>
     <name>TransactionDesc</name>
     <message numerus="yes">
-        <location filename="../transactiondesc.cpp" line="+33"/>
+        <location filename="../transactiondesc.cpp" line="+31"/>
         <source>Open for %n more block(s)</source>
         <translation>
             <numerusform>Open for %n more block</numerusform>
@@ -4171,7 +4113,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>conflicted</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+7"/>
         <source>%1/offline</source>
         <translation>%1/offline</translation>
     </message>
@@ -4206,22 +4148,17 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>%1 confirmations</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>verified via InstantSend</source>
-        <translation>verified via InstantSend</translation>
-    </message>
-    <message>
         <location line="+2"/>
-        <source>InstantSend verification in progress - %1 of %2 signatures</source>
-        <translation>InstantSend verification in progress - %1 of %2 signatures</translation>
+        <source>locked via LLMQ based ChainLocks</source>
+        <translation>locked via LLMQ based ChainLocks</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>InstantSend verification failed</source>
-        <translation>InstantSend verification failed</translation>
+        <location line="+6"/>
+        <source>verified via LLMQ based InstantSend</source>
+        <translation>verified via LLMQ based InstantSend</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+20"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
@@ -4293,12 +4230,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <location line="+12"/>
         <location line="+53"/>
         <location line="+26"/>
-        <location line="+54"/>
+        <location line="+55"/>
         <source>Credit</source>
         <translation>Credit</translation>
     </message>
     <message numerus="yes">
-        <location line="-143"/>
+        <location line="-144"/>
         <source>matures in %n more block(s)</source>
         <translation>
             <numerusform>matures in %n more block</numerusform>
@@ -4313,12 +4250,12 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <location line="+59"/>
         <location line="+25"/>
-        <location line="+54"/>
+        <location line="+55"/>
         <source>Debit</source>
         <translation>Debit</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="-70"/>
         <source>Total debit</source>
         <translation>Total debit</translation>
     </message>
@@ -4339,12 +4276,12 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+6"/>
-        <location line="+10"/>
+        <location line="+11"/>
         <source>Message</source>
         <translation>Message</translation>
     </message>
     <message>
-        <location line="-8"/>
+        <location line="-9"/>
         <source>Comment</source>
         <translation>Comment</translation>
     </message>
@@ -4352,6 +4289,11 @@ https://www.transifex.com/projects/p/genix/</translation>
         <location line="+2"/>
         <source>Transaction ID</source>
         <translation>Transaction ID</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Output index</source>
+        <translation>Output index</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4384,7 +4326,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Inputs</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+20"/>
         <source>Amount</source>
         <translation>Amount</translation>
     </message>
@@ -4404,20 +4346,20 @@ https://www.transifex.com/projects/p/genix/</translation>
 <context>
     <name>TransactionDescDialog</name>
     <message>
-        <location filename="../forms/transactiondescdialog.ui" line="+14"/>
-        <source>Transaction details</source>
-        <translation>Transaction details</translation>
-    </message>
-    <message>
-        <location line="+6"/>
+        <location filename="../forms/transactiondescdialog.ui" line="+20"/>
         <source>This pane shows a detailed description of the transaction</source>
         <translation>This pane shows a detailed description of the transaction</translation>
+    </message>
+    <message>
+        <location filename="../transactiondescdialog.cpp" line="+20"/>
+        <source>Details for %1</source>
+        <translation>Details for %1</translation>
     </message>
 </context>
 <context>
     <name>TransactionTableModel</name>
     <message>
-        <location filename="../transactiontablemodel.cpp" line="+246"/>
+        <location filename="../transactiontablemodel.cpp" line="+262"/>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -4432,7 +4374,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Address / Label</translation>
     </message>
     <message numerus="yes">
-        <location line="+58"/>
+        <location line="+74"/>
         <source>Open for %n more block(s)</source>
         <translation>
             <numerusform>Open for %n more block</numerusform>
@@ -4490,7 +4432,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Generated but not accepted</translation>
     </message>
     <message>
-        <location line="+39"/>
+        <location line="+38"/>
         <source>Received with</source>
         <translation>Received with</translation>
     </message>
@@ -4555,7 +4497,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>(n/a)</translation>
     </message>
     <message>
-        <location line="+219"/>
+        <location line="+239"/>
         <source>(no label)</source>
         <translation>(no label)</translation>
     </message>
@@ -4581,6 +4523,11 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+2"/>
+        <source>Whether or not this transaction was locked by InstantSend.</source>
+        <translation>Whether or not this transaction was locked by InstantSend.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>User-defined intent/purpose of the transaction.</source>
         <translation>User-defined intent/purpose of the transaction.</translation>
     </message>
@@ -4593,13 +4540,24 @@ https://www.transifex.com/projects/p/genix/</translation>
 <context>
     <name>TransactionView</name>
     <message>
-        <location filename="../transactionview.cpp" line="+73"/>
+        <location filename="../transactionview.cpp" line="+70"/>
+        <location line="+11"/>
         <location line="+17"/>
         <source>All</source>
         <translation>All</translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="-27"/>
+        <source>Locked by InstantSend</source>
+        <translation>Locked by InstantSend</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Not locked by InstantSend</source>
+        <translation>Not locked by InstantSend</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Today</source>
         <translation>Today</translation>
     </message>
@@ -4694,7 +4652,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Min amount</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+50"/>
         <source>Abandon transaction</source>
         <translation>Abandon transaction</translation>
     </message>
@@ -4739,7 +4697,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Show transaction details</translation>
     </message>
     <message>
-        <location line="+211"/>
+        <location line="+1"/>
+        <source>Show address QR code</source>
+        <translation>Show address QR code</translation>
+    </message>
+    <message>
+        <location line="+228"/>
         <source>Export Transaction History</source>
         <translation>Export Transaction History</translation>
     </message>
@@ -4804,7 +4767,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>The transaction history was successfully saved to %1.</translation>
     </message>
     <message>
-        <location line="+166"/>
+        <location line="+145"/>
+        <source>QR code</source>
+        <translation>QR code</translation>
+    </message>
+    <message>
+        <location line="+43"/>
         <source>Range:</source>
         <translation>Range:</translation>
     </message>
@@ -4817,7 +4785,7 @@ https://www.transifex.com/projects/p/genix/</translation>
 <context>
     <name>UnitDisplayStatusBarControl</name>
     <message>
-        <location filename="../genixgui.cpp" line="+138"/>
+        <location filename="../bitcoingui.cpp" line="+139"/>
         <source>Unit to show amounts in. Click to select another unit.</source>
         <translation>Unit to show amounts in. Click to select another unit.</translation>
     </message>
@@ -4833,23 +4801,9 @@ https://www.transifex.com/projects/p/genix/</translation>
 <context>
     <name>WalletModel</name>
     <message>
-        <location filename="../walletmodel.cpp" line="+310"/>
-        <location line="+12"/>
-        <location line="+5"/>
-        <location line="+11"/>
+        <location filename="../walletmodel.cpp" line="+339"/>
         <source>Send Coins</source>
         <translation>Send Coins</translation>
-    </message>
-    <message>
-        <location line="-28"/>
-        <location line="+12"/>
-        <source>InstantSend doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 GENIX.</source>
-        <translation>InstantSend doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 GENIX.</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
-        <translation>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</translation>
     </message>
 </context>
 <context>
@@ -4865,12 +4819,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Export the data in the current tab to a file</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+9"/>
         <source>Selected amount:</source>
         <translation>Selected amount:</translation>
     </message>
     <message>
-        <location line="+231"/>
+        <location line="+240"/>
         <source>Backup Wallet</source>
         <translation>Backup Wallet</translation>
     </message>
@@ -4903,22 +4857,17 @@ https://www.transifex.com/projects/p/genix/</translation>
 <context>
     <name>genix-core</name>
     <message>
-        <location filename="../genixstrings.cpp" line="+34"/>
+        <location filename="../genixstrings.cpp" line="+39"/>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
         <translation>Bind to given address and always listen on it. Use [host]:port notation for IPv6</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>Cannot obtain a lock on data directory %s. GENIX Core is probably already running.</source>
-        <translation>Cannot obtain a lock on data directory %s. GENIX Core is probably already running.</translation>
-    </message>
-    <message>
-        <location line="+34"/>
+        <location line="+53"/>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
         <translation>Error: Listening for incoming connections failed (listen returned error %s)</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+6"/>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
         <translation>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</translation>
     </message>
@@ -4933,77 +4882,42 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Execute command when the best block changes (%s in cmd is replaced by block hash)</translation>
     </message>
     <message>
-        <location line="+64"/>
+        <location line="+70"/>
         <source>Name to construct url for KeePass entry that stores the wallet passphrase</source>
         <translation>Name to construct url for KeePass entry that stores the wallet passphrase</translation>
     </message>
     <message>
-        <location line="+21"/>
-        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
-        <translation>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</source>
-        <translation>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="+50"/>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
         <translation>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+19"/>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
         <translation>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</translation>
     </message>
     <message>
-        <location line="+13"/>
-        <source>Unable to bind to %s on this computer. GENIX Core is probably already running.</source>
-        <translation>Unable to bind to %s on this computer. GENIX Core is probably already running.</translation>
-    </message>
-    <message>
-        <location line="+45"/>
+        <location line="+71"/>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
         <translation>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+10"/>
         <source>Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.</source>
         <translation>Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
-        <translation>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</source>
-        <translation>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</translation>
-    </message>
-    <message>
-        <location line="+18"/>
+        <location line="+30"/>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Accept command line and JSON-RPC commands</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
-        <translation>Accept connections from outside (default: 1 if no -proxy or -connect)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Add a node to connect to and attempt to keep the connection open</source>
-        <translation>Add a node to connect to and attempt to keep the connection open</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation>Allow DNS lookups for -addnode, -seednode and -connect</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Already have that input.</source>
         <translation>Already have that input.</translation>
     </message>
@@ -5018,29 +4932,14 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Cannot downgrade wallet</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Cannot resolve -bind address: &apos;%s&apos;</source>
-        <translation>Cannot resolve -bind address: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Cannot resolve -externalip address: &apos;%s&apos;</source>
-        <translation>Cannot resolve -externalip address: &apos;%s&apos;</translation>
-    </message>
-    <message>
         <location line="+2"/>
         <source>Cannot write default address</source>
         <translation>Cannot write default address</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Collateral not valid.</source>
         <translation>Collateral not valid.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Connect only to the specified node(s)</source>
-        <translation>Connect only to the specified node(s)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -5053,7 +4952,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Connection options:</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>Corrupted block database detected</source>
         <translation>Corrupted block database detected</translation>
     </message>
@@ -5083,7 +4982,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Entries are full.</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>Error initializing block database</source>
         <translation>Error initializing block database</translation>
     </message>
@@ -5093,22 +4992,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Error initializing wallet database environment %s!</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+5"/>
         <source>Error loading block database</source>
         <translation>Error loading block database</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Error loading wallet.dat</source>
-        <translation>Error loading wallet.dat</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation>Error loading wallet.dat: Wallet corrupted</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="+4"/>
         <source>Error opening block database</source>
         <translation>Error opening block database</translation>
     </message>
@@ -5118,7 +5007,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Error reading from database, shutting down.</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -5128,29 +5017,19 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Error: Disk space is low!</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Failed to listen on any port. Use -listen=0 if you want this.</translation>
     </message>
     <message>
-        <location line="-358"/>
+        <location line="-403"/>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>-fallbackfee is set very high! This is the transaction fee you may pay when fee estimates are not available.</source>
-        <translation>-fallbackfee is set very high! This is the transaction fee you may pay when fee estimates are not available.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
         <translation>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>-paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
-        <translation>-paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -5163,7 +5042,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Accept relayed transactions received from whitelisted peers even when not relaying transactions (default: %d)</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
         <translation>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</translation>
     </message>
@@ -5173,12 +5052,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Bind to given address and whitelist peers connecting to it. Use [host]:port notation for IPv6</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
-        <translation>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</translation>
-    </message>
-    <message>
-        <location line="+7"/>
+        <location line="+14"/>
         <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
         <translation>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</translation>
     </message>
@@ -5188,17 +5062,17 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
-        <translation>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
+        <location line="+17"/>
+        <source>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</source>
+        <translation>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</translation>
     </message>
     <message>
-        <location line="+14"/>
-        <source>Error loading %s: You can&apos;t enable HD on a already existing non-HD wallet</source>
-        <translation>Error loading %s: You can&apos;t enable HD on a already existing non-HD wallet</translation>
+        <location line="+3"/>
+        <source>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</source>
+        <translation>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+47"/>
         <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
         <translation>Found unconfirmed denominated outputs, will wait till they confirm to continue.</translation>
     </message>
@@ -5218,7 +5092,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>If this block is in the chain assume that it and its ancestors are valid and potentially skip their script verification (0 to verify all, default: %s, testnet: %s)</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+7"/>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
         <translation>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least the minrelay fee of %s to prevent stuck transactions)</translation>
     </message>
@@ -5228,17 +5102,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Maintain a full transaction index, used by the getrawtransaction rpc call (default: %u)</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Make sure to encrypt your wallet and delete all non-encrypted backups after you verified that wallet works!</source>
-        <translation>Make sure to encrypt your wallet and delete all non-encrypted backups after you verified that wallet works!</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+16"/>
         <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
         <translation>Maximum size of data in data carrier transactions we relay and mine (default: %u)</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+10"/>
         <source>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</source>
         <translation>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</translation>
     </message>
@@ -5248,32 +5117,22 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</translation>
     </message>
     <message>
-        <location line="+36"/>
-        <source>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</source>
-        <translation>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</translation>
+        <location line="+5"/>
+        <source>Overrides minimum spork signers to change spork value. Only useful for regtest and devnet. Using this on mainnet or testnet will ban you.</source>
+        <translation>Overrides minimum spork signers to change spork value. Only useful for regtest and devnet. Using this on mainnet or testnet will ban you.</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Show N confirmations for a successfully locked transaction (0-9999, default: %u)</source>
-        <translation>Show N confirmations for a successfully locked transaction (0-9999, default: %u)</translation>
+        <location line="+9"/>
+        <source>PrivateSend uses exact denominated amounts to send funds, you might simply need to mix some more coins.</source>
+        <translation>PrivateSend uses exact denominated amounts to send funds, you might simply need to mix some more coins.</translation>
     </message>
     <message>
-        <location line="+17"/>
-        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
-        <translation>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</translation>
+        <location line="+89"/>
+        <source>Use N separate masternodes in parallel to mix funds (%u-%u, default: %u)</source>
+        <translation>Use N separate masternodes in parallel to mix funds (%u-%u, default: %u)</translation>
     </message>
     <message>
-        <location line="+17"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 1000 GENIX.</source>
-        <translation>Unable to locate enough funds for this transaction that are not equal 1000 GENIX.</translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Use hierarchical deterministic key generation (HD) after bip39/bip44. Only has effect during wallet creation/first start</source>
-        <translation>Use hierarchical deterministic key generation (HD) after bip39/bip44. Only has effect during wallet creation/first start</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+7"/>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
         <translation>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</translation>
     </message>
@@ -5288,32 +5147,17 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>User defined seed for HD wallet (should be in hex). Only has effect during wallet creation/first start (default: randomly generated)</translation>
     </message>
     <message>
-        <location line="+21"/>
-        <source>Warning: incorrect parameter -walletbackupsdir, path must exist! Using default path.</source>
-        <translation>Warning: incorrect parameter -walletbackupsdir, path must exist! Using default path.</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</source>
-        <translation>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+35"/>
         <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
         <translation>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>You need to rebuild the database using -reindex-chainstate to change -txindex</source>
-        <translation>You need to rebuild the database using -reindex-chainstate to change -txindex</translation>
-    </message>
-    <message>
-        <location line="+7"/>
+        <location line="+14"/>
         <source>(default: %s)</source>
         <translation>(default: %s)</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+10"/>
         <source>Accept public REST requests (default: %u)</source>
         <translation>Accept public REST requests (default: %u)</translation>
     </message>
@@ -5329,11 +5173,6 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Cannot resolve -whitebind address: &apos;%s&apos;</source>
-        <translation>Cannot resolve -whitebind address: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <location line="+2"/>
         <source>Chain selection options:</source>
         <translation>Chain selection options:</translation>
     </message>
@@ -5348,47 +5187,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Connect to KeePassHttp on port &lt;port&gt; (default: %u)</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
-        <translation>Copyright (C) 2009-%i The Bitcoin Core Developers</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copyright (C) 2017-%i The GENIX Core Developers</source>
-        <translation>Copyright (C) 2017-%i The GENIX Core Developers</translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Enable the client to act as a masternode (0-1, default: %u)</source>
-        <translation>Enable the client to act as a masternode (0-1, default: %u)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+20"/>
         <source>Entry exceeds maximum size.</source>
         <translation>Entry exceeds maximum size.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Error connecting to Masternode.</source>
-        <translation>Error connecting to Masternode.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Error loading %s: You can&apos;t disable HD on a already existing HD wallet</source>
-        <translation>Error loading %s: You can&apos;t disable HD on a already existing HD wallet</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of GENIX Core</source>
-        <translation>Error loading wallet.dat: Wallet requires newer version of GENIX Core</translation>
-    </message>
-    <message>
-        <location line="+10"/>
+        <location line="+22"/>
         <source>Failed to load fulfilled requests cache from</source>
         <translation>Failed to load fulfilled requests cache from</translation>
     </message>
@@ -5403,12 +5207,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Failed to load masternode cache from</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Failed to load masternode payments cache from</source>
-        <translation>Failed to load masternode payments cache from</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+4"/>
         <source>Found enough users, signing ( waiting %s )</source>
         <translation>Found enough users, signing ( waiting %s )</translation>
     </message>
@@ -5416,11 +5215,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <location line="+1"/>
         <source>Found enough users, signing ...</source>
         <translation>Found enough users, signing ...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Generate coins (default: %u)</source>
-        <translation>Generate coins (default: %u)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5458,62 +5252,47 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Information</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Initialization sanity check failed. GENIX Core is shutting down.</source>
-        <translation>Initialization sanity check failed. GENIX Core is shutting down.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Input is not valid.</source>
         <translation>Input is not valid.</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Insufficient funds.</source>
         <translation>Insufficient funds.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Invalid -onion address: &apos;%s&apos;</source>
-        <translation>Invalid -onion address: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Invalid -proxy address: &apos;%s&apos;</source>
-        <translation>Invalid -proxy address: &apos;%s&apos;</translation>
+        <location line="+4"/>
+        <source>Invalid amount for -discardfee=&lt;amount&gt;: &apos;%s&apos;</source>
+        <translation>Invalid amount for -discardfee=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Invalid amount for -minrelaytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation>Invalid amount for -minrelaytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Invalid amount for -mintxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation>Invalid amount for -mintxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least %s)</source>
         <translation>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least %s)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
+        <location line="+2"/>
+        <source>Invalid minimum number of spork signers specified with -minsporkkeys</source>
+        <translation>Invalid minimum number of spork signers specified with -minsporkkeys</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+6"/>
+        <source>Keep N genix mixed (%u-%u, default: %u)</source>
+        <translation>Keep N genix mixed (%u-%u, default: %u)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
+        <translation>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Keypool ran out, please call keypoolrefill first</source>
         <translation>Keypool ran out, please call keypoolrefill first</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+3"/>
         <source>Listen for JSON-RPC connections on &lt;port&gt; (default: %u or testnet: %u)</source>
         <translation>Listen for JSON-RPC connections on &lt;port&gt; (default: %u or testnet: %u)</translation>
     </message>
@@ -5538,22 +5317,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Loading masternode cache...</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Loading masternode payment cache...</source>
-        <translation>Loading masternode payment cache...</translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Lock is already in place.</source>
         <translation>Lock is already in place.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Lock masternodes from masternode configuration file (default: %u)</source>
-        <translation>Lock masternodes from masternode configuration file (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+6"/>
+        <location line="+5"/>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</translation>
     </message>
@@ -5588,7 +5357,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>No compatible Masternode found.</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+7"/>
+        <source>Not enough funds to mix.</source>
+        <translation>Not enough funds to mix.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Not in the Masternode list.</source>
         <translation>Not in the Masternode list.</translation>
     </message>
@@ -5599,16 +5373,11 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Port: %d</source>
-        <translation>Port: %d</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Prepend debug output with timestamp (default: %u)</source>
         <translation>Prepend debug output with timestamp (default: %u)</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+11"/>
         <source>Rebuild chain state and block index from the blk*.dat files on disk</source>
         <translation>Rebuild chain state and block index from the blk*.dat files on disk</translation>
     </message>
@@ -5623,19 +5392,9 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Send trace/debug info to debug.log file (default: %u)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
-        <translation>Send transactions as zero-fee transactions if possible (default: %u)</translation>
-    </message>
-    <message>
         <location line="+4"/>
         <source>Set key pool size to &lt;n&gt; (default: %u)</source>
         <translation>Set key pool size to &lt;n&gt; (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Set minimum block size in bytes (default: %u)</source>
-        <translation>Set minimum block size in bytes (default: %u)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -5654,11 +5413,6 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify masternode configuration file (default: %s)</source>
-        <translation>Specify masternode configuration file (default: %s)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Specify pid file (default: %s)</source>
         <translation>Specify pid file (default: %s)</translation>
     </message>
@@ -5668,24 +5422,9 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Spend unconfirmed change when sending transactions (default: %u)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Submitted following entries to masternode: %u / %d</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Submitted to masternode, waiting for more entries ( %u / %d ) %s</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Submitted to masternode, waiting in queue %s</source>
         <translation>Submitted to masternode, waiting in queue %s</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Synchroning blockchain...</source>
-        <translation>Synchroning blockchain...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5698,17 +5437,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Synchronization finished</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>Synchronizing masternodes...</source>
-        <translation>Synchronizing masternodes...</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>This is not a Masternode.</source>
-        <translation>This is not a Masternode.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+10"/>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
         <translation>Threshold for disconnecting misbehaving peers (default: %u)</translation>
     </message>
@@ -5716,6 +5445,11 @@ https://www.transifex.com/projects/p/genix/</translation>
         <location line="+1"/>
         <source>Too many %f denominations, removing.</source>
         <translation>Too many %f denominations, removing.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Too many %f denominations, skipping.</source>
+        <translation>Too many %f denominations, skipping.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5728,7 +5462,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Tor control port to use if onion listening enabled (default: %s)</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+15"/>
         <source>Unable to start HTTP server. See debug log for details.</source>
         <translation>Unable to start HTTP server. See debug log for details.</translation>
     </message>
@@ -5753,12 +5487,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Unsupported argument -tor found, use -onion.</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Upgrade wallet to latest format on startup</source>
         <translation>Upgrade wallet to latest format on startup</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Use KeePass 2 integration using KeePassHttp plugin (default: %u)</source>
         <translation>Use KeePass 2 integration using KeePassHttp plugin (default: %u)</translation>
     </message>
@@ -5768,7 +5502,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Use UPnP to map the listening port (default: %u)</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Use the test chain</source>
         <translation>Use the test chain</translation>
     </message>
@@ -5778,22 +5512,17 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>User Agent comment (%s) contains unsafe characters.</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Wallet needed to be rewritten: restart GENIX Core to complete</source>
-        <translation>Wallet needed to be rewritten: restart GENIX Core to complete</translation>
+        <location line="+3"/>
+        <source>Verifying wallet(s)...</source>
+        <translation>Verifying wallet(s)...</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+12"/>
         <source>Will retry...</source>
         <translation>Will retry...</translation>
     </message>
     <message>
-        <location line="-147"/>
-        <source>Invalid masternodeprivkey. Please see documenation.</source>
-        <translation>Invalid masternodeprivkey. Please see documenation.</translation>
-    </message>
-    <message>
-        <location line="-80"/>
+        <location line="-230"/>
         <source>Can&apos;t find random Masternode.</source>
         <translation>Can&apos;t find random Masternode.</translation>
     </message>
@@ -5803,19 +5532,9 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Can&apos;t mix while sync in progress.</translation>
     </message>
     <message>
-        <location line="+17"/>
-        <source>Could not parse masternode.conf</source>
-        <translation>Could not parse masternode.conf</translation>
-    </message>
-    <message>
-        <location line="+63"/>
+        <location line="+80"/>
         <source>Invalid netmask specified in -whitelist: &apos;%s&apos;</source>
         <translation>Invalid netmask specified in -whitelist: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Invalid port detected in masternode.conf</source>
-        <translation>Invalid port detected in masternode.conf</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5823,7 +5542,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Invalid script detected.</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>KeePassHttp id for the established association</source>
         <translation>KeePassHttp id for the established association</translation>
     </message>
@@ -5833,22 +5552,37 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>KeePassHttp key for AES encrypted communication with KeePass</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Keep N GENIX anonymized (default: %u)</source>
-        <translation>Keep N GENIX anonymized (default: %u)</translation>
+        <location line="-392"/>
+        <source>Disable all genix specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
+        <translation>Disable all genix specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
-        <translation>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</translation>
+        <location line="-48"/>
+        <source>%s file contains all private keys from this wallet. Do not share it with anyone!</source>
+        <translation>%s file contains all private keys from this wallet. Do not share it with anyone!</translation>
     </message>
     <message>
-        <location line="-354"/>
-        <source>Disable all GENIX specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
-        <translation>Disable all GENIX specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</translation>
+        <location line="+6"/>
+        <source>-masternode option is deprecated and ignored, specifying -masternodeblsprivkey is enough to start this node as a masternode.</source>
+        <translation>-masternode option is deprecated and ignored, specifying -masternodeblsprivkey is enough to start this node as a masternode.</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+12"/>
+        <source>Add a node to connect to and attempt to keep the connection open (see the `addnode` RPC command help for more info)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Bind to given address to listen for JSON-RPC connections. This option is ignored unless -rpcallowip is also passed. Port is optional and overrides -rpcport. Use [host]:port notation for IPv6. This option can be specified multiple times (default: 127.0.0.1 and ::1 i.e., localhost, or if -rpcallowip has been specified, 0.0.0.0 and :: i.e., all addresses)</source>
+        <translation>Bind to given address to listen for JSON-RPC connections. This option is ignored unless -rpcallowip is also passed. Port is optional and overrides -rpcport. Use [host]:port notation for IPv6. This option can be specified multiple times (default: 127.0.0.1 and ::1 i.e., localhost, or if -rpcallowip has been specified, 0.0.0.0 and :: i.e., all addresses)</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Connect only to the specified node(s); -connect=0 disables automatic connections (the rules for this peer are the same as for -addnode)</source>
+        <translation>Connect only to the specified node(s); -connect=0 disables automatic connections (the rules for this peer are the same as for -addnode)</translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Discover own IP addresses (default: 1 when listening and no -externalip or -proxy)</source>
         <translation>Discover own IP addresses (default: 1 when listening and no -externalip or -proxy)</translation>
     </message>
@@ -5859,31 +5593,21 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</source>
-        <translation>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
         <source>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</source>
         <translation>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Enable use of automated PrivateSend for funds stored in this wallet (0-1, default: %u)</source>
-        <translation>Enable use of automated PrivateSend for funds stored in this wallet (0-1, default: %u)</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation>Error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</translation>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+28"/>
         <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
         <translation>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</translation>
     </message>
     <message>
         <location line="+9"/>
+        <source>Extra transactions to keep in memory for compact block reconstructions (default: %u)</source>
+        <translation>Extra transactions to keep in memory for compact block reconstructions (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Failed to create backup, file already exists! This could happen if you restarted wallet in less than 60 seconds. You can continue if you are ok with this.</source>
         <translation>Failed to create backup, file already exists! This could happen if you restarted wallet in less than 60 seconds. You can continue if you are ok with this.</translation>
     </message>
@@ -5898,27 +5622,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Fees (in %s/kB) smaller than this are considered zero fee for transaction creation (default: %s)</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Force relay of transactions from whitelisted peers even they violate local relay policy (default: %d)</source>
-        <translation>Force relay of transactions from whitelisted peers even they violate local relay policy (default: %d)</translation>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+11"/>
         <source>If &lt;category&gt; is not supplied or if &lt;category&gt; = 1, output all debugging information.</source>
         <translation>If &lt;category&gt; is not supplied or if &lt;category&gt; = 1, output all debugging information.</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>InstantSend doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 GENIX.</source>
-        <translation>InstantSend doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 GENIX.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</translation>
-    </message>
-    <message>
-        <location line="+6"/>
+        <location line="+16"/>
         <source>Maintain a full address index, used to query for the balance, txids and unspent outputs for addresses (default: %u)</source>
         <translation>Maintain a full address index, used to query for the balance, txids and unspent outputs for addresses (default: %u)</translation>
     </message>
@@ -5938,27 +5647,17 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Maintain at most &lt;n&gt; connections to peers (temporary service connections excluded) (default: %u)</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Maximum total fees (in %s) to use in a single wallet transaction; setting this too low may abort large transactions (default: %s)</source>
-        <translation>Maximum total fees (in %s) to use in a single wallet transaction; setting this too low may abort large transactions (default: %s)</translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Please check that your computer&apos;s date and time are correct! If your clock is wrong GENIX Core will not work properly.</source>
-        <translation>Please check that your computer&apos;s date and time are correct! If your clock is wrong GENIX Core will not work properly.</translation>
-    </message>
-    <message>
         <location line="+3"/>
-        <source>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</translation>
+        <source>Make sure to encrypt your wallet and delete all non-encrypted backups after you have verified that the wallet works!</source>
+        <translation>Make sure to encrypt your wallet and delete all non-encrypted backups after you have verified that the wallet works!</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</source>
-        <translation>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</translation>
+        <location line="+13"/>
+        <source>Maximum total size of all orphan transactions in megabytes (default: %u)</source>
+        <translation>Maximum total size of all orphan transactions in megabytes (default: %u)</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+23"/>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
         <translation>Prune configured below the minimum of %d MiB.  Please use a higher number.</translation>
     </message>
@@ -5968,22 +5667,27 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Prune: last wallet synchronisation goes beyond pruned data. You need to -reindex (download the whole blockchain again in case of pruned node)</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+3"/>
+        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect used)</source>
+        <translation>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect used)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
         <translation>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Reduce storage requirements by pruning (deleting) old blocks. This mode is incompatible with -txindex and -rescan. Warning: Reverting this setting requires re-downloading the entire blockchain. (default: 0 = disable pruning blocks, &gt;%u = target size in MiB to use for block files)</source>
-        <translation>Reduce storage requirements by pruning (deleting) old blocks. This mode is incompatible with -txindex and -rescan. Warning: Reverting this setting requires re-downloading the entire blockchain. (default: 0 = disable pruning blocks, &gt;%u = target size in MiB to use for block files)</translation>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+12"/>
         <source>Rescans are not possible in pruned mode. You will need to use -reindex which will download the whole blockchain again.</source>
         <translation>Rescans are not possible in pruned mode. You will need to use -reindex which will download the whole blockchain again.</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+6"/>
+        <source>Set the masternode BLS private key and enable the client to act as a masternode</source>
+        <translation>Set the masternode BLS private key and enable the client to act as a masternode</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Specify full path to directory for automatic wallet backups (must exist)</source>
         <translation>Specify full path to directory for automatic wallet backups (must exist)</translation>
     </message>
@@ -5998,14 +5702,19 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>The block database contains a block which appears to be from the future. This may be due to your computer&apos;s date and time being set incorrectly. Only rebuild the block database if you are sure that your computer&apos;s date and time are correct</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+10"/>
         <source>The transaction amount is too small to send after the fee has been deducted</source>
         <translation>The transaction amount is too small to send after the fee has been deducted</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+14"/>
         <source>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</source>
         <translation>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Transaction index can&apos;t be disabled in full mode. Either start with -litemode command line switch or enable transaction index.</source>
+        <translation>Transaction index can&apos;t be disabled in full mode. Either start with -litemode command line switch or enable transaction index.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -6013,17 +5722,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Tries to keep outbound traffic under the given target (in MiB per 24h), 0 = no limit (default: %d)</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+3"/>
         <source>Unable to locate enough PrivateSend denominated funds for this transaction.</source>
         <translation>Unable to locate enough PrivateSend denominated funds for this transaction.</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 1000 GENIX.</source>
-        <translation>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 1000 GENIX.</translation>
-    </message>
-    <message>
-        <location line="+6"/>
+        <location line="+8"/>
         <source>Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</source>
         <translation>Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</translation>
     </message>
@@ -6033,27 +5737,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Unsupported argument -whitelistalwaysrelay ignored, use -whitelistrelay and/or -whitelistforcerelay.</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Use N separate masternodes for each denominated input to mix funds (2-16, default: %u)</source>
-        <translation>Use N separate masternodes for each denominated input to mix funds (2-16, default: %u)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+8"/>
         <source>Use UPnP to map the listening port (default: 1 when listening and no -proxy)</source>
         <translation>Use UPnP to map the listening port (default: 1 when listening and no -proxy)</translation>
     </message>
     <message>
-        <location line="+11"/>
-        <source>User defined mnemonic passphrase for HD wallet (bip39). Only has effect during wallet creation/first start (default: empty string)</source>
-        <translation>User defined mnemonic passphrase for HD wallet (bip39). Only has effect during wallet creation/first start (default: empty string)</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Username and hashed password for JSON-RPC connections. The field &lt;userpw&gt; comes in the format: &lt;USERNAME&gt;:&lt;SALT&gt;$&lt;HASH&gt;. A canonical python script is included in share/rpcuser. This option can be specified multiple times</source>
-        <translation>Username and hashed password for JSON-RPC connections. The field &lt;userpw&gt; comes in the format: &lt;USERNAME&gt;:&lt;SALT&gt;$&lt;HASH&gt;. A canonical python script is included in share/rpcuser. This option can be specified multiple times</translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+23"/>
         <source>WARNING! Failed to replenish keypool, please unlock your wallet to do so.</source>
         <translation>WARNING! Failed to replenish keypool, please unlock your wallet to do so.</translation>
     </message>
@@ -6063,47 +5752,32 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Wallet is locked, can&apos;t replenish keypool! Automatic backups and mixing are disabled, please unlock your wallet to replenish keypool.</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+9"/>
         <source>Warning: Unknown block versions being mined! It&apos;s possible unknown rules are in effect</source>
         <translation>Warning: Unknown block versions being mined! It&apos;s possible unknown rules are in effect</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+20"/>
+        <source>You need to rebuild the database using -reindex to change -timestampindex</source>
+        <translation>You need to rebuild the database using -reindex to change -timestampindex</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>You need to rebuild the database using -reindex to go back to unpruned mode.  This will redownload the entire blockchain</source>
         <translation>You need to rebuild the database using -reindex to go back to unpruned mode.  This will redownload the entire blockchain</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>masternodeaddr option is deprecated. Please use masternode.conf to manage your remote masternodes.</source>
-        <translation>masternodeaddr option is deprecated. Please use masternode.conf to manage your remote masternodes.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>%s - %d confirmations</source>
-        <translation>%s - %d confirmations</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>(%d could be used only on mainnet)</source>
-        <translation>(%d could be used only on mainnet)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="+8"/>
         <source>(default: %u)</source>
         <translation>(default: %u)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>(must be %d for mainnet)</source>
-        <translation>(must be %d for mainnet)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>-maxmempool must be at least %d MB</source>
         <translation>-maxmempool must be at least %d MB</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>&lt;category&gt; can be:</source>
         <translation>&lt;category&gt; can be:</translation>
     </message>
@@ -6113,12 +5787,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Append comment to the user agent string</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Attempt to recover private keys from a corrupt wallet.dat on startup</source>
-        <translation>Attempt to recover private keys from a corrupt wallet.dat on startup</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Automatic backups disabled</source>
         <translation>Automatic backups disabled</translation>
     </message>
@@ -6128,7 +5797,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Automatically create Tor hidden service (default: %d)</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+22"/>
         <source>ERROR! Failed to create automatic backup</source>
         <translation>ERROR! Failed to create automatic backup</translation>
     </message>
@@ -6136,6 +5805,16 @@ https://www.transifex.com/projects/p/genix/</translation>
         <location line="+1"/>
         <source>Enable publish hash block in &lt;address&gt;</source>
         <translation>Enable publish hash block in &lt;address&gt;</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enable publish hash of governance objects (like proposals) in &lt;address&gt;</source>
+        <translation>Enable publish hash of governance objects (like proposals) in &lt;address&gt;</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enable publish hash of governance votes in &lt;address&gt;</source>
+        <translation>Enable publish hash of governance votes in &lt;address&gt;</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6163,12 +5842,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Enable publish raw transaction in &lt;address&gt;</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Enable transaction replacement in the memory pool (default: %u)</source>
-        <translation>Enable transaction replacement in the memory pool (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+14"/>
+        <location line="+17"/>
         <source>Error: A fatal internal error occurred, see debug.log for details</source>
         <translation>Error: A fatal internal error occurred, see debug.log for details</translation>
     </message>
@@ -6189,31 +5863,36 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Failed to parse host:port string</source>
-        <translation>Failed to parse host:port string</translation>
+        <source>Failed to load sporks cache from</source>
+        <translation>Failed to load sporks cache from</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Fee (in %s/kB) to add to transactions you send (default: %s)</source>
         <translation>Fee (in %s/kB) to add to transactions you send (default: %s)</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+5"/>
         <source>Imports blocks from external blk000??.dat file on startup</source>
         <translation>Imports blocks from external blk000??.dat file on startup</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>InstantSend options:</source>
         <translation>InstantSend options:</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <source>Invalid amount for -fallbackfee=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation>Invalid amount for -fallbackfee=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+2"/>
+        <source>Invalid masternodeblsprivkey. Please see documentation.</source>
+        <translation>Invalid masternodeblsprivkey. Please see documentation.</translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Keep the transaction memory pool below &lt;n&gt; megabytes (default: %u)</source>
         <translation>Keep the transaction memory pool below &lt;n&gt; megabytes (default: %u)</translation>
     </message>
@@ -6228,17 +5907,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Last successful PrivateSend action was too recent.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Line: %d</source>
-        <translation>Line: %d</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Loading addresses...</source>
-        <translation>Loading addresses...</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="+5"/>
         <source>Loading block index...</source>
         <translation>Loading block index...</translation>
     </message>
@@ -6248,7 +5917,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Loading governance cache...</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
+        <source>Loading sporks cache...</source>
+        <translation>Loading sporks cache...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Loading wallet... (%3.2f %%)</source>
         <translation>Loading wallet... (%3.2f %%)</translation>
     </message>
@@ -6263,14 +5937,9 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Location of the auth cookie (default: data dir)</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>Make the wallet broadcast transactions</source>
         <translation>Make the wallet broadcast transactions</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Masternode cache is empty, skipping payments and governance cache...</source>
-        <translation>Masternode cache is empty, skipping payments and governance cache...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6328,12 +5997,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Not enough file descriptors available.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Not enough funds to anonymize.</source>
-        <translation>Not enough funds to anonymize.</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Number of automatic wallet backups (default: %u)</source>
         <translation>Number of automatic wallet backups (default: %u)</translation>
     </message>
@@ -6393,7 +6057,77 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Rescan the block chain for missing wallet transactions on startup</translation>
     </message>
     <message>
-        <location line="+74"/>
+        <location line="+27"/>
+        <source>Synchronizing blockchain...</source>
+        <translation>Synchronizing blockchain...</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>The wallet will avoid paying less than the minimum relay fee.</source>
+        <translation>The wallet will avoid paying less than the minimum relay fee.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>This is the minimum transaction fee you pay on every transaction.</source>
+        <translation>This is the minimum transaction fee you pay on every transaction.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>This is the transaction fee you will pay if you send a transaction.</source>
+        <translation>This is the transaction fee you will pay if you send a transaction.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Transaction amounts must not be negative</source>
+        <translation>Transaction amounts must not be negative</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Transaction has too long of a mempool chain</source>
+        <translation>Transaction has too long of a mempool chain</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Transaction must have at least one recipient</source>
+        <translation>Transaction must have at least one recipient</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Transaction too large</source>
+        <translation>Transaction too large</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Trying to connect...</source>
+        <translation>Trying to connect...</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Unable to bind to %s on this computer. %s is probably already running.</source>
+        <translation>Unable to bind to %s on this computer. %s is probably already running.</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Upgrading UTXO database</source>
+        <translation>Upgrading UTXO database</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Use devnet chain with provided name</source>
+        <translation>Use devnet chain with provided name</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Wallet debugging/testing options:</source>
+        <translation>Wallet debugging/testing options:</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Wallet needed to be rewritten: restart %s to complete</source>
+        <translation>Wallet needed to be rewritten: restart %s to complete</translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Warning: unknown new rules activated (versionbit %i)</source>
         <translation>Warning: unknown new rules activated (versionbit %i)</translation>
     </message>
@@ -6408,7 +6142,32 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Whether to operate in a blocks only mode (default: %u)</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+2"/>
+        <source>You can not start a masternode in lite mode.</source>
+        <translation>You can not start a masternode in lite mode.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>You can not start a masternode with wallet enabled.</source>
+        <translation>You can not start a masternode with wallet enabled.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>You need to rebuild the database using -reindex to change -addressindex</source>
+        <translation>You need to rebuild the database using -reindex to change -addressindex</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>You need to rebuild the database using -reindex to change -spentindex</source>
+        <translation>You need to rebuild the database using -reindex to change -spentindex</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>You need to rebuild the database using -reindex to change -txindex</source>
+        <translation>You need to rebuild the database using -reindex to change -txindex</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>ZeroMQ notification options:</source>
         <translation>ZeroMQ notification options:</translation>
     </message>
@@ -6423,17 +6182,342 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>see debug.log for details.</translation>
     </message>
     <message>
-        <location line="-90"/>
+        <location line="-100"/>
         <source>RPC server options:</source>
         <translation>RPC server options:</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Receive and display P2P network alerts (default: %u)</source>
-        <translation>Receive and display P2P network alerts (default: %u)</translation>
+        <location line="-497"/>
+        <source>genix Core</source>
+        <translation>genix Core</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>The %s developers</source>
+        <translation>The %s developers</translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>Cannot obtain a lock on data directory %s. %s is probably already running.</source>
+        <translation>Cannot obtain a lock on data directory %s. %s is probably already running.</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
+        <translation>Distributed under the MIT software license, see the accompanying file %s or %s</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Enable use of PrivateSend for funds stored in this wallet (0-1, default: %u)</source>
+        <translation>Enable use of PrivateSend for funds stored in this wallet (0-1, default: %u)</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error loading %s: You can&apos;t enable HD on an already existing non-HD wallet</source>
+        <translation>Error loading %s: You can&apos;t enable HD on an already existing non-HD wallet</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error loading wallet %s. -wallet parameter must only specify a filename (not a path).</source>
+        <translation>Error loading wallet %s. -wallet parameter must only specify a filename (not a path).</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Error reading %s! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
+        <translation>Error reading %s! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Exclude debugging information for a category. Can be used in conjunction with -debug=1 to output debug logs for all categories except one or more specified categories.</source>
+        <translation>Exclude debugging information for a category. Can be used in conjunction with -debug=1 to output debug logs for all categories except one or more specified categories.</translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Force relay of transactions from whitelisted peers even if they violate local relay policy (default: %d)</source>
+        <translation>Force relay of transactions from whitelisted peers even if they violate local relay policy (default: %d)</translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>Incorrect or no devnet genesis block found. Wrong datadir for devnet specified?</source>
+        <translation>Incorrect or no devnet genesis block found. Wrong datadir for devnet specified?</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Maximum allowed median peer time offset adjustment. Local perspective of time may be influenced by peers forward or backward by this amount. (default: %u seconds)</source>
+        <translation>Maximum allowed median peer time offset adjustment. Local perspective of time may be influenced by peers forward or backward by this amount. (default: %u seconds)</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Maximum total fees (in %s) to use in a single wallet transaction or raw transaction; setting this too low may abort large transactions (default: %s)</source>
+        <translation>Maximum total fees (in %s) to use in a single wallet transaction or raw transaction; setting this too low may abort large transactions (default: %s)</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Override spork address. Only useful for regtest and devnet. Using this on mainnet or testnet will ban you.</source>
+        <translation>Override spork address. Only useful for regtest and devnet. Using this on mainnet or testnet will ban you.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Please check that your computer&apos;s date and time are correct! If your clock is wrong, %s will not work properly.</source>
+        <translation>Please check that your computer&apos;s date and time are correct! If your clock is wrong, %s will not work properly.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Please contribute if you find %s useful. Visit %s for further information about the software.</source>
+        <translation>Please contribute if you find %s useful. Visit %s for further information about the software.</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Reduce storage requirements by enabling pruning (deleting) of old blocks. This allows the pruneblockchain RPC to be called to delete specific blocks, and enables automatic pruning of old blocks if a target size in MiB is provided. This mode is incompatible with -txindex and -rescan. Warning: Reverting this setting requires re-downloading the entire blockchain. (default: 0 = disable pruning blocks, 1 = allow manual pruning via RPC, &gt;%u = automatically prune block files to stay under the specified target size in MiB)</source>
+        <translation>Reduce storage requirements by enabling pruning (deleting) of old blocks. This allows the pruneblockchain RPC to be called to delete specific blocks, and enables automatic pruning of old blocks if a target size in MiB is provided. This mode is incompatible with -txindex and -rescan. Warning: Reverting this setting requires re-downloading the entire blockchain. (default: 0 = disable pruning blocks, 1 = allow manual pruning via RPC, &gt;%u = automatically prune block files to stay under the specified target size in MiB)</translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Set lowest fee rate (in %s/kB) for transactions to be included in block creation. (default: %s)</source>
+        <translation>Set lowest fee rate (in %s/kB) for transactions to be included in block creation. (default: %s)</translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>The fee rate (in %s/kB) that indicates your tolerance for discarding change by adding it to the fee (default: %s). Note: An output is discarded if it is dust at this rate, but we will always discard up to the dust relay fee and a discard fee above that is limited by the fee estimate for the longest target</source>
+        <translation>The fee rate (in %s/kB) that indicates your tolerance for discarding change by adding it to the fee (default: %s). Note: An output is discarded if it is dust at this rate, but we will always discard up to the dust relay fee and a discard fee above that is limited by the fee estimate for the longest target</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>This is the transaction fee you may discard if change is smaller than dust at this level</source>
+        <translation>This is the transaction fee you may discard if change is smaller than dust at this level</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>This is the transaction fee you may pay when fee estimates are not available.</source>
+        <translation>This is the transaction fee you may pay when fee estimates are not available.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit %s and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
+        <translation>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit %s and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction.</source>
+        <translation>Unable to locate enough PrivateSend non-denominated funds for this transaction.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Unable to replay blocks. You will need to rebuild the database using -reindex-chainstate.</source>
+        <translation>Unable to replay blocks. You will need to rebuild the database using -reindex-chainstate.</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Use N separate masternodes for each denominated input to mix funds (%u-%u, default: %u)</source>
+        <translation>Use N separate masternodes for each denominated input to mix funds (%u-%u, default: %u)</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Use hierarchical deterministic key generation (HD) after BIP39/BIP44. Only has effect during wallet creation/first start</source>
+        <translation>Use hierarchical deterministic key generation (HD) after BIP39/BIP44. Only has effect during wallet creation/first start</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>User defined mnemonic passphrase for HD wallet (BIP39). Only has effect during wallet creation/first start (default: empty string)</source>
+        <translation>User defined mnemonic passphrase for HD wallet (BIP39). Only has effect during wallet creation/first start (default: empty string)</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Username and hashed password for JSON-RPC connections. The field &lt;userpw&gt; comes in the format: &lt;USERNAME&gt;:&lt;SALT&gt;$&lt;HASH&gt;. A canonical python script is included in share/rpcuser. The client then connects normally using the rpcuser=&lt;USERNAME&gt;/rpcpassword=&lt;PASSWORD&gt; pair of arguments. This option can be specified multiple times</source>
+        <translation>Username and hashed password for JSON-RPC connections. The field &lt;userpw&gt; comes in the format: &lt;USERNAME&gt;:&lt;SALT&gt;$&lt;HASH&gt;. A canonical python script is included in share/rpcuser. The client then connects normally using the rpcuser=&lt;USERNAME&gt;/rpcpassword=&lt;PASSWORD&gt; pair of arguments. This option can be specified multiple times</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Wallet will not create transactions that violate mempool chain limits (default: %u)</source>
+        <translation>Wallet will not create transactions that violate mempool chain limits (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Warning: Wallet file corrupt, data salvaged! Original %s saved as %s in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
+        <translation>Warning: Wallet file corrupt, data salvaged! Original %s saved as %s in %s; if your balance or transactions are incorrect you should restore from a backup.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Whether to save the mempool on shutdown and load on restart (default: %u)</source>
+        <translation>Whether to save the mempool on shutdown and load on restart (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Whitelist peers connecting from the given IP address (e.g. 1.2.3.4) or CIDR notated network (e.g. 1.2.3.0/24). Can be specified multiple times.</source>
+        <translation>Whitelist peers connecting from the given IP address (e.g. 1.2.3.4) or CIDR notated network (e.g. 1.2.3.0/24). Can be specified multiple times.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>You are starting in lite mode, most genix-specific functionality is disabled.</source>
+        <translation>You are starting in lite mode, most genix-specific functionality is disabled.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>%d of last 100 blocks have unexpected version</source>
+        <translation>%d of last 100 blocks have unexpected version</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%s corrupt, salvage failed</source>
+        <translation>%s corrupt, salvage failed</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%s is not a valid backup folder!</source>
+        <translation>%s is not a valid backup folder!</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%s is set very high!</source>
+        <translation>%s is set very high!</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>(press q to shutdown and continue later)</source>
+        <translation>(press q to shutdown and continue later)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>-devnet can only be specified once</source>
+        <translation>-devnet can only be specified once</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>-port must be specified when -devnet and -listen are specified</source>
+        <translation>-port must be specified when -devnet and -listen are specified</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>-rpcport must be specified when -devnet and -server are specified</source>
+        <translation>-rpcport must be specified when -devnet and -server are specified</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
+        <translation>Accept connections from outside (default: 1 if no -proxy or -connect)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Allow RFC1918 addresses to be relayed and connected to (default: %u)</source>
+        <translation>Allow RFC1918 addresses to be relayed and connected to (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Attempt to recover private keys from a corrupt wallet on startup</source>
+        <translation>Attempt to recover private keys from a corrupt wallet on startup</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Cannot resolve -%s address: &apos;%s&apos;</source>
+        <translation>Cannot resolve -%s address: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Change index out of range</source>
+        <translation>Change index out of range</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Copyright (C)</source>
+        <translation>Copyright (C)</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Create up to N inputs of each denominated amount (%u-%u, default: %u)</source>
+        <translation>Create up to N inputs of each denominated amount (%u-%u, default: %u)</translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>Error loading %s</source>
+        <translation>Error loading %s</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Error loading %s: Wallet corrupted</source>
+        <translation>Error loading %s: Wallet corrupted</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Error loading %s: Wallet requires newer version of %s</source>
+        <translation>Error loading %s: Wallet requires newer version of %s</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Error loading %s: You can&apos;t disable HD on an already existing HD wallet</source>
+        <translation>Error loading %s: You can&apos;t disable HD on an already existing HD wallet</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error loading wallet %s. -wallet filename must be a regular file.</source>
+        <translation>Error loading wallet %s. -wallet filename must be a regular file.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Error loading wallet %s. Duplicate -wallet filename specified.</source>
+        <translation>Error loading wallet %s. Duplicate -wallet filename specified.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Error loading wallet %s. Invalid characters in -wallet filename.</source>
+        <translation>Error loading wallet %s. Invalid characters in -wallet filename.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Error upgrading chainstate database</source>
+        <translation>Error upgrading chainstate database</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Failed to find mixing queue to join</source>
+        <translation>Failed to find mixing queue to join</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Failed to start a new mixing queue</source>
+        <translation>Failed to start a new mixing queue</translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Initialization sanity check failed. %s is shutting down.</source>
+        <translation>Initialization sanity check failed. %s is shutting down.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Inputs vs outputs size mismatch.</source>
+        <translation>Inputs vs outputs size mismatch.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Invalid -onion address or hostname: &apos;%s&apos;</source>
+        <translation>Invalid -onion address or hostname: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Invalid -proxy address or hostname: &apos;%s&apos;</source>
+        <translation>Invalid -proxy address or hostname: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Invalid amount for -%s=&lt;amount&gt;: &apos;%s&apos;</source>
+        <translation>Invalid amount for -%s=&lt;amount&gt;: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Invalid spork address specified with -sporkaddr</source>
+        <translation>Invalid spork address specified with -sporkaddr</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Loading P2P addresses...</source>
+        <translation>Loading P2P addresses...</translation>
+    </message>
+    <message>
+        <location line="+37"/>
+        <source>Print this help message and exit</source>
+        <translation>Print this help message and exit</translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Reducing -maxconnections from %d to %d, because of system limitations.</source>
         <translation>Reducing -maxconnections from %d to %d, because of system limitations.</translation>
     </message>
@@ -6446,6 +6530,11 @@ https://www.transifex.com/projects/p/genix/</translation>
         <location line="+1"/>
         <source>Relay non-P2SH multisig (default: %u)</source>
         <translation>Relay non-P2SH multisig (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Replaying blocks...</source>
+        <translation>Replaying blocks...</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -6463,7 +6552,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Send trace/debug info to console instead of debug.log file</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>Session not complete!</source>
         <translation>Session not complete!</translation>
     </message>
@@ -6481,11 +6570,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <location line="+2"/>
         <source>Set maximum block size in bytes (default: %d)</source>
         <translation>Set maximum block size in bytes (default: %d)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Set the masternode private key</source>
-        <translation>Set the masternode private key</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -6508,7 +6592,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Specify data directory</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>Specify wallet file (within data directory)</source>
         <translation>Specify wallet file (within data directory)</translation>
     </message>
@@ -6518,49 +6602,54 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Specify your own public address</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+2"/>
+        <source>Start PrivateSend automatically (0-1, default: %u)</source>
+        <translation>Start PrivateSend automatically (0-1, default: %u)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Starting network threads...</source>
+        <translation>Starting network threads...</translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Synchronization pending...</source>
         <translation>Synchronization pending...</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Synchronizing governance objects...</source>
         <translation>Synchronizing governance objects...</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Synchronizing masternode payments...</source>
-        <translation>Synchronizing masternode payments...</translation>
+        <source>The source code is available from %s.</source>
+        <translation>The source code is available from %s.</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+1"/>
         <source>The transaction amount is too small to pay the fee</source>
         <translation>The transaction amount is too small to pay the fee</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>This help message</source>
-        <translation>This help message</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>This is experimental software.</source>
         <translation>This is experimental software.</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+8"/>
         <source>Transaction amount too small</source>
         <translation>Transaction amount too small</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Transaction amounts must be positive</source>
-        <translation>Transaction amounts must be positive</translation>
+        <location line="+2"/>
+        <source>Transaction created successfully.</source>
+        <translation>Transaction created successfully.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Transaction created successfully.</source>
-        <translation>Transaction created successfully.</translation>
+        <source>Transaction fee and change calculation failed</source>
+        <translation>Transaction fee and change calculation failed</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6568,7 +6657,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Transaction fees are too high.</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Transaction not valid.</source>
         <translation>Transaction not valid.</translation>
     </message>
@@ -6578,17 +6667,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Transaction too large for fee policy</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Transaction too large</source>
-        <translation>Transaction too large</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Unable to bind to %s on this computer (bind returned error %s)</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Unable to sign spork message, wrong key?</source>
         <translation>Unable to sign spork message, wrong key?</translation>
     </message>
@@ -6603,7 +6687,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Unknown state: id = %u</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+4"/>
+        <source>Unsupported logging category %s=%s.</source>
+        <translation>Unsupported logging category %s=%s.</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Username for JSON-RPC connections</source>
         <translation>Username for JSON-RPC connections</translation>
     </message>
@@ -6613,12 +6702,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Verifying blocks...</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Verifying wallet...</source>
-        <translation>Verifying wallet...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Very low number of keys left: %d</source>
         <translation>Very low number of keys left: %d</translation>
     </message>
@@ -6628,7 +6712,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Wallet %s resides outside data directory %s</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Wallet is locked.</source>
         <translation>Wallet is locked.</translation>
     </message>
@@ -6648,24 +6732,14 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Warning</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+10"/>
         <source>Your entries added successfully.</source>
         <translation>Your entries added successfully.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Your transaction was accepted into the pool!</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Zapping all transactions from wallet...</source>
         <translation>Zapping all transactions from wallet...</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>wallet.dat corrupt, salvage failed</source>
-        <translation>wallet.dat corrupt, salvage failed</translation>
     </message>
 </context>
 </TS>

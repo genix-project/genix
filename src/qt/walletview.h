@@ -2,16 +2,15 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_QT_WALLETVIEW_H
-#define GENIX_QT_WALLETVIEW_H
+#ifndef BITCOIN_QT_WALLETVIEW_H
+#define BITCOIN_QT_WALLETVIEW_H
 
 #include "amount.h"
-#include "toolspage.h"
 #include "masternodelist.h"
 
 #include <QStackedWidget>
 
-class GENIXGUI;
+class BitcoinGUI;
 class ClientModel;
 class OverviewPage;
 class PlatformStyle;
@@ -21,8 +20,6 @@ class SendCoinsRecipient;
 class TransactionView;
 class WalletModel;
 class AddressBookPage;
-class SettingsPage;
-class ToolsPage;
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -44,13 +41,13 @@ public:
     explicit WalletView(const PlatformStyle *platformStyle, QWidget *parent);
     ~WalletView();
 
-    void setGENIXGUI(GENIXGUI *gui);
+    void setBitcoinGUI(BitcoinGUI *gui);
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
     */
     void setClientModel(ClientModel *clientModel);
     /** Set the wallet model.
-        The wallet model represents a genix wallet, and offers access to the list of transactions, address book and sending
+        The wallet model represents a bitcoin wallet, and offers access to the list of transactions, address book and sending
         functionality.
     */
     void setWalletModel(WalletModel *walletModel);
@@ -58,7 +55,6 @@ public:
     bool handlePaymentRequest(const SendCoinsRecipient& recipient);
 
     void showOutOfSyncWarning(bool fShow);
-    void gotoToolsPageTab(enum ToolsPage::TabTypes page);
 
 private:
     ClientModel *clientModel;
@@ -71,8 +67,6 @@ private:
     AddressBookPage *usedSendingAddressesPage;
     AddressBookPage *usedReceivingAddressesPage;
     MasternodeList *masternodeListPage;
-    SettingsPage *settingsPage;
-    ToolsPage *toolsPage;
 
     TransactionView *transactionView;
 
@@ -91,8 +85,6 @@ public Q_SLOTS:
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
-    void gotoSettingsPage();
-    void gotoToolsPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
@@ -130,7 +122,7 @@ public Q_SLOTS:
     void requestedSyncWarningInfo();
 
 
-    /** Update selected ORE amount from transactionview */
+    /** Update selected genix amount from transactionview */
     void trxAmount(QString amount);
 Q_SIGNALS:
     /** Signal that we want to show the main window */
@@ -147,4 +139,4 @@ Q_SIGNALS:
     void outOfSyncWarningClicked();
 };
 
-#endif // GENIX_QT_WALLETVIEW_H
+#endif // BITCOIN_QT_WALLETVIEW_H

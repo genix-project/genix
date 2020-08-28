@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_SCRIPT_SCRIPT_ERROR_H
-#define GENIX_SCRIPT_SCRIPT_ERROR_H
+#ifndef BITCOIN_SCRIPT_SCRIPT_ERROR_H
+#define BITCOIN_SCRIPT_SCRIPT_ERROR_H
 
 typedef enum ScriptError_t
 {
@@ -48,6 +48,7 @@ typedef enum ScriptError_t
     SCRIPT_ERR_SIG_NULLDUMMY,
     SCRIPT_ERR_PUBKEYTYPE,
     SCRIPT_ERR_CLEANSTACK,
+    SCRIPT_ERR_SIG_NULLFAIL,
 
     /* softfork safeness */
     SCRIPT_ERR_DISCOURAGE_UPGRADABLE_NOPS,
@@ -59,4 +60,4 @@ typedef enum ScriptError_t
 
 const char* ScriptErrorString(const ScriptError error);
 
-#endif // GENIX_SCRIPT_SCRIPT_ERROR_H
+#endif // BITCOIN_SCRIPT_SCRIPT_ERROR_H

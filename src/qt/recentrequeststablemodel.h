@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_QT_RECENTREQUESTSTABLEMODEL_H
-#define GENIX_QT_RECENTREQUESTSTABLEMODEL_H
+#ifndef BITCOIN_QT_RECENTREQUESTSTABLEMODEL_H
+#define BITCOIN_QT_RECENTREQUESTSTABLEMODEL_H
 
 #include "walletmodel.h"
 
@@ -27,11 +27,10 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    inline void SerializationOp(Stream& s, Operation ser_action) {
         unsigned int nDate = date.toTime_t();
 
         READWRITE(this->nVersion);
-        nVersion = this->nVersion;
         READWRITE(id);
         READWRITE(nDate);
         READWRITE(recipient);
@@ -53,7 +52,7 @@ private:
     Qt::SortOrder order;
 };
 
-/** Model for list of recently generated payment requests / galactrum: URIs.
+/** Model for list of recently generated payment requests / genix: URIs.
  * Part of wallet model.
  */
 class RecentRequestsTableModel: public QAbstractTableModel
@@ -88,11 +87,6 @@ public:
     void addNewRequest(const SendCoinsRecipient &recipient);
     void addNewRequest(const std::string &recipient);
     void addNewRequest(RecentRequestEntry &recipient);
-    int count();
-
-
-Q_SIGNALS:
-    void countChanged(int);
 
 public Q_SLOTS:
     void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
@@ -108,7 +102,6 @@ private:
     void updateAmountColumnTitle();
     /** Gets title for amount column including current display unit if optionsModel reference available. */
     QString getAmountTitle();
-    void emitCountChanged();
 };
 
-#endif // GENIX_QT_RECENTREQUESTSTABLEMODEL_H
+#endif // BITCOIN_QT_RECENTREQUESTSTABLEMODEL_H

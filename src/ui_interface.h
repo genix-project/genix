@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_UI_INTERFACE_H
-#define GENIX_UI_INTERFACE_H
+#ifndef BITCOIN_UI_INTERFACE_H
+#define BITCOIN_UI_INTERFACE_H
 
 #include <stdint.h>
 #include <string>
@@ -12,10 +12,9 @@
 #include <boost/signals2/last_value.hpp>
 #include <boost/signals2/signal.hpp>
 
-class CBasicKeyStore;
 class CWallet;
-class uint256;
 class CBlockIndex;
+class CDeterministicMNList;
 
 /** General change type (added, updated, removed). */
 enum ChangeType
@@ -88,14 +87,10 @@ public:
     /** Network activity state changed. */
     boost::signals2::signal<void (bool networkActive)> NotifyNetworkActiveChanged;
 
-    /** Number of masternodes changed. */
-    boost::signals2::signal<void (int newNumMasternodes)> NotifyStrMasternodeCountChanged;
-
     /**
-     * New, updated or cancelled alert.
-     * @note called with lock cs_mapAlerts held.
+     * Status bar alerts changed.
      */
-    boost::signals2::signal<void (const uint256 &hash, ChangeType status)> NotifyAlertChanged;
+    boost::signals2::signal<void ()> NotifyAlertChanged;
 
     /** A wallet has been loaded. */
     boost::signals2::signal<void (CWallet* wallet)> LoadWallet;
@@ -112,6 +107,9 @@ public:
     /** Best header has changed */
     boost::signals2::signal<void (bool, const CBlockIndex *)> NotifyHeaderTip;
 
+    /** Masternode list has changed */
+    boost::signals2::signal<void (const CDeterministicMNList&)> NotifyMasternodeListChanged;
+
     /** Additional data sync progress changed */
     boost::signals2::signal<void (double nSyncProgress)> NotifyAdditionalDataSyncProgressChanged;
 
@@ -119,6 +117,16 @@ public:
     boost::signals2::signal<void (void)> BannedListChanged;
 };
 
+/** Show warning message **/
+void InitWarning(const std::string& str);
+
+/** Show error message **/
+bool InitError(const std::string& str);
+
+std::string AmountHighWarn(const std::string& optname);
+
+std::string AmountErrMsg(const char* const optname, const std::string& strValue);
+
 extern CClientUIInterface uiInterface;
 
-#endif // GENIX_UI_INTERFACE_H
+#endif // BITCOIN_UI_INTERFACE_H
