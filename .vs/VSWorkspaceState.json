@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\consensus"
+    "\\src\\consensus",
+    "\\src\\qt"
   ],
-  "SelectedNode": "\\src\\consensus\\merkle.h",
+  "SelectedNode": "\\build.sh",
   "PreviewInSolutionExplorer": false
 }
