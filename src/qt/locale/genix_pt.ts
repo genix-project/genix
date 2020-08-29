@@ -2686,8 +2686,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>EnvioPrivado</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Se a taxa por defeito está definida em 1000 duffs e a transação é apenas 250 bytes, então "per kilobyte" paga apenas 250 duffs de taxa,&lt;br /&gt;enquanto "no mínimo" paga 1000 duffs. Para transações maiores que um kilobyte, ambas pagam por kilobyte.</translation>
+        <source>If the custom fee is set to 1000 twigs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 twigs in fee,&lt;br /&gt;while "at least" pays 1000 twigs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Se a taxa por defeito está definida em 1000 twigs e a transação é apenas 250 bytes, então "per kilobyte" paga apenas 250 twigs de taxa,&lt;br /&gt;enquanto "no mínimo" paga 1000 twigs. Para transações maiores que um kilobyte, ambas pagam por kilobyte.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for genix transactions than the network can process.</source>

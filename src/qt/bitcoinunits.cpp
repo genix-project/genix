@@ -22,7 +22,7 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
     unitlist.append(genix);
     unitlist.append(mgenix);
     unitlist.append(ugenix);
-    unitlist.append(duffs);
+    unitlist.append(twigs);
     return unitlist;
 }
 
@@ -33,7 +33,7 @@ bool BitcoinUnits::valid(int unit)
     case genix:
     case mgenix:
     case ugenix:
-    case duffs:
+    case twigs:
         return true;
     default:
         return false;
@@ -49,7 +49,7 @@ QString BitcoinUnits::name(int unit)
             case genix: return QString("genix");
             case mgenix: return QString("mgenix");
             case ugenix: return QString::fromUtf8("μgenix");
-            case duffs: return QString("duffs");
+            case twigs: return QString("twigs");
             default: return QString("???");
         }
     }
@@ -60,7 +60,7 @@ QString BitcoinUnits::name(int unit)
             case genix: return QString("tgenix");
             case mgenix: return QString("mtgenix");
             case ugenix: return QString::fromUtf8("μtgenix");
-            case duffs: return QString("tduffs");
+            case twigs: return QString("ttwigs");
             default: return QString("???");
         }
     }
@@ -75,7 +75,7 @@ QString BitcoinUnits::description(int unit)
             case genix: return QString("genix");
             case mgenix: return QString("Milli-genix (1 / 1" THIN_SP_UTF8 "000)");
             case ugenix: return QString("Micro-genix (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-genix (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case twigs: return QString("Ten Nano-genix (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -86,7 +86,7 @@ QString BitcoinUnits::description(int unit)
             case genix: return QString("Testgenixs");
             case mgenix: return QString("Milli-Testgenix (1 / 1" THIN_SP_UTF8 "000)");
             case ugenix: return QString("Micro-Testgenix (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-Testgenix (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case twigs: return QString("Ten Nano-Testgenix (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -99,7 +99,7 @@ qint64 BitcoinUnits::factor(int unit)
     case genix:  return 100000000;
     case mgenix: return 100000;
     case ugenix: return 100;
-    case duffs: return 1;
+    case twigs: return 1;
     default:   return 100000000;
     }
 }
@@ -111,7 +111,7 @@ int BitcoinUnits::decimals(int unit)
     case genix: return 8;
     case mgenix: return 5;
     case ugenix: return 2;
-    case duffs: return 0;
+    case twigs: return 0;
     default: return 0;
     }
 }

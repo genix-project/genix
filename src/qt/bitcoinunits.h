@@ -60,7 +60,7 @@ public:
         genix,
         mgenix,
         ugenix,
-        duffs
+        twigs
     };
 
     enum SeparatorStyle
