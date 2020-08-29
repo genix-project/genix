@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
-// Copyright (c) 2014-2020 The genix Core developers
+// Copyright (c) 2014-2020 The Genix Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -344,7 +344,7 @@ public:
         // Genix BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        // genix BIP44 coin type is '5'
+        // Genix BIP44 coin type is '5'
         nExtCoinType = 5;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -417,8 +417,8 @@ public:
         consensus.DIP0003EnforcementHeight = 7300;
         consensus.DIP0003EnforcementHash = uint256S("00000055ebc0e974ba3a3fb785c5ad4365a39637d4df168169ee80d313612f8f");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // genix: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // genix: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Genix: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Genix: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 4002; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -526,7 +526,7 @@ public:
         // Genix BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        // Testnet genix BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Genix BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
@@ -597,8 +597,8 @@ public:
         consensus.DIP0003EnforcementHeight = 2; // DIP0003 activated immediately on devnet
         consensus.DIP0003EnforcementHash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // genix: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // genix: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Genix: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Genix: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 4001; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -667,18 +667,18 @@ public:
         vSeeds.clear();
         //vSeeds.push_back(CDNSSeedData("genixevo.org",  "devnet-seed.genixevo.org"));
 
-        // Testnet genix addresses start with 'y'
+        // Testnet Genix addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Testnet genix script addresses start with '8' or '9'
+        // Testnet Genix script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet genix BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Genix BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Testnet genix BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Genix BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Testnet genix BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Genix BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
@@ -749,8 +749,8 @@ public:
         consensus.DIP0003EnforcementHeight = 500;
         consensus.DIP0003EnforcementHash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // genix: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // genix: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Genix: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Genix: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nPowKGWHeight = 15200; // same as mainnet
@@ -826,18 +826,18 @@ public:
             0
         };
 
-        // Regtest genix addresses start with 'y'
+        // Regtest Genix addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Regtest genix script addresses start with '8' or '9'
+        // Regtest Genix script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Regtest genix BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Genix BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Regtest genix BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Genix BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Regtest genix BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Genix BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params

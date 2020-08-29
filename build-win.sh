@@ -23,7 +23,9 @@ depends()
     echo "depends not built, building now"
     cd depends/
     make HOST=x86_64-w64-mingw32 -j4 $*
-    cd ..                                                                                                                                                                                                                                    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         if [ -d $PWD"/depends/x86_64-w64-mingw32/" ]
+    cd ..
+}
+if [ -d $PWD"/depends/x86_64-w64-mingw32/" ]
 then
 compileSource
 else

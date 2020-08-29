@@ -88,7 +88,7 @@ stages:
     - echo "Commit log:" && git log --format=fuller -1
 
     # Build genix_hash
-    - git clone https://github.com/genixpay/genix_hash
+    - git clone https://github.com/genix-project/genix_hash
     - cd genix_hash && python3 setup.py install
 
     # Install build target specific packages
