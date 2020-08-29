@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\src",
     "\\src\\consensus",
     "\\src\\qt"
   ],
-  "SelectedNode": "\\build.sh",
+  "SelectedNode": "\\src\\version.h",
   "PreviewInSolutionExplorer": false
 }
