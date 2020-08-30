@@ -249,11 +249,11 @@ public:
         consensus.nMasternodeMinimumConfirmations = 15;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x000005c44e04128d9953a742860dbe3c10fb527a3605462cb6bd3e36dd6a285a");
-        consensus.BIP65Height = 9999999999;
-        consensus.BIP66Height = 9999999999;
+        consensus.BIP65Height = 360000;
+        consensus.BIP66Height = 365000;
         consensus.DIP0001Height = 50000;
-        consensus.DIP0003Height = 9999999999;
-        consensus.DIP0003EnforcementHeight = 9999999999;
+        consensus.DIP0003Height = 360000;
+        consensus.DIP0003EnforcementHeight = 365000;
         consensus.DIP0003EnforcementHash = uint256S("0x00");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 1 * 60; // Genix: 1 hour
@@ -282,22 +282,22 @@ public:
 
         // Deployment of BIP147
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1524477600; // Apr 23th, 2018
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 1556013600; // Apr 23th, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1598524789; // 2020
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 1630060789; // 2021
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 3226; // 80% of 4032
 
         // Deployment of DIP0003
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].bit = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nStartTime = 1546300800; // Jan 1st, 2019
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nTimeout = 1577836800; // Jan 1st, 2020
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nStartTime = 1598524789; // 2020
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nTimeout = 1630060789; // 2021
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nThreshold = 3226; // 80% of 4032
 
         // Deployment of DIP0008
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0008].bit = 4;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0008].nStartTime = 1557878400; // May 15th, 2019
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0008].nTimeout = 1589500800; // May 15th, 2020
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0008].nStartTime = 1598524789; // 2020
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0008].nTimeout = 1630060789; // 2021
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0008].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0008].nThreshold = 3226; // 80% of 4032
 
@@ -325,13 +325,13 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("93113cc5a2df97b20bbe91731578c6722080355be0b4b83b60c6b9ac535d5d15"));
 
         vSeeds.emplace_back("161.43.201.255", true);
-        vSeeds.emplace_back("104.156.239.75", true);
-        vSeeds.emplace_back("173.199.119.100", true);
-        vSeeds.emplace_back("104.238.164.138", true);
-        vSeeds.emplace_back("104.207.142.141", true);
-        vSeeds.emplace_back("45.63.95.253", true);
-        vSeeds.emplace_back("198.12.95.122", true);
+        vSeeds.emplace_back("164.68.76.122", true);
+        vSeeds.emplace_back("192.99.55.111", true);
         vSeeds.emplace_back("45.77.125.15", true);
+        vSeeds.emplace_back("167.99.75.36", true);
+        vSeeds.emplace_back("206.189.34.157", true);
+        vSeeds.emplace_back("178.128.96.216", true);
+        vSeeds.emplace_back("167.71.220.78", true);
 
         // Genix addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
@@ -373,7 +373,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                {58382, uint256S("0x000000000029aec185b7462e1661e726bef920b41f1b728a1879c5d7527aae6d")},
+                {348942, uint256S("0x000000003dd8b5ef4504a6cac5d153452b505028eaa735b35ec11177c096885c")},
             }
         };
 
@@ -381,7 +381,7 @@ public:
             1561717114, // * UNIX timestamp of last known number of transactions (Block 1173619)
             200000,   // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            25         // * estimated number of transactions per second after that timestamp
+            0.2         // * estimated number of transactions per second after that timestamp
         };
     }
 };
@@ -412,9 +412,9 @@ public:
         consensus.BIP34Hash = uint256S("0x000006874678aa53f78b7676ced0f443cd22ae8917199b5ec14d0b7b7df7b93d");
         consensus.BIP65Height = 2431; // 0000039cf01242c7f921dcb4806a5994bc003b48c1973ae0c89b67809c2bb2ab
         consensus.BIP66Height = 2075; // 0000002acdd29a14583540cb72e1c5cc83783560e38fa7081495d474fe1671f7
-        consensus.DIP0001Height = 5500;
-        consensus.DIP0003Height = 7000;
-        consensus.DIP0003EnforcementHeight = 7300;
+        consensus.DIP0001Height = 200;
+        consensus.DIP0003Height = 1200;
+        consensus.DIP0003EnforcementHeight = 1500;
         consensus.DIP0003EnforcementHash = uint256S("00000055ebc0e974ba3a3fb785c5ad4365a39637d4df168169ee80d313612f8f");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 24 * 60 * 60; // Genix: 1 day
