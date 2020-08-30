@@ -3,8 +3,10 @@
     "",
     "\\src",
     "\\src\\consensus",
-    "\\src\\qt"
+    "\\src\\qt",
+    "\\src\\qt\\res",
+    "\\src\\qt\\res\\css"
   ],
-  "SelectedNode": "\\src\\chainparams.cpp",
+  "SelectedNode": "\\src\\qt\\res\\css\\dark.css",
   "PreviewInSolutionExplorer": false
 }
