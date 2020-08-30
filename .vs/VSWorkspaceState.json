@@ -5,6 +5,6 @@
     "\\src\\consensus",
     "\\src\\qt"
   ],
-  "SelectedNode": "\\src\\version.h",
+  "SelectedNode": "\\src\\chainparams.cpp",
   "PreviewInSolutionExplorer": false
 }
