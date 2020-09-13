@@ -249,11 +249,11 @@ public:
         consensus.nMasternodeMinimumConfirmations = 15;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x000005c44e04128d9953a742860dbe3c10fb527a3605462cb6bd3e36dd6a285a");
-        consensus.BIP65Height = 380000;
-        consensus.BIP66Height = 385000;
-        consensus.DIP0001Height = 50000;
-        consensus.DIP0003Height = 395000;
-        consensus.DIP0003EnforcementHeight = 400000;
+        consensus.BIP65Height = 420000;
+        consensus.BIP66Height = 425000;
+        consensus.DIP0001Height = 16128;
+        consensus.DIP0003Height = 435000;
+        consensus.DIP0003EnforcementHeight = 440000;
         consensus.DIP0003EnforcementHash = uint256S("0x00");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 1 * 60; // Genix: 1 hour
@@ -367,8 +367,8 @@ public:
         nPoolMaxParticipants = 5;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        vSporkAddresses = {"GPtvomLwsEwjp7KaFHsU4BLcKLsc9155D3"};
-        nMinSporkKeys = 1;
+        vSporkAddresses = {"GPtvomLwsEwjp7KaFHsU4BLcKLsc9155D3", "GW9NQGHV9MYiWBkjAraiqPjak5fSBSN1nz", "GM6ZeWA16wLVvydhsyRHJSTAcLicJNf5GB"}; // FS350 TKMS SEAN
+        nMinSporkKeys = 2;
         fBIP9CheckMasternodesUpgraded = true;
 
         checkpointData = (CCheckpointData) {
