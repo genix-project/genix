@@ -367,7 +367,7 @@ public:
         nPoolMaxParticipants = 5;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        vSporkAddresses = {"GPtvomLwsEwjp7KaFHsU4BLcKLsc9155D3", "GW9NQGHV9MYiWBkjAraiqPjak5fSBSN1nz", "GM6ZeWA16wLVvydhsyRHJSTAcLicJNf5GB"}; // FS350 TKMS SEAN
+        vSporkAddresses = {"GPtvomLwsEwjp7KaFHsU4BLcKLsc9155D3", "GW9NQGHV9MYiWBkjAraiqPjak5fSBSN1nz"}; // FS350 TKMS
         nMinSporkKeys = 2;
         fBIP9CheckMasternodesUpgraded = true;
 
