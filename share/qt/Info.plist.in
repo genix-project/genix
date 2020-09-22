@@ -43,7 +43,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.genix.genixPayment</string>
+      <string>org.genix.genix-projectment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>genix</string>
@@ -68,7 +68,7 @@
         <string>application/x-genix-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>genixpaymentrequest</string>
+          <string>genix-projectmentrequest</string>
         </array>
       </dict>
     </dict>

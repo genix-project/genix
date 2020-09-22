@@ -3,13 +3,13 @@ genix Core version 0.12.3.4
 
 Release is now available from:
 
-  <https://www.genix.org/downloads/#wallets>
+  <https://www.genix.cx/downloads/#wallets>
 
 This is an optional release and only contains changes for testnet. It is not required to update masternodes on mainnet.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/genixpay/genix/issues>
+  <https://github.com/genix-project/genix/issues>
 
 
 Upgrading and downgrading
@@ -54,7 +54,7 @@ When deployed on testnet, it is required to start with a fresh data directory or
 0.12.3.4 Change log
 ===================
 
-See detailed [set of changes](https://github.com/genixpay/genix/compare/v0.12.3.3...genixpay:v0.12.3.4).
+See detailed [set of changes](https://github.com/genix-project/genix/compare/v0.12.3.3...genix-project:v0.12.3.4).
 
 Python Support
 --------------
@@ -91,17 +91,17 @@ genix Core tree 0.12.1.x was a fork of Bitcoin Core tree 0.12.
 
 These release are considered obsolete. Old release notes can be found here:
 
-- [v0.12.3.3](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.3.md) released Sep/19/2018
-- [v0.12.3.2](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.2.md) released Jul/09/2018
-- [v0.12.3.1](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.1.md) released Jul/03/2018
-- [v0.12.2.3](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.2.3.md) released Jan/12/2018
-- [v0.12.2.2](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.2.2.md) released Dec/17/2017
-- [v0.12.2](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.2.md) released Nov/08/2017
-- [v0.12.1](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.1.md) released Feb/06/2017
-- [v0.12.0](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.0.md) released Aug/15/2015
-- [v0.11.2](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.11.2.md) released Mar/04/2015
-- [v0.11.1](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.11.1.md) released Feb/10/2015
-- [v0.11.0](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.11.0.md) released Jan/15/2015
-- [v0.10.x](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.10.0.md) released Sep/25/2014
-- [v0.9.x](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.9.0.md) released Mar/13/2014
+- [v0.12.3.3](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.3.md) released Sep/19/2018
+- [v0.12.3.2](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.2.md) released Jul/09/2018
+- [v0.12.3.1](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.1.md) released Jul/03/2018
+- [v0.12.2.3](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.2.3.md) released Jan/12/2018
+- [v0.12.2.2](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.2.2.md) released Dec/17/2017
+- [v0.12.2](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.2.md) released Nov/08/2017
+- [v0.12.1](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.1.md) released Feb/06/2017
+- [v0.12.0](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.0.md) released Aug/15/2015
+- [v0.11.2](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.11.2.md) released Mar/04/2015
+- [v0.11.1](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.11.1.md) released Feb/10/2015
+- [v0.11.0](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.11.0.md) released Jan/15/2015
+- [v0.10.x](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.10.0.md) released Sep/25/2014
+- [v0.9.x](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.9.0.md) released Mar/13/2014
 

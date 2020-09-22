@@ -2,7 +2,7 @@
 
 This issue tracker is only for technical issues related to Genix Core.
 
-General genix questions and/or support requests and are best directed to the [genixpay Reddit](https://www.reddit.com/r/genixpay/).
+General genix questions and/or support requests and are best directed to the [genix-project Reddit](https://www.reddit.com/r/genix-project/).
 
 To report critical security issues, email admin@genix.cx and/or see the genix bug bounty program on [Bugcrowd](https://bugcrowd.com/genixdigitalcash) instead of creating Github issues.
 

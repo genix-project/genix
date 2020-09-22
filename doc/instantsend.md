@@ -12,8 +12,8 @@ When a "Transaction Lock" occurs the hash of the related transaction is broadcas
 * `zmqpubhashtxlock`: publishes the transaction hash when locked via InstantSend
 
 This mechanism has been integrated into Bitcore-Node-genix which allows for notification to be broadcast through Insight API in one of two ways:
-* WebSocket: [https://github.com/genixpay/insight-api-genix#web-socket-api](https://github.com/genixpay/insight-api-genix#web-socket-api)
-* API: [https://github.com/genixpay/insight-api-genix#instantsend-transactions](https://github.com/genixpay/insight-api-genix#instantsend-transactions)
+* WebSocket: [https://github.com/genix-project/insight-api-genix#web-socket-api](https://github.com/genix-project/insight-api-genix#web-socket-api)
+* API: [https://github.com/genix-project/insight-api-genix#instantsend-transactions](https://github.com/genix-project/insight-api-genix#instantsend-transactions)
 
 #### Command line option
 

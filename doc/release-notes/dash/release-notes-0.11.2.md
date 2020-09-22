@@ -3,7 +3,7 @@
 
 genix Core version 0.11.2 is now available from:
 
-  https://genixpay.io/downloads
+  https://genix-project.io/downloads
 
 Please report bugs using the issue tracker at github:
 

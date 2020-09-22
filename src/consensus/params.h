@@ -53,7 +53,7 @@ enum LLMQType : uint8_t
 };
 
 // Configures a LLMQ and its DKG
-// See https://github.com/genixpay/dips/blob/master/dip-0006.md for more details
+// See https://github.com/genix-project/dips/blob/master/dip-0006.md for more details
 struct LLMQParams {
     LLMQType type;
 

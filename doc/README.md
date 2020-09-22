@@ -1,7 +1,7 @@
 genix Core
 ==========
 
-This is the official reference wallet for genix digital currency and comprises the backbone of the genix peer-to-peer network. You can [download genix Core](https://www.genix.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for genix digital currency and comprises the backbone of the genix peer-to-peer network. You can [download genix Core](https://www.genix.cx/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
@@ -24,12 +24,12 @@ Drag genix-Qt to your applications folder, and then run genix-Qt.
 
 ### Need Help?
 
-* See the [genix documentation](https://docs.genix.org)
+* See the [genix documentation](https://docs.genix.cx)
 for help and more information.
 * See the [genix Developer Documentation](https://genix-docs.github.io/) 
 for technical specifications and implementation details.
 * Ask for help on [genix Nation Discord](http://genixchat.org)
-* Ask for help on the [genix Forum](https://genix.org/forum)
+* Ask for help on the [genix Forum](https://genix.cx/forum)
 
 Building
 ---------------------
@@ -59,7 +59,7 @@ The genix Core repo's [root README](/README.md) contains relevant information on
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [genix Forum](https://genix.org/forum), in the Development & Technical Discussion board.
+* Discuss on the [genix Forum](https://genix.cx/forum), in the Development & Technical Discussion board.
 * Discuss on [genix Nation Discord](http://genixchat.org)
 
 ### Miscellaneous

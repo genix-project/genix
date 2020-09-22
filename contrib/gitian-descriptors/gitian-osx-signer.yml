@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/genixpay/genix-detached-sigs.git"
+- "url": "https://github.com/genix-project/genix-detached-sigs.git"
   "dir": "signature"
 files:
 - "genixcore-osx-unsigned.tar.gz"

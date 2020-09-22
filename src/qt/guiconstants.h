@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2020 The genix Core developers
+// Copyright (c) 2014-2021 The genix Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -32,7 +32,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "genix"
-#define QAPP_ORG_DOMAIN "genix.org"
+#define QAPP_ORG_DOMAIN "genix.cx"
 #define QAPP_APP_NAME_DEFAULT "genix-Qt"
 #define QAPP_APP_NAME_TESTNET "genix-Qt-testnet"
 #define QAPP_APP_NAME_DEVNET "genix-Qt-%s"

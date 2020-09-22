@@ -3,13 +3,13 @@ genix Core version 0.13.3.0
 
 Release is now available from:
 
-  <https://www.genix.org/downloads/#wallets>
+  <https://www.genix.cx/downloads/#wallets>
 
 This is a new minor version release, bringing various bugfixes and other improvements.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/genixpay/genix/issues>
+  <https://github.com/genix-project/genix/issues>
 
 
 Upgrading and downgrading
@@ -70,21 +70,21 @@ There are few bug fixes in this release:
  0.13.3.0 Change log
 ===================
 
-See detailed [set of changes](https://github.com/genixpay/genix/compare/v0.13.2.0...genixpay:v0.13.3.0).
+See detailed [set of changes](https://github.com/genix-project/genix/compare/v0.13.2.0...genix-project:v0.13.3.0).
 
 ### Backports
 
-- [`575cafc01`](https://github.com/genixpay/genix/commit/575cafc01) Do not skip pushing of vMatch and vHashes in CMerkleBlock (#2826)
-- [`8c58799d8`](https://github.com/genixpay/genix/commit/8c58799d8) There can be no two votes which differ by the outcome only (#2819)
-- [`66c2f3953`](https://github.com/genixpay/genix/commit/66c2f3953) Fix vote ratecheck (#2813)
-- [`b52d0ad19`](https://github.com/genixpay/genix/commit/b52d0ad19) Fix revoke reason check for ProUpRevTx (#2787)
-- [`35914e084`](https://github.com/genixpay/genix/commit/35914e084) Skip mempool.dat when wallet is starting in "zap" mode (#2782)
-- [`46d875100`](https://github.com/genixpay/genix/commit/46d875100) Disable in-wallet miner for win/macos Travis/Gitian builds (#2778)
+- [`575cafc01`](https://github.com/genix-project/genix/commit/575cafc01) Do not skip pushing of vMatch and vHashes in CMerkleBlock (#2826)
+- [`8c58799d8`](https://github.com/genix-project/genix/commit/8c58799d8) There can be no two votes which differ by the outcome only (#2819)
+- [`66c2f3953`](https://github.com/genix-project/genix/commit/66c2f3953) Fix vote ratecheck (#2813)
+- [`b52d0ad19`](https://github.com/genix-project/genix/commit/b52d0ad19) Fix revoke reason check for ProUpRevTx (#2787)
+- [`35914e084`](https://github.com/genix-project/genix/commit/35914e084) Skip mempool.dat when wallet is starting in "zap" mode (#2782)
+- [`46d875100`](https://github.com/genix-project/genix/commit/46d875100) Disable in-wallet miner for win/macos Travis/Gitian builds (#2778)
 
 ### Other
 
-- [`25038ff36`](https://github.com/genixpay/genix/commit/25038ff36) Bump version to 0.13.3.0
-- [`53b2162e2`](https://github.com/genixpay/genix/commit/53b2162e2) Harden spork15 value to 1047200 when on mainnet (#2830)
+- [`25038ff36`](https://github.com/genix-project/genix/commit/25038ff36) Bump version to 0.13.3.0
+- [`53b2162e2`](https://github.com/genix-project/genix/commit/53b2162e2) Harden spork15 value to 1047200 when on mainnet (#2830)
 
 Credits
 =======
@@ -120,21 +120,21 @@ genix Core tree 0.12.1.x was a fork of Bitcoin Core tree 0.12.
 
 These release are considered obsolete. Old release notes can be found here:
 
-- [v0.13.2](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.13.2.md) released Mar/15/2019
-- [v0.13.1](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.13.1.md) released Feb/9/2019
-- [v0.13.0](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.13.0.md) released Jan/14/2019
-- [v0.12.3.4](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.4.md) released Dec/14/2018
-- [v0.12.3.3](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.3.md) released Sep/19/2018
-- [v0.12.3.2](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.2.md) released Jul/09/2018
-- [v0.12.3.1](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.1.md) released Jul/03/2018
-- [v0.12.2.3](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.2.3.md) released Jan/12/2018
-- [v0.12.2.2](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.2.2.md) released Dec/17/2017
-- [v0.12.2](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.2.md) released Nov/08/2017
-- [v0.12.1](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.1.md) released Feb/06/2017
-- [v0.12.0](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.12.0.md) released Aug/15/2015
-- [v0.11.2](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.11.2.md) released Mar/04/2015
-- [v0.11.1](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.11.1.md) released Feb/10/2015
-- [v0.11.0](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.11.0.md) released Jan/15/2015
-- [v0.10.x](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.10.0.md) released Sep/25/2014
-- [v0.9.x](https://github.com/genixpay/genix/blob/master/doc/release-notes/genix/release-notes-0.9.0.md) released Mar/13/2014
+- [v0.13.2](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.13.2.md) released Mar/15/2019
+- [v0.13.1](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.13.1.md) released Feb/9/2019
+- [v0.13.0](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.13.0.md) released Jan/14/2019
+- [v0.12.3.4](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.4.md) released Dec/14/2018
+- [v0.12.3.3](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.3.md) released Sep/19/2018
+- [v0.12.3.2](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.2.md) released Jul/09/2018
+- [v0.12.3.1](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.3.1.md) released Jul/03/2018
+- [v0.12.2.3](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.2.3.md) released Jan/12/2018
+- [v0.12.2.2](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.2.2.md) released Dec/17/2017
+- [v0.12.2](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.2.md) released Nov/08/2017
+- [v0.12.1](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.1.md) released Feb/06/2017
+- [v0.12.0](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.12.0.md) released Aug/15/2015
+- [v0.11.2](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.11.2.md) released Mar/04/2015
+- [v0.11.1](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.11.1.md) released Feb/10/2015
+- [v0.11.0](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.11.0.md) released Jan/15/2015
+- [v0.10.x](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.10.0.md) released Sep/25/2014
+- [v0.9.x](https://github.com/genix-project/genix/blob/master/doc/release-notes/genix/release-notes-0.9.0.md) released Mar/13/2014
 

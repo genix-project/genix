@@ -4,7 +4,7 @@ run using Python 3 but are compatible with Python 2.
 
 ## Step 0: Install genix_hash
 
-https://github.com/genixpay/genix_hash
+https://github.com/genix-project/genix_hash
 
 ## Step 1: Download hash list
 

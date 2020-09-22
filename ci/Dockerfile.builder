@@ -17,7 +17,7 @@ RUN pip3 install pyzmq # really needed?
 RUN pip3 install jinja2
 
 # genix_hash
-RUN git clone https://github.com/genixpay/genix_hash
+RUN git clone https://github.com/genix-project/genix_hash
 RUN cd genix_hash && python3 setup.py install
 
 ARG USER_ID=1000

@@ -31,7 +31,7 @@ packages:
 - "fonts-tuffy"
 - "ccache"
 remotes:
-- "url": "https://github.com/genixpay/genix.git"
+- "url": "https://github.com/genix-project/genix.git"
   "dir": "genix"
 files:
 - "MacOSX10.11.sdk.tar.gz"

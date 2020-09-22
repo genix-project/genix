@@ -32,7 +32,7 @@ packages:
 - "libxkbcommon0"
 - "ccache"
 remotes:
-- "url": "https://github.com/genixpay/genix.git"
+- "url": "https://github.com/genix-project/genix.git"
   "dir": "genix"
 files: []
 script: |
