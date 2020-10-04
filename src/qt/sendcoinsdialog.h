@@ -2,18 +2,19 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_QT_SENDCOINSDIALOG_H
-#define GENIX_QT_SENDCOINSDIALOG_H
+#ifndef BITCOIN_QT_SENDCOINSDIALOG_H
+#define BITCOIN_QT_SENDCOINSDIALOG_H
 
 #include "walletmodel.h"
 
 #include <QDialog>
+#include <QMessageBox>
 #include <QString>
+#include <QTimer>
 
 static const int MAX_SEND_POPUP_ENTRIES = 10;
 
 class ClientModel;
-class OptionsModel;
 class PlatformStyle;
 class SendCoinsEntry;
 class SendCoinsRecipient;
@@ -26,15 +27,13 @@ QT_BEGIN_NAMESPACE
 class QUrl;
 QT_END_NAMESPACE
 
-const int defaultConfirmTarget = 25;
-
-/** Dialog for sending genixs */
+/** Dialog for sending bitcoins */
 class SendCoinsDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *parent = 0, QWidget *walletview = 0);
+    explicit SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *parent = 0);
     ~SendCoinsDialog();
 
     void setClientModel(ClientModel *clientModel);
@@ -62,7 +61,7 @@ private:
     ClientModel *clientModel;
     WalletModel *model;
     bool fNewRecipientAllowed;
-    void send(QList<SendCoinsRecipient> recipients, QString strFee, QString strFunds);
+    void send(QList<SendCoinsRecipient> recipients);
     bool fFeeMinimized;
     const PlatformStyle *platformStyle;
 
@@ -72,6 +71,8 @@ private:
     void processSendCoinsReturn(const WalletModel::SendCoinsReturn &sendCoinsReturn, const QString &msgArg = QString());
     void minimizeFeeSection(bool fMinimize);
     void updateFeeMinimizedLabel();
+    // Update the passed in CCoinControl with state from the GUI
+    void updateCoinControlState(CCoinControl& ctrl);
 
 private Q_SLOTS:
     void on_sendButton_clicked();
@@ -79,7 +80,6 @@ private Q_SLOTS:
     void on_buttonMinimizeFee_clicked();
     void removeEntry(SendCoinsEntry* entry);
     void updateDisplayUnit();
-    void updateInstantSend();
     void coinControlFeatureChanged(bool);
     void coinControlButtonClicked();
     void coinControlChangeChecked(int);
@@ -96,11 +96,30 @@ private Q_SLOTS:
     void updateFeeSectionControls();
     void updateMinFeeLabel();
     void updateSmartFeeLabel();
-    void updateGlobalFeeVariables();
 
 Q_SIGNALS:
     // Fired when a message should be reported to the user
     void message(const QString &title, const QString &message, unsigned int style);
 };
 
-#endif // GENIX_QT_SENDCOINSDIALOG_H
+
+
+class SendConfirmationDialog : public QMessageBox
+{
+    Q_OBJECT
+
+public:
+    SendConfirmationDialog(const QString &title, const QString &text, int secDelay = 0, QWidget *parent = 0);
+    int exec();
+
+private Q_SLOTS:
+    void countDown();
+    void updateYesButton();
+
+private:
+    QAbstractButton *yesButton;
+    QTimer countDownTimer;
+    int secDelay;
+};
+
+#endif // BITCOIN_QT_SENDCOINSDIALOG_H

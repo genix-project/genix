@@ -6,12 +6,16 @@
 #include "primitives/block.h"
 
 #include "hash.h"
+#include "streams.h"
 #include "tinyformat.h"
 #include "utilstrencodings.h"
 #include "crypto/common.h"
 
 uint256 CBlockHeader::GetHash() const
 {
+    std::vector<unsigned char> vch(80);
+    CVectorWriter ss(SER_NETWORK, PROTOCOL_VERSION, vch, 0);
+    ss << *this;
     return HashX16R(BEGIN(nVersion), END(nNonce), hashPrevBlock);
 }
 
@@ -25,9 +29,8 @@ std::string CBlock::ToString() const
         hashMerkleRoot.ToString(),
         nTime, nBits, nNonce,
         vtx.size());
-    for (unsigned int i = 0; i < vtx.size(); i++)
-    {
-        s << "  " << vtx[i].ToString() << "\n";
+    for (const auto& tx : vtx) {
+        s << "  " << tx->ToString() << "\n";
     }
     return s.str();
 }

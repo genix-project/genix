@@ -1,10 +1,10 @@
 // Copyright (c) 2014 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Dash Core developers
+// Copyright (c) 2014-2019 The genix Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_QT_NETWORKSTYLE_H
-#define GENIX_QT_NETWORKSTYLE_H
+#ifndef BITCOIN_QT_NETWORKSTYLE_H
+#define BITCOIN_QT_NETWORKSTYLE_H
 
 #include <QIcon>
 #include <QPixmap>
@@ -35,4 +35,4 @@ private:
     void rotateColors(QImage& img, const int iconColorHueShift, const int iconColorSaturationReduction);
 };
 
-#endif // GENIX_QT_NETWORKSTYLE_H
+#endif // BITCOIN_QT_NETWORKSTYLE_H

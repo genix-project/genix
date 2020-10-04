@@ -1,17 +1,17 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Dash Core developers
+// Copyright (c) 2014-2021 The genix Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "paymentserver.h"
 
-#include "genixunits.h"
+#include "bitcoinunits.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
 
 #include "base58.h"
 #include "chainparams.h"
-#include "validation.h" // For minRelayTxFee
+#include "policy/policy.h"
 #include "ui_interface.h"
 #include "util.h"
 #include "wallet/wallet.h"
@@ -47,8 +47,8 @@
 #include <QUrlQuery>
 #endif
 
-const int GENIX_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString GENIX_IPC_PREFIX("genix:");
+const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
+const QString BITCOIN_IPC_PREFIX("genix:");
 // BIP70 payment protocol messages
 const char* BIP70_MESSAGE_PAYMENTACK = "PaymentACK";
 const char* BIP70_MESSAGE_PAYMENTREQUEST = "PaymentRequest";
@@ -56,8 +56,6 @@ const char* BIP70_MESSAGE_PAYMENTREQUEST = "PaymentRequest";
 const char* BIP71_MIMETYPE_PAYMENT = "application/genix-payment";
 const char* BIP71_MIMETYPE_PAYMENTACK = "application/genix-paymentack";
 const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/genix-paymentrequest";
-// BIP70 max payment request size in bytes (DoS protection)
-const qint64 BIP70_MAX_PAYMENTREQUEST_SIZE = 50000;
 
 struct X509StoreDeleter {
       void operator()(X509_STORE* b) {
@@ -81,12 +79,12 @@ namespace // Anon namespace
 //
 static QString ipcServerName()
 {
-    QString name("GENIXQt");
+    QString name("genixQt");
 
     // Append a simple hash of the datadir
     // Note that GetDataDir(true) returns a different path
     // for -testnet versus main net
-    QString ddir(QString::fromStdString(GetDataDir(true).string()));
+    QString ddir(GUIUtil::boostPathToQString(GetDataDir(true)));
     name.append(QString::number(qHash(ddir)));
 
     return name;
@@ -125,7 +123,7 @@ void PaymentServer::LoadRootCAs(X509_STORE* _store)
 
     // Note: use "-system-" default here so that users can pass -rootcertificates=""
     // and get 'I don't like X.509 certificates, don't trust anybody' behavior:
-    QString certFile = QString::fromStdString(GetArg("-rootcertificates", "-system-"));
+    QString certFile = QString::fromStdString(gArgs.GetArg("-rootcertificates", "-system-"));
 
     // Empty store
     if (certFile.isEmpty()) {
@@ -147,7 +145,7 @@ void PaymentServer::LoadRootCAs(X509_STORE* _store)
     int nRootCerts = 0;
     const QDateTime currentTime = QDateTime::currentDateTime();
 
-    Q_FOREACH (const QSslCertificate& cert, certList) {
+    for (const QSslCertificate& cert : certList) {
         // Don't log NULL certificates
         if (cert.isNull())
             continue;
@@ -214,22 +212,24 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
         // network as that would require fetching and parsing the payment request.
         // That means clicking such an URI which contains a testnet payment request
         // will start a mainnet instance and throw a "wrong network" error.
-        if (arg.startsWith(GENIX_IPC_PREFIX, Qt::CaseInsensitive)) // genix: URI
+        if (arg.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // genix: URI
         {
             savedPaymentRequests.append(arg);
 
             SendCoinsRecipient r;
-            if (GUIUtil::parseGENIXURI(arg, &r) && !r.address.isEmpty())
+            if (GUIUtil::parseBitcoinURI(arg, &r) && !r.address.isEmpty())
             {
-                CGENIXAddress address(r.address.toStdString());
+                CBitcoinAddress address(r.address.toStdString());
+                auto tempChainParams = CreateChainParams(CBaseChainParams::MAIN);
 
-                if (address.IsValid(Params(CBaseChainParams::MAIN)))
+                if (address.IsValid(*tempChainParams))
                 {
                     SelectParams(CBaseChainParams::MAIN);
                 }
-                else if (address.IsValid(Params(CBaseChainParams::TESTNET)))
-                {
-                    SelectParams(CBaseChainParams::TESTNET);
+                else {
+                    tempChainParams = CreateChainParams(CBaseChainParams::TESTNET);
+                    if (address.IsValid(*tempChainParams))
+                        SelectParams(CBaseChainParams::TESTNET);
                 }
             }
         }
@@ -268,14 +268,14 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
 bool PaymentServer::ipcSendCommandLine()
 {
     bool fResult = false;
-    Q_FOREACH (const QString& r, savedPaymentRequests)
+    for (const QString& r : savedPaymentRequests)
     {
         QLocalSocket* socket = new QLocalSocket();
         socket->connectToServer(ipcServerName(), QIODevice::WriteOnly);
-        if (!socket->waitForConnected(GENIX_IPC_CONNECT_TIMEOUT))
+        if (!socket->waitForConnected(BITCOIN_IPC_CONNECT_TIMEOUT))
         {
             delete socket;
-            socket = NULL;
+            socket = nullptr;
             return false;
         }
 
@@ -287,11 +287,11 @@ bool PaymentServer::ipcSendCommandLine()
 
         socket->write(block);
         socket->flush();
-        socket->waitForBytesWritten(GENIX_IPC_CONNECT_TIMEOUT);
+        socket->waitForBytesWritten(BITCOIN_IPC_CONNECT_TIMEOUT);
         socket->disconnectFromServer();
 
         delete socket;
-        socket = NULL;
+        socket = nullptr;
         fResult = true;
     }
 
@@ -365,7 +365,7 @@ void PaymentServer::initNetManager()
 {
     if (!optionsModel)
         return;
-    if (netManager != NULL)
+    if (netManager != nullptr)
         delete netManager;
 
     // netManager is used to fetch paymentrequests given in genix: URIs
@@ -393,7 +393,7 @@ void PaymentServer::uiReady()
     initNetManager();
 
     saveURIs = false;
-    Q_FOREACH (const QString& s, savedPaymentRequests)
+    for (const QString& s : savedPaymentRequests)
     {
         handleURIOrFile(s);
     }
@@ -408,7 +408,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith(GENIX_IPC_PREFIX, Qt::CaseInsensitive)) // genix: URI
+    if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // genix: URI
     {
 #if QT_VERSION < 0x050000
         QUrl uri(s);
@@ -440,9 +440,9 @@ void PaymentServer::handleURIOrFile(const QString& s)
         else // normal URI
         {
             SendCoinsRecipient recipient;
-            if (GUIUtil::parseGENIXURI(s, &recipient))
+            if (GUIUtil::parseBitcoinURI(s, &recipient))
             {
-                CGENIXAddress address(recipient.address.toStdString());
+                CBitcoinAddress address(recipient.address.toStdString());
                 if (!address.IsValid()) {
                     Q_EMIT message(tr("URI handling"), tr("Invalid payment address %1").arg(recipient.address),
                         CClientUIInterface::MSG_ERROR);
@@ -452,7 +452,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
             }
             else
                 Q_EMIT message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid GENIX address or malformed URI parameters."),
+                    tr("URI cannot be parsed! This can be caused by an invalid genix address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;
@@ -556,12 +556,12 @@ bool PaymentServer::processPaymentRequest(const PaymentRequestPlus& request, Sen
     QList<std::pair<CScript, CAmount> > sendingTos = request.getPayTo();
     QStringList addresses;
 
-    Q_FOREACH(const PAIRTYPE(CScript, CAmount)& sendingTo, sendingTos) {
+    for (const std::pair<CScript, CAmount>& sendingTo : sendingTos) {
         // Extract and check destination addresses
         CTxDestination dest;
         if (ExtractDestination(sendingTo.first, dest)) {
             // Append destination address
-            addresses.append(QString::fromStdString(CGENIXAddress(dest).ToString()));
+            addresses.append(QString::fromStdString(CBitcoinAddress(dest).ToString()));
         }
         else if (!recipient.authenticatedMerchant.isEmpty()) {
             // Unauthenticated payment requests to custom genix addresses are not supported
@@ -573,7 +573,7 @@ bool PaymentServer::processPaymentRequest(const PaymentRequestPlus& request, Sen
             return false;
         }
 
-        // GENIX amounts are stored as (optional) uint64 in the protobuf messages (see paymentrequest.proto),
+        // genix amounts are stored as (optional) uint64 in the protobuf messages (see paymentrequest.proto),
         // but CAmount is defined as int64_t. Because of that we need to verify that amounts are in a valid range
         // and no overflow has happened.
         if (!verifyAmount(sendingTo.second)) {
@@ -583,9 +583,9 @@ bool PaymentServer::processPaymentRequest(const PaymentRequestPlus& request, Sen
 
         // Extract and check amounts
         CTxOut txOut(sendingTo.second, sendingTo.first);
-        if (txOut.IsDust(::minRelayTxFee)) {
+        if (IsDust(txOut, ::dustRelayFee)) {
             Q_EMIT message(tr("Payment request error"), tr("Requested payment amount of %1 is too small (considered dust).")
-                .arg(GENIXUnits::formatWithUnit(optionsModel->getDisplayUnit(), sendingTo.second)),
+                .arg(BitcoinUnits::formatWithUnit(optionsModel->getDisplayUnit(), sendingTo.second)),
                 CClientUIInterface::MSG_ERROR);
 
             return false;
@@ -743,16 +743,16 @@ void PaymentServer::reportSslErrors(QNetworkReply* reply, const QList<QSslError>
     Q_UNUSED(reply);
 
     QString errString;
-    Q_FOREACH (const QSslError& err, errs) {
+    for (const QSslError& err : errs) {
         qWarning() << "PaymentServer::reportSslErrors: " << err;
         errString += err.errorString() + "\n";
     }
     Q_EMIT message(tr("Network request error"), errString, CClientUIInterface::MSG_ERROR);
 }
 
-void PaymentServer::setOptionsModel(OptionsModel *optionsModel)
+void PaymentServer::setOptionsModel(OptionsModel *_optionsModel)
 {
-    this->optionsModel = optionsModel;
+    this->optionsModel = _optionsModel;
 }
 
 void PaymentServer::handlePaymentACK(const QString& paymentACKMsg)

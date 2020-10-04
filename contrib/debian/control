@@ -1,8 +1,8 @@
 Source: genix
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@genix.org>
-Uploaders: Holger Schinzel <holger@genix.org>
+Maintainer: Holger Schinzel <holger@genix.cx>
+Uploaders: Holger Schinzel <holger@genix.cx>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -12,30 +12,32 @@ Build-Depends: debhelper,
  libssl-dev,
  pkg-config,
  libevent-dev,
- libboost-system1.48-dev | libboost-system-dev (>> 1.35),
- libboost-filesystem1.48-dev | libboost-filesystem-dev (>> 1.35),
- libboost-program-options1.48-dev | libboost-program-options-dev (>> 1.35),
- libboost-thread1.48-dev | libboost-thread-dev (>> 1.35),
- libboost-test1.48-dev | libboost-test-dev (>> 1.35),
- libboost-chrono1.48-dev | libboost-chrono-dev (>> 1.35),
- qt4-qmake,
- libqt4-dev,
+ libboost-system1.48-dev | libboost-system-dev (>> 1.47),
+ libboost-filesystem1.48-dev | libboost-filesystem-dev (>> 1.47),
+ libboost-program-options1.48-dev | libboost-program-options-dev (>> 1.47),
+ libboost-thread1.48-dev | libboost-thread-dev (>> 1.47),
+ libboost-test1.48-dev | libboost-test-dev (>> 1.47),
+ libboost-chrono1.48-dev | libboost-chrono-dev (>> 1.47),
+ libminiupnpc8-dev | libminiupnpc-dev,
+ qt4-qmake, libqt4-dev,
+ qttools5-dev-tools, qttools5-dev,
  libqrencode-dev,
  libprotobuf-dev, protobuf-compiler,
- python
+ python,
+ libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: https://www.genix.org/
-Vcs-Git: git://github.com/genixcrypto/genix.git
-Vcs-Browser: https://github.com/genixcrypto/genix
+Homepage: https://www.genix.cx/
+Vcs-Git: git://github.com/genix-project/genix.git
+Vcs-Browser: https://github.com/genix-project/genix
 
 Package: genixd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- GENIX is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. GENIX uses peer-to-peer
+ genix is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. genix uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. GENIX Core
+ and issuing money are carried out collectively by the network. genix Core
  is the name of the open source software which enables the use of this currency.
  .
  This package provides the daemon, genixd, and the CLI tool
@@ -45,22 +47,22 @@ Package: genix-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- GENIX is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. GENIX uses peer-to-peer
+ genix is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. genix uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. GENIX Core
+ and issuing money are carried out collectively by the network. genix Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides GENIX-Qt, a GUI for GENIX based on Qt.
+ This package provides genix-Qt, a GUI for genix based on Qt.
 
 Package: genix-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- GENIX is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. GENIX uses peer-to-peer
+ genix is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. genix uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. GENIX Core
+ and issuing money are carried out collectively by the network. genix Core
  is the name of the open source software which enables the use of this currency.
  .
  This package provides genix-tx, a command-line transaction creation

@@ -2,17 +2,16 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_WALLET_CRYPTER_H
-#define GENIX_WALLET_CRYPTER_H
+#ifndef BITCOIN_WALLET_CRYPTER_H
+#define BITCOIN_WALLET_CRYPTER_H
 
 #include "keystore.h"
 #include "serialize.h"
 #include "support/allocators/secure.h"
 
-class uint256;
-
 const unsigned int WALLET_CRYPTO_KEY_SIZE = 32;
 const unsigned int WALLET_CRYPTO_SALT_SIZE = 8;
+const unsigned int WALLET_CRYPTO_IV_SIZE = 16;
 
 /**
  * Private key encryption is done based on a CMasterKey,
@@ -46,7 +45,7 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    inline void SerializationOp(Stream& s, Operation ser_action) {
         READWRITE(vchCryptedKey);
         READWRITE(vchSalt);
         READWRITE(nDerivationMethod);
@@ -66,44 +65,45 @@ public:
 
 typedef std::vector<unsigned char, secure_allocator<unsigned char> > CKeyingMaterial;
 
+namespace wallet_crypto
+{
+    class TestCrypter;
+}
+
 /** Encryption/decryption context with key information */
 class CCrypter
 {
+friend class wallet_crypto::TestCrypter; // for test access to chKey/chIV
 private:
-    unsigned char chKey[WALLET_CRYPTO_KEY_SIZE];
-    unsigned char chIV[WALLET_CRYPTO_KEY_SIZE];
+    std::vector<unsigned char, secure_allocator<unsigned char>> vchKey;
+    std::vector<unsigned char, secure_allocator<unsigned char>> vchIV;
     bool fKeySet;
+
+    int BytesToKeySHA512AES(const std::vector<unsigned char>& chSalt, const SecureString& strKeyData, int count, unsigned char *key,unsigned char *iv) const;
 
 public:
     bool SetKeyFromPassphrase(const SecureString &strKeyData, const std::vector<unsigned char>& chSalt, const unsigned int nRounds, const unsigned int nDerivationMethod);
-    bool Encrypt(const CKeyingMaterial& vchPlaintext, std::vector<unsigned char> &vchCiphertext);
-    bool Decrypt(const std::vector<unsigned char>& vchCiphertext, CKeyingMaterial& vchPlaintext);
+    bool Encrypt(const CKeyingMaterial& vchPlaintext, std::vector<unsigned char> &vchCiphertext) const;
+    bool Decrypt(const std::vector<unsigned char>& vchCiphertext, CKeyingMaterial& vchPlaintext) const;
     bool SetKey(const CKeyingMaterial& chNewKey, const std::vector<unsigned char>& chNewIV);
 
     void CleanKey()
     {
-        memory_cleanse(chKey, sizeof(chKey));
-        memory_cleanse(chIV, sizeof(chIV));
+        memory_cleanse(vchKey.data(), vchKey.size());
+        memory_cleanse(vchIV.data(), vchIV.size());
         fKeySet = false;
     }
 
     CCrypter()
     {
         fKeySet = false;
-
-        // Try to keep the key data out of swap (and be a bit over-careful to keep the IV that we don't even use out of swap)
-        // Note that this does nothing about suspend-to-disk (which will put all our key data on disk)
-        // Note as well that at no point in this program is any attempt made to prevent stealing of keys by reading the memory of the running process.
-        LockedPageManager::Instance().LockRange(&chKey[0], sizeof chKey);
-        LockedPageManager::Instance().LockRange(&chIV[0], sizeof chIV);
+        vchKey.resize(WALLET_CRYPTO_KEY_SIZE);
+        vchIV.resize(WALLET_CRYPTO_IV_SIZE);
     }
 
     ~CCrypter()
     {
         CleanKey();
-
-        LockedPageManager::Instance().UnlockRange(&chKey[0], sizeof chKey);
-        LockedPageManager::Instance().UnlockRange(&chIV[0], sizeof chIV);
     }
 };
 
@@ -187,8 +187,8 @@ public:
     bool Lock(bool fAllowMixing = false);
 
     virtual bool AddCryptedKey(const CPubKey &vchPubKey, const std::vector<unsigned char> &vchCryptedSecret);
-    bool AddKeyPubKey(const CKey& key, const CPubKey &pubkey);
-    bool HaveKey(const CKeyID &address) const
+    bool AddKeyPubKey(const CKey& key, const CPubKey &pubkey) override;
+    bool HaveKey(const CKeyID &address) const override
     {
         {
             LOCK(cs_KeyStore);
@@ -198,9 +198,9 @@ public:
         }
         return false;
     }
-    bool GetKey(const CKeyID &address, CKey& keyOut) const;
-    bool GetPubKey(const CKeyID &address, CPubKey& vchPubKeyOut) const;
-    void GetKeys(std::set<CKeyID> &setAddress) const
+    bool GetKey(const CKeyID &address, CKey& keyOut) const override;
+    bool GetPubKey(const CKeyID &address, CPubKey& vchPubKeyOut) const override;
+    void GetKeys(std::set<CKeyID> &setAddress) const override
     {
         if (!IsCrypted())
         {
@@ -216,7 +216,7 @@ public:
         }
     }
 
-    bool GetHDChain(CHDChain& hdChainRet) const;
+    virtual bool GetHDChain(CHDChain& hdChainRet) const override;
 
     /**
      * Wallet status (encrypted, locked) changed.
@@ -225,4 +225,4 @@ public:
     boost::signals2::signal<void (CCryptoKeyStore* wallet)> NotifyStatusChanged;
 };
 
-#endif // GENIX_WALLET_CRYPTER_H
+#endif // BITCOIN_WALLET_CRYPTER_H

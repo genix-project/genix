@@ -11,8 +11,8 @@
  * - E-mail usually won't line-break if there's no punctuation to break at.
  * - Double-clicking selects the whole string as one word if it's all alphanumeric.
  */
-#ifndef GENIX_BASE58_H
-#define GENIX_BASE58_H
+#ifndef BITCOIN_BASE58_H
+#define BITCOIN_BASE58_H
 
 #include "chainparams.h"
 #include "key.h"
@@ -26,7 +26,7 @@
 
 /**
  * Encode a byte sequence as a base58-encoded string.
- * pbegin and pend cannot be NULL, unless both are.
+ * pbegin and pend cannot be nullptr, unless both are.
  */
 std::string EncodeBase58(const unsigned char* pbegin, const unsigned char* pend);
 
@@ -38,7 +38,7 @@ std::string EncodeBase58(const std::vector<unsigned char>& vch);
 /**
  * Decode a base58-encoded string (psz) into a byte vector (vchRet).
  * return true if decoding is successful.
- * psz cannot be NULL.
+ * psz cannot be nullptr.
  */
 bool DecodeBase58(const char* psz, std::vector<unsigned char>& vchRet);
 
@@ -95,13 +95,13 @@ public:
     bool operator> (const CBase58Data& b58) const { return CompareTo(b58) >  0; }
 };
 
-/** base58-encoded GENIX addresses.
+/** base58-encoded genix addresses.
  * Public-key-hash-addresses have version 76 (or 140 testnet).
  * The data vector contains RIPEMD160(SHA256(pubkey)), where pubkey is the serialized public key.
  * Script-hash-addresses have version 16 (or 19 testnet).
  * The data vector contains RIPEMD160(SHA256(cscript)), where cscript is the serialized redemption script.
  */
-class CGENIXAddress : public CBase58Data {
+class CBitcoinAddress : public CBase58Data {
 public:
     bool Set(const CKeyID &id);
     bool Set(const CScriptID &id);
@@ -109,10 +109,10 @@ public:
     bool IsValid() const;
     bool IsValid(const CChainParams &params) const;
 
-    CGENIXAddress() {}
-    CGENIXAddress(const CTxDestination &dest) { Set(dest); }
-    CGENIXAddress(const std::string& strAddress) { SetString(strAddress); }
-    CGENIXAddress(const char* pszAddress) { SetString(pszAddress); }
+    CBitcoinAddress() {}
+    CBitcoinAddress(const CTxDestination &dest) { Set(dest); }
+    CBitcoinAddress(const std::string& strAddress) { SetString(strAddress); }
+    CBitcoinAddress(const char* pszAddress) { SetString(pszAddress); }
 
     CTxDestination Get() const;
     bool GetKeyID(CKeyID &keyID) const;
@@ -123,7 +123,7 @@ public:
 /**
  * A base58-encoded secret key
  */
-class CGENIXSecret : public CBase58Data
+class CBitcoinSecret : public CBase58Data
 {
 public:
     void SetKey(const CKey& vchSecret);
@@ -132,11 +132,11 @@ public:
     bool SetString(const char* pszSecret);
     bool SetString(const std::string& strSecret);
 
-    CGENIXSecret(const CKey& vchSecret) { SetKey(vchSecret); }
-    CGENIXSecret() {}
+    CBitcoinSecret(const CKey& vchSecret) { SetKey(vchSecret); }
+    CBitcoinSecret() {}
 };
 
-template<typename K, int Size, CChainParams::Base58Type Type> class CGENIXExtKeyBase : public CBase58Data
+template<typename K, int Size, CChainParams::Base58Type Type> class CBitcoinExtKeyBase : public CBase58Data
 {
 public:
     void SetKey(const K &key) {
@@ -148,24 +148,24 @@ public:
     K GetKey() {
         K ret;
         if (vchData.size() == Size) {
-            //if base58 encouded data not holds a ext key, return a !IsValid() key
-            ret.Decode(&vchData[0]);
+            // If base58 encoded data does not hold an ext key, return a !IsValid() key
+            ret.Decode(vchData.data());
         }
         return ret;
     }
 
-    CGENIXExtKeyBase(const K &key) {
+    CBitcoinExtKeyBase(const K &key) {
         SetKey(key);
     }
 
-    CGENIXExtKeyBase(const std::string& strBase58c) {
+    CBitcoinExtKeyBase(const std::string& strBase58c) {
         SetString(strBase58c.c_str(), Params().Base58Prefix(Type).size());
     }
 
-    CGENIXExtKeyBase() {}
+    CBitcoinExtKeyBase() {}
 };
 
-typedef CGENIXExtKeyBase<CExtKey, 74, CChainParams::EXT_SECRET_KEY> CGENIXExtKey;
-typedef CGENIXExtKeyBase<CExtPubKey, 74, CChainParams::EXT_PUBLIC_KEY> CGENIXExtPubKey;
+typedef CBitcoinExtKeyBase<CExtKey, BIP32_EXTKEY_SIZE, CChainParams::EXT_SECRET_KEY> CBitcoinExtKey;
+typedef CBitcoinExtKeyBase<CExtPubKey, BIP32_EXTKEY_SIZE, CChainParams::EXT_PUBLIC_KEY> CBitcoinExtPubKey;
 
-#endif // GENIX_BASE58_H
+#endif // BITCOIN_BASE58_H

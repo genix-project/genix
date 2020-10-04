@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  genixd The GENIX Core server.
+#  genixd The genix Core server.
 #
 #
 # chkconfig: 345 80 20
@@ -19,14 +19,14 @@ fi
 RETVAL=0
 
 prog=genixd
-# you can override the lockfile via GENIXD_LOCKFILE in /etc/sysconfig/genixd
-lockfile=${GENIXD_LOCKFILE-/var/lock/subsys/genixd}
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/genixd
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/genixd}
 
-# genixd defaults to /usr/bin/genixd, override with GENIXD_BIN
-genixd=${GENIXD_BIN-/usr/bin/genixd}
+# genixd defaults to /usr/bin/genixd, override with BITCOIND_BIN
+genixd=${BITCOIND_BIN-/usr/bin/genixd}
 
-# genixd opts default to -disablewallet, override with GENIXD_OPTS
-genixd_opts=${GENIXD_OPTS--disablewallet}
+# genixd opts default to -disablewallet, override with BITCOIND_OPTS
+genixd_opts=${BITCOIND_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "

@@ -3,13 +3,12 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_SYNC_H
-#define GENIX_SYNC_H
+#ifndef BITCOIN_SYNC_H
+#define BITCOIN_SYNC_H
 
 #include "threadsafety.h"
 
 #include <boost/thread/condition_variable.hpp>
-#include <boost/thread/locks.hpp>
 #include <boost/thread/mutex.hpp>
 #include <boost/thread/recursive_mutex.hpp>
 
@@ -71,29 +70,40 @@ public:
     }
 };
 
+#ifdef DEBUG_LOCKORDER
+void EnterCritical(const char* pszName, const char* pszFile, int nLine, void* cs, bool fTry = false);
+void LeaveCritical();
+std::string LocksHeld();
+void AssertLockHeldInternal(const char* pszName, const char* pszFile, int nLine, void* cs);
+void AssertLockNotHeldInternal(const char* pszName, const char* pszFile, int nLine, void* cs);
+void DeleteLock(void* cs);
+#else
+void static inline EnterCritical(const char* pszName, const char* pszFile, int nLine, void* cs, bool fTry = false) {}
+void static inline LeaveCritical() {}
+void static inline AssertLockHeldInternal(const char* pszName, const char* pszFile, int nLine, void* cs) {}
+void static inline AssertLockNotHeldInternal(const char* pszName, const char* pszFile, int nLine, void* cs) {}
+void static inline DeleteLock(void* cs) {}
+#endif
+#define AssertLockHeld(cs) AssertLockHeldInternal(#cs, __FILE__, __LINE__, &cs)
+#define AssertLockNotHeld(cs) AssertLockNotHeldInternal(#cs, __FILE__, __LINE__, &cs)
+
 /**
  * Wrapped boost mutex: supports recursive locking, but no waiting
  * TODO: We should move away from using the recursive lock by default.
  */
-typedef AnnotatedMixin<boost::recursive_mutex> CCriticalSection;
+class CCriticalSection : public AnnotatedMixin<boost::recursive_mutex>
+{
+public:
+    ~CCriticalSection() {
+        DeleteLock((void*)this);
+    }
+};
 
 /** Wrapped boost mutex: supports waiting but not recursive locking */
 typedef AnnotatedMixin<boost::mutex> CWaitableCriticalSection;
 
 /** Just a typedef for boost::condition_variable, can be wrapped later if desired */
 typedef boost::condition_variable CConditionVariable;
-
-#ifdef DEBUG_LOCKORDER
-void EnterCritical(const char* pszName, const char* pszFile, int nLine, void* cs, bool fTry = false);
-void LeaveCritical();
-std::string LocksHeld();
-void AssertLockHeldInternal(const char* pszName, const char* pszFile, int nLine, void* cs);
-#else
-void static inline EnterCritical(const char* pszName, const char* pszFile, int nLine, void* cs, bool fTry = false) {}
-void static inline LeaveCritical() {}
-void static inline AssertLockHeldInternal(const char* pszName, const char* pszFile, int nLine, void* cs) {}
-#endif
-#define AssertLockHeld(cs) AssertLockHeldInternal(#cs, __FILE__, __LINE__, &cs)
 
 #ifdef DEBUG_LOCKCONTENTION
 void PrintLockContention(const char* pszName, const char* pszFile, int nLine);
@@ -255,11 +265,10 @@ public:
         grant.Release();
         grant.sem = sem;
         grant.fHaveGrant = fHaveGrant;
-        sem = NULL;
         fHaveGrant = false;
     }
 
-    CSemaphoreGrant() : sem(NULL), fHaveGrant(false) {}
+    CSemaphoreGrant() : sem(nullptr), fHaveGrant(false) {}
 
     CSemaphoreGrant(CSemaphore& sema, bool fTry = false) : sem(&sema), fHaveGrant(false)
     {
@@ -280,4 +289,4 @@ public:
     }
 };
 
-#endif // GENIX_SYNC_H
+#endif // BITCOIN_SYNC_H

@@ -1,5 +1,5 @@
 // Copyright (c) 2014 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Dash Core developers
+// Copyright (c) 2014-2021 The genix Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,6 +8,9 @@
 #include "guiconstants.h"
 #include "guiutil.h"
 
+#include "chainparams.h"
+#include "tinyformat.h"
+
 #include <QApplication>
 
 static const struct {
@@ -15,11 +18,12 @@ static const struct {
     const char *appName;
     const int iconColorHueShift;
     const int iconColorSaturationReduction;
-    const char *titleAddText;
+    const std::string titleAddText;
 } network_styles[] = {
     {"main", QAPP_APP_NAME_DEFAULT, 0, 0, ""},
     {"test", QAPP_APP_NAME_TESTNET, 190, 20, QT_TRANSLATE_NOOP("SplashScreen", "[testnet]")},
-    {"regtest", QAPP_APP_NAME_TESTNET, 160, 30, "[regtest]"}
+    {"dev", QAPP_APP_NAME_DEVNET, 190, 20, "[devnet: %s]"},
+    {"regtest", QAPP_APP_NAME_REGTEST, 160, 30, "[regtest]"}
 };
 static const unsigned network_styles_count = sizeof(network_styles)/sizeof(*network_styles);
 
@@ -42,7 +46,7 @@ void NetworkStyle::rotateColors(QImage& img, const int iconColorHueShift, const 
             col.getHsl(&h,&s,&l);
 
             // rotate color on RGB color circle
-            // 70° should end up with the typical "testnet" green (in genix)
+            // 70° should end up with the typical "testnet" green (in bitcoin)
             h+=iconColorHueShift;
 
             // change saturation value
@@ -58,19 +62,17 @@ void NetworkStyle::rotateColors(QImage& img, const int iconColorHueShift, const 
 }
 
 // titleAddText needs to be const char* for tr()
-NetworkStyle::NetworkStyle(const QString &appName, const int iconColorHueShift, const int iconColorSaturationReduction, const char *titleAddText):
-    appName(appName),
-    titleAddText(qApp->translate("SplashScreen", titleAddText))
+NetworkStyle::NetworkStyle(const QString &_appName, const int iconColorHueShift, const int iconColorSaturationReduction, const char *_titleAddText):
+    appName(_appName),
+    titleAddText(qApp->translate("SplashScreen", _titleAddText))
 {
     // Allow for separate UI settings for testnets
     QApplication::setApplicationName(appName);
     // Make sure settings migrated properly
     GUIUtil::migrateQtSettings();
-    // Grab theme from settings
-    QString theme = GUIUtil::getThemeName();
     // load pixmap
-    QPixmap appIconPixmap(":/icons/genix");
-    QPixmap splashImagePixmap(":/images/" + theme + "/splash");
+    QPixmap appIconPixmap(":/icons/bitcoin");
+    QPixmap splashImagePixmap(":/images/splash");
 
     if(iconColorHueShift != 0 && iconColorSaturationReduction != 0)
     {
@@ -102,11 +104,19 @@ const NetworkStyle *NetworkStyle::instantiate(const QString &networkId)
     {
         if (networkId == network_styles[x].networkId)
         {
+            std::string appName = network_styles[x].appName;
+            std::string titleAddText = network_styles[x].titleAddText;
+
+            if (networkId == QString(CBaseChainParams::DEVNET.c_str())) {
+                appName = strprintf(appName, GetDevNetName());
+                titleAddText = strprintf(titleAddText, GetDevNetName());
+            }
+
             return new NetworkStyle(
-                    network_styles[x].appName,
+                    appName.c_str(),
                     network_styles[x].iconColorHueShift,
                     network_styles[x].iconColorSaturationReduction,
-                    network_styles[x].titleAddText);
+                    titleAddText.c_str());
         }
     }
     return 0;

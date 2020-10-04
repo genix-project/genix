@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_ADDRESSINDEX_H
-#define GENIX_ADDRESSINDEX_H
+#ifndef BITCOIN_ADDRESSINDEX_H
+#define BITCOIN_ADDRESSINDEX_H
 
 #include "uint256.h"
 #include "amount.h"
@@ -79,4 +79,4 @@ struct CMempoolAddressDeltaKeyCompare
     }
 };
 
-#endif // GENIX_ADDRESSINDEX_H
+#endif // BITCOIN_ADDRESSINDEX_H

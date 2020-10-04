@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_QT_TRANSACTIONVIEW_H
-#define GENIX_QT_TRANSACTIONVIEW_H
+#ifndef BITCOIN_QT_TRANSACTIONVIEW_H
+#define BITCOIN_QT_TRANSACTIONVIEW_H
 
 #include "guiutil.h"
 
@@ -53,6 +53,7 @@ public:
     enum ColumnWidths {
         STATUS_COLUMN_WIDTH = 30,
         WATCHONLY_COLUMN_WIDTH = 23,
+        INSTANTSEND_COLUMN_WIDTH = 23,
         DATE_COLUMN_WIDTH = 120,
         TYPE_COLUMN_WIDTH = 240,
         AMOUNT_MINIMUM_COLUMN_WIDTH = 120,
@@ -66,6 +67,7 @@ private:
     QComboBox *dateWidget;
     QComboBox *typeWidget;
     QComboBox *watchOnlyWidget;
+    QComboBox *instantsendWidget;
     QLineEdit *addressWidget;
     QLineEdit *amountWidget;
 
@@ -81,14 +83,15 @@ private:
 
     GUIUtil::TableViewLastColumnResizingFixer *columnResizingFixer;
 
-    virtual void resizeEvent(QResizeEvent* event);
+    virtual void resizeEvent(QResizeEvent* event) override;
 
-    bool eventFilter(QObject *obj, QEvent *event);
+    bool eventFilter(QObject *obj, QEvent *event) override;
 
 private Q_SLOTS:
     void contextualMenu(const QPoint &);
     void dateRangeChanged();
     void showDetails();
+    void showAddressQRCode();
     void copyAddress();
     void editLabel();
     void copyLabel();
@@ -113,11 +116,12 @@ public Q_SLOTS:
     void chooseDate(int idx);
     void chooseType(int idx);
     void chooseWatchonly(int idx);
-    void changedPrefix(const QString &prefix);
-    void changedAmount(const QString &amount);
+    void chooseInstantSend(int idx);
+    void changedAmount();
+    void changedPrefix();
     void exportClicked();
     void focusTransaction(const QModelIndex&);
     void computeSum();
 };
 
-#endif // GENIX_QT_TRANSACTIONVIEW_H
+#endif // BITCOIN_QT_TRANSACTIONVIEW_H

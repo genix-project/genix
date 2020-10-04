@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Dash Core developers
+// Copyright (c) 2014-2017 The genix Core developers
 // Copyright (c) 2017 The Raven Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_HASH_H
-#define GENIX_HASH_H
+#ifndef genix_HASH_H
+#define genix_HASH_H
 
 #include <iostream>
 #include <chrono>
@@ -85,8 +85,8 @@ GLOBAL sph_sha512_context      z_sha;
 #define ZJH (memcpy(&ctx_jh, &z_jh, sizeof(z_jh)))
 #define ZKECCAK (memcpy(&ctx_keccak, &z_keccak, sizeof(z_keccak)))
 #define ZSKEIN (memcpy(&ctx_skein, &z_skein, sizeof(z_skein)))
-/* ----------- GENIX Hash ------------------------------------------------- */
-/** A hasher class for GENIX's 256-bit hash (double SHA-256). */
+/* ----------- genix Hash ------------------------------------------------- */
+/** A hasher class for genix's 256-bit hash (double SHA-256). */
 class CHash256 {
 private:
     CSHA256 sha;
@@ -110,7 +110,7 @@ public:
     }
 };
 
-/** A hasher class for GENIX's 160-bit hash (SHA-256 + RIPEMD-160). */
+/** A hasher class for genix's 160-bit hash (SHA-256 + RIPEMD-160). */
 class CHash160 {
 private:
     CSHA256 sha;
@@ -255,9 +255,9 @@ class CHashWriter
 private:
     CHash256 ctx;
 
-public:
     const int nType;
     const int nVersion;
+public:
 
     CHashWriter(int nTypeIn, int nVersionIn) : nType(nTypeIn), nVersion(nVersionIn) {}
 
@@ -278,8 +278,8 @@ public:
     template<typename T>
     CHashWriter& operator<<(const T& obj) {
         // Serialize to this stream
-        // ::Serialize(*this, obj);
-        ::Serialize(*this, obj, nType, nVersion);
+        ::Serialize(*this, obj);
+        // ::Serialize(*this, obj, nType, nVersion);
         return (*this);
     }
 };
@@ -314,8 +314,8 @@ public:
     CHashVerifier<Source>& operator>>(T& obj)
     {
         // Unserialize from this stream
-        // ::Unserialize(*this, obj);
-        ::Unserialize(*this, obj, nType, nVersion);
+        ::Unserialize(*this, obj);
+        // ::Unserialize(*this, obj, nType, nVersion);
         return (*this);
     }
 };
@@ -509,4 +509,4 @@ inline uint256 HashX16R(const T1 pbegin, const T1 pend, const uint256 PrevBlockH
     return hash[15].trim256();
 }
 
-#endif // GENIX_HASH_H
+#endif // genix_HASH_H

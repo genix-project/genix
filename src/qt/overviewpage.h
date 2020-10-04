@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_QT_OVERVIEWPAGE_H
-#define GENIX_QT_OVERVIEWPAGE_H
+#ifndef BITCOIN_QT_OVERVIEWPAGE_H
+#define BITCOIN_QT_OVERVIEWPAGE_H
 
 #include "amount.h"
 
@@ -30,7 +30,7 @@ class OverviewPage : public QWidget
     Q_OBJECT
 
 public:
-    explicit OverviewPage(const PlatformStyle *platformStyle, QWidget *parent = 0, QWidget *walletview = 0, QWidget *walletframe = 0);
+    explicit OverviewPage(const PlatformStyle *platformStyle, QWidget *parent = 0);
     ~OverviewPage();
 
     void setClientModel(ClientModel *clientModel);
@@ -41,13 +41,6 @@ public Q_SLOTS:
     void privateSendStatus();
     void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& anonymizedBalance,
                     const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
-#ifdef ENABLE_WALLET
-    void showPrivateSend();
-    void hidePrivateSend();
-    void setEncryptionStatus(int status);
-
-  
-#endif // ENABLE_WALLET
 
 Q_SIGNALS:
     void transactionClicked(const QModelIndex &index);
@@ -67,7 +60,7 @@ private:
     CAmount currentWatchImmatureBalance;
     int nDisplayUnit;
     bool fShowAdvancedPSUI;
-    bool fShowPrivateSend;
+    int cachedNumISLocks;
 
     TxViewDelegate *txdelegate;
     std::unique_ptr<TransactionFilterProxy> filter;
@@ -77,9 +70,6 @@ private:
 
 private Q_SLOTS:
     void togglePrivateSend();
-    void privateSendAuto();
-    void privateSendReset();
-    void privateSendInfo();
     void updateDisplayUnit();
     void updatePrivateSendProgress();
     void updateAdvancedPSUI(bool fShowAdvancedPSUI);
@@ -89,4 +79,4 @@ private Q_SLOTS:
     void handleOutOfSyncWarningClicks();
 };
 
-#endif // GENIX_QT_OVERVIEWPAGE_H
+#endif // BITCOIN_QT_OVERVIEWPAGE_H

@@ -2,14 +2,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_QT_WALLETFRAME_H
-#define GENIX_QT_WALLETFRAME_H
+#ifndef BITCOIN_QT_WALLETFRAME_H
+#define BITCOIN_QT_WALLETFRAME_H
 
-#include "toolspage.h"
 #include <QFrame>
 #include <QMap>
 
-class GENIXGUI;
+class BitcoinGUI;
 class ClientModel;
 class PlatformStyle;
 class SendCoinsRecipient;
@@ -20,12 +19,19 @@ QT_BEGIN_NAMESPACE
 class QStackedWidget;
 QT_END_NAMESPACE
 
+/**
+ * A container for embedding all wallet-related
+ * controls into BitcoinGUI. The purpose of this class is to allow future
+ * refinements of the wallet controls with minimal need for further
+ * modifications to BitcoinGUI, thus greatly simplifying merges while
+ * reducing the risk of breaking top-level stuff.
+ */
 class WalletFrame : public QFrame
 {
     Q_OBJECT
 
 public:
-    explicit WalletFrame(const PlatformStyle *platformStyle, GENIXGUI *_gui = 0);
+    explicit WalletFrame(const PlatformStyle *platformStyle, BitcoinGUI *_gui = 0);
     ~WalletFrame();
 
     void setClientModel(ClientModel *clientModel);
@@ -38,8 +44,6 @@ public:
     bool handlePaymentRequest(const SendCoinsRecipient& recipient);
 
     void showOutOfSyncWarning(bool fShow);
-    WalletView getWalletView();
-    void gotoToolsPageTab(enum ToolsPage::TabTypes page);
 
 Q_SIGNALS:
     /** Notify that the user has requested more information about the out-of-sync warning */
@@ -47,7 +51,7 @@ Q_SIGNALS:
 
 private:
     QStackedWidget *walletStack;
-    GENIXGUI *gui;
+    BitcoinGUI *gui;
     ClientModel *clientModel;
     QMap<QString, WalletView*> mapWalletViews;
 
@@ -68,8 +72,6 @@ public Q_SLOTS:
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
-    void gotoSettingsPage();
-    void gotoToolsPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
@@ -95,4 +97,4 @@ public Q_SLOTS:
     void outOfSyncWarningClicked();
 };
 
-#endif // GENIX_QT_WALLETFRAME_H
+#endif // BITCOIN_QT_WALLETFRAME_H

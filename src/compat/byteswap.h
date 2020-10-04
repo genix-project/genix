@@ -1,10 +1,9 @@
-// Copyright (c) 2014 The Bitcoin developers
-// Copyright (c) 2019 The Genix Core developers
+// Copyright (c) 2014 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_COMPAT_BYTESWAP_H
-#define GENIX_COMPAT_BYTESWAP_H
+#ifndef BITCOIN_COMPAT_BYTESWAP_H
+#define BITCOIN_COMPAT_BYTESWAP_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/genix-config.h"
@@ -64,4 +63,4 @@ inline uint64_t bswap_64(uint64_t x)
 
 #endif // defined(__APPLE__)
 
-#endif // GENIX_COMPAT_BYTESWAP_H
+#endif // BITCOIN_COMPAT_BYTESWAP_H

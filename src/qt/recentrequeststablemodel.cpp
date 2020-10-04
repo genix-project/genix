@@ -4,14 +4,13 @@
 
 #include "recentrequeststablemodel.h"
 
-#include "genixunits.h"
+#include "bitcoinunits.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
 
 #include "clientversion.h"
 #include "streams.h"
 
-#include <boost/foreach.hpp>
 
 RecentRequestsTableModel::RecentRequestsTableModel(CWallet *wallet, WalletModel *parent) :
     QAbstractTableModel(parent), walletModel(parent)
@@ -22,7 +21,7 @@ RecentRequestsTableModel::RecentRequestsTableModel(CWallet *wallet, WalletModel 
     // Load entries from wallet
     std::vector<std::string> vReceiveRequests;
     parent->loadReceiveRequests(vReceiveRequests);
-    BOOST_FOREACH(const std::string& request, vReceiveRequests)
+    for (const std::string& request : vReceiveRequests)
         addNewRequest(request);
 
     /* These columns must match the indices in the ColumnIndex enumeration */
@@ -55,10 +54,9 @@ QVariant RecentRequestsTableModel::data(const QModelIndex &index, int role) cons
     if(!index.isValid() || index.row() >= list.length())
         return QVariant();
 
-    const RecentRequestEntry *rec = &list[index.row()];
-
     if(role == Qt::DisplayRole || role == Qt::EditRole)
     {
+        const RecentRequestEntry *rec = &list[index.row()];
         switch(index.column())
         {
         case Date:
@@ -83,11 +81,11 @@ QVariant RecentRequestsTableModel::data(const QModelIndex &index, int role) cons
             }
         case Amount:
             if (rec->recipient.amount == 0 && role == Qt::DisplayRole)
-                return tr("(no amount)");
+                return tr("(no amount requested)");
             else if (role == Qt::EditRole)
-                return GENIXUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount, false, GENIXUnits::separatorNever);
+                return BitcoinUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount, false, BitcoinUnits::separatorNever);
             else
-                return GENIXUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount);
+                return BitcoinUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount);
         }
     }
     else if (role == Qt::TextAlignmentRole)
@@ -125,12 +123,7 @@ void RecentRequestsTableModel::updateAmountColumnTitle()
 /** Gets title for amount column including current display unit if optionsModel reference available. */
 QString RecentRequestsTableModel::getAmountTitle()
 {
-    QString amountTitle = tr("Amount");
-    if (this->walletModel->getOptionsModel() != NULL)
-    {
-        amountTitle += " ("+GENIXUnits::name(this->walletModel->getOptionsModel()->getDisplayUnit()) + ")";
-    }
-    return amountTitle;
+    return (this->walletModel->getOptionsModel() != nullptr) ? tr("Requested") + " ("+BitcoinUnits::name(this->walletModel->getOptionsModel()->getDisplayUnit()) + ")" : "";
 }
 
 QModelIndex RecentRequestsTableModel::index(int row, int column, const QModelIndex &parent) const
@@ -157,7 +150,6 @@ bool RecentRequestsTableModel::removeRows(int row, int count, const QModelIndex 
         beginRemoveRows(parent, row, row + count - 1);
         list.erase(list.begin() + row, list.begin() + row + count);
         endRemoveRows();
-        emitCountChanged();
         return true;
     } else {
         return false;
@@ -210,7 +202,6 @@ void RecentRequestsTableModel::addNewRequest(RecentRequestEntry &recipient)
     beginInsertRows(QModelIndex(), 0, 0);
     list.prepend(recipient);
     endInsertRows();
-    emitCountChanged();
 }
 
 void RecentRequestsTableModel::sort(int column, Qt::SortOrder order)
@@ -222,16 +213,6 @@ void RecentRequestsTableModel::sort(int column, Qt::SortOrder order)
 void RecentRequestsTableModel::updateDisplayUnit()
 {
     updateAmountColumnTitle();
-}
-
-void RecentRequestsTableModel::emitCountChanged() 
-{
-    Q_EMIT countChanged(list.count());
-}
-
-int RecentRequestsTableModel::count()
-{
-    return list.count();
 }
 
 bool RecentRequestEntryLessThan::operator()(RecentRequestEntry &left, RecentRequestEntry &right) const

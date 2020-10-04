@@ -1,11 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2019 The Genix Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_CONSENSUS_VALIDATION_H
-#define GENIX_CONSENSUS_VALIDATION_H
+#ifndef BITCOIN_CONSENSUS_VALIDATION_H
+#define BITCOIN_CONSENSUS_VALIDATION_H
 
 #include <string>
 
@@ -15,7 +14,7 @@ static const unsigned char REJECT_INVALID = 0x10;
 static const unsigned char REJECT_OBSOLETE = 0x11;
 static const unsigned char REJECT_DUPLICATE = 0x12;
 static const unsigned char REJECT_NONSTANDARD = 0x40;
-static const unsigned char REJECT_DUST = 0x41;
+// static const unsigned char REJECT_DUST = 0x41; // part of BIP 61
 static const unsigned char REJECT_INSUFFICIENTFEE = 0x42;
 static const unsigned char REJECT_CHECKPOINT = 0x43;
 
@@ -23,9 +22,9 @@ static const unsigned char REJECT_CHECKPOINT = 0x43;
 class CValidationState {
 private:
     enum mode_state {
-        MODE_VALID,   //! everything ok
-        MODE_INVALID, //! network rule violation (DoS value may be set)
-        MODE_ERROR,   //! run-time error
+        MODE_VALID,   //!< everything ok
+        MODE_INVALID, //!< network rule violation (DoS value may be set)
+        MODE_ERROR,   //!< run-time error
     } mode;
     int nDoS;
     std::string strRejectReason;
@@ -83,4 +82,4 @@ public:
     std::string GetDebugMessage() const { return strDebugMessage; }
 };
 
-#endif // GENIX_CONSENSUS_VALIDATION_H
+#endif // BITCOIN_CONSENSUS_VALIDATION_H

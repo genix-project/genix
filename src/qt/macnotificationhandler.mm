@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.genix.GENIX-Qt";
+        return @"org.genix.genix-Qt";
     } else {
         return [self __bundleIdentifier];
     }
