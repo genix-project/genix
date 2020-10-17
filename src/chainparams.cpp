@@ -149,10 +149,10 @@ static Consensus::LLMQParams llmq5_60 = {
         .minSize = 3,
         .threshold = 3,
 
-        .dkgInterval = 24, // one DKG per hour
+        .dkgInterval = 30, // one DKG per hour
         .dkgPhaseBlocks = 2,
         .dkgMiningWindowStart = 10, // dkgPhaseBlocks * 5 = after finalization
-        .dkgMiningWindowEnd = 18,
+        .dkgMiningWindowEnd = 24,
         .dkgBadVotesThreshold = 8,
 
         .signingActiveQuorumCount = 2, // just a few ones to allow easier testing
@@ -167,10 +167,10 @@ static Consensus::LLMQParams llmq50_60 = {
         .minSize = 40,
         .threshold = 30,
 
-        .dkgInterval = 24, // one DKG per hour
+        .dkgInterval = 30, // one DKG per hour
         .dkgPhaseBlocks = 2,
         .dkgMiningWindowStart = 10, // dkgPhaseBlocks * 5 = after finalization
-        .dkgMiningWindowEnd = 18,
+        .dkgMiningWindowEnd = 24,
         .dkgBadVotesThreshold = 40,
 
         .signingActiveQuorumCount = 24, // a full day worth of LLMQs
@@ -185,10 +185,10 @@ static Consensus::LLMQParams llmq400_60 = {
         .minSize = 300,
         .threshold = 240,
 
-        .dkgInterval = 24 * 12, // one DKG every 12 hours
+        .dkgInterval = 30 * 12, // one DKG every 12 hours
         .dkgPhaseBlocks = 4,
         .dkgMiningWindowStart = 20, // dkgPhaseBlocks * 5 = after finalization
-        .dkgMiningWindowEnd = 28,
+        .dkgMiningWindowEnd = 34,
         .dkgBadVotesThreshold = 300,
 
         .signingActiveQuorumCount = 4, // two days worth of LLMQs
@@ -204,10 +204,10 @@ static Consensus::LLMQParams llmq400_85 = {
         .minSize = 350,
         .threshold = 340,
 
-        .dkgInterval = 24 * 24, // one DKG every 24 hours
+        .dkgInterval = 30 * 24, // one DKG every 24 hours
         .dkgPhaseBlocks = 4,
         .dkgMiningWindowStart = 20, // dkgPhaseBlocks * 5 = after finalization
-        .dkgMiningWindowEnd = 48, // give it a larger mining window to make sure it is mined
+        .dkgMiningWindowEnd = 54, // give it a larger mining window to make sure it is mined
         .dkgBadVotesThreshold = 300,
 
         .signingActiveQuorumCount = 4, // four days worth of LLMQs
