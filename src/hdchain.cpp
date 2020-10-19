@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Dash Core developers
+// Copyright (c) 2014-2021 The Genix Core developers
 // Distributed under the MIT software license, see the accompanying
 
 #include "base58.h"
@@ -39,7 +39,7 @@ bool CHDChain::IsCrypted() const
     return fCrypted;
 }
 
-void CHDChain::Debug(std::string strName) const
+void CHDChain::Debug(const std::string& strName) const
 {
     DBG(
         std::cout << __func__ << ": ---" << strName << "---" << std::endl;
@@ -55,14 +55,14 @@ void CHDChain::Debug(std::string strName) const
             CExtKey extkey;
             extkey.SetMaster(&vchSeed[0], vchSeed.size());
 
-            CGENIXExtKey b58extkey;
+            CBitcoinExtKey b58extkey;
             b58extkey.SetKey(extkey);
             std::cout << "extended private masterkey: " << b58extkey.ToString().c_str() << std::endl;
 
             CExtPubKey extpubkey;
             extpubkey = extkey.Neuter();
 
-            CGENIXExtPubKey b58extpubkey;
+            CBitcoinExtPubKey b58extpubkey;
             b58extpubkey.SetKey(extpubkey);
             std::cout << "extended public masterkey: " << b58extpubkey.ToString().c_str() << std::endl;
         }
@@ -169,9 +169,9 @@ void CHDChain::DeriveChildExtKey(uint32_t nAccountIndex, bool fInternal, uint32_
     purposeKey.Derive(cointypeKey, Params().ExtCoinType() | 0x80000000);
     // derive m/purpose'/coin_type'/account'
     cointypeKey.Derive(accountKey, nAccountIndex | 0x80000000);
-    // derive m/purpose'/coin_type'/account/change
+    // derive m/purpose'/coin_type'/account'/change
     accountKey.Derive(changeKey, fInternal ? 1 : 0);
-    // derive m/purpose'/coin_type'/account/change/address_index
+    // derive m/purpose'/coin_type'/account'/change/address_index
     changeKey.Derive(extKeyRet, nChildIndex);
 }
 

@@ -21,8 +21,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef GENIX_BIP39_H
-#define GENIX_BIP39_H
+#ifndef genix_BIP39_H
+#define genix_BIP39_H
 
 #include "support/allocators/secure.h"
 

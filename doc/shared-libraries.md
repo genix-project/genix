@@ -3,7 +3,7 @@ Shared Libraries
 
 ## genixconsensus
 
-The purpose of this library is to make the verification functionality that is critical to Genix's consensus available to other applications, e.g. to language bindings.
+The purpose of this library is to make the verification functionality that is critical to genix's consensus available to other applications, e.g. to language bindings.
 
 ### API
 
@@ -11,7 +11,7 @@ The interface is defined in the C header `genixconsensus.h` located in  `src/scr
 
 #### Version
 
-`genixconsensus_version` returns an `unsigned int` with the the API version *(currently at an experimental `0`)*.
+`genixconsensus_version` returns an `unsigned int` with the API version *(currently at an experimental `0`)*.
 
 #### Script Validation
 
@@ -28,8 +28,11 @@ The interface is defined in the C header `genixconsensus.h` located in  `src/scr
 
 ##### Script Flags
 - `genixconsensus_SCRIPT_FLAGS_VERIFY_NONE`
-- `genixconsensus_SCRIPT_FLAGS_VERIFY_P2SH` - Evaluate P2SH ([BIP16](https://github.com/genix/bips/blob/master/bip-0016.mediawiki)) subscripts
-- `genixconsensus_SCRIPT_FLAGS_VERIFY_DERSIG` - Enforce strict DER ([BIP66](https://github.com/genix/bips/blob/master/bip-0066.mediawiki)) compliance
+- `genixconsensus_SCRIPT_FLAGS_VERIFY_P2SH` - Evaluate P2SH ([BIP16](https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki)) subscripts
+- `genixconsensus_SCRIPT_FLAGS_VERIFY_DERSIG` - Enforce strict DER ([BIP66](https://github.com/bitcoin/bips/blob/master/bip-0066.mediawiki)) compliance
+- `genixconsensus_SCRIPT_FLAGS_VERIFY_NULLDUMMY` - Enforce NULLDUMMY ([BIP147](https://github.com/bitcoin/bips/blob/master/bip-0147.mediawiki))
+- `genixconsensus_SCRIPT_FLAGS_VERIFY_CHECKLOCKTIMEVERIFY` - Enable CHECKLOCKTIMEVERIFY ([BIP65](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki))
+- `genixconsensus_SCRIPT_FLAGS_VERIFY_CHECKSEQUENCEVERIFY` - Enable CHECKSEQUENCEVERIFY ([BIP112](https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki))
 
 ##### Errors
 - `genixconsensus_ERR_OK` - No errors with input parameters *(see the return value of `genixconsensus_verify_script` for the verification status)*
@@ -38,7 +41,7 @@ The interface is defined in the C header `genixconsensus.h` located in  `src/scr
 - `genixconsensus_ERR_DESERIALIZE` - An error deserializing `txTo`
 
 ### Example Implementations
-- [NGENIX](https://github.com/NicolasDorier/NGENIX/blob/master/NGENIX/Script.cs#L814) (.NET Bindings)
-- [node-libgenixconsensus](https://github.com/bitpay/node-libgenixconsensus) (Node.js Bindings)
-- [java-libgenixconsensus](https://github.com/dexX7/java-libgenixconsensus) (Java Bindings)
-- [genixconsensus-php](https://github.com/Bit-Wasp/genixconsensus-php) (PHP Bindings)
+- [NBitcoin](https://github.com/NicolasDorier/NBitcoin/blob/master/NBitcoin/Script.cs#L814) (.NET Bindings)
+- [node-libbitcoinconsensus](https://github.com/bitpay/node-libbitcoinconsensus) (Node.js Bindings)
+- [java-libbitcoinconsensus](https://github.com/dexX7/java-libbitcoinconsensus) (Java Bindings)
+- [bitcoinconsensus-php](https://github.com/Bit-Wasp/bitcoinconsensus-php) (PHP Bindings)

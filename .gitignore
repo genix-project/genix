@@ -1,32 +1,137 @@
-# Prerequisites
-*.d
+*.sublime-project
+*.sublime-workspace
+todo.txt
+reset-files.bash
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+*.tar.gz
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
 *.exe
-*.out
-*.app
+src/genix
+src/genixd
+src/genix-cli
+src/genix-tx
+src/test/test_genix
+src/test/test_genix_fuzzy
+src/qt/test/test_genix-qt
+src/bench/bench_genix
+
+# autoreconf
+Makefile.in
+aclocal.m4
+autom4te.cache/
+build-aux/config.guess
+build-aux/config.sub
+build-aux/depcomp
+build-aux/install-sh
+build-aux/ltmain.sh
+build-aux/m4/libtool.m4
+build-aux/m4/lt~obsolete.m4
+build-aux/m4/ltoptions.m4
+build-aux/m4/ltsugar.m4
+build-aux/m4/ltversion.m4
+build-aux/missing
+build-aux/compile
+build-aux/test-driver
+config.log
+config.status
+configure
+libtool
+src/config/genix-config.h
+src/config/genix-config.h.in
+src/config/stamp-h1
+share/setup.nsi
+share/qt/Info.plist
+
+src/univalue/gen
+
+src/qt/*.moc
+src/qt/moc_*.cpp
+src/qt/forms/ui_*.h
+
+src/qt/test/moc*.cpp
+libconftest.dylib*
+
+.deps
+.dirstamp
+.libs
+.*.swp
+*.*~*
+*.bak
+*.rej
+*.orig
+*.pyc
+*.o
+*.o-*
+*.patch
+!depends/patches/*/*.patch
+*.a
+*.pb.cc
+*.pb.h
+
+*.log
+*.trs
+*.dmg
+
+*.json.h
+*.raw.h
+
+#libtool object files
+*.lo
+*.la
+
+# Compilation and Qt preprocessor part
+*.qm
+Makefile
+genix-qt
+genix-Qt.app
+!/depends/Makefile
+
+# Unit-tests
+Makefile.test
+genix-qt_test
+
+# Resources cpp
+qrc_*.cpp
+
+# Mac specific
+.DS_Store
+build
+
+#lcov
+*.gcno
+*.gcda
+/*.info
+test_genix.coverage/
+total.coverage/
+coverage_percent.txt
+
+#build tests
+linux-coverage-build
+linux-build
+win32-build
+test/config.ini
+test/cache/*
+
+!src/leveldb*/Makefile
+
+.cproject
+.project
+.autotools
+/doc/doxygen/
+
+libgenixconsensus.pc
+contrib/devtools/split-debug.sh
+src/qt/genix-qt.bash
+qa/pull-tester/tests-config.sh
+
+#development symlinks
+genix-cli
+genixd
+genix-qt
+make
+
+/docker/bin
+
+# CLion
+.idea
+cmake-build-debug

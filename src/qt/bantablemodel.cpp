@@ -64,7 +64,7 @@ public:
         }
 
         if (sortColumn >= 0)
-            // sort cachedBanlist (use stable sort to prevent rows jumping around unneceesarily)
+            // sort cachedBanlist (use stable sort to prevent rows jumping around unnecessarily)
             qStableSort(cachedBanlist.begin(), cachedBanlist.end(), BannedNodeLessThan(sortColumn, sortOrder));
     }
 
@@ -181,7 +181,5 @@ void BanTableModel::sort(int column, Qt::SortOrder order)
 
 bool BanTableModel::shouldShow()
 {
-    if (priv->size() > 0)
-        return true;
-    return false;
+    return priv->size() > 0;
 }

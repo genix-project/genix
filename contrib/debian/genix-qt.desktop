@@ -1,9 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=GENIX
-Comment=GENIX P2P Cryptocurrency
-Comment[fr]=GENIX, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=GENIX, eşten eşe kriptografik sanal para birimi
+Name=Genix Core
+Comment=genix P2P Cryptocurrency
+Comment[de]=Verbinde mit dem genix peer-to-peer Netzwerk
+Comment[fr]=genix, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=genix, eşten eşe kriptografik sanal para birimi
 Exec=genix-qt %u
 Terminal=false
 Type=Application

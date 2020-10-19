@@ -4,7 +4,7 @@
 
 #include "walletframe.h"
 
-#include "genixgui.h"
+#include "bitcoingui.h"
 #include "walletview.h"
 
 #include <cstdio>
@@ -12,10 +12,10 @@
 #include <QHBoxLayout>
 #include <QLabel>
 
-WalletFrame::WalletFrame(const PlatformStyle *platformStyle, GENIXGUI *_gui) :
+WalletFrame::WalletFrame(const PlatformStyle *_platformStyle, BitcoinGUI *_gui) :
     QFrame(_gui),
     gui(_gui),
-    platformStyle(platformStyle)
+    platformStyle(_platformStyle)
 {
     // Leave HBox hook for adding a list view later
     QHBoxLayout *walletFrameLayout = new QHBoxLayout(this);
@@ -33,9 +33,9 @@ WalletFrame::~WalletFrame()
 {
 }
 
-void WalletFrame::setClientModel(ClientModel *clientModel)
+void WalletFrame::setClientModel(ClientModel *_clientModel)
 {
-    this->clientModel = clientModel;
+    this->clientModel = _clientModel;
 }
 
 bool WalletFrame::addWallet(const QString& name, WalletModel *walletModel)
@@ -44,7 +44,7 @@ bool WalletFrame::addWallet(const QString& name, WalletModel *walletModel)
         return false;
 
     WalletView *walletView = new WalletView(platformStyle, this);
-    walletView->setGENIXGUI(gui);
+    walletView->setBitcoinGUI(gui);
     walletView->setClientModel(clientModel);
     walletView->setWalletModel(walletModel);
     walletView->showOutOfSyncWarning(bOutOfSync);
@@ -120,22 +120,7 @@ void WalletFrame::gotoHistoryPage()
     QMap<QString, WalletView*>::const_iterator i;
     for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
         i.value()->gotoHistoryPage();
-    }
-    
-void WalletFrame::gotoSettingsPage()
-{
-    QMap<QString, WalletView*>::const_iterator i;
-    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
-        i.value()->gotoSettingsPage();
 }
-
-void WalletFrame::gotoToolsPage()
-{
-    QMap<QString, WalletView*>::const_iterator i;
-    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
-        i.value()->gotoToolsPage();
-}
-
 
 void WalletFrame::gotoMasternodePage()
 {
@@ -170,19 +155,11 @@ void WalletFrame::gotoVerifyMessageTab(QString addr)
     WalletView *walletView = currentWalletView();
     if (walletView)
         walletView->gotoVerifyMessageTab(addr);
-    }
-    
-void WalletFrame::gotoToolsPageTab(enum ToolsPage::TabTypes page)
-{
-    QMap<QString, WalletView*>::const_iterator i;
-    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
-        i.value()->gotoToolsPageTab(page);
 }
 
 void WalletFrame::encryptWallet(bool status)
 {
     WalletView *walletView = currentWalletView();
-    status = true;
     if (walletView)
         walletView->encryptWallet(status);
 }

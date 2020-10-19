@@ -4,8 +4,8 @@
 
 #include "qvalidatedlineedit.h"
 
-#include "genixaddressvalidator.h"
-#include "guiconstants.h"
+#include "bitcoinaddressvalidator.h"
+#include "guiutil.h"
 
 QValidatedLineEdit::QValidatedLineEdit(QWidget *parent) :
     QLineEdit(parent),
@@ -15,22 +15,22 @@ QValidatedLineEdit::QValidatedLineEdit(QWidget *parent) :
     connect(this, SIGNAL(textChanged(QString)), this, SLOT(markValid()));
 }
 
-void QValidatedLineEdit::setValid(bool valid)
+void QValidatedLineEdit::setValid(bool _valid)
 {
-    if(valid == this->valid)
+    if(_valid == this->valid)
     {
         return;
     }
 
-    if(valid)
+    if(_valid)
     {
         setStyleSheet("");
     }
     else
     {
-        setStyleSheet(STYLE_INVALID);
+        setStyleSheet(GUIUtil::getThemedStyleQString(GUIUtil::ThemedStyle::TS_INVALID));
     }
-    this->valid = valid;
+    this->valid = _valid;
 }
 
 void QValidatedLineEdit::focusInEvent(QFocusEvent *evt)

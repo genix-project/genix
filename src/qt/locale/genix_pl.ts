@@ -1,4 +1,4 @@
-<TS language="pl" version="2.0">
+<TS language="pl" version="2.1">
 <context>
     <name>AddressBookPage</name>
     <message>
@@ -20,6 +20,14 @@
     <message>
         <source>&amp;Copy</source>
         <translation>&amp;Kopiuj</translation>
+    </message>
+    <message>
+        <source>Show QR code for the currently selected address</source>
+        <translation>Pokaż kod QR dla wybranego adresu</translation>
+    </message>
+    <message>
+        <source>&amp;Show QR code</source>
+        <translation>&amp;Pokaż kod QR</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
@@ -62,12 +70,12 @@
         <translation>Adres odbiorczy</translation>
     </message>
     <message>
-        <source>These are your GENIX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>To są twoje adresy GENIX, na które wysyłasz płatności. Zanim wyślesz środki, zawsze upewnij się, że kwota i adres są prawidłowe.</translation>
+        <source>These are your genix addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>To są twoje adresy genix, na które wysyłasz płatności. Zanim wyślesz środki, zawsze upewnij się, że kwota i adres są prawidłowe.</translation>
     </message>
     <message>
-        <source>These are your GENIX addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>To są twoje adresy do otrzymywania GENIXów. Zaleca się tworzyć nowy adres dla każdej transakcji.</translation>
+        <source>These are your genix addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>To są twoje adresy do otrzymywania płatności. Zaleca się tworzyć nowy adres dla każdej transakcji.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -80,6 +88,14 @@
     <message>
         <source>&amp;Edit</source>
         <translation>&amp;Edytuj</translation>
+    </message>
+    <message>
+        <source>&amp;Show address QR code</source>
+        <translation>&amp;Pokaż adres kodu QR</translation>
+    </message>
+    <message>
+        <source>QR code</source>
+        <translation>Kod QR</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -132,14 +148,6 @@
         <translation>Powtórz nowe hasło</translation>
     </message>
     <message>
-        <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
-        <translation>Służy do zablokowania funkcji wysyłania środków, gdy konto użytkownika systemu operacyjnego zostało przejęte przez osobę trzecią. Nie gwarantuje prawdziwego bezpieczeństwa.</translation>
-    </message>
-    <message>
-        <source>Only for mixing via PrivateSend</source>
-        <translation>Tylko do mieszania przez PrivateSend</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Wprowadź nowe hasło dla twojego portfela.&lt;br/&gt;Proszę używać hasła o długości co najmniej &lt;b&gt;dziesięciu losowych znaków&lt;/b&gt; lub &lt;b&gt;co najmniej 8 słów&lt;/b&gt;.</translation>
     </message>
@@ -150,6 +158,10 @@
     <message>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
         <translation>Ta operacja wymaga hasła do odblokowania portfela.</translation>
+    </message>
+    <message>
+        <source>Unlock wallet for mixing only</source>
+        <translation>Odblokuj portfel tylko dla miksowania monet</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
@@ -176,7 +188,7 @@
         <translation>Potwierdź zaszyfrowanie portfela</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR GENIX&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR genix&lt;/b&gt;!</source>
         <translation>Ostrzeżenie: Jeśli zaszyfrujesz swój portfel i zgubisz hasło, &lt;b&gt;STRACISZ WSZYSTKIE ŚRODKI&lt;/b&gt;</translation>
     </message>
     <message>
@@ -188,12 +200,16 @@
         <translation>Portfel zaszyfrowany</translation>
     </message>
     <message>
-        <source>GENIX Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your genixs from being stolen by malware infecting your computer.</source>
-        <translation>GENIX Core zostanie zamknięty, aby ukończyć szyfrowanie. Pamiętaj, szyfrowanie portfela nie chroni przed kradzieżą GENIXów, jeśli twój komputer jest zainfekowany przez malware.</translation>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your funds from being stolen by malware infecting your computer.</source>
+        <translation>%1 zostanie teraz zamknięty aby zakończyć proces szyfrowania. Pamiętaj, że zaszyfrowanie portfela nie gwarantuje pełnej ochrony przed kradzieżą twoich monet przez złośliwe oprogramowanie.</translation>
+    </message>
+    <message>
+        <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. Previous backups of the unencrypted wallet file contain the same HD seed and still have full access to all your funds just like the new, encrypted wallet.</source>
+        <translation>WAŻNE: Wszystkie wykonane wcześniej kopie pliku portfela powinny być zamienione na nowe, zaszyfrowany plik portfela. Poprzednie kopie zapasowe niezaszyfrowanego porfela dalej mają dostęp do frazy HD oraz twoich funduszy tak samo jak nowy, zaszyfrowany portfel.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
-        <translation>WAŻNE: Wszystkie wykonane wcześniej kopie zapasowe portfela należy zamienić na nowe, szyfrowane pliki. Z powodów bezpieczeństwa, poprzednie niezaszyfrowane kopie portfela staną się bezużyteczne, gdy tylko zaczniesz korzystać z nowego, zaszyfrowanego portfela.</translation>
+        <translation>WAŻNE: Wszystkie wcześniejsze kopie zapasowe portfela należy zamienić na nowe, zaszyfrowane pliki. Dla bezpieczeństwa poprzednie, niezaszyfrowane kopie portfela staną się bezużyteczne, gdy tylko zaczniesz korzystać z nowego, zaszyfrowanego portfela.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -240,14 +256,14 @@
     </message>
 </context>
 <context>
-    <name>GENIXGUI</name>
+    <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. GENIX Core can no longer continue safely and will quit.</source>
-        <translation>Wystąpił błąd krytyczny. GENIX Core nie może bezpiecznie kontynuować i zostanie zamknięty.</translation>
+        <source>A fatal error occurred. Genix Core can no longer continue safely and will quit.</source>
+        <translation>Wystąpił błąd krytyczny. Genix Core nie może bezpiecznie kontynuować i zostanie zamknięty.</translation>
     </message>
     <message>
-        <source>GENIX Core</source>
-        <translation>GENIX Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -270,8 +286,8 @@
         <translation>Wyślij</translation>
     </message>
     <message>
-        <source>Send coins to a GENIX address</source>
-        <translation>Wyślij monety na adres GENIX</translation>
+        <source>Send coins to a genix address</source>
+        <translation>Wyślij monety na adres genix</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
@@ -306,12 +322,8 @@
         <translation>Zamknij program</translation>
     </message>
     <message>
-        <source>&amp;About GENIX Core</source>
-        <translation>&amp;O GENIX Core</translation>
-    </message>
-    <message>
-        <source>Show information about GENIX Core</source>
-        <translation>Pokaż informacje o GENIX Core</translation>
+        <source>Show information about Genix Core</source>
+        <translation>Pokaż informacje o Genix Core</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -326,8 +338,12 @@
         <translation>&amp;Opcje...</translation>
     </message>
     <message>
-        <source>Modify configuration options for GENIX Core</source>
-        <translation>Zmień opcje konfiguracji GENIX Core</translation>
+        <source>&amp;About %1</source>
+        <translation>&amp;O %1</translation>
+    </message>
+    <message>
+        <source>Modify configuration options for %1</source>
+        <translation>Zmień opcje konfiguracji dla %1</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
@@ -378,16 +394,16 @@
         <translation>Podpisz wiado&amp;mość...</translation>
     </message>
     <message>
-        <source>Sign messages with your GENIX addresses to prove you own them</source>
-        <translation>Podpisz wiadomości swoim adresem GENIX, aby udowodnić, że jesteś ich właścicielem. </translation>
+        <source>Sign messages with your genix addresses to prove you own them</source>
+        <translation>Podpisz wiadomości swoim adresem genix, aby udowodnić, że jesteś ich właścicielem. </translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
         <translation>&amp;Zweryfikuj wiadomość...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified GENIX addresses</source>
-        <translation>Zweryfikuj wiadomości, aby upewnić się, że zostały one podpisane wybranym adresem GENIX</translation>
+        <source>Verify messages to ensure they were signed with specified genix addresses</source>
+        <translation>Zweryfikuj wiadomości, aby upewnić się, że zostały one podpisane wybranym adresem genix</translation>
     </message>
     <message>
         <source>&amp;Information</source>
@@ -438,14 +454,6 @@
         <translation>Otworz plik konfiguracji </translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Otwórz Plik &amp;Konfiguracyjny Masternoda</translation>
-    </message>
-    <message>
-        <source>Open Masternode configuration file</source>
-        <translation>Otwórz plik konfiguracyjny Masternoda</translation>
-    </message>
-    <message>
         <source>Show Automatic &amp;Backups</source>
         <translation>Pokaż automatyczne kopie zapasowe (&amp;Backups)</translation>
     </message>
@@ -482,8 +490,12 @@
         <translation>&amp;Opcje konsoli</translation>
     </message>
     <message>
-        <source>Show the GENIX Core help message to get a list with possible GENIX Core command-line options</source>
-        <translation>Pokaż wiadomość pomocy GENIX Core, aby otrzymać listę z dostępnymi opcjami wiersza poleceń.</translation>
+        <source>Show the %1 help message to get a list with possible genix command-line options</source>
+        <translation>Pokaż pomoc %1 aby zobaczyć listę wszystkich opcji lnii poleceń.</translation>
+    </message>
+    <message>
+        <source>%1 client</source>
+        <translation>%1 klient</translation>
     </message>
     <message>
         <source>&amp;PrivateSend information</source>
@@ -513,13 +525,9 @@
         <source>Tabs toolbar</source>
         <translation>Pasek zakładek</translation>
     </message>
-    <message>
-        <source>GENIX Core client</source>
-        <translation>Klient GENIX Core</translation>
-    </message>
     <message numerus="yes">
-        <source>%n active connection(s) to GENIX network</source>
-        <translation><numerusform>%n aktywne połączenie z siecią GENIX</numerusform><numerusform>%n aktywne połączenia z siecią GENIX</numerusform><numerusform>%n aktywnych połączeń z siecią GENIX</numerusform><numerusform>%n aktywne połączenia z siecią GENIX</numerusform></translation>
+        <source>%n active connection(s) to genix network</source>
+        <translation><numerusform>%n aktywne połączenie z siecią genix</numerusform><numerusform>%n aktywne połączenia z siecią genix</numerusform><numerusform>%n aktywnych połączeń z siecią genix</numerusform><numerusform>%n aktywne połączenia z siecią genix</numerusform></translation>
     </message>
     <message>
         <source>Network activity disabled</source>
@@ -590,6 +598,30 @@
         <translation>Informacja</translation>
     </message>
     <message>
+        <source>Received and sent multiple transactions</source>
+        <translation>Otrzymano i wysłano wiele transakcji</translation>
+    </message>
+    <message>
+        <source>Sent multiple transactions</source>
+        <translation>Wysłano wiele transakcji</translation>
+    </message>
+    <message>
+        <source>Received multiple transactions</source>
+        <translation>Otrzymano wiele transakcji</translation>
+    </message>
+    <message>
+        <source>Sent Amount: %1
+</source>
+        <translation>Wyślij kowtę: %1
+</translation>
+    </message>
+    <message>
+        <source>Received Amount: %1
+</source>
+        <translation>Otrzymano kwotę: %1
+</translation>
+    </message>
+    <message>
         <source>Date: %1
 </source>
         <translation>Data: %1
@@ -646,17 +678,6 @@
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Portfel jest &lt;b&gt;zaszyfrowany&lt;/b&gt; i obecnie &lt;b&gt;zablokowany&lt;/b&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>ClientModel</name>
-    <message>
-        <source>Total: %1 (PS compatible: %2 / Enabled: %3)</source>
-        <translation>Razem: %1 (zgodne z PS: %2 / włączone: %3)</translation>
-    </message>
-    <message>
-        <source>Network Alert</source>
-        <translation>Sieć Alert</translation>
     </message>
 </context>
 <context>
@@ -794,8 +815,8 @@
         <translation>W celu użycia tej funkcji, przełącz na "Tryb Listy"</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-nonymized inputs first and then check PrivateSend checkbox again.</source>
-        <translation>Wybrano niezanonimizowane środki. &lt;b&gt; PrivateSend  zostanie wyłączony.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Jeśli nadal chcesz użyć PrivateSend, cofnij wybór niezanonimizowanych środków, a następnie zaznacz pole wyboru PrivateSend.</translation>
+        <source>Non-mixed input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-mixed inputs first and then check the PrivateSend checkbox again.</source>
+        <translation>Wybrane zostały niezmiksowane kwoty.&lt;b&gt;PrivateSend zostanie wyłączony.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Jeśli dalej chcesz używać PrivateSend odhacz wszystkie niezmiksowane kwoty i ponownie wybierz PrivateSend.</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
@@ -832,73 +853,6 @@
     <message>
         <source>n/a</source>
         <translation>nie dotyczy</translation>
-    </message>
-</context>
-<context>
-    <name>DarksendConfig</name>
-    <message>
-        <source>Configure PrivateSend</source>
-        <translation>Skonfiguruj PrivateSend</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Podstawowa prywatność</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Wysoka prywatność</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maksymalna prywatność</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Proszę wybrać poziom prywatności.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 1000 GENIX</source>
-        <translation>Użyj 2 oddzielnych masternodów, aby wymieszać środki max. do 1000 GENIX</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 1000 GENIX</source>
-        <translation>Użyj 8 oddzielnych masternodów, aby wymieszać środki max. do 1000 GENIX</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Użyj 16 oddzielnych masternodów</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 GENIX to anonymize 1000 GENIX</source>
-        <translation>Ta opcja jest najszybsza i kosztuje około 0.025 GENIX za zanonimizowanie 1000 GENIX</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 GENIX to anonymize 1000 GENIX</source>
-        <translation>Ta opcja jest w miarę szybka i kosztuje około 0.05 GENIX za zanonimizowanie 1000 GENIX</translation>
-    </message>
-    <message>
-        <source>0.1 GENIX per 1000 GENIX you anonymize.</source>
-        <translation>0.1 GENIX za każde 1000 GENIX, które zanonimizujesz.</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Jest to najwolniejsza, lecz najbardziej bezpieczna opcja. Maksymalny poziom zanonimizowania będzie kosztować</translation>
-    </message>
-    <message>
-        <source>PrivateSend Configuration</source>
-        <translation>Konfiguracja PrivateSend</translation>
-    </message>
-    <message>
-        <source>PrivateSend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening GENIX's configuration screen.</source>
-        <translation>PrivateSend pomyślnie ustawiono na poziom podstawowy (%1 oraz 2 rundy). Możesz to zmienić w każdej chwili, otwierając ekran konfiguracji GENIX.</translation>
-    </message>
-    <message>
-        <source>PrivateSend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening GENIX's configuration screen.</source>
-        <translation>PrivateSend pomyślnie ustawiono na poziom wysoki (%1 oraz 8 rund). Możesz to zmienić w każdej chwili, otwierając ekran konfiguracji GENIX.</translation>
-    </message>
-    <message>
-        <source>PrivateSend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening GENIX's configuration screen.</source>
-        <translation>PrivateSend pomyślnie ustawiono na poziom najwyższy (%1 oraz 16 rund). Możesz to zmienić w każdej chwili, otwierając ekran konfiguracji GENIX.</translation>
     </message>
 </context>
 <context>
@@ -940,8 +894,8 @@
         <translation>Zmień adres wysyłania</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid GENIX address.</source>
-        <translation>Wprowadzony adres "%1" nie jest właściwym adresem GENIX.</translation>
+        <source>The entered address "%1" is not a valid genix address.</source>
+        <translation>Wprowadzony adres "%1" nie jest właściwym adresem genix.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -982,10 +936,6 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>GENIX Core</source>
-        <translation>GENIX Core</translation>
-    </message>
-    <message>
         <source>version</source>
         <translation>wersja</translation>
     </message>
@@ -994,8 +944,8 @@
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About GENIX Core</source>
-        <translation>Informacje o GENIX Core</translation>
+        <source>About %1</source>
+        <translation>Informacje o %1</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1042,8 +992,8 @@
         <translation>Informacje o PrivateSend</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the GENIX in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times..&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.01 GENIX, 0.1 GENIX, 1 GENIX and 10 GENIX -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;         </source>
-        <translation>&lt;h3&gt;Podstawy PrivateSend&lt;/h3&gt; PrivateSend zapewnia prawdziwą prywatność poprzez ukrycie pochodzenia środków. Wszystkie genixe w twoim portfelu składają się z różnych "kwot wejściowych", które można traktować jako oddzielne, indywidualne monety.&lt;br&gt; PrivateSend wykorzystuje rewolucyjny proces mieszania twoich "kwot wejściowych" z "kwotami wejściowymi" dwóch innych  użytkowników, przy czym twoje środki nigdy nie opuszczają twojego portfela. W każdej chwili zachowujesz nad nimi pełną kontrolę.&lt;hr&gt; &lt;b&gt;Proces PrivateSend przebiega w następujący sposób:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;Najpierw PrivateSend dzieli twoje kwoty wejściowe twoich transakcji na standardowe nominały. Są kwoty 0.01 GENIX, 0.1 GENIX, 1 GENIX oraz 10 GENIX – mniej  więcej jak banknoty, których codziennie używasz.&lt;/li&gt; &lt;li&gt;Następnie twój portfel wysyła żądania do specjalnie skonfigurowanych węzłów sieci, zwanych "masternodami." Masternody otrzymują komunikat, że jesteś zainteresowany wymieszaniem określonego nominału. Masternody nie otrzymują żadnych informacji pozwalających na identyfikację, w związku z tym nigdy nie wiedzą "kim" jesteś.&lt;/li&gt; &lt;li&gt;Kiedy dwaj inni użytkownicy wyślą podobne komunikaty, z żądanie wymieszanie takiego samego nominału, rozpocznie się sesja mieszania. Masternod wymiesza kwoty wejściowe i nakaże portfelom takich trzech użytkowników wypłacić sobie samemu przetworzone kwoty wejściowe. Twój portfel wpłaci dany nominał do siebie samego, jednak na inny adres (tzw. adres reszty).&lt;/li&gt; &lt;li&gt;W celu pełnego zaciemnienia pochodzenia środków, twój portfel musi powtórzyć te czynności dla każdego nominału określoną ilość razy.  Każde wykonanie tego procesu określamy mianem "rundy." Każda runda procesu PrivateSend wykładniczo zwiększa trudność ustalenia pochodzenia twoich środków.&lt;/li&gt; &lt;li&gt;Proces mieszania odbywa się w tle, bez dodatkowego zaangażowania z twojej strony. Kiedy zechcesz wykonać transakcję, twoje środki będą już zanonimizowane. Nie będzie konieczne dodatkowe oczekiwanie.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;UWAGA:&lt;/b&gt; Portfel zawiera tylko 1000 "adresów reszty." Każde mieszanie zużywa do 9 adresów. Oznacza to, że po 100 mieszaniach zużyjesz ok. 1000 adresów. Po wykorzystaniu 900 adresów, portfel musi wygenerować nowe adresy. Może not nastąpić jedynie, jeżeli włączone jest automatyczne tworzenie kopii zapasowych.&lt;br&gt; Dlatego też, PrivateSend jest wyłączone, jeżeli użytkownik wyłączył automatyczne tworzenie kopii zapasowych. &lt;hr&gt;         </translation>
+        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the genix in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 genix, 0.01 genix, 0.1 genix, 1 genix and 10 genix -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be mixed. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.genix.cx/en/stable/wallets/genixcore/privatesend-instantsend.html"&gt;PrivateSend documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;Podstawy PrivateSend&lt;/h3&gt; PrivateSend daje ci prawdziwą anonimowość finansową poprzez zacieranie śladów prowadzących do osoby która wysłała daną transakcję. Wszystkie monety genix w twoim portfelu składają się z różnych "kwot" o których możesz myśleć jako osobne nominały monet.&lt;br&gt; PrivateSend używa innowacyjny proces do mieszania twoich monet razem z monetami dwóch innych użytkowników bez potrzeby opuszczania portfela. Przez cały czas posiadasz kontrolę nad twoimi funduszami. &lt;hr&gt;&lt;b&gt;PrivateSend  działa w ten sposób: &lt;/b&gt;&lt;ol type="1"&gt;&lt;li&gt; PrivateSend rozpoczyna rozmienianie twoich monet na standardowe nominały czyli 0.001 genix, 0.01 genix, 0.1 genix, 1 genix, 10 genix - coś w rodzaju nominałów banknotów. &lt;/li&gt;&lt;li&gt; Następnie, twój portfel wysyła prośbę do specjalnie skonfigurowanych serewerów sieci zwanych jako "masternody". Masternody te zostają poinformowane że chcesz wymieszać pewne nominały swoich monet. Żadne informacje mogące cię zidentyfikować zostają wysłane do masternodów, więc nie wiedzą one kim jesteś. &lt;/li&gt;&lt;li&gt; Kiedy dwoje innych użytkowników wyśle podobne prośby o wymieszanie takich samych nominałów, rozpoczyna się sesja miksowania. Masternode miesza dane nominały oraz wydaje polecenie portfelom danych użytkowników aby te wysłały wymieszane kwoty do samych siebie ale na nowy adres (również znany jako adres reszty). &lt;/li&gt;&lt;li&gt; Aby całkowicie zanonimizować fundusze, twój portfel wielokrotnie powtarza ten sam proces z każdym nominałem. Pojedyńczy proces nazywa się "runda". Trudność wyśledzenia źródła funduszy rośnie wykładniczo z każdą dodatkową rundą PrivateSend. &lt;/li&gt;&lt;li&gt; Proces mieszania odbywa się w tle, bez jakiejkolwiek potrzeby interwencji. Kiedy chcesz dokonać anonimowej transakcji twoje fundusze będą już wymieszane i gotowe do wysyłki. &lt;/li&gt;&lt;/ol&gt;&lt;hr&gt;&lt;b&gt; UWAGA:&lt;/b&gt; Twój portfel posiada jedynie 1000 "adresów reszty." Za każdym razem kiedy odbywa się sesja miksowania monet, aż 9 adresów może zostać zużytych. Oznacza to, że 1000 adresów reszty może wystarczyć na około 100 rund miksowania. Jeśli 900 adresów zostanie zużyte twój portfel musi wygenerować więcej adresów. Twój portfel może to zrobić jedynie jeśli masz włączone automatyczne tworzenie kopii zapasowych. &lt;br&gt;Jeżeli użytkownik nie ma włączonej opcji automatycznego tworzenia kopii zapasowych to onzacza że nie będzie mógł korzystać z PrivateSend. &lt;hr&gt; Więcej  informacji możesz znaleźć w &lt;a href="https://docs.genix.cx/en/stable/wallets/genixcore/privatesend-instantsend.html"&gt; pełnej dokumentacji PrivateSend&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -1053,16 +1003,24 @@
         <translation>Witaj</translation>
     </message>
     <message>
-        <source>Welcome to GENIX Core.</source>
-        <translation>Witaj w GENIX Core</translation>
+        <source>Welcome to %1.</source>
+        <translation>Witaj w %1.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where GENIX Core will store its data.</source>
-        <translation>Ponieważ uruchomiłeś ten program po raz pierwszy, możesz wybrać gdzie GENIX Core będzie przechowywał dane.</translation>
+        <source>As this is the first time the program is launched, you can choose where %1 will store its data.</source>
+        <translation>Ponieważ jest to pierwsze uruchomienie programu, możesz wybrać gdzie %1 będzie przechowywał swoje dane.</translation>
     </message>
     <message>
-        <source>GENIX Core will download and store a copy of the GENIX block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>GENIX Core ściągnie i zapisze kopię łańcucha bloków-blockchain na twoim dysku. Co najmniej %1GB danych zostanie zapisanych w tym katalogu, a z upływem czasu blockchain będzie stopniowo wymagał coraz więcej miejsca. Twój portfel również zostanie zapisany w tym katalogu.</translation>
+        <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
+        <translation>Gdy naciśniesz OK, %1 zacznie się pobieranie i przetwarzanie całego %4 łańcucha bloków (%2GB) zaczynając od najwcześniejszych transakcji w %3 gdy %4 został uruchomiony. </translation>
+    </message>
+    <message>
+        <source>This initial synchronisation is very demanding, and may expose hardware problems with your computer that had previously gone unnoticed. Each time you run %1, it will continue downloading where it left off.</source>
+        <translation>Wstępna synchronizacja jest bardzo wymagająca i może ujawnić wcześniej niezauważone problemy sprzętowe. Za każdym uruchomieniem %1 pobieranie będzie kontynuowane od miejsca w którym zostało zatrzymane.</translation>
+    </message>
+    <message>
+        <source>If you have chosen to limit block chain storage (pruning), the historical data must still be downloaded and processed, but will be deleted afterward to keep your disk usage low.</source>
+        <translation>Nawet jeśli wybrałeś opcję ograniczenia przechowywania łańcucha bloków (przycinanie), to mimo wszystko dane historyczne zostaną pobrane i przetworzone. Następnie zostaną usunięte by ograniczyć użycie dysku.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1073,8 +1031,20 @@
         <translation>Użyj wybranego folderu dla danych</translation>
     </message>
     <message>
-        <source>GENIX Core</source>
-        <translation>GENIX Core</translation>
+        <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
+        <translation>Co najmniej %1 GB danych, zostanie zapisane w tym katalogu, dane te będą przyrastały w czasie.</translation>
+    </message>
+    <message>
+        <source>Approximately %1 GB of data will be stored in this directory.</source>
+        <translation>Około %1 GB danych zostanie zapisane w tym katalogu.</translation>
+    </message>
+    <message>
+        <source>%1 will download and store a copy of the genix block chain.</source>
+        <translation>%1 pobierze i zapisze lokalnie kopię łańcucha bloków genix.</translation>
+    </message>
+    <message>
+        <source>The wallet will also be stored in this directory.</source>
+        <translation>Portfel również zostanie zapisany w tym katalogu.</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1100,64 +1070,12 @@
         <translation>Formularz</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
-        <translation>Moje masternody</translation>
-    </message>
-    <message>
-        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your masternode should be running but you still do not see "ENABLED" in "Status" field.</source>
-        <translation>Uwaga! Status twoich masternodów w lokalnym portfelu potencjalnie może być niezupełnie poprawny.&lt;br /&gt;Jeżeli twój masternode powinien być uruchomiony, ale nadal nie widzisz słowa "WŁĄCZONY" w polu "Status", &lt;br /&gt;zawsze poczekaj na zsynchronizowanie danych dodatkowych i porównaj z danymi z innego węzła.</translation>
-    </message>
-    <message>
-        <source>Alias</source>
-        <translation>Alias</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Adres</translation>
-    </message>
-    <message>
-        <source>Protocol</source>
-        <translation>Protokół</translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <source>Active</source>
-        <translation>Aktywny</translation>
-    </message>
-    <message>
-        <source>Last Seen</source>
-        <translation>Ostatnio widziany</translation>
-    </message>
-    <message>
-        <source>Payee</source>
-        <translation>Odbiorca</translation>
-    </message>
-    <message>
-        <source>Start &amp;all</source>
-        <translation>Uruchom &amp;wszystkie</translation>
-    </message>
-    <message>
-        <source>Start &amp;MISSING</source>
-        <translation>Uruchom &amp;brakujące</translation>
-    </message>
-    <message>
-        <source>&amp;Update status</source>
-        <translation>&amp;Aktualizuj status</translation>
-    </message>
-    <message>
-        <source>Status will be updated automatically in (sec):</source>
-        <translation>Czas (w sekundach) do automatycznej aktualizacji statusu:</translation>
-    </message>
-    <message>
         <source>0</source>
         <translation>0</translation>
-    </message>
-    <message>
-        <source>All Masternodes</source>
-        <translation>Wszystkie Masternody</translation>
     </message>
     <message>
         <source>Filter List:</source>
@@ -1172,55 +1090,107 @@
         <translation>Liczba węzłów:</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Uruchom alias</translation>
+        <source>Show only masternodes this wallet has keys for.</source>
+        <translation>Pokaż tylko masternody których klucze są w tym portfelu.</translation>
     </message>
     <message>
-        <source>Confirm masternode start</source>
-        <translation>Potwierdź start masternoda</translation>
+        <source>My masternodes only</source>
+        <translation>Tylko moje masternody</translation>
     </message>
     <message>
-        <source>Are you sure you want to start masternode %1?</source>
-        <translation>Czy na pewno chcesz wystartować masternod %1?</translation>
+        <source>Service</source>
+        <translation>Usługa</translation>
     </message>
     <message>
-        <source>Confirm all masternodes start</source>
-        <translation>Potwierdź start wszystkich masternodów</translation>
+        <source>PoSe Score</source>
+        <translation>Wynik PoSe</translation>
     </message>
     <message>
-        <source>Are you sure you want to start ALL masternodes?</source>
-        <translation>Czy na pewno chcesz wystartować WSZYSTKIE masternody?</translation>
+        <source>Registered</source>
+        <translation>Zarejestrowany</translation>
     </message>
     <message>
-        <source>Command is not available right now</source>
-        <translation>Obecnie komenda jest niedostępna.</translation>
+        <source>Last Paid</source>
+        <translation>Ostatnio zapłacony</translation>
     </message>
     <message>
-        <source>You can't use this command until masternode list is synced</source>
-        <translation>Nie możesz użyć tej komendy przed zsynchronizowaniem listy masternodów.</translation>
+        <source>Next Payment</source>
+        <translation>Następna płatność</translation>
     </message>
     <message>
-        <source>Confirm missing masternodes start</source>
-        <translation>Potwierdź uruchomienie zagubionego masternoda</translation>
+        <source>Payout Address</source>
+        <translation>Adres Wypłaty</translation>
     </message>
     <message>
-        <source>Are you sure you want to start MISSING masternodes?</source>
-        <translation>Czy na pewno chcesz wystartować BRAKUJĄCE masternody?</translation>
+        <source>Operator Reward</source>
+        <translation>Nagroda dla operatora</translation>
+    </message>
+    <message>
+        <source>Collateral Address</source>
+        <translation>Adres Zastawu</translation>
+    </message>
+    <message>
+        <source>Owner Address</source>
+        <translation>Adres Właściciela</translation>
+    </message>
+    <message>
+        <source>Voting Address</source>
+        <translation>Adres głosujący</translation>
+    </message>
+    <message>
+        <source>Copy ProTx Hash</source>
+        <translation>Skopiuj ProTx Hash</translation>
+    </message>
+    <message>
+        <source>Copy Collateral Outpoint</source>
+        <translation>Skopiuj Collateral punkt wyjscia</translation>
+    </message>
+    <message>
+        <source>ENABLED</source>
+        <translation>WŁĄCZONY</translation>
+    </message>
+    <message>
+        <source>POSE_BANNED</source>
+        <translation>POSE_ZBANOWANY</translation>
+    </message>
+    <message>
+        <source>UNKNOWN</source>
+        <translation>NIEZNANY</translation>
+    </message>
+    <message>
+        <source>to %1</source>
+        <translation>do %1</translation>
+    </message>
+    <message>
+        <source>to UNKNOWN</source>
+        <translation>do NIEZNANEGO</translation>
+    </message>
+    <message>
+        <source>but not claimed</source>
+        <translation>ale nie zażądana</translation>
+    </message>
+    <message>
+        <source>NONE</source>
+        <translation>ŻADEN</translation>
+    </message>
+    <message>
+        <source>Additional information for DIP3 Masternode %1</source>
+        <translation>Dodatkowe informacje dla DIP3 Masternode %1</translation>
     </message>
 </context>
 <context>
     <name>ModalOverlay</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the GENIX network, as detailed below.</source>
-        <translation>Ostatnie mogą jeszcze nie być widoczne i dlatego saldo portfela może być niepoprawne. Poprawne informacje pojawią się po zakończeniu synchronizacji z siecią GENIX, tak jak przedstawiono to poniżej.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the genix network, as detailed below.</source>
+        <translation>Ostatnie transakcje mogą jeszcze być niewidoczne. Saldo może być błędne. Poprawne informacje pojawią się po zakończeniu synchronizacji z siecią genix. Stan synchronizacji widzisz poniżej.</translation>
     </message>
     <message>
-        <source>Attempting to spend GENIX that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Próba wydania środków, z transakcji wykonanych, ale jeszcze niewidocznych, nie zostanie zaakceptowana przez sieć.</translation>
+        <source>Attempting to spend genix that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Próba wydania środków z transakcji wykonanych, ale jeszcze niewidocznych, nie zostanie zaakceptowana przez sieć.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1237,10 +1207,6 @@
     <message>
         <source>Progress</source>
         <translation>Postęp</translation>
-    </message>
-    <message>
-        <source>~</source>
-        <translation>~</translation>
     </message>
     <message>
         <source>Progress increase per hour</source>
@@ -1313,20 +1279,8 @@
         <translation>(0=auto, &lt;0 = zostaw tyle wolnych rdzeni)</translation>
     </message>
     <message>
-        <source>Amount of GENIX to keep anonymized</source>
-        <translation>Ilość GENIXów, które mają pozostać anonimowe.</translation>
-    </message>
-    <message>
         <source>W&amp;allet</source>
         <translation>Portfel</translation>
-    </message>
-    <message>
-        <source>Automatically start GENIX Core after logging in to the system.</source>
-        <translation>Automatycznie uruchom GENIX Core po zalogowaniu do systemu.</translation>
-    </message>
-    <message>
-        <source>&amp;Start GENIX Core on system login</source>
-        <translation>&amp;Uruchom GENIX Core przy zalogowaniu do systemu</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1353,6 +1307,10 @@
         <translation>Ostrzegaj, jeżeli wyczerpują się klucze PrivateSend</translation>
     </message>
     <message>
+        <source>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
+        <translation>Czy użyć eksperymentalnego trybu PrivateSend z wielokrotnymi sesjami miksowania na blok?&lt;br/&gt;Uwaga: Korzystaj z tego trybu rozważnie.&lt;br/&gt;Zawsze sprawdź czy masz w bezpiecznym miejscu najnowszą (automatyczną) kopię zapasową!</translation>
+    </message>
+    <message>
         <source>Enable PrivateSend &amp;multi-session</source>
         <translation>Włącz multi-sesję dla PrivateSend</translation>
     </message>
@@ -1366,55 +1324,71 @@
     </message>
     <message>
         <source>This amount acts as a threshold to turn off PrivateSend once it's reached.</source>
-        <translation>Ta kwota działa jako próg po którego przekroczeniu PrivateSend zostaje wyłączony.</translation>
+        <translation>Ta kwota działa jako próg, po którego przekroczeniu PrivateSend zostaje wyłączony.</translation>
     </message>
     <message>
-        <source>Automatically open the GENIX Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatycznie otwórz port klienta GENIX Core na ruterze. Opcja działa jedynie, jeżeli router obsługuje UPnP i funkcja UPnP jest włączona.</translation>
+        <source>Target PrivateSend balance</source>
+        <translation>Celem jest bilans PrivateSend</translation>
     </message>
     <message>
-        <source>Accept connections from outside</source>
-        <translation>Akceptuj połączenia z zewnątrz</translation>
+        <source>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatycznie otwórz port klienta Genix Core na ruterze. Opcja działa jedynie, jeżeli router obsługuje UPnP i funkcja UPnP jest włączona.</translation>
     </message>
     <message>
-        <source>Allow incoming connections</source>
-        <translation>Zezwól na przychodzące połączenia</translation>
-    </message>
-    <message>
-        <source>Connect to the GENIX network through a SOCKS5 proxy.</source>
-        <translation>Połącz się z siecią GENIX przez proxy SOCKS5.</translation>
+        <source>Connect to the genix network through a SOCKS5 proxy.</source>
+        <translation>Połącz się z siecią genix przez proxy SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
         <translation>Połą&amp;cz się przez SOCKS5 proxy (opcja domyślna):</translation>
     </message>
     <message>
+        <source>Shows if the supplied default SOCKS5 proxy is used to reach peers via this network type.</source>
+        <translation>Pokazuje czy podane domyślnie SOCKS5 proxy jest używane do połączenia z peerami przez ten rodzaj sieci.</translation>
+    </message>
+    <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</source>
         <translation>Minimalizuje zamiast zakończyć działanie programu przy zamknięciu okna. Kiedy ta opcja jest włączona, program zakończy działanie po wybraniu Zamknij w menu.</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting GENIX Core.</source>
-        <translation>Tutaj można ustawić język interfejsu użytkownika. Ustawienie to zostanie uaktywnione po ponownym uruchomieniu GENIX Core.</translation>
+        <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items.&lt;br/&gt;%s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
+        <translation>URL do zewnętrznych seriwsó(np. eksplorator bloków), które pojawiają się w zakładce transakcji jako pozycje w menu kontekstowym.&lt;br/&gt; %s w URL jest zastąpione przez hash transakcji. Wielokrotne URL są oddzielane przez pionową poprzeczkę |.</translation>
     </message>
     <message>
         <source>Expert</source>
         <translation>Ekspert</translation>
     </message>
     <message>
-        <source>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</source>
-        <translation>Tutaj możesz ustawić liczbę masternodów, przez które transakcja zostanie przepuszczona.&lt;br/&gt;Im większa liczba masternodów tym większy poziom anonimowości, ale opłata jest również wyższa.</translation>
-    </message>
-    <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Czy pokazać funkcje kontroli monet czy nie.</translation>
+    </message>
+    <message>
+        <source>Automatically start %1 after logging in to the system.</source>
+        <translation>Automatycznie uruchom %1 po zalogowaniu do systemu.</translation>
+    </message>
+    <message>
+        <source>&amp;Start %1 on system login</source>
+        <translation>Uruchamiaj %1 wraz z zalogowaniem do &amp;systemu</translation>
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
         <translation>Włącz funkcje &amp;kontroli monet</translation>
     </message>
     <message>
+        <source>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
+        <translation>Pokaż podręczne systemowe wyskakujące okienka PrivateSend transakcji mieszania &lt;br/&gt; tak jak dla wszystkich innych typów transakcji.</translation>
+    </message>
+    <message>
+        <source>Show popups for PrivateSend transactions</source>
+        <translation>Pokazuj podręczne wyskakujące okienka dla transakcji PrivateSend</translation>
+    </message>
+    <message>
         <source>&amp;Spend unconfirmed change</source>
         <translation>&amp;Wydaj niepotwierdzoną resztę</translation>
+    </message>
+    <message>
+        <source>This setting determines the amount of individual masternodes that an input will be mixed through.&lt;br/&gt;More rounds of mixing gives a higher degree of privacy, but also costs more in fees.</source>
+        <translation>To ustawienie decyduje o liczbie osobnych masternodów któe będą miksować wybraną kwotę. &lt;br/&gt;Im więcej rund mieszania, tym większy poziom prywatności, ale również kosztuje więcej w opłatach za transakcje.</translation>
     </message>
     <message>
         <source>&amp;Network</source>
@@ -1423,6 +1397,14 @@
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Mapuj port używając &amp;UPnP</translation>
+    </message>
+    <message>
+        <source>Accept connections from outside</source>
+        <translation>Akceptuj połączenia z zewnątrz</translation>
+    </message>
+    <message>
+        <source>Allow incoming connections</source>
+        <translation>Zezwól na przychodzące połączenia</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1457,8 +1439,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the GENIX network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Połącz się z siecią GENIX przez oddzielne proxy SOCKS5 dla ukrytych usług Tor.</translation>
+        <source>Connect to the genix network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Połącz się z siecią genix przez oddzielne proxy SOCKS5 dla ukrytych usług Tor.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -1497,9 +1479,13 @@
         <translation>Język &amp;Użytkownika:</translation>
     </message>
     <message>
+        <source>The user interface language can be set here. This setting will take effect after restarting %1.</source>
+        <translation>Tu możesz ustawić język interfejsu. Zmiana stanie się aktywna po ponownym uruchomieniu %1.</translation>
+    </message>
+    <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
 https://www.transifex.com/projects/p/genix/</source>
-        <translation>GENIX Core nie został przetłumaczony na twój język? Tłumaczenie jest niepełne lub niepoprawne? Możesz pomóc nam tłumaczyć tutaj:
+        <translation>Genix Core nie został przetłumaczony na Twój język? Tłumaczenie jest niepełne lub niepoprawne? Możesz pomóc nam tłumaczyć tutaj:
 https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
@@ -1578,8 +1564,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Formularz</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the GENIX network after a connection is established, but this process has not completed yet.</source>
-        <translation>Wyświetlona informacja może być przedawniona. Twój portfel automatycznie zsynchronizuje się z siecią GENIX, gdy tylko zostanie ustanowione połączenie, jednak proces ten jeszcze się nie zakończył.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the genix network after a connection is established, but this process has not completed yet.</source>
+        <translation>Wyświetlona informacja może być przedawniona. Twój portfel automatycznie zsynchronizuje się z siecią genix, gdy tylko zostanie ustanowione połączenie, jednak proces ten jeszcze się nie zakończył.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1658,28 +1644,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Ukończone:</translation>
     </message>
     <message>
-        <source>Try to manually submit a PrivateSend request.</source>
-        <translation>Spróbuj ręcznie zażądać PrivateSend.</translation>
-    </message>
-    <message>
-        <source>Reset the current status of PrivateSend (can interrupt PrivateSend if it's in the process of Mixing, which can cost you money!)</source>
-        <translation>Zresetuj obecny stan PrivateSend (może przerwać PrivateSend, jeżeli jest w trakcie mieszania. Może Cię to kosztować! )</translation>
-    </message>
-    <message>
-        <source>Information about PrivateSend and Mixing</source>
-        <translation>Informacje o PrivateSend i Mieszaniu.</translation>
-    </message>
-    <message>
-        <source>Info</source>
-        <translation>Informacje</translation>
-    </message>
-    <message>
         <source>Amount and Rounds:</source>
         <translation>Ilość oraz Rundy:</translation>
     </message>
     <message>
-        <source>0 GENIX / 0 Rounds</source>
-        <translation>0 GENIX / 0 Rund</translation>
+        <source>0 genix / 0 Rounds</source>
+        <translation>0 genix / 0 Rund</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>
@@ -1708,14 +1678,6 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <source>(Last Message)</source>
         <translation>(Ostatnia Wiadomość)</translation>
-    </message>
-    <message>
-        <source>Try Mix</source>
-        <translation>Mieszaj</translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation>Reset</translation>
     </message>
     <message>
         <source>out of sync</source>
@@ -1747,7 +1709,7 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <source>Not enough compatible inputs to anonymize &lt;span style='color:red;'&gt;%1&lt;/span&gt;,&lt;br&gt;will anonymize &lt;span style='color:red;'&gt;%2&lt;/span&gt; instead</source>
-        <translation>Nie ma wystarczającej ilośći środków aby moć dokonać anonimizacji &lt;span style='color:red;'&gt;%1&lt;/span&gt;,&lt;br&gt;zamiast oryginalnej sumy &lt;spam style='color:red;'&gt;%2&lt;/spam&gt; zostanie zanonimizowanych.</translation>
+        <translation>Brak wystarczających środków by wykonać anonimizację &lt;span style='color:red;'&gt;%1&lt;/span&gt;. Zamiast tego &lt;br&gt; przeprowadzisz anonimizację &lt;span style='color:red;'&gt;%2&lt;/span&gt; </translation>
     </message>
     <message>
         <source>Overall progress</source>
@@ -1758,12 +1720,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Denominowane</translation>
     </message>
     <message>
-        <source>Mixed</source>
-        <translation>Zmiksowane</translation>
+        <source>Partially mixed</source>
+        <translation>Częściowo wymieszane</translation>
     </message>
     <message>
-        <source>Anonymized</source>
-        <translation>Zanonimowane</translation>
+        <source>Mixed</source>
+        <translation>Zmiksowane</translation>
     </message>
     <message numerus="yes">
         <source>Denominated inputs have %5 of %n rounds on average</source>
@@ -1783,10 +1745,10 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <source>We are about to create a new automatic backup for you, however &lt;span style='color:red;'&gt; you should always make sure you have backups saved in some safe place&lt;/span&gt;!</source>
-        <translation>Utworzymy nową automatyczną kopię zapasową, jednak&lt;span style='color:red;'&gt; zawsze musisz zapisywać swoje kopie zapasowe w bezpiecznym miejscu &lt;/span&gt;!</translation>
+        <translation>Utworzymy nową automatyczną kopię zapasową, jednak&lt;span style='color:red;'&gt; zawsze musisz zapisywać kopie zapasowe w bezpiecznym miejscu &lt;/span&gt;!</translation>
     </message>
     <message>
-        <source>Note: You turn this message off in options.</source>
+        <source>Note: You can turn this message off in options.</source>
         <translation>Uwaga: Ten komunikat możesz wyłączyć w Opcjach.</translation>
     </message>
     <message>
@@ -1818,14 +1780,6 @@ https://www.transifex.com/projects/p/genix/</translation>
 </source>
         <translation>Ostatnia wiadomość PrivateSend:
 </translation>
-    </message>
-    <message>
-        <source>N/A</source>
-        <translation>NIEDOSTĘPNE</translation>
-    </message>
-    <message>
-        <source>PrivateSend was successfully reset.</source>
-        <translation>PrivateSend pomyślnie zresetowano</translation>
     </message>
     <message>
         <source>If you don't want to see internal PrivateSend fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
@@ -1863,8 +1817,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Nieprawidłowy adres płatności %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid GENIX address or malformed URI parameters.</source>
-        <translation>URI nie może zostać przeanalizowany! Mogło to być spowodowane przez niewłaściwy adres GENIX lub niewłaściwe parametry URI</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid genix address or malformed URI parameters.</source>
+        <translation>URI nie może zostać przeanalizowany! Mogło to być spowodowane przez niewłaściwy adres genix lub niewłaściwe parametry URI</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1953,36 +1907,16 @@ https://www.transifex.com/projects/p/genix/</translation>
 <context>
     <name>QObject</name>
     <message>
-        <source>GENIX Core</source>
-        <translation>GENIX Core</translation>
-    </message>
-    <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>Błąd: Podany folder danych "%1" nie istnieje.</translation>
-    </message>
-    <message>
-        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
-        <translation>Błąd: Nie można przetworzyć pliku konfiguracyjnego: %1. Używaj jedynie składni: klucz=wartość.</translation>
-    </message>
-    <message>
-        <source>Error: %1</source>
-        <translation>Błąd: %1</translation>
-    </message>
-    <message>
-        <source>Error reading masternode configuration file: %1</source>
-        <translation>Błąd wczytywania pliku konfiguracji masternoda: %1</translation>
-    </message>
-    <message>
-        <source>GENIX Core didn't yet exit safely...</source>
-        <translation>GENIX Core jeszcze nie został poprawnie zamknięty...</translation>
+        <source>%1 didn't yet exit safely...</source>
+        <translation>%1 jeszcze się bezpiecznie nie zamknął...</translation>
     </message>
     <message>
         <source>Amount</source>
         <translation>Kwota</translation>
     </message>
     <message>
-        <source>Enter a GENIX address (e.g. %1)</source>
-        <translation>Wpisz adres GENIX (np. %1)</translation>
+        <source>Enter a genix address (e.g. %1)</source>
+        <translation>Wpisz adres genix (np. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2046,6 +1980,59 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
 </context>
 <context>
+    <name>QObject::QObject</name>
+    <message>
+        <source>Error: Specified data directory "%1" does not exist.</source>
+        <translation>Błąd: Określony folder danych "%1" nie istnieje.</translation>
+    </message>
+    <message>
+        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
+        <translation>Błąd: Nie można przetworzyć pliku konfiguracyjnego: %1. Używaj tylko składni klucz=wartość.</translation>
+    </message>
+    <message>
+        <source>Error: %1</source>
+        <translation>Błąd: %1</translation>
+    </message>
+</context>
+<context>
+    <name>QRDialog</name>
+    <message>
+        <source>QR-Code Title</source>
+        <translation>Tytuł Kodu QR</translation>
+    </message>
+    <message>
+        <source>QR Code</source>
+        <translation>Kod QR</translation>
+    </message>
+    <message>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Zapisz obraz...</translation>
+    </message>
+    <message>
+        <source>Error creating QR Code.</source>
+        <translation>Błąd kreowania kodu QR.</translation>
+    </message>
+</context>
+<context>
+    <name>QRGeneralImageWidget</name>
+    <message>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Zapisz obraz...</translation>
+    </message>
+    <message>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Kopiuj obraz</translation>
+    </message>
+    <message>
+        <source>Save QR Code</source>
+        <translation>Zapisz Kod QR</translation>
+    </message>
+    <message>
+        <source>PNG Image (*.png)</source>
+        <translation>Obraz PNG (*.png)</translation>
+    </message>
+</context>
+<context>
     <name>QRImageWidget</name>
     <message>
         <source>&amp;Save Image...</source>
@@ -2081,10 +2068,6 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <source>Name</source>
         <translation>Nazwa</translation>
-    </message>
-    <message>
-        <source>Client name</source>
-        <translation>Nazwa klienta</translation>
     </message>
     <message>
         <source>N/A</source>
@@ -2147,10 +2130,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Użycie pamięci</translation>
     </message>
     <message>
-        <source>Open the GENIX Core debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otwórz plik dziennika debugowania GENIX Core w bieżącym folderze danych. W przypadku dużych plików może to chwilę potrwać.</translation>
-    </message>
-    <message>
         <source>&amp;Console</source>
         <translation>&amp;Konsola</translation>
     </message>
@@ -2160,11 +2139,7 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <source>&amp;Network Traffic</source>
-        <translation>$Ruch sieciowy</translation>
-    </message>
-    <message>
-        <source>&amp;Clear</source>
-        <translation>&amp;Wyczyść</translation>
+        <translation>Ruch sieciowy</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -2227,12 +2202,24 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Datadir</translation>
     </message>
     <message>
+        <source>Open the %1 debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Otwórz plik dziennika debugowania %1 z obecnego katalogu z danymi. Może to potrwać kilka sekund przy większych plikach.</translation>
+    </message>
+    <message>
+        <source>InstantSend locks</source>
+        <translation>Blokady InstantSend</translation>
+    </message>
+    <message>
         <source>Decrease font size</source>
         <translation>Zmniejsz rozmiar czcionki</translation>
     </message>
     <message>
         <source>Increase font size</source>
         <translation>Zwiększ rozmiar czcionki</translation>
+    </message>
+    <message>
+        <source>&amp;Reset</source>
+        <translation>&amp;Zresetuj</translation>
     </message>
     <message>
         <source>Services</source>
@@ -2363,16 +2350,20 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>&amp;Miejski</translation>
     </message>
     <message>
-        <source>Welcome to the GENIX Core RPC console.</source>
-        <translation>Witaj w konsoli RPC GENIX Core</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Użyj strzałek do przewijania historii i &lt;b&gt;Ctrl-L&lt;/b&gt; aby wyczyścić ekran</translation>
+        <source>Welcome to the %1 RPC console.</source>
+        <translation>Witaj w konsoli %1 RPC.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Wpisz &lt;b&gt;help&lt;/b&gt; aby uzyskać listę dostępnych komend</translation>
+    </message>
+    <message>
+        <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
+        <translation>Użyj strzałek do przewijania historii i %1 aby wyczyścić ekran</translation>
+    </message>
+    <message>
+        <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
+        <translation>UWAGA: Oszuści często mówią użytkownikom aby wpisywali tutaj komendy, co umożliwia kradzież monet. Nie używaj tej konsoli, jeśli nie rozumiesz funkcji używanych komend.</translation>
     </message>
     <message>
         <source>In:</source>
@@ -2385,6 +2376,10 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <source>Network activity disabled</source>
         <translation>Aktywność sieci jest wyłączona</translation>
+    </message>
+    <message>
+        <source>Total: %1 (Enabled: %2)</source>
+        <translation>Wszystkich: %1 (Włączonych: %2)</translation>
     </message>
     <message>
         <source>%1 B</source>
@@ -2446,8 +2441,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Użyj istniejącego adresu odbiorczego (nie zalecane)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the GENIX network.</source>
-        <translation>Opcjonalna wiadomość do żądania płatności. Wiadomość wyświetli się po otwarciu żądania. Pamiętaj: Wiadomość nie zostanie wysłana razem z płatnością poprzez sieć GENIX.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the genix network.</source>
+        <translation>Opcjonalna wiadomość do żądania płatności. Wiadomość wyświetli się po otwarciu żądania. Pamiętaj: Wiadomość nie zostanie wysłana razem z płatnością poprzez sieć genix.</translation>
     </message>
     <message>
         <source>&amp;Message:</source>
@@ -2458,8 +2453,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Opcjonalna etykieta do skojarzenia z nowym adresem odbiorczym.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the GENIX network.</source>
-        <translation>Opcjonalna wiadomość do żądania płatności. Wiadomość wyświetli się po otwarciu żądania.&lt;br&gt; Pamiętaj: Wiadomość nie zostanie wysłana razem z płatnością poprzez sieć GENIX.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the genix network.</source>
+        <translation>Opcjonalna wiadomość do żądania płatności. Wiadomość wyświetli się po otwarciu żądania.&lt;br&gt; Pamiętaj: Wiadomość nie zostanie wysłana razem z płatnością poprzez sieć genix.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -2488,10 +2483,6 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <source>Clear</source>
         <translation>Wyczyść</translation>
-    </message>
-    <message>
-        <source>Request InstantSend</source>
-        <translation>Zarządaj InstantSend</translation>
     </message>
     <message>
         <source>Requested payments history</source>
@@ -2577,18 +2568,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Wiadomość</translation>
     </message>
     <message>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>Tak</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>Nie</translation>
-    </message>
-    <message>
         <source>Resulting URI too long, try to reduce the text for label / message.</source>
         <translation>Wynikowy URI jest zbyt długi, spróbuj zmniejszyć tekst etykiety / wiadomości</translation>
     </message>
@@ -2620,12 +2599,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>(brak wiadomości)</translation>
     </message>
     <message>
-        <source>(no amount)</source>
+        <source>(no amount requested)</source>
         <translation>(brak kwoty)</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Kwota</translation>
+        <source>Requested</source>
+        <translation>Zażądano</translation>
     </message>
 </context>
 <context>
@@ -2688,7 +2667,7 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
-        <translation>Opłata za transakcje:</translation>
+        <translation>Opłata za transakcję:</translation>
     </message>
     <message>
         <source>Choose...</source>
@@ -2699,20 +2678,16 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>zamknij ustawienia opłat</translation>
     </message>
     <message>
+        <source>Confirmation time target:</source>
+        <translation>Docelowy czas potwierdzenia:</translation>
+    </message>
+    <message>
         <source>PrivateSend</source>
         <translation>PrivateSend</translation>
     </message>
     <message>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
-    </message>
-    <message>
-        <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Jeśli ręcznie ustalona opłata wynosi 1000 Duffów, a sama transakcja ma tylko 250 bajtów, to opłata "za kilobajt" wynosi tylko 250 duffów. &lt;br/&gt;Dzieje się tak dla każdej transakcji poniżej 1000 duffów. W przypadku transakcji większych niż jedrn kilobajt opłata jest naliczana od kilobajta. </translation>
-    </message>
-    <message>
-        <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "total at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Jeśli ręcznie ustalona opłata wynosi 1000 Duffów, a sama transakcja ma tylko 250 bitów, to opłata "za kilobajt" wynosi tylko 250 duffów.&lt;br/&gt; Dzieje się tak dla każdej transakcji poniżej 1000 duffów. W przypadku transakcji większych niż jeden kilobajt opłata jest naliczana od kilobajta.</translation>
+        <source>If the custom fee is set to 1000 twigs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 twigs in fee,&lt;br /&gt;while "at least" pays 1000 twigs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Jeśli ręcznie ustalona opłata wynosi 1000 Duffów, a sama transakcja ma tylko 250 bajtów, to opłata "za kilobajt" wynosi tylko 250 duffów. &lt;br/&gt;Dzieje się tak dla każdej transakcji poniżej 1000 duffów. W przypadku transakcji większych niż jeden kilobajt opłata jest naliczana od kilobajta. </translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for genix transactions than the network can process.</source>
@@ -2723,16 +2698,20 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>na kilobajt</translation>
     </message>
     <message>
+        <source>Using the fallbackfee can result in sending a transaction that will take several hours or days (or never) to confirm. Consider choosing your fee manually or wait until you have validated the complete chain.</source>
+        <translation>Używając opcji fallbackfee może sprawić, że transakcja nie zostanie potwierdzona przez kilka godzin, dni, lub nigdy. Pomyśl nad ręcznym wybraniem wysokości opłaty, lub poczekaj pełną walidację łańcucha.</translation>
+    </message>
+    <message>
+        <source>Note: Not enough data for fee estimation, using the fallback fee instead.</source>
+        <translation>Uwaga: Za mało danych do oszacowania opłaty, używam opłaty zastępczej.</translation>
+    </message>
+    <message>
         <source>Hide</source>
         <translation>Ukryj</translation>
     </message>
     <message>
-        <source>total at least</source>
-        <translation>Łączna kwota wynosi co najmniej</translation>
-    </message>
-    <message>
         <source>(read the tooltip)</source>
-        <translation>(przeczytaj powpowiedź w chmurce)</translation>
+        <translation>(przeczytaj podpowiedź w chmurce)</translation>
     </message>
     <message>
         <source>Recommended:</source>
@@ -2745,26 +2724,6 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
         <translation>(Opłata smart nie została jeszcze zainicjonowana. Zazwyczaj zajmuje to kilka bloków...)</translation>
-    </message>
-    <message>
-        <source>Confirmation time:</source>
-        <translation>Czas potwierdzenia:</translation>
-    </message>
-    <message>
-        <source>normal</source>
-        <translation>normalny</translation>
-    </message>
-    <message>
-        <source>fast</source>
-        <translation>szybki</translation>
-    </message>
-    <message>
-        <source>Send as zero-fee transaction if possible</source>
-        <translation>Wyślij transakcję bez uiszczania opłat, jeśli jest to możliwe.</translation>
-    </message>
-    <message>
-        <source>(confirmation may take longer)</source>
-        <translation>(potwierdzenie może zająć trochę więcej czasu)</translation>
     </message>
     <message>
         <source>Confirm the send action</source>
@@ -2823,24 +2782,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Skopiuj resztę</translation>
     </message>
     <message>
+        <source>%1 (%2 blocks)</source>
+        <translation>%1 (%2 bloki)</translation>
+    </message>
+    <message>
         <source>using</source>
         <translation>używając</translation>
-    </message>
-    <message>
-        <source>anonymous funds</source>
-        <translation>anonimowe środki</translation>
-    </message>
-    <message>
-        <source>(privatesend requires this amount to be rounded up to the nearest %1).</source>
-        <translation>(privatesend wymaga aby ta kwota została zaokrąglona do najbliżeszej %1).</translation>
-    </message>
-    <message>
-        <source>any available funds (not anonymous)</source>
-        <translation>jakiekolwiek dostępne środki (brak anonimowości)</translation>
-    </message>
-    <message>
-        <source>and InstantSend</source>
-        <translation>oraz InstantSend</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -2852,7 +2799,7 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <source>are added as transaction fee</source>
-        <translation>dodane są jako opłata za transakcje</translation>
+        <translation>dodane są jako opłata za transakcję</translation>
     </message>
     <message>
         <source>Total Amount = &lt;b&gt;%1&lt;/b&gt;&lt;br /&gt;= %2</source>
@@ -2861,6 +2808,34 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <source>&lt;b&gt;(%1 of %2 entries displayed)&lt;/b&gt;</source>
         <translation>&lt;b&gt;(%1 z %2 wyświetlonych wpisów)&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>PrivateSend funds only</source>
+        <translation>Tylko fundusze PrivateSend</translation>
+    </message>
+    <message>
+        <source>any available funds</source>
+        <translation>jakiekolwiek dostępne środki</translation>
+    </message>
+    <message>
+        <source>(PrivateSend transactions have higher fees usually due to no change output being allowed)</source>
+        <translation>(Transakcje PrivateSend mają większe opłaty ponieważ reszta nie jest zwracana do odbiorcy)</translation>
+    </message>
+    <message>
+        <source>Transaction size: %1</source>
+        <translation>Rozmiar transakcji: %1</translation>
+    </message>
+    <message>
+        <source>Fee rate: %1</source>
+        <translation>Opłata: %1</translation>
+    </message>
+    <message numerus="yes">
+        <source>This transaction will consume %n input(s)</source>
+        <translation><numerusform>Transakcja ta zużyje %n nominał</numerusform><numerusform>Transakcja ta zużyje %n nominały</numerusform><numerusform>Transakcja ta zużyje %n nominałów</numerusform><numerusform>Transakcja ta zużyje %n nominałów</numerusform></translation>
+    </message>
+    <message>
+        <source>Warning: Using PrivateSend with %1 or more inputs can harm your privacy and is not recommended</source>
+        <translation>Uwaga: Używanie PrivateSend z %1 lub więcej nominałami może stanowić zagrożenie dla twojej anonimowości i nie jest zalecane.</translation>
     </message>
     <message>
         <source>Confirm send coins</source>
@@ -2891,8 +2866,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Utworzenie transakcji nie powiodło się!</translation>
     </message>
     <message>
-        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Transakcja została odrzucona! Może się to zdarzyć, jeśli część monet z portfela została już wydana przy użyciu kopii pliku wallet.dat i nie zostało to tutaj uwzględnione.</translation>
+        <source>The transaction was rejected with the following reason: %1</source>
+        <translation>Transakcja została odrzucona z następującym powodem: %1</translation>
     </message>
     <message>
         <source>A fee higher than %1 is considered an absurdly high fee.</source>
@@ -2911,12 +2886,20 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation><numerusform>Potwierdzenia zaczną się za około %n blok</numerusform><numerusform>Potwierdzenia zaczną się za około %n bloki</numerusform><numerusform>Potwierdzenia zaczną się za około %n bloków</numerusform><numerusform>Potwierdzenia zaczną się za około %n bloków</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid GENIX address</source>
-        <translation>Ostrzeżenie: adres GENIX jest nieprawidlowy </translation>
+        <source>Warning: Invalid genix address</source>
+        <translation>Ostrzeżenie: adres genix jest nieprawidlowy </translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
         <translation>Ostrzeżenie: Nieznany adres reszty</translation>
+    </message>
+    <message>
+        <source>Confirm custom change address</source>
+        <translation>Potwierdź zmianę adresu własnego</translation>
+    </message>
+    <message>
+        <source>The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?</source>
+        <translation>Adres który wybrałeś dla reszty nie znajduje się w tym porfelu. Część lub wszystkie twoje monety mogą zostać wysłane na ten adres. Jesteś pewien? </translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2934,8 +2917,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Zapłać &amp;dla:</translation>
     </message>
     <message>
-        <source>The GENIX address to send the payment to</source>
-        <translation>Adres GENIX na który wysłać fundusze</translation>
+        <source>The genix address to send the payment to</source>
+        <translation>Adres genix na który wysłać fundusze</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2970,7 +2953,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Su&amp;ma:</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of GENIX than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of genix than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation>Opłata zostanie odliczona od wysyłanej kwoty. Odbiorca otrzyma mniej, niż wprowadziłeś w polu kwoty. W razie wielu odbiorców, opłata zostanie równo podzielona.</translation>
     </message>
     <message>
@@ -2982,8 +2965,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Wiadomość:</translation>
     </message>
     <message>
-        <source>A message that was attached to the genix: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the GENIX network.</source>
-        <translation>Wiadomość, która została dołączona do genix: Link, który zostanie zapisany wraz z transakcją do wglądu w przyszłości. Zauważ, że sama wiadomość nie zostanie wysłana przez sieć GENIX.</translation>
+        <source>A message that was attached to the genix: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the genix network.</source>
+        <translation>Wiadomość, która została dołączona do genix: Link, który zostanie zapisany wraz z transakcją do wglądu w przyszłości. Zauważ, że sama wiadomość nie zostanie wysłana przez sieć genix.</translation>
     </message>
     <message>
         <source>This is an unauthenticated payment request.</source>
@@ -3007,10 +2990,17 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
 </context>
 <context>
+    <name>SendConfirmationDialog</name>
+    <message>
+        <source>Yes</source>
+        <translation>Tak</translation>
+    </message>
+</context>
+<context>
     <name>ShutdownWindow</name>
     <message>
-        <source>GENIX Core is shutting down...</source>
-        <translation>Trwa zamykanie GENIX Core</translation>
+        <source>%1 is shutting down...</source>
+        <translation>%1 się zamyka...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -3028,12 +3018,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Podpi&amp;sz Wiadomość</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive GENIX sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive genix sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Możesz podpisywać wiadomości swoimi adresami aby udowodnić, że jesteś ich właścicielem. Uważaj, aby nie podpisywać niczego co wzbudza Twoje podejrzenia, ponieważ ktoś może stosować phishing próbując nakłonić Cię do ich podpisania. Akceptuj i podpisuj tylko w pełni zrozumiałe komunikaty i wiadomości.</translation>
     </message>
     <message>
-        <source>The GENIX address to sign the message with</source>
-        <translation>Adres GENIX do podpisu wiadomości</translation>
+        <source>The genix address to sign the message with</source>
+        <translation>Adres genix do podpisu wiadomości</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3064,8 +3054,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Kopiuje aktualny podpis do schowka systemowego</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this GENIX address</source>
-        <translation>Podpisz wiadomość, aby udowodnić, że jesteś właścicielem adresu GENIX.</translation>
+        <source>Sign the message to prove you own this genix address</source>
+        <translation>Podpisz wiadomość, aby udowodnić, że jesteś właścicielem adresu genix.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3088,12 +3078,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Wpisz adres odbiorcy, podaj wiadomość (upewnij się, że dokładnie skopiujesz wszystkie zakończenia linii, spacje, tabulacje itp.) oraz podpis poniżej by sprawdzić wiadomość. Uważaj by nie dodać więcej do podpisu niż do samej podpisywanej wiadomości by uniknąć ataku man-in-the-middle (człowiek pośrodku)</translation>
     </message>
     <message>
-        <source>The GENIX address the message was signed with</source>
-        <translation>Adres GENIX, którym wiadomość została podpisana</translation>
+        <source>The genix address the message was signed with</source>
+        <translation>Adres genix, którym wiadomość została podpisana</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified GENIX address</source>
-        <translation>Zweryfikuj wiadomość, aby upewnić się, że została zapisana przez konkretny adres GENIX</translation>
+        <source>Verify the message to ensure it was signed with the specified genix address</source>
+        <translation>Zweryfikuj wiadomość, aby upewnić się, że została zapisana przez konkretny adres genix</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3163,20 +3153,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>[testnet]</translation>
     </message>
     <message>
-        <source>GENIX Core</source>
-        <translation>GENIX Core</translation>
-    </message>
-    <message>
         <source>Version %1</source>
         <translation>Wersja %1</translation>
-    </message>
-    <message>
-        <source>The GENIX Core developers</source>
-        <translation>Deweloperzy GENIX Core</translation>
-    </message>
-    <message>
-        <source>The GENIX Core developers</source>
-        <translation>Deweloperzy GENIX Core</translation>
     </message>
 </context>
 <context>
@@ -3229,16 +3207,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>%1 potwierdzeń</translation>
     </message>
     <message>
-        <source>verified via InstantSend</source>
-        <translation>potwierdzono przez InstantSend</translation>
+        <source>locked via LLMQ based ChainLocks</source>
+        <translation>zablokowane przez LLMQ oparte o ChainLocks</translation>
     </message>
     <message>
-        <source>InstantSend verification in progress - %1 of %2 signatures</source>
-        <translation>InstantSend jest weryfikowane - %1 z %2 sygnatur.</translation>
-    </message>
-    <message>
-        <source>InstantSend verification failed</source>
-        <translation>Potwierdzenie InstantSend nieudane</translation>
+        <source>verified via LLMQ based InstantSend</source>
+        <translation>zweryfikowane przez LLMQ oparte o InstantSend</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3333,6 +3307,10 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>ID transakcji</translation>
     </message>
     <message>
+        <source>Output index</source>
+        <translation>Indeks wyjściowy</translation>
+    </message>
+    <message>
         <source>Transaction total size</source>
         <translation>Całkowity rozmiar transakcji</translation>
     </message>
@@ -3372,12 +3350,12 @@ https://www.transifex.com/projects/p/genix/</translation>
 <context>
     <name>TransactionDescDialog</name>
     <message>
-        <source>Transaction details</source>
-        <translation>Szczegóły transakcji</translation>
-    </message>
-    <message>
         <source>This pane shows a detailed description of the transaction</source>
         <translation>Ten panel pokazuje szczegółowy opis transakcji</translation>
+    </message>
+    <message>
+        <source>Details for %1</source>
+        <translation>Szczegóły %1</translation>
     </message>
 </context>
 <context>
@@ -3511,6 +3489,10 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Bez względu na to czy adres tylko do odczytu jest zawarty w tej transakcji.</translation>
     </message>
     <message>
+        <source>Whether or not this transaction was locked by InstantSend.</source>
+        <translation>Czy transakcja ta została zabezpieczona przez InstantSend lub nie.</translation>
+    </message>
+    <message>
         <source>User-defined intent/purpose of the transaction.</source>
         <translation>Określony przez użytkownika cel transakcji.</translation>
     </message>
@@ -3524,6 +3506,14 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <source>All</source>
         <translation>Wszystko</translation>
+    </message>
+    <message>
+        <source>Locked by InstantSend</source>
+        <translation>Zablokowane przez InstantSend</translation>
+    </message>
+    <message>
+        <source>Not locked by InstantSend</source>
+        <translation>Niezablokowane przez InstantSend</translation>
     </message>
     <message>
         <source>Today</source>
@@ -3638,6 +3628,10 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Pokaż szczegóły transakcji</translation>
     </message>
     <message>
+        <source>Show address QR code</source>
+        <translation>Pokaż adres kodu QR</translation>
+    </message>
+    <message>
         <source>Export Transaction History</source>
         <translation>Eksport historii transakcji</translation>
     </message>
@@ -3690,6 +3684,10 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Historia transakcji została zapisana do %1.</translation>
     </message>
     <message>
+        <source>QR code</source>
+        <translation>Kod QR</translation>
+    </message>
+    <message>
         <source>Range:</source>
         <translation>Zakres:</translation>
     </message>
@@ -3717,14 +3715,6 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <source>Send Coins</source>
         <translation>Wyślij płatność</translation>
-    </message>
-    <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 GENIX.</source>
-        <translation>InstantSend nie obsługuje jeszcze tak wielkich kwot. Transakcje są obecnie ograniczone do %1 GENIX</translation>
-    </message>
-    <message>
-        <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
-        <translation>Dla tej transakcji InstantSend użyto zbyt wielu wejść (&gt;%1). Opłata może być bardzo wysoka.</translation>
     </message>
 </context>
 <context>
@@ -3773,10 +3763,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Związany z danym adresem oraz zawsze prowadzący na nim nasłuch.  Użyj [host]:oznaczenie dla IPv6</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. GENIX Core is probably already running.</source>
-        <translation>Nie można zablokować katalogu danych %s. Prawdopodobnie GENIX jest już uruchomiony. </translation>
-    </message>
-    <message>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
         <translation>Błąd: Nie powiodło się nasłuchiwanie połączeń przychodzących (nasłuch zwrócił błąd %s)</translation>
     </message>
@@ -3797,24 +3783,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Nazwa służąca do stworzenia linka do KeePass w którym trzymane jest hasło portfela</translation>
     </message>
     <message>
-        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
-        <translation>Jeśli pula adresów jest niska, pytaj o adresy peer przez podgląd DNS (domyślnie: 1 chyba że -connect)</translation>
-    </message>
-    <message>
-        <source>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</source>
-        <translation>Ustaw maksymalny rozmiar transakcji o wysokim/niskim priorytecie w bajtach (domyślny: %d)</translation>
-    </message>
-    <message>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
         <translation>Ustaw liczbę wątków weryfikacji skryptu (%u do %d, 0 = auto, &lt;0 = zostaw tyle rdzeni wolnych, domyślnie: %d)</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
         <translation>Ta wersja nie jest jeszcze gotowa na oficjalne wydanie - używaj jej na własne ryzyko - nie używaj tej wersji do kopania monet lub do świadczenia usług komercyjnych.</translation>
-    </message>
-    <message>
-        <source>Unable to bind to %s on this computer. GENIX Core is probably already running.</source>
-        <translation>Niezdolny do związania z %s na tym komputerze. Prawdopodobnie GENIX jest już uruchomiony. </translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -3825,24 +3799,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>dadf</translation>
     </message>
     <message>
-        <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
-        <translation>Uwaga: plik wallet.dat jest uszkodzony, ale dane zostały odzyskane! Oryginalny plik wallet.dat został zapisany jako wallet.{timestamp}.bak w %s; jeżeli twoje saldo lub transakcje są nieprawidłowe powinieneś przwyrócić ten plik z kopi zapasowej.</translation>
-    </message>
-    <message>
-        <source>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</source>
-        <translation>Musisz sprecyzować masternodeprivkey w konfiguracji. Proszę przeglądnij dokumentacje w celu pomocy.</translation>
-    </message>
-    <message>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Zaakceptuj linie poleceń oraz polecenia JSON-RPC </translation>
-    </message>
-    <message>
-        <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
-        <translation>Pozwól na połączenia z zewnątrz (domyślnie: 1 jeśli nie -proxy lub -connect)</translation>
-    </message>
-    <message>
-        <source>Add a node to connect to and attempt to keep the connection open</source>
-        <translation>Dodaj węzeł do połączenia się oraz spróbuj utrzymać połączenie otwarte</translation>
     </message>
     <message>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
@@ -3861,24 +3819,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Nie można obniżyć wersji portfela</translation>
     </message>
     <message>
-        <source>Cannot resolve -bind address: '%s'</source>
-        <translation>Nie można rozwiązać -bind dla adresu adresu: '%s'</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -externalip address: '%s'</source>
-        <translation>Nie można rozwiązać -externalip dla adresu: '%s'</translation>
-    </message>
-    <message>
         <source>Cannot write default address</source>
         <translation>Nie można zapisać domyślnych adresów</translation>
     </message>
     <message>
         <source>Collateral not valid.</source>
         <translation>Transakcja pod zastaw jest nie niewłaściwa.</translation>
-    </message>
-    <message>
-        <source>Connect only to the specified node(s)</source>
-        <translation>Podłącz tylko do wyszczególnionych węzła(ów)</translation>
     </message>
     <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
@@ -3925,14 +3871,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Błąd wczytywania bloku bazy danych</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat</source>
-        <translation>Błąd wczytywania wallet.dat</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation>Błąd wczytywania wallet.dat: Portfel uszkodzony</translation>
-    </message>
-    <message>
         <source>Error opening block database</source>
         <translation>Błąd otwarcia bloku bazy danych</translation>
     </message>
@@ -3957,16 +3895,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>(1 = zaochwaj metadane np. informacje właściciela konta oraz żądania zapłat, 2 = pozbądź się matadanych tx)</translation>
     </message>
     <message>
-        <source>-fallbackfee is set very high! This is the transaction fee you may pay when fee estimates are not available.</source>
-        <translation>-fallbackfee jest bardzo wysoka! Ta opłata może być uiszczona jeśli nie ma innych szacunków wysokości opłaty.</translation>
-    </message>
-    <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
         <translation>-maxtxfee jest bardzo wysoka! Tak duże opłaty mogą być uiszczone przy wysłaniu jednej transakcji.</translation>
-    </message>
-    <message>
-        <source>-paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
-        <translation>-paytxfee jest bardzo wysoka! To jest opłata którą będziesz musiał uiścić jeśli dokonasz transakcji.</translation>
     </message>
     <message>
         <source>A fee rate (in %s/kB) that will be used when fee estimation has insufficient data (default: %s)</source>
@@ -3985,10 +3915,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Zwiąż z danym adresem oraz wpisz łączących się peerów na białą liste. Użyj notacji [host]:port dla IPv6</translation>
     </message>
     <message>
-        <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
-        <translation>Zwiąż z danym adresem oraz wpisz łączących się peerów na białą liste. Użyj notacji [host]:port dla IPv6. Opcja ta może być ustawiana wielokrotnie (domyślnie: połącz z wszystkimi interfejsami)</translation>
-    </message>
-    <message>
         <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
         <translation>Zamiast demaskowania 077, stwórz nowe pliki z domyślnymi pozwoleniami systemu (możliwe tylko z wyłączoną funkcją porfela)</translation>
     </message>
@@ -3997,12 +3923,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Usuń wszystkie transakcje portfela i odzyskaj tylko te części blockchainu - zeskanuj powonie na starcie.</translation>
     </message>
     <message>
-        <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
-        <translation>Rozpowszechniane na licencji MIT. Jeśli chcesz się dowiedzieć więcej otwórz towarzyszący plik o nzwie COPYING lub odwiedź &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
+        <source>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</source>
+        <translation>Włącz upublicznienie surowej transakcji próby double spendingu InstantSend w &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Error loading %s: You can't enable HD on a already existing non-HD wallet</source>
-        <translation>Błąd podczas wczytywania %s: Niemożliwe jest zmienienie zwykłego porfela w porfel HD</translation>
+        <source>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</source>
+        <translation>Włącz upublicznienie hashy transakcji próby double spendingu InstantSend w &lt;address&gt;</translation>
     </message>
     <message>
         <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
@@ -4029,10 +3955,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Utrzymuj pełny index transakcji używany przez getrawtransaction rpc call (domyślnie: %u)</translation>
     </message>
     <message>
-        <source>Make sure to encrypt your wallet and delete all non-encrypted backups after you verified that wallet works!</source>
-        <translation>Jeśli już zweryfikowałeś że porfel działa jak należy, to nie zapomnij zaszyfrować porfel oraz usunąć wszystkie niezaszyfrowane kopie zapasowe.</translation>
-    </message>
-    <message>
         <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
         <translation>Maksymalny rozmiar danych w wykopanych i retransmitowanych transakcjach przesyłanych przez operatora (domyślnie: %u)</translation>
     </message>
@@ -4045,24 +3967,16 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Informacje na temat debugowania danych wyjściowych (domyślnie: %u, podanie &lt;category&gt; jest opcjonalne)</translation>
     </message>
     <message>
-        <source>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</source>
-        <translation>Ustaw liczbę wątków do generowania monet, jeśli jest ono włączone (-1 = wszystkie rdzenie. domyślnie: %d)</translation>
+        <source>Overrides minimum spork signers to change spork value. Only useful for regtest and devnet. Using this on mainnet or testnet will ban you.</source>
+        <translation>Zastępuje minimalną liczbę osób podpsujących sporka. Użyeczne tylko dla regtest oraz devnet. Używanie tego na normalnej sieci lub testnecie zaskutkuje banem.</translation>
     </message>
     <message>
-        <source>Show N confirmations for a successfully locked transaction (0-9999, default: %u)</source>
-        <translation>Pokaż N potwierdzeń dla skutecznie zamkniętej transakcji (0-9999, domyślnie: %u)</translation>
+        <source>PrivateSend uses exact denominated amounts to send funds, you might simply need to mix some more coins.</source>
+        <translation>PrivateSend używa dokładnie zdenominowanych kwot, możliwe że musisz zmiksować więcej monet. </translation>
     </message>
     <message>
-        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
-        <translation>Produkt ten zawiera oprogramowanie stworzone przez OpenSSL Project do użytku w OpenSSL Toolkit &lt;https://www.openssl.org/&gt;, oprogramowanie krptograficzne napisane przez Eric Young oraz oprogramowanie UPnP napisane przez Thomas Bernard.</translation>
-    </message>
-    <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 1000 GENIX.</source>
-        <translation>Niemożliwe jest zlokalizowanie wystarczającej ilości środków dla tej transakcji, które nie są równe 1000 GENIX.</translation>
-    </message>
-    <message>
-        <source>Use hierarchical deterministic key generation (HD) after bip39/bip44. Only has effect during wallet creation/first start</source>
-        <translation>Użyj hierarchinie deterministyczny proces generacji kluczy (HD) po bip39/44 Tyczy się jedynie kiedy towrzysz nowy portfel.</translation>
+        <source>Use N separate masternodes in parallel to mix funds (%u-%u, default: %u)</source>
+        <translation>Użyj N osobnych masternodów jednocześnie aby wymieszać monety (%u-%u, domyślnie: %u)</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -4070,27 +3984,15 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <source>User defined mnemonic for HD wallet (bip39). Only has effect during wallet creation/first start (default: randomly generated)</source>
-        <translation>Lista słów dla porfela HD stworzona przez użytkownika (bip39). Tyczy się jedynie kiedy tworzysz nowy porfel (domyślnie: tworozne losowo)</translation>
+        <translation>Lista słów dla portfela HD stworzona przez użytkownika (bip39). Tyczy się jedynie kiedy tworzysz nowy portfel (domyślnie: tworzone losowo)</translation>
     </message>
     <message>
         <source>User defined seed for HD wallet (should be in hex). Only has effect during wallet creation/first start (default: randomly generated)</source>
         <translation>Lista słów dla porfela HD stworzona przez użytkownika (powinna być w formie hex). Tyczy się jedynie kiedy tworzysz nowy porfel. (domyślnie: tworzone losowo)</translation>
     </message>
     <message>
-        <source>Warning: incorrect parameter -walletbackupsdir, path must exist! Using default path.</source>
-        <translation>Uwaga: błędne parametry - walletbackupdir, ścieżka musi być poprawna! Używając domyślnie ścieżki.</translation>
-    </message>
-    <message>
-        <source>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</source>
-        <translation>Peery z białej listy łączące się z danej maski sieci lub adresu IP. Może byc ustawiane wielokrotnie.</translation>
-    </message>
-    <message>
         <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
         <translation>Peery z białej listy nie mogą zostać zbanowane a ich transakcje są zawsze retransmitowane, nawet jeśli już są w pamięci zbiorowej (mempool). Jest to przydatne np. dla bramek wyjściowych</translation>
-    </message>
-    <message>
-        <source>You need to rebuild the database using -reindex-chainstate to change -txindex</source>
-        <translation>Musisz odnowić bazę danych używając -reindex-chainstate aby zmienić -txindex</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -4109,10 +4011,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Mieszanie jest niemożliwe: nie znaleziono odpowiednich wartości wejściowych.</translation>
     </message>
     <message>
-        <source>Cannot resolve -whitebind address: '%s'</source>
-        <translation>Nie można rozwiązać -bind dla adresu adresu: '%s'</translation>
-    </message>
-    <message>
         <source>Chain selection options:</source>
         <translation>Opcje wyboru łańcucha:</translation>
     </message>
@@ -4125,36 +4023,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Podłącz do KeePassHttp na porcie &lt;port&gt; (domyślny: %u)</translation>
     </message>
     <message>
-        <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
-        <translation>Prawo autorskie (c) 2009-%i deweloperzy Bitcoin</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation>Prawa autorskie (C) 2014-%i deweloperzy Dash</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2017-%i The GENIX Core Developers</source>
-        <translation>Prawa autorskie (C) 2017-%i deweloperzy GENIX</translation>
-    </message>
-    <message>
-        <source>Enable the client to act as a masternode (0-1, default: %u)</source>
-        <translation>Upoważnia klienta aby działał jako masternode (0-1, domyślnie: %u)</translation>
-    </message>
-    <message>
         <source>Entry exceeds maximum size.</source>
         <translation>Przekracza maksymalny rozmiar.</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Błąd w połączeniu z Masternodem.</translation>
-    </message>
-    <message>
-        <source>Error loading %s: You can't disable HD on a already existing HD wallet</source>
-        <translation>Błąd podczas wczytywania %s: Niemożliwe jest zmienienie porfela HD w standarodowy porfel.</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of GENIX Core</source>
-        <translation>Błą wczytywania wallet.dat: Portfel wymaga nowszej wersji GENIX</translation>
     </message>
     <message>
         <source>Failed to load fulfilled requests cache from</source>
@@ -4169,20 +4039,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Nieudane ładowanie bufora masternodów z</translation>
     </message>
     <message>
-        <source>Failed to load masternode payments cache from</source>
-        <translation>Nieudane ładowanie bufora płatności masternodów z</translation>
-    </message>
-    <message>
         <source>Found enough users, signing ( waiting %s )</source>
         <translation>Znaleziono wystarczającą ilość użytkowników, trwa podoposywanie ( poczekaj %s )</translation>
     </message>
     <message>
         <source>Found enough users, signing ...</source>
         <translation>Znaleziono wystarczającą ilość użytkowników, zapisuje ...</translation>
-    </message>
-    <message>
-        <source>Generate coins (default: %u)</source>
-        <translation>Generuj monety (domyślny: %u)</translation>
     </message>
     <message>
         <source>How many blocks to check at startup (default: %u, 0 = all)</source>
@@ -4213,10 +4075,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Informacja</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. GENIX Core is shutting down.</source>
-        <translation>Inicjalizacja kontroli poprawności nie powiodła się. Trwa zamykanie GENIX Core</translation>
-    </message>
-    <message>
         <source>Input is not valid.</source>
         <translation>Transakcja wejściowa jest niewłaściwa.</translation>
     </message>
@@ -4225,32 +4083,24 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Niewystarczające środki</translation>
     </message>
     <message>
-        <source>Invalid -onion address: '%s'</source>
-        <translation>Nieprawidłowy adres -onion: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid -proxy address: '%s'</source>
-        <translation>Nieprawidłowy adres -proxy: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Nieprawidłowa kwota dla -maxtxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -minrelaytxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Nieprawidłowa kwota dla -minrelaytxfee=&lt;kwota&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -mintxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Nieprawidłowa kwota dla -mintxfee=&lt;kwota&gt;: '%s'</translation>
+        <source>Invalid amount for -discardfee=&lt;amount&gt;: '%s'</source>
+        <translation>Nieprawidłowa kwota dla -discardfee=&lt;amount&gt;: '%s'</translation>
     </message>
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</source>
         <translation>Nieprawidłowa kwota dla -paytxfee=&lt;amount&gt;: '%s' (musi wynosić co najmniej %s)</translation>
     </message>
     <message>
-        <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Nieprawidłowa kwota dla -paytxfee=&lt;kwota&gt;: '%s'</translation>
+        <source>Invalid minimum number of spork signers specified with -minsporkkeys</source>
+        <translation>Nieważna  minimalna liczba osób podpisujących sporka ustawiona z -minsporkkeys</translation>
+    </message>
+    <message>
+        <source>Keep N genix mixed (%u-%u, default: %u)</source>
+        <translation>Trzymaj N genix wymieszane (%u-%u, domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
+        <translation>Trzymaj nie więcej niż &lt;n&gt; niepołączonych transakcji w pamięci (domyślnie: %u)</translation>
     </message>
     <message>
         <source>Keypool ran out, please call keypoolrefill first</source>
@@ -4277,16 +4127,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Ładuję pamięć podręczną masternoda...</translation>
     </message>
     <message>
-        <source>Loading masternode payment cache...</source>
-        <translation>Ładuję pamięć podręczną płatności masternodów...</translation>
-    </message>
-    <message>
         <source>Lock is already in place.</source>
         <translation>Transakcja została już zamknięta.</translation>
-    </message>
-    <message>
-        <source>Lock masternodes from masternode configuration file (default: %u)</source>
-        <translation>Zamknij masternody z pliku konfiguracji (domyślnie: %u)</translation>
     </message>
     <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
@@ -4317,16 +4159,16 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Nie znalezione zadnego kompatybilnego Masternoda.</translation>
     </message>
     <message>
+        <source>Not enough funds to mix.</source>
+        <translation>Nie masz wystarczających środków do mieszania.</translation>
+    </message>
+    <message>
         <source>Not in the Masternode list.</source>
         <translation>Nie istnieje na liście masternodów.</translation>
     </message>
     <message>
         <source>Only connect to nodes in network &lt;net&gt; (ipv4, ipv6 or onion)</source>
         <translation>Łącz się tylko z węzłami w sieci &lt;net&gt; (ipv4, ipv6 lub onion)</translation>
-    </message>
-    <message>
-        <source>Port: %d</source>
-        <translation>Port: %d</translation>
     </message>
     <message>
         <source>Prepend debug output with timestamp (default: %u)</source>
@@ -4345,16 +4187,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Wyślij informacje o debugowaniu/śladach do pliku debug.log (domyślnie: %u)</translation>
     </message>
     <message>
-        <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
-        <translation>Wyślij transakcje jako darmowe jeśli istnieje taka możliwość (domyślnie: %u)</translation>
-    </message>
-    <message>
         <source>Set key pool size to &lt;n&gt; (default: %u)</source>
         <translation>Ustaw ilość kluczy w key pool na &lt;n&gt; (domyślny: %u)</translation>
-    </message>
-    <message>
-        <source>Set minimum block size in bytes (default: %u)</source>
-        <translation>Ustaw minimalny rozmiar bloku w bajtach (domyślny: %u)</translation>
     </message>
     <message>
         <source>Set the number of threads to service RPC calls (default: %d)</source>
@@ -4369,10 +4203,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>ustaw limit czasu połączenia w milisekundach (minimum: 1, domyślnie: %d)</translation>
     </message>
     <message>
-        <source>Specify masternode configuration file (default: %s)</source>
-        <translation>Ustaw plik konfiguracji masternoda (domyślnie: %s)</translation>
-    </message>
-    <message>
         <source>Specify pid file (default: %s)</source>
         <translation>Sprecyjzuj plik pid (domyślny: %s)</translation>
     </message>
@@ -4381,20 +4211,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Wydaj niepotwierdzoną resztę podczas wysyłania transakcji (domuślnie: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Następujące wpisy zostały przesłane do masternoda: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Zapisano do masternoda, czekam na więcej wejść ( %u / %d ) %s</translation>
-    </message>
-    <message>
         <source>Submitted to masternode, waiting in queue %s</source>
         <translation>Przesłano do masterdnoda, czekaj na swoją kolej %s</translation>
-    </message>
-    <message>
-        <source>Synchroning blockchain...</source>
-        <translation>Synchronizuję łańcuch bloków...</translation>
     </message>
     <message>
         <source>Synchronization failed</source>
@@ -4405,14 +4223,6 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Synchronizacja zakończona</translation>
     </message>
     <message>
-        <source>Synchronizing masternodes...</source>
-        <translation>Synchronizuję masternody...</translation>
-    </message>
-    <message>
-        <source>This is not a Masternode.</source>
-        <translation>To nie jest Masternode.</translation>
-    </message>
-    <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
         <translation>Próg dla niewłaściwie działających, odłączających sie peerów (domyślnie: %u)</translation>
     </message>
@@ -4421,12 +4231,32 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Zbyt wiele %f nominałów, usuwam.</translation>
     </message>
     <message>
+        <source>Too many %f denominations, skipping.</source>
+        <translation>Zbyt wiele %f denominacji, pomijam.</translation>
+    </message>
+    <message>
+        <source>Tor control port password (default: empty)</source>
+        <translation>Hasło do kontroli portu Tor (domyślnie: puste)</translation>
+    </message>
+    <message>
+        <source>Tor control port to use if onion listening enabled (default: %s)</source>
+        <translation>Używany port kontrolny Tora  jeśli włączony jest nasłuch onion (domyślnie %s)</translation>
+    </message>
+    <message>
         <source>Unable to start HTTP server. See debug log for details.</source>
         <translation>Uruchomienie serwera HTTP nieudane. Szczegóły znajdziesz w dzienniku debugowania.</translation>
     </message>
     <message>
         <source>Unknown response.</source>
         <translation>Nieznana odpowiedź.</translation>
+    </message>
+    <message>
+        <source>Unsupported argument -benchmark ignored, use -debug=bench.</source>
+        <translation>Nieobsługiwany argument - benchmark został zignorowany, użyj -debug=bench.</translation>
+    </message>
+    <message>
+        <source>Unsupported argument -debugnet ignored, use -debug=net.</source>
+        <translation>Znaleziono nieobsługiwany argument -debugnet zignorowano, użyj -debug=net.</translation>
     </message>
     <message>
         <source>Unsupported argument -tor found, use -onion.</source>
@@ -4449,16 +4279,16 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Użyj łańcucha testowego</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart GENIX Core to complete</source>
-        <translation>Portfel potrzebuje być przepisany: uruchom ponownie GENIX Core aby zakończyć.</translation>
+        <source>User Agent comment (%s) contains unsafe characters.</source>
+        <translation>Komentarz agenta użytkownika (%s) zawiera znaki które nie są bezpieczne.</translation>
+    </message>
+    <message>
+        <source>Verifying wallet(s)...</source>
+        <translation>Weryfikuje portfel(e)...</translation>
     </message>
     <message>
         <source>Will retry...</source>
         <translation>Spróbuje ponownie...</translation>
-    </message>
-    <message>
-        <source>Invalid masternodeprivkey. Please see documenation.</source>
-        <translation>Nieprawidłowy klucz prywatny masternoda. Przeczytaj dokumentację.</translation>
     </message>
     <message>
         <source>Can't find random Masternode.</source>
@@ -4469,16 +4299,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Nie możesz miksować w trakcie  synchronizacji.</translation>
     </message>
     <message>
-        <source>Could not parse masternode.conf</source>
-        <translation>Nie można analizować masternode.conf</translation>
-    </message>
-    <message>
         <source>Invalid netmask specified in -whitelist: '%s'</source>
         <translation>Niewłaściwa maska sieci w -whitelist: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid port detected in masternode.conf</source>
-        <translation>Wykryto niewłaściwy port w masternode.conf</translation>
     </message>
     <message>
         <source>Invalid script detected.</source>
@@ -4493,48 +4315,180 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Klucz KeePassHttp dla zaszyfrowanego metodą AES połączenia z KeePass</translation>
     </message>
     <message>
-        <source>Keep N GENIX anonymized (default: %u)</source>
-        <translation>Utrzymuj N zanonimizowanych genix (domyślnie: %u)</translation>
+        <source>Disable all genix specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
+        <translation>Wyłącz wszystkie funkcjonalności charakterystyczne dla genix (Masternody, PrivateSend, InstantSend, Governance) (0-1, domyślnie: %u)</translation>
     </message>
     <message>
-        <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
-        <translation>Utrzymuj najwyżej &lt;n&gt; niepodłączalnych transakcji w pamięci (domyślny: %u)</translation>
+        <source>%s file contains all private keys from this wallet. Do not share it with anyone!</source>
+        <translation>%s plik zawiera wszystkie klucze prywatne przechowywane w tym portfelu. Nie dawaj nikomu dostępu do tego pliku. </translation>
+    </message>
+    <message>
+        <source>-masternode option is deprecated and ignored, specifying -masternodeblsprivkey is enough to start this node as a masternode.</source>
+        <translation>-masternode funkcja ta jest przestarzała i ignorowana, -masterndebisprivkey wystarczy do uruchomienia tego węzłą jako masternode. </translation>
+    </message>
+    <message>
+        <source>Add a node to connect to and attempt to keep the connection open (see the `addnode` RPC command help for more info)</source>
+        <translation>Dodaj węzeł do którego chcesz się połączyć oraz próbuj utrzymać to połączenie otwarte (zobacz 'addnode' RPC komenda pomoc po więcej informacji)</translation>
+    </message>
+    <message>
+        <source>Bind to given address to listen for JSON-RPC connections. This option is ignored unless -rpcallowip is also passed. Port is optional and overrides -rpcport. Use [host]:port notation for IPv6. This option can be specified multiple times (default: 127.0.0.1 and ::1 i.e., localhost, or if -rpcallowip has been specified, 0.0.0.0 and :: i.e., all addresses)</source>
+        <translation>Powiąż z podanym adresem, aby nasłuchiwać połączeń JSON-RPC. Ta opcja jest ignorowana, chyba że przekazany zostanie także -rpcallowip. Port jest opcjonalny i zastępuje -rpcport. Użyj [host]: notacja portu dla IPv6. Ta opcja może być podana wiele razy (domyślnie: 127.0.0.1 i :: 1 tj. Localhost lub jeśli podano -rpcallowip, 0.0.0.0 i :: tj. wszystkie adresy)</translation>
+    </message>
+    <message>
+        <source>Connect only to the specified node(s); -connect=0 disables automatic connections (the rules for this peer are the same as for -addnode)</source>
+        <translation>Połącz tylko do wyznaczonych węzłów(a); -connect=0 wyłącza automatyczne połączenia (zasady dla tego węzła są takie same jak dla -addnode)</translation>
+    </message>
+    <message>
+        <source>Discover own IP addresses (default: 1 when listening and no -externalip or -proxy)</source>
+        <translation>Wykryj własny adres IP (domyślnie: 1 kiedy nasłuchuje, bez stosowania -externalip lub -proxy)</translation>
     </message>
     <message>
         <source>Do not keep transactions in the mempool longer than &lt;n&gt; hours (default: %u)</source>
         <translation>Nie trzyma transakcji w puli pamięci dłużej niż &lt;n&gt; godz. (domyślnie: %u)</translation>
     </message>
     <message>
-        <source>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</source>
-        <translation>Włącz InstantSend, pokazuj potwierdzenia zamkniętych  transakcji (0-1, domyślnie: %u)</translation>
+        <source>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</source>
+        <translation>Włącz wielokrotne sesje mieszające PrivateSend na blok, funkcja eksperymentalna (0-1, domyślnie: %u)</translation>
     </message>
     <message>
         <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
         <translation>Wykonaj komendę, kiedy się transakcja InstantSend  portfela zostanie pomyślnie zamknięta (%s w konsoli jest zastąpione przez TxID)</translation>
     </message>
     <message>
+        <source>Extra transactions to keep in memory for compact block reconstructions (default: %u)</source>
+        <translation>Dodatkowe transakcje trzymane w pamięci aby móc zrekonstruować kompaktowe bloki (domyślnie: %u)</translation>
+    </message>
+    <message>
         <source>Failed to create backup, file already exists! This could happen if you restarted wallet in less than 60 seconds. You can continue if you are ok with this.</source>
         <translation>Tworzenie kopii zapasowej nieudane, plik już istnieje! Taka sytuacja może wystąpić, jeżeli minęło mniej niż 60 od ostatniego zamknięcia portfela. Jeżeli Ci to nie przeszkadza, możesz kontynuować.</translation>
     </message>
     <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong GENIX Core will not work properly.</source>
-        <translation>Sprawdź, czy data i godzina na Twoim komputerze są poprawne! Jeżeli zegar wskazuje niewłaściwy czas, GENIX Core nie będzie działać poprawnie.</translation>
+        <source>Fees (in %s/kB) smaller than this are considered zero fee for relaying, mining and transaction creation (default: %s)</source>
+        <translation>Opłaty (%s/kB)  niższe niż ta są równoznaczne z brakiem opłaty za przekazanie, wykopanie i utworzenie transakcji (domyślnie: %s)</translation>
     </message>
     <message>
-        <source>%s - %d confirmations</source>
-        <translation>%s - %d potwierdzeń</translation>
+        <source>Fees (in %s/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Opłaty (%s/kB) niższe niż ta uważane są za równoznaczne z brakiem opłaty za utworzenie transakcji (domyślnie: %s)</translation>
     </message>
     <message>
-        <source>(%d could be used only on mainnet)</source>
-        <translation>(%d może być użyte jedynie na głównej sieci)</translation>
+        <source>If &lt;category&gt; is not supplied or if &lt;category&gt; = 1, output all debugging information.</source>
+        <translation>Jeżeli nie podano &lt;category&gt; lub jeżeli  &lt;category&gt; = 1, pokaż informacje o debugowaniu.</translation>
+    </message>
+    <message>
+        <source>Maintain a full address index, used to query for the balance, txids and unspent outputs for addresses (default: %u)</source>
+        <translation>Utrzymuj pełny index adresów, używany do wyszukiwania sald, identyfikatorów transakcji i niewykorzystanych danych wyjściowych dla danych adresów (domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Maintain a full spent index, used to query the spending txid and input index for an outpoint (default: %u)</source>
+        <translation>Utrzymuj pełny indeks wydatków, używany do wyszukiwania identyfikatorów transakcji wyjściowych oraz indeks danych wejściowych dla punktu wyjścia (domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Maintain a timestamp index for block hashes, used to query blocks hashes by a range of timestamps (default: %u)</source>
+        <translation>Utrzymuj indeks znaczników czasu dla haszy bloku, funkcja wykorzystywana do wyszukiwania haszy bloku według zakresu znaczników czasu (domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Maintain at most &lt;n&gt; connections to peers (temporary service connections excluded) (default: %u)</source>
+        <translation>Utrzymuj nie więcej niż &lt;n&gt; połączeń z peerami (tymczasowe połączenia serwisowe nie są liczone) (domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Make sure to encrypt your wallet and delete all non-encrypted backups after you have verified that the wallet works!</source>
+        <translation>Jeśli już zweryfikowałeś że porfel działa jak należy, to nie zapomnij zaszyfrować porfel oraz usunąć wszystkie niezaszyfrowane kopie zapasowe.</translation>
+    </message>
+    <message>
+        <source>Maximum total size of all orphan transactions in megabytes (default: %u)</source>
+        <translation>Całkowity maksymalny rozmiar wszystkich osieroconych transakcji w megabytach (domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
+        <translation>Czyszczenie starych danych ustawiono poniżej minimum %d MiB.  Ustaw wyższą wartość.</translation>
+    </message>
+    <message>
+        <source>Prune: last wallet synchronisation goes beyond pruned data. You need to -reindex (download the whole blockchain again in case of pruned node)</source>
+        <translation>Oczyszczanie: ostatnia synchronizacja portfela sięga poza skasowane dane. Użyj -reindex (w razie oczyszczenia węzła, ponownie pobierz cały łańcuch bloków).</translation>
+    </message>
+    <message>
+        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect used)</source>
+        <translation>Zapytanie o adresy równorzędne poprzez wyszukiwanie DNS, jeśli brakuje adresów (domyślnie: 1, chyba że użyto opcji -connect)</translation>
+    </message>
+    <message>
+        <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
+        <translation>Dla każdego połączenia proxy wybierz losowe dane uwierzytalniające. Pozwala to na izolacje Tor stream (domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Rescans are not possible in pruned mode. You will need to use -reindex which will download the whole blockchain again.</source>
+        <translation>Ponownie skanowanie jest niemożliwe w trybie oczyszczania. Użyj -reindex, co spowoduje ponowne pobranie całego łańcucha bloków.</translation>
+    </message>
+    <message>
+        <source>Set the masternode BLS private key and enable the client to act as a masternode</source>
+        <translation>Wyznacz prywatny klucz BLS dla masternoda oraz pozwól klienotowi na działanie jako masternode. </translation>
+    </message>
+    <message>
+        <source>Specify full path to directory for automatic wallet backups (must exist)</source>
+        <translation>Podaj pełną ścieżkę do (istniejącego) katalogu na automatyczne kopie zapasowe portfela</translation>
+    </message>
+    <message>
+        <source>Support filtering of blocks and transaction with bloom filters (default: %u)</source>
+        <translation>Pozwalaj na filtrowanie bloków i transakcji za pomocą filtrów bloom (domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>The block database contains a block which appears to be from the future. This may be due to your computer's date and time being set incorrectly. Only rebuild the block database if you are sure that your computer's date and time are correct</source>
+        <translation>Baza danych bloków zawiera blok, który zdaje się pochodzić z przyszłości. Taka sytuacja może się zdarzyć, jeżeli zegar Twojego komputera pokazuje niepoprawną datę i godzinę. Przebuduj bazę danych bloków wyłącznie, jeżeli masz pewność, że zegar Twojego komputera pokazuje poprawną datę i godzinę. </translation>
+    </message>
+    <message>
+        <source>The transaction amount is too small to send after the fee has been deducted</source>
+        <translation>Po odliczeniu opłaty, transakcja jest zbyt niska aby móc ją wysłać.</translation>
+    </message>
+    <message>
+        <source>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</source>
+        <translation>Całkowita długość sieciowej wersji struny (%i) przekracza maksymalną długość (%i). Zredukuj liczbę lub rozmiar uacomments.</translation>
+    </message>
+    <message>
+        <source>Transaction index can't be disabled in full mode. Either start with -litemode command line switch or enable transaction index.</source>
+        <translation>Indeks tranaskcji nie może zostać wyłączony w pełnym trybe. Albo uruchom z komendy -lighmode lub włącz indeksowanie transakcji.</translation>
+    </message>
+    <message>
+        <source>Tries to keep outbound traffic under the given target (in MiB per 24h), 0 = no limit (default: %d)</source>
+        <translation>Próbuje utrzymać wychodzący ruch sieciowy poniżej podanej wartości (MiB/24 h), 0 = bez ograniczeń (domyślnie: %d)</translation>
+    </message>
+    <message>
+        <source>Unable to locate enough PrivateSend denominated funds for this transaction.</source>
+        <translation>Nie znaleziono wystarczających środków PrivateSend o nominałach koniecznych do wykonania tej transakcji.</translation>
+    </message>
+    <message>
+        <source>Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
+        <translation>Błąd: niewspierany argument, znaleziono -socks. Ustawienie wersji SOCKS nie jest już możliwa, wspierane są tylko bramki  proxy SOCKS5.</translation>
+    </message>
+    <message>
+        <source>Unsupported argument -whitelistalwaysrelay ignored, use -whitelistrelay and/or -whitelistforcerelay.</source>
+        <translation>niewspierany argument -whitelistalwaysrelay jest ignorowany, używaj -whitelistrelay oraz/lub -whitelistforcerelay.</translation>
+    </message>
+    <message>
+        <source>Use UPnP to map the listening port (default: 1 when listening and no -proxy)</source>
+        <translation>Użyj UPnP aby zmapować porty nasłuchujące (domyślnie: 1 kiedy słucha i nie ma proxy)</translation>
+    </message>
+    <message>
+        <source>WARNING! Failed to replenish keypool, please unlock your wallet to do so.</source>
+        <translation>OSTRZEŻENIE! Nie udało się uzupełnić puli kluczy. W tym celu musisz odblokować portfel.</translation>
+    </message>
+    <message>
+        <source>Wallet is locked, can't replenish keypool! Automatic backups and mixing are disabled, please unlock your wallet to replenish keypool.</source>
+        <translation>Portfel jest zamknięty , nie można uzupełnić pul* kluczy! Automatyczne tworzenie kopi zapasowych oraz miksowanie są wyłączone. Otwórz porfel aby uzupełnić pul* kluczy.</translation>
+    </message>
+    <message>
+        <source>Warning: Unknown block versions being mined! It's possible unknown rules are in effect</source>
+        <translation>Uwaga: Wykopywane są bloki o nieznanej wersji! Możliwe, że zostały aktywowane inne zasady na których opiera się sieć.</translation>
+    </message>
+    <message>
+        <source>You need to rebuild the database using -reindex to change -timestampindex</source>
+        <translation>Musisz odnowić bazę danych używając -reindex aby zmienić -timestampindex</translation>
+    </message>
+    <message>
+        <source>You need to rebuild the database using -reindex to go back to unpruned mode.  This will redownload the entire blockchain</source>
+        <translation>Aby wrócić do trybu bez bez obcinki, musisz odtworzyć bazę danych za pomocą komendy -reindex. Cały blockchain zostanie ponownie ściągnięty.</translation>
     </message>
     <message>
         <source>(default: %u)</source>
         <translation>(domyślnie: %u)</translation>
-    </message>
-    <message>
-        <source>(must be %d for mainnet)</source>
-        <translation>(musi być %d dla głównej sieci)</translation>
     </message>
     <message>
         <source>-maxmempool must be at least %d MB</source>
@@ -4543,6 +4497,10 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <source>&lt;category&gt; can be:</source>
         <translation>&lt;category&gt;może być:</translation>
+    </message>
+    <message>
+        <source>Append comment to the user agent string</source>
+        <translation>Dodaj komentarz do linijek agenta użytkwnika.</translation>
     </message>
     <message>
         <source>Automatic backups disabled</source>
@@ -4561,6 +4519,14 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Pozwól na publikację hash bloku w &lt;address&gt;</translation>
     </message>
     <message>
+        <source>Enable publish hash of governance objects (like proposals) in &lt;address&gt;</source>
+        <translation>Pozwól na publikację hash obiektu zarządzania (np. propozycji) w &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish hash of governance votes in &lt;address&gt;</source>
+        <translation>Pozwól na publikację hash głosów w &lt;address&gt;</translation>
+    </message>
+    <message>
         <source>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</source>
         <translation>Pozwól na publikację hash transakcji (zabezpiecznona przez InstantSend) w &lt;address&gt;</translation>
     </message>
@@ -4573,24 +4539,92 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Pozwól na publikację surowego bloku w &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Line: %d</source>
-        <translation>Linia: %d</translation>
+        <source>Enable publish raw transaction (locked via InstantSend) in &lt;address&gt;</source>
+        <translation>Włącz publikację surowych danych transakcji (wyłączone przez InstantSend) w &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Loading addresses...</source>
-        <translation>Wczytuje adresy...</translation>
+        <source>Enable publish raw transaction in &lt;address&gt;</source>
+        <translation>Pozwól na publikację czystych danych transakcji w &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Error: A fatal internal error occurred, see debug.log for details</source>
+        <translation>Błąd: Wystąpił wewnętrzny błąd krytyczny, szczegóły znajdziesz w pliku debug.log</translation>
+    </message>
+    <message>
+        <source>Failed to create backup %s!</source>
+        <translation>Nie powiodło się tworzenie kopii zapasowej %s!</translation>
+    </message>
+    <message>
+        <source>Failed to create backup, error: %s</source>
+        <translation>Tworzenie kopii zapasowej nie powiodło się, błąd: %s</translation>
+    </message>
+    <message>
+        <source>Failed to delete backup, error: %s</source>
+        <translation>Skasowanie kopii zapasowej nie powiodło się, błąd: %s</translation>
+    </message>
+    <message>
+        <source>Failed to load sporks cache from</source>
+        <translation>Nie powiodło się ładowanie bufora sporków z</translation>
+    </message>
+    <message>
+        <source>Fee (in %s/kB) to add to transactions you send (default: %s)</source>
+        <translation>Dodanie opłaty (w %s/kB) do twojej transakcji (domyślnie: %s)</translation>
+    </message>
+    <message>
+        <source>Imports blocks from external blk000??.dat file on startup</source>
+        <translation>Importuje bloki z zewnętrznego pliku blk000??.dat na starcie</translation>
+    </message>
+    <message>
+        <source>InstantSend options:</source>
+        <translation>Opcje InstantSend:</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -fallbackfee=&lt;amount&gt;: '%s'</source>
+        <translation>Błędna ilość -fallbackfee=&lt;amount&gt;: '%s'</translation>
+    </message>
+    <message>
+        <source>Invalid masternodeblsprivkey. Please see documentation.</source>
+        <translation>Niewłaściwy masternodeblsprivkey. Sprawdź dokumentacje.</translation>
+    </message>
+    <message>
+        <source>Keep the transaction memory pool below &lt;n&gt; megabytes (default: %u)</source>
+        <translation>Utrzymuj rozmiar memory pool poniżej &lt;n&gt; megabajtów (domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Last PrivateSend was too recent.</source>
+        <translation>Za mało czasu upłynęło od ostatniej transakcji PrivateSend.</translation>
+    </message>
+    <message>
+        <source>Last successful PrivateSend action was too recent.</source>
+        <translation>Zbyt mało czasu upłynęło od ostatniej udanej transakcji PrivateSend. </translation>
     </message>
     <message>
         <source>Loading block index...</source>
-        <translation>Wczytuje indeks bloków</translation>
+        <translation>Wczytuję indeks bloków</translation>
+    </message>
+    <message>
+        <source>Loading governance cache...</source>
+        <translation>Wczytuję bufor governance</translation>
+    </message>
+    <message>
+        <source>Loading sporks cache...</source>
+        <translation>Ładowanie bufora sporków....</translation>
     </message>
     <message>
         <source>Loading wallet... (%3.2f %%)</source>
-        <translation>Ładuje portfel... (%3.2f %%)</translation>
+        <translation>Ładuję portfel... (%3.2f %%)</translation>
     </message>
     <message>
         <source>Loading wallet...</source>
-        <translation>Ładuje portfel...</translation>
+        <translation>Ładuję portfel...</translation>
+    </message>
+    <message>
+        <source>Location of the auth cookie (default: data dir)</source>
+        <translation>Miejsce w którym znajduje się ciasteczko auth (domyślnie: data dir)</translation>
+    </message>
+    <message>
+        <source>Make the wallet broadcast transactions</source>
+        <translation>Zmuś portfel do wysłania transakcji.</translation>
     </message>
     <message>
         <source>Masternode options:</source>
@@ -4603,6 +4637,10 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <source>Masternode:</source>
         <translation>Masternod:</translation>
+    </message>
+    <message>
+        <source>Minimum bytes per sigop in transactions we relay and mine (default: %u)</source>
+        <translation>Minimalna liczba bajtów na każdą operację podpisu w transakcjach które są przez nas przekazywane i włączne do bloku (domyślnie: %u)</translation>
     </message>
     <message>
         <source>Missing input transaction information.</source>
@@ -4633,12 +4671,20 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Dostępny niewystarczający opis pliku.</translation>
     </message>
     <message>
+        <source>Number of automatic wallet backups (default: %u)</source>
+        <translation>Ilość automatycznych kopi bezpieczeństwa (domyślnie: %u)</translation>
+    </message>
+    <message>
         <source>Options:</source>
         <translation>Opcje:</translation>
     </message>
     <message>
         <source>Password for JSON-RPC connections</source>
         <translation>Hasło dla połączeń JSON-RPC</translation>
+    </message>
+    <message>
+        <source>Print version and exit</source>
+        <translation>Wydrukuj wersję i zamknij.</translation>
     </message>
     <message>
         <source>PrivateSend is idle.</source>
@@ -4649,20 +4695,400 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Opcje PrivateSend:</translation>
     </message>
     <message>
+        <source>PrivateSend request complete:</source>
+        <translation>Żądanie PrivateSend jest ukończone:</translation>
+    </message>
+    <message>
+        <source>PrivateSend request incomplete:</source>
+        <translation>Żądanie PrivateSend nie powiodło się.</translation>
+    </message>
+    <message>
+        <source>Prune cannot be configured with a negative value.</source>
+        <translation>Obcinanie nie może zostać skonfigurowane z ujemnymi wartościami.</translation>
+    </message>
+    <message>
+        <source>Prune mode is incompatible with -txindex.</source>
+        <translation>Tryb obcinania jest niekompatybilny z -txindex.</translation>
+    </message>
+    <message>
+        <source>Pruning blockstore...</source>
+        <translation>Kasuję stare bloki ...</translation>
+    </message>
+    <message>
+        <source>Rescan the block chain for missing wallet transactions on startup</source>
+        <translation>Przeskanuj blockchain ponownie aby zlokalizować zagubione transakcje podczas startu.</translation>
+    </message>
+    <message>
+        <source>Synchronizing blockchain...</source>
+        <translation>Synchronizuje blockchain...</translation>
+    </message>
+    <message>
+        <source>The wallet will avoid paying less than the minimum relay fee.</source>
+        <translation>Portfel będzie unikał płacenia mniejszej niż przekazana opłaty.</translation>
+    </message>
+    <message>
+        <source>This is the minimum transaction fee you pay on every transaction.</source>
+        <translation>Minimalna opłata transakcyjna którą płacisz przy każdej transakcji.</translation>
+    </message>
+    <message>
+        <source>This is the transaction fee you will pay if you send a transaction.</source>
+        <translation>To jest opłata transakcyjna którą zapłacisz jeśli wyślesz transakcję. </translation>
+    </message>
+    <message>
+        <source>Transaction amounts must not be negative</source>
+        <translation>Kwota transakcji musi być dodatnia</translation>
+    </message>
+    <message>
+        <source>Transaction has too long of a mempool chain</source>
+        <translation>Transakcja posiada zbyt długi łańcuch pamięci</translation>
+    </message>
+    <message>
+        <source>Transaction must have at least one recipient</source>
+        <translation>Transakcja wymaga co najmniej jednego odbiorcy</translation>
+    </message>
+    <message>
+        <source>Transaction too large</source>
+        <translation>Za duża transakcja</translation>
+    </message>
+    <message>
+        <source>Trying to connect...</source>
+        <translation>Staram się połączyć</translation>
+    </message>
+    <message>
+        <source>Unable to bind to %s on this computer. %s is probably already running.</source>
+        <translation>Nie można przywiązać do %s na tym komputerze. %s prawdopodobnie jest już uruchomiony.</translation>
+    </message>
+    <message>
+        <source>Upgrading UTXO database</source>
+        <translation>Aktualizowanie bazy danych UTXO</translation>
+    </message>
+    <message>
+        <source>Use devnet chain with provided name</source>
+        <translation>Użyj łańcucha devnet z doranym imieniem.</translation>
+    </message>
+    <message>
+        <source>Wallet debugging/testing options:</source>
+        <translation>Opcje debugowania/testowania portfela:</translation>
+    </message>
+    <message>
+        <source>Wallet needed to be rewritten: restart %s to complete</source>
+        <translation>Portfel wymaga przepisania: zrestartuj %s aby ukończyć</translation>
+    </message>
+    <message>
+        <source>Warning: unknown new rules activated (versionbit %i)</source>
+        <translation>Uwaga: aktywowane zostały nowe zasady (versionbit %i)</translation>
+    </message>
+    <message>
         <source>Wasn't able to create wallet backup folder %s!</source>
         <translation>Nie udało się utworzyć folderu %s na kopie zapasowe portfela!</translation>
+    </message>
+    <message>
+        <source>Whether to operate in a blocks only mode (default: %u)</source>
+        <translation>Czy operować jedynie w trybie bloków (domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>You can not start a masternode in lite mode.</source>
+        <translation>Nie możesz uruchomić masternoda w trybie lite. </translation>
+    </message>
+    <message>
+        <source>You can not start a masternode with wallet enabled.</source>
+        <translation>Nie możesz uruchomić masternode z włączonym portfelem.</translation>
+    </message>
+    <message>
+        <source>You need to rebuild the database using -reindex to change -addressindex</source>
+        <translation>Musisz odnowić bazę danych używając -reindex aby zmienić -addressindex</translation>
+    </message>
+    <message>
+        <source>You need to rebuild the database using -reindex to change -spentindex</source>
+        <translation>Musisz odnowić bazę danych używając -reindex aby zmienić -spentindex</translation>
+    </message>
+    <message>
+        <source>You need to rebuild the database using -reindex to change -txindex</source>
+        <translation>Musisz odnowić bazę danych używając -reindex aby zmienić -txindex</translation>
+    </message>
+    <message>
+        <source>ZeroMQ notification options:</source>
+        <translation>ZeroMQ opcje powiadomień:</translation>
     </message>
     <message>
         <source>no mixing available.</source>
         <translation>Mieszanie niedostępne.</translation>
     </message>
     <message>
+        <source>see debug.log for details.</source>
+        <translation>Otwórz debug.log jeśli chcesz poznać detale.</translation>
+    </message>
+    <message>
         <source>RPC server options:</source>
         <translation>Opcje serwera RPC:</translation>
     </message>
     <message>
-        <source>Receive and display P2P network alerts (default: %u)</source>
-        <translation>Odbiera i wyświetla P2P alarmy sieci (standardowo: %u)</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
+    </message>
+    <message>
+        <source>The %s developers</source>
+        <translation>Deweloperzy %s</translation>
+    </message>
+    <message>
+        <source>Cannot obtain a lock on data directory %s. %s is probably already running.</source>
+        <translation>Nie można uzyskać blokady na katalogu z danymi %s. %s najprawdopodobniej jest już uruchomiony.</translation>
+    </message>
+    <message>
+        <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
+        <translation>Rozprowadzane na licencji MIT, zobacz dołączony plik %s lub %s</translation>
+    </message>
+    <message>
+        <source>Enable use of PrivateSend for funds stored in this wallet (0-1, default: %u)</source>
+        <translation>Włącz korzystanie z PrivateSend dla funduszy przechowywanych w tym portfelu (0-1, domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Error loading %s: You can't enable HD on an already existing non-HD wallet</source>
+        <translation>Błąd ładowania %s: Nie możesz włączyć HD na już istniejącym portfelu innym niż HD</translation>
+    </message>
+    <message>
+        <source>Error loading wallet %s. -wallet parameter must only specify a filename (not a path).</source>
+        <translation>Błąd ładowania portfela %s. Parametr -wallet musi określać tylko nazwę pliku (nie ścieżkę).</translation>
+    </message>
+    <message>
+        <source>Error reading %s! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
+        <translation>Błąd odczytu %s! Wszystkie klucze zostały odczytane poprawnie, ale może brakować  danych transakcji lub wpisów w książce adresowej, lub mogą one być nieprawidłowe.</translation>
+    </message>
+    <message>
+        <source>Exclude debugging information for a category. Can be used in conjunction with -debug=1 to output debug logs for all categories except one or more specified categories.</source>
+        <translation>Wyklucz informacje debugowania dla kategorii. Może być używany w połączeniu z opcją -debug = 1, aby wyświetlać dzienniki debugowania dla wszystkich kategorii oprócz jednej lub więcej określonych kategorii.</translation>
+    </message>
+    <message>
+        <source>Force relay of transactions from whitelisted peers even if they violate local relay policy (default: %d)</source>
+        <translation>Wymuś przekazywanie transakcji od peerów z białej listy,  nawet jeśli jest to w sprzeczności z lokalnymi ustawieniami (domyślnie: %d)</translation>
+    </message>
+    <message>
+        <source>Incorrect or no devnet genesis block found. Wrong datadir for devnet specified?</source>
+        <translation>Znaleziono błędny lub nie istniejący pierwszy blog devnet. Wybrano zły datadir dla devnet? </translation>
+    </message>
+    <message>
+        <source>Maximum allowed median peer time offset adjustment. Local perspective of time may be influenced by peers forward or backward by this amount. (default: %u seconds)</source>
+        <translation>Dopasowanie maksymalnego przeciętnego czasu peer. Lokalna perspektywa czasu może ulec zmianie przez peery któe znajdują się powyżej lub poniżej tej wartści. (domyślnie: %u sekund)</translation>
+    </message>
+    <message>
+        <source>Maximum total fees (in %s) to use in a single wallet transaction or raw transaction; setting this too low may abort large transactions (default: %s)</source>
+        <translation>Maksymalna wysokość opłat (w %s) dla jednej transakcji; ustawienie tej wartości za nisko może zatrzymać duże transakcje (domyślnie: %s)</translation>
+    </message>
+    <message>
+        <source>Override spork address. Only useful for regtest and devnet. Using this on mainnet or testnet will ban you.</source>
+        <translation>Nadpisz adres spork. Przydatne tylko na regtest oraz devnecie. Użycie tego na normalnje sieci lub testnecie zaskutkuje banem. </translation>
+    </message>
+    <message>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>
+        <translation>Proszę sprawdzić czy data i czas na Twoim komputerze są poprawne! Jeżeli ustawienia zegara będą złe, %s nie będzie działał prawidłowo.</translation>
+    </message>
+    <message>
+        <source>Please contribute if you find %s useful. Visit %s for further information about the software.</source>
+        <translation>Jeśli %s przydatne dla ciebie, wesprzyj nas. Odwiedź %s po więcej informacj na temat tego programu. </translation>
+    </message>
+    <message>
+        <source>Reduce storage requirements by enabling pruning (deleting) of old blocks. This allows the pruneblockchain RPC to be called to delete specific blocks, and enables automatic pruning of old blocks if a target size in MiB is provided. This mode is incompatible with -txindex and -rescan. Warning: Reverting this setting requires re-downloading the entire blockchain. (default: 0 = disable pruning blocks, 1 = allow manual pruning via RPC, &gt;%u = automatically prune block files to stay under the specified target size in MiB)</source>
+        <translation>Zmniejsz ilość wymaganego miejsca poprzez czyszczenie (kasowanie) starych bloków.  TPozwala to pruneblockchain RPC na kasowanie wybranych bloków oraz na automatyczne czyszczenie starych bloków jeśli jest ustawiony limit miejsca w MiB. Tryb ten jest niezgodny z -txindex oraz -rescan. Uwaga: Cofnięcie tego ustawienia wymaga ponownego pobrania całego łańcucha bloków. (domyślnie: 0 = kasowanie starych bloków wyłączone, 1 = pozwól na ręczne czyszczenie przez RPC, &gt;%u = automatycznie kasuj bloki aby ilość zabranego miejsca nie przekraczała wybranego limitu w MiB)</translation>
+    </message>
+    <message>
+        <source>Set lowest fee rate (in %s/kB) for transactions to be included in block creation. (default: %s)</source>
+        <translation>Ustaw najniższą opłatę (in %s/kB) za transakcję aby została ona włączona do bloku. (domyślnie: %s)</translation>
+    </message>
+    <message>
+        <source>The fee rate (in %s/kB) that indicates your tolerance for discarding change by adding it to the fee (default: %s). Note: An output is discarded if it is dust at this rate, but we will always discard up to the dust relay fee and a discard fee above that is limited by the fee estimate for the longest target</source>
+        <translation>Stawka opłaty (w %s/domyślniekB) wskazująca twoją tolerancję na odrzucenie reszty poprzez dodanie jej do opłaty (domyślnie: %s). Uwaga: Wyjście jest odrzucane, jeśli jest to pył, ale zawsze będziemy odrzucać do opłaty za przekazywanie pyłu i opłaty za odrzucenie powyżej, która jest ograniczona szacunkową opłatą za najdłuższy cel</translation>
+    </message>
+    <message>
+        <source>This is the transaction fee you may discard if change is smaller than dust at this level</source>
+        <translation>Jest to opłata transakcyjna, którą możesz odrzucić, jeśli reszta jest mniejsza niż pył na tym poziomie</translation>
+    </message>
+    <message>
+        <source>This is the transaction fee you may pay when fee estimates are not available.</source>
+        <translation>To jest prawdopodobny koszt transakcj jeśli szacunki opłat są niedostępne. </translation>
+    </message>
+    <message>
+        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit %s and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
+        <translation>Produkt zawiera oprogramowanie stworzone przez OpenSSL Project do użycia w OpensSSL Toolkit %s, oprogramowanie kryptograficzne napisane przez Eric Young oraz oprogramowanie UPnP napisane przez Thomas Bernard.</translation>
+    </message>
+    <message>
+        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction.</source>
+        <translation>Nie znaleziono wystarczających środków PrivateSend o nominałach koniecznych do wykonania tej transakcji.</translation>
+    </message>
+    <message>
+        <source>Unable to replay blocks. You will need to rebuild the database using -reindex-chainstate.</source>
+        <translation>Nie można odtworzyć bloków. Będziesz musiał odbudować bazę danych przy użyciu -reindex-chainstate.</translation>
+    </message>
+    <message>
+        <source>Use N separate masternodes for each denominated input to mix funds (%u-%u, default: %u)</source>
+        <translation>Użyj N osobnych masternodów dla każdej denominowanej wartości wejściowej aby zmiksować fundusze (%u-%u, domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Use hierarchical deterministic key generation (HD) after BIP39/BIP44. Only has effect during wallet creation/first start</source>
+        <translation>Użyj hierarchinie deterministycznego procesu generacji kluczy (HD) po BIP39/BIP44. Tyczy się jedynie kiedy towrzysz nowy portfel.</translation>
+    </message>
+    <message>
+        <source>User defined mnemonic passphrase for HD wallet (BIP39). Only has effect during wallet creation/first start (default: empty string)</source>
+        <translation>Fraza przypominająca dla portfela HD (bip39) zdefiniowana przez użytkownika. Działa jedynie przy tworzeniu nowego portfela/przy pierwszym uruchomieniu (domyślnie: pusty ciąg)</translation>
+    </message>
+    <message>
+        <source>Username and hashed password for JSON-RPC connections. The field &lt;userpw&gt; comes in the format: &lt;USERNAME&gt;:&lt;SALT&gt;$&lt;HASH&gt;. A canonical python script is included in share/rpcuser. The client then connects normally using the rpcuser=&lt;USERNAME&gt;/rpcpassword=&lt;PASSWORD&gt; pair of arguments. This option can be specified multiple times</source>
+        <translation>Nazwa użytkownika oraz zhaszowane hasło do połączenia JSON-RPC. Pole &lt;userpw&gt; jest w formacie: &lt;USERNAME&gt;:&lt;SALT&gt;$&lt;HASH&gt;. Kanoniczny skrypt python jest zawarty w share/rpcuser. Klient łączy się normalnie używając rpcuser=&lt;USERNAME&gt;/rpcpassword=&lt;PASSWORD&gt;pary argumentów. Opcja ta może zostać wielokrotnie sprecyzowana.</translation>
+    </message>
+    <message>
+        <source>Wallet will not create transactions that violate mempool chain limits (default: %u)</source>
+        <translation>Portfel nie stworzy transakcji które są sprzeczne z limitami puli pamięci. (domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Warning: Wallet file corrupt, data salvaged! Original %s saved as %s in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
+        <translation>Ostrzeżenie: Odzyskano dane z uszkodzonego pliku portfela! Oryginalny %s został zapisany jako %s w %s; jeśli twoje saldo lub transakcje są niepoprawne, należy odtworzyć kopię zapasową.</translation>
+    </message>
+    <message>
+        <source>Whether to save the mempool on shutdown and load on restart (default: %u)</source>
+        <translation>Określa, czy zapisać mempool przy wyłączaniu i ładować przy restarcie (domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Whitelist peers connecting from the given IP address (e.g. 1.2.3.4) or CIDR notated network (e.g. 1.2.3.0/24). Can be specified multiple times.</source>
+        <translation>Peery z białej listy łączące się z danejgo adresu IP (np. 1.2.3.4) lub CIDR notowanej sieci (np. 1.2.3.0/24). Może byc ustawiane wielokrotnie.</translation>
+    </message>
+    <message>
+        <source>You are starting in lite mode, most genix-specific functionality is disabled.</source>
+        <translation>Zaczynasz w trybie Lite, większość funkcji specyficznych dla genixa jest wyłączona.</translation>
+    </message>
+    <message>
+        <source>%d of last 100 blocks have unexpected version</source>
+        <translation>%d z ostatnich 100 bloków ma nieoczekiwaną wersję</translation>
+    </message>
+    <message>
+        <source>%s corrupt, salvage failed</source>
+        <translation>%s uszkodzony, odtworzenie się nie powiodło</translation>
+    </message>
+    <message>
+        <source>%s is not a valid backup folder!</source>
+        <translation>%s nie jest ważnym folderem kopi zapasowych!</translation>
+    </message>
+    <message>
+        <source>%s is set very high!</source>
+        <translation>%s jest ustawione bardzo wysoko!</translation>
+    </message>
+    <message>
+        <source>(press q to shutdown and continue later)</source>
+        <translation>(naciśnij q aby zamknąć i kontynuować później)</translation>
+    </message>
+    <message>
+        <source>-devnet can only be specified once</source>
+        <translation>-devnet może zostać ustawiony tylko jeden raz</translation>
+    </message>
+    <message>
+        <source>-port must be specified when -devnet and -listen are specified</source>
+        <translation>kiedy -devnet oraz -listen są ustawione -port też musi być ustawiony</translation>
+    </message>
+    <message>
+        <source>-rpcport must be specified when -devnet and -server are specified</source>
+        <translation>kiedy -devnet oraz -server są ustawione -rpcport też musi być ustawiony</translation>
+    </message>
+    <message>
+        <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
+        <translation>Pozwól na połączenia z zewnątrz (domyślnie: 1 jeśli nie -proxy lub -connect)</translation>
+    </message>
+    <message>
+        <source>Allow RFC1918 addresses to be relayed and connected to (default: %u)</source>
+        <translation>Pozwól RFC1918 adresom na bycie przekierowanym oraz połączonym do (domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Attempt to recover private keys from a corrupt wallet on startup</source>
+        <translation>Próbuj odzyskać klucze prywatne z uszkodzonego portfela podczas uruchamiania.</translation>
+    </message>
+    <message>
+        <source>Cannot resolve -%s address: '%s'</source>
+        <translation>Nie można rozpoznać -%s adresu: '%s'</translation>
+    </message>
+    <message>
+        <source>Change index out of range</source>
+        <translation>Index zmian poza zasięgiem.</translation>
+    </message>
+    <message>
+        <source>Copyright (C)</source>
+        <translation>Prawo autorskie (C)</translation>
+    </message>
+    <message>
+        <source>Create up to N inputs of each denominated amount (%u-%u, default: %u)</source>
+        <translation>Utwórz do N danych wejściowych każdej denominowanej kwoty (%u-%u, domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Error loading %s</source>
+        <translation>Błąd ładowania %s</translation>
+    </message>
+    <message>
+        <source>Error loading %s: Wallet corrupted</source>
+        <translation>Błąd ładowania %s: Uszkodzony portfel</translation>
+    </message>
+    <message>
+        <source>Error loading %s: Wallet requires newer version of %s</source>
+        <translation>Błąd ładowania %s: Portfel wymaga nowszej wersji %s</translation>
+    </message>
+    <message>
+        <source>Error loading %s: You can't disable HD on an already existing HD wallet</source>
+        <translation>Błąd podczas wczytywania %s: Niemożliwe jest zmienienie porfela HD w standarodowy porfel.</translation>
+    </message>
+    <message>
+        <source>Error loading wallet %s. -wallet filename must be a regular file.</source>
+        <translation>Błąd ładowania portfela %s. -wallet nazwa pliku musi być zwykłym plikiem.</translation>
+    </message>
+    <message>
+        <source>Error loading wallet %s. Duplicate -wallet filename specified.</source>
+        <translation>Błąd ładowania portfela %s. Podano zduplikowaną nazwę pliku -wallet.</translation>
+    </message>
+    <message>
+        <source>Error loading wallet %s. Invalid characters in -wallet filename.</source>
+        <translation>Błąd ładowania portfela %s. Nieprawidłowe znaki w pliku -wallet.</translation>
+    </message>
+    <message>
+        <source>Error upgrading chainstate database</source>
+        <translation>Błąd ładowania bazy bloków</translation>
+    </message>
+    <message>
+        <source>Failed to find mixing queue to join</source>
+        <translation>Znalezienie kolejki do mieszania monet zakończyło się niepowodzeniem</translation>
+    </message>
+    <message>
+        <source>Failed to start a new mixing queue</source>
+        <translation>Próba stworzenia kolejki do mieszania monet zakończyła się niepowodzeniem</translation>
+    </message>
+    <message>
+        <source>Initialization sanity check failed. %s is shutting down.</source>
+        <translation>Wstępna kontrola poprawności nie powiodła się. %s wyłącza się.</translation>
+    </message>
+    <message>
+        <source>Inputs vs outputs size mismatch.</source>
+        <translation>Niezgodność wielkości wejść i wyjść.</translation>
+    </message>
+    <message>
+        <source>Invalid -onion address or hostname: '%s'</source>
+        <translation>Niewłaściwy adres -onion lub nazwa hosta: '%s'</translation>
+    </message>
+    <message>
+        <source>Invalid -proxy address or hostname: '%s'</source>
+        <translation>Nieprawidłowy adres -proxy lub nazwa hosta: '%s'</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
+        <translation>Nieprawidłowa kwota dla -%s=&lt;amount&gt;: '%s'</translation>
+    </message>
+    <message>
+        <source>Invalid spork address specified with -sporkaddr</source>
+        <translation>Nieważny adres spork ustawiony z -sporkaddr</translation>
+    </message>
+    <message>
+        <source>Loading P2P addresses...</source>
+        <translation>Wczytywanie adresów P2P...</translation>
+    </message>
+    <message>
+        <source>Print this help message and exit</source>
+        <translation>Wyświetl ten tekst pomocy i wyjdź</translation>
+    </message>
+    <message>
+        <source>Reducing -maxconnections from %d to %d, because of system limitations.</source>
+        <translation>Zmniejsz -maxconnections z %d do %d, z powodu ograniczeń systemowych.</translation>
     </message>
     <message>
         <source>Relay and mine data carrier transactions (default: %u)</source>
@@ -4673,12 +5099,20 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Retransmituj non-P2SH multisig (doyślnie: %u)</translation>
     </message>
     <message>
+        <source>Replaying blocks...</source>
+        <translation>Odtwarzanie bloków ...</translation>
+    </message>
+    <message>
         <source>Rescanning...</source>
         <translation>Ponowne skanowanie...</translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
         <translation>Działaj w tle jako daemon i akceptuj polecenia</translation>
+    </message>
+    <message>
+        <source>Send trace/debug info to console instead of debug.log file</source>
+        <translation>Wyślij informacje na temat błędów do konsoli zamiast do debug.log file</translation>
     </message>
     <message>
         <source>Session not complete!</source>
@@ -4695,10 +5129,6 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <source>Set maximum block size in bytes (default: %d)</source>
         <translation>Ustaw maksymalny rozmiar bloku w bajtach (domyślny: %d)</translation>
-    </message>
-    <message>
-        <source>Set the masternode private key</source>
-        <translation>Ustaw klucz prywatny masternoda</translation>
     </message>
     <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
@@ -4725,6 +5155,14 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Sprecyzuj swój adres publiczny</translation>
     </message>
     <message>
+        <source>Start PrivateSend automatically (0-1, default: %u)</source>
+        <translation>Uruchom PrivateSend automatycznie (0-1, domyślnie: %u)</translation>
+    </message>
+    <message>
+        <source>Starting network threads...</source>
+        <translation>Uruchamianie wątków sieciowych...</translation>
+    </message>
+    <message>
         <source>Synchronization pending...</source>
         <translation>Oczekiwanie na synchronizację...</translation>
     </message>
@@ -4733,16 +5171,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Synchronizuję obiekty zarządzania...</translation>
     </message>
     <message>
-        <source>Synchronizing masternode payments...</source>
-        <translation>Synchronizacja płatności masternodów...</translation>
+        <source>The source code is available from %s.</source>
+        <translation>Kod źródłowy dostępny jest z %s.</translation>
     </message>
     <message>
         <source>The transaction amount is too small to pay the fee</source>
         <translation>Kwota transakcji jest za niska by pokryć opłatę</translation>
-    </message>
-    <message>
-        <source>This help message</source>
-        <translation>Ten komunikat pomocny</translation>
     </message>
     <message>
         <source>This is experimental software.</source>
@@ -4753,12 +5187,12 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Zbyt mała kwota</translation>
     </message>
     <message>
-        <source>Transaction amounts must be positive</source>
-        <translation>Kwota musi być dodatnia</translation>
-    </message>
-    <message>
         <source>Transaction created successfully.</source>
         <translation>Skutecznie utworzono transakcję.</translation>
+    </message>
+    <message>
+        <source>Transaction fee and change calculation failed</source>
+        <translation>Obliczenie opłaty transakcyjnej i reszty nie powiodło się</translation>
     </message>
     <message>
         <source>Transaction fees are too high.</source>
@@ -4771,10 +5205,6 @@ https://www.transifex.com/projects/p/genix/</translation>
     <message>
         <source>Transaction too large for fee policy</source>
         <translation>Transakcja nie mieści się w ramach wyznaczających wielkość opłaty za transakcję</translation>
-    </message>
-    <message>
-        <source>Transaction too large</source>
-        <translation>Za duża transakcja</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
@@ -4793,16 +5223,16 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Status nieznany: id = %u</translation>
     </message>
     <message>
+        <source>Unsupported logging category %s=%s.</source>
+        <translation>Nieobsługiwana kategoria rejestrowania %s=%s.</translation>
+    </message>
+    <message>
         <source>Username for JSON-RPC connections</source>
         <translation>Nazwa użytkownika dla połączeń JSON-RPC </translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
         <translation>Weryfikacja bloków...</translation>
-    </message>
-    <message>
-        <source>Verifying wallet...</source>
-        <translation>Weryfikacja portfela...</translation>
     </message>
     <message>
         <source>Very low number of keys left: %d</source>
@@ -4833,16 +5263,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Twoje wejścia zostały dodane z powodzeniem.</translation>
     </message>
     <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Twoja transakcja została dołączona do poola!</translation>
-    </message>
-    <message>
         <source>Zapping all transactions from wallet...</source>
         <translation>Zappowanie wszystkich transakcji z portfela</translation>
-    </message>
-    <message>
-        <source>wallet.dat corrupt, salvage failed</source>
-        <translation>Plik wallet.dat zepsuty, odzyskiwanie nie powiodło się</translation>
     </message>
 </context>
 </TS>

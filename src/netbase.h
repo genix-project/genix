@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_NETBASE_H
-#define GENIX_NETBASE_H
+#ifndef BITCOIN_NETBASE_H
+#define BITCOIN_NETBASE_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/genix-config.h"
@@ -24,12 +24,13 @@ extern bool fNameLookup;
 static const int DEFAULT_CONNECT_TIMEOUT = 5000;
 //! -dns default
 static const int DEFAULT_NAME_LOOKUP = true;
+static const bool DEFAULT_ALLOWPRIVATENET = false;
 
 class proxyType
 {
 public:
     proxyType(): randomize_credentials(false) {}
-    proxyType(const CService &proxy, bool randomize_credentials=false): proxy(proxy), randomize_credentials(randomize_credentials) {}
+    proxyType(const CService &_proxy, bool _randomize_credentials=false): proxy(_proxy), randomize_credentials(_randomize_credentials) {}
 
     bool IsValid() const { return proxy.IsValid(); }
 
@@ -39,7 +40,6 @@ public:
 
 enum Network ParseNetwork(std::string net);
 std::string GetNetworkName(enum Network net);
-void SplitHostPort(std::string in, int &portOut, std::string &hostOut);
 bool SetProxy(enum Network net, const proxyType &addrProxy);
 bool GetProxy(enum Network net, proxyType &proxyInfoOut);
 bool IsProxy(const CNetAddr &addr);
@@ -58,11 +58,13 @@ std::string NetworkErrorString(int err);
 /** Close socket and set hSocket to INVALID_SOCKET */
 bool CloseSocket(SOCKET& hSocket);
 /** Disable or enable blocking-mode for a socket */
-bool SetSocketNonBlocking(SOCKET& hSocket, bool fNonBlocking);
+bool SetSocketNonBlocking(const SOCKET& hSocket, bool fNonBlocking);
+/** Set the TCP_NODELAY flag on a socket */
+bool SetSocketNoDelay(const SOCKET& hSocket);
 /**
  * Convert milliseconds to a struct timeval for e.g. select.
  */
 struct timeval MillisToTimeval(int64_t nTimeout);
 void InterruptSocks5(bool interrupt);
 
-#endif // GENIX_NETBASE_H
+#endif // BITCOIN_NETBASE_H

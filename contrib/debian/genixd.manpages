@@ -1,3 +1,2 @@
-debian/manpages/genixd.1
-debian/manpages/genix.conf.5
-debian/manpages/genix-cli.1
+doc/man/genixd.1
+doc/man/genix-cli.1

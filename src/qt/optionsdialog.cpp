@@ -9,7 +9,7 @@
 #include "optionsdialog.h"
 #include "ui_optionsdialog.h"
 
-#include "genixunits.h"
+#include "bitcoinunits.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
 
@@ -20,10 +20,8 @@
 #ifdef ENABLE_WALLET
 #include "wallet/wallet.h" // for CWallet::GetRequiredFee()
 
-#include "privatesend-client.h"
+#include "privatesend/privatesend-client.h"
 #endif // ENABLE_WALLET
-
-#include <boost/thread.hpp>
 
 #include <QDataWidgetMapper>
 #include <QDir>
@@ -33,8 +31,9 @@
 #include <QTimer>
 
 #ifdef ENABLE_WALLET
-extern CWallet* pwalletMain;
-#endif // ENABLE_WALLET
+typedef CWallet* CWalletRef;
+extern std::vector<CWalletRef> vpwallets;
+#endif //ENABLE_WALLET
 
 OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     QDialog(parent),
@@ -92,16 +91,20 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     
     /* Theme selector */
-    ui->theme->addItem(QString("GENIX-light"), QVariant("light"));
-    ui->theme->addItem(QString("GENIX-light-hires"), QVariant("light-hires"));
-    ui->theme->addItem(QString("GENIX-blue"), QVariant("drkblue"));
-    ui->theme->addItem(QString("GENIX-Crownium"), QVariant("crownium"));
-    ui->theme->addItem(QString("GENIX-traditional"), QVariant("trad"));
-    
+    QDir themes(":themes");
+    for (const QString &entry : themes.entryList()) {
+        ui->theme->addItem(entry, QVariant(entry));
+    }
+
     /* Language selector */
     QDir translations(":translations");
+
+    ui->bitcoinAtStartup->setToolTip(ui->bitcoinAtStartup->toolTip().arg(tr(PACKAGE_NAME)));
+    ui->bitcoinAtStartup->setText(ui->bitcoinAtStartup->text().arg(tr(PACKAGE_NAME)));
+
+    ui->lang->setToolTip(ui->lang->toolTip().arg(tr(PACKAGE_NAME)));
     ui->lang->addItem(QString("(") + tr("default") + QString(")"), QVariant(""));
-    Q_FOREACH(const QString &langStr, translations.entryList())
+    for (const QString &langStr : translations.entryList())
     {
         QLocale locale(langStr);
 
@@ -131,7 +134,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     ui->thirdPartyTxUrls->setPlaceholderText("https://example.com/tx/%s");
 #endif
 
-    ui->unit->setModel(new GENIXUnits(this));
+    ui->unit->setModel(new BitcoinUnits(this));
 
     /* Widget-to-option mapper */
     mapper = new QDataWidgetMapper(this);
@@ -152,22 +155,22 @@ OptionsDialog::~OptionsDialog()
     delete ui;
 }
 
-void OptionsDialog::setModel(OptionsModel *model)
+void OptionsDialog::setModel(OptionsModel *_model)
 {
-    this->model = model;
+    this->model = _model;
 
-    if(model)
+    if(_model)
     {
         /* check if client restart is needed and show persistent message */
-        if (model->isRestartRequired())
+        if (_model->isRestartRequired())
             showRestartWarning(true);
 
-        QString strLabel = model->getOverriddenByCommandLine();
+        QString strLabel = _model->getOverriddenByCommandLine();
         if (strLabel.isEmpty())
             strLabel = tr("none");
         ui->overriddenByCommandLineLabel->setText(strLabel);
 
-        mapper->setModel(model);
+        mapper->setModel(_model);
         setMapper();
         mapper->toFirst();
 
@@ -196,19 +199,20 @@ void OptionsDialog::setModel(OptionsModel *model)
 void OptionsDialog::setMapper()
 {
     /* Main */
-    mapper->addMapping(ui->genixAtStartup, OptionsModel::StartAtStartup);
+    mapper->addMapping(ui->bitcoinAtStartup, OptionsModel::StartAtStartup);
     mapper->addMapping(ui->threadsScriptVerif, OptionsModel::ThreadsScriptVerif);
     mapper->addMapping(ui->databaseCache, OptionsModel::DatabaseCache);
 
     /* Wallet */
     mapper->addMapping(ui->coinControlFeatures, OptionsModel::CoinControlFeatures);
     mapper->addMapping(ui->showMasternodesTab, OptionsModel::ShowMasternodesTab);
-    mapper->addMapping(ui->showAdvancedPSUI, OptionsModel::ShowAdvancedPSUI);
-    mapper->addMapping(ui->lowKeysWarning, OptionsModel::LowKeysWarning);
-    mapper->addMapping(ui->privateSendMultiSession, OptionsModel::PrivateSendMultiSession);
-    mapper->addMapping(ui->spendZeroConfChange, OptionsModel::SpendZeroConfChange);
-    mapper->addMapping(ui->privateSendRounds, OptionsModel::PrivateSendRounds);
-    mapper->addMapping(ui->privateSendAmount, OptionsModel::PrivateSendAmount);
+//    mapper->addMapping(ui->showAdvancedPSUI, OptionsModel::ShowAdvancedPSUI);
+//    mapper->addMapping(ui->showPrivateSendPopups, OptionsModel::ShowPrivateSendPopups);
+//    mapper->addMapping(ui->lowKeysWarning, OptionsModel::LowKeysWarning);
+//    mapper->addMapping(ui->privateSendMultiSession, OptionsModel::PrivateSendMultiSession);
+//    mapper->addMapping(ui->spendZeroConfChange, OptionsModel::SpendZeroConfChange);
+//    mapper->addMapping(ui->privateSendRounds, OptionsModel::PrivateSendRounds);
+//    mapper->addMapping(ui->privateSendAmount, OptionsModel::PrivateSendAmount);
 
     /* Network */
     mapper->addMapping(ui->mapPortUpnp, OptionsModel::MapPortUPnP);
@@ -266,8 +270,8 @@ void OptionsDialog::on_okButton_clicked()
     mapper->submit();
 #ifdef ENABLE_WALLET
     privateSendClient.nCachedNumBlocks = std::numeric_limits<int>::max();
-    if(pwalletMain)
-        pwalletMain->MarkDirty();
+    if(!vpwallets.empty())
+        vpwallets[0]->MarkDirty();
 #endif // ENABLE_WALLET
     accept();
     updateDefaultProxyNets();
@@ -293,7 +297,7 @@ void OptionsDialog::on_hideTrayIcon_stateChanged(int fState)
 
 void OptionsDialog::showRestartWarning(bool fPersistent)
 {
-    ui->statusLabel->setStyleSheet("QLabel { color: red; }");
+    ui->statusLabel->setStyleSheet(GUIUtil::getThemedStyleQString(GUIUtil::ThemedStyle::TS_ERROR));
 
     if(fPersistent)
     {
@@ -311,6 +315,9 @@ void OptionsDialog::showRestartWarning(bool fPersistent)
 void OptionsDialog::clearStatusLabel()
 {
     ui->statusLabel->clear();
+    if (model && model->isRestartRequired()) {
+        showRestartWarning(true);
+    }
 }
 
 void OptionsDialog::updateProxyValidationState()
@@ -320,12 +327,12 @@ void OptionsDialog::updateProxyValidationState()
     if (pUiProxyIp->isValid() && (!ui->proxyPort->isEnabled() || ui->proxyPort->text().toInt() > 0) && (!ui->proxyPortTor->isEnabled() || ui->proxyPortTor->text().toInt() > 0))
     {
         setOkButtonState(otherProxyWidget->isValid()); //only enable ok button if both proxys are valid
-        ui->statusLabel->clear();
+        clearStatusLabel();
     }
     else
     {
         setOkButtonState(false);
-        ui->statusLabel->setStyleSheet("QLabel { color: red; }");
+        ui->statusLabel->setStyleSheet(GUIUtil::getThemedStyleQString(GUIUtil::ThemedStyle::TS_ERROR));
         ui->statusLabel->setText(tr("The supplied proxy address is invalid."));
     }
 }

@@ -1,9 +1,32 @@
+# Copyright (c) 2013-2016 The Bitcoin Core developers
+# Copyright (c) 2014-2018 The Genix Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 DIST_SUBDIRS = secp256k1 univalue
 
 AM_LDFLAGS = $(PTHREAD_CFLAGS) $(LIBTOOL_LDFLAGS) $(HARDENED_LDFLAGS)
-AM_CXXFLAGS = $(HARDENED_CXXFLAGS)
+AM_CXXFLAGS = $(HARDENED_CXXFLAGS) $(ERROR_CXXFLAGS)
 AM_CPPFLAGS = $(HARDENED_CPPFLAGS)
 EXTRA_LIBRARIES =
+
+if ENABLE_CRASH_HOOKS
+if CRASH_HOOKS_WRAPPED_CXX_ABI
+# Wrap internal C++ ABI's so that we can attach stacktraces to exceptions
+LDFLAGS_WRAP_EXCEPTIONS = -Wl,-wrap,__cxa_allocate_exception -Wl,-wrap,__cxa_free_exception
+if TARGET_WINDOWS
+LDFLAGS_WRAP_EXCEPTIONS += -Wl,-wrap,_assert -Wl,-wrap,_wassert
+else
+LDFLAGS_WRAP_EXCEPTIONS += -Wl,-wrap,__assert_fail
+endif
+endif
+endif
+
+if TARGET_WINDOWS
+BACKTRACE_LIB = -ldbghelp -lbacktrace
+else
+BACKTRACE_LIB = -lbacktrace
+endif
 
 if EMBEDDED_UNIVALUE
 LIBUNIVALUE = univalue/libunivalue.la
@@ -14,20 +37,46 @@ else
 LIBUNIVALUE = $(UNIVALUE_LIBS)
 endif
 
-GENIX_CONFIG_INCLUDES=-I$(builddir)/config
-GENIX_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
+BITCOIN_CONFIG_INCLUDES=-I$(builddir)/config
+BITCOIN_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
 
-GENIX_INCLUDES += -I$(srcdir)/secp256k1/include
-GENIX_INCLUDES += $(UNIVALUE_CFLAGS)
+BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
+BITCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
 
-LIBGENIX_SERVER=libgenix_server.a
-LIBGENIX_WALLET=libgenix_wallet.a
-LIBGENIX_COMMON=libgenix_common.a
-LIBGENIX_CLI=libgenix_cli.a
-LIBGENIX_UTIL=libgenix_util.a
-LIBGENIX_CRYPTO=crypto/libgenix_crypto.a
-LIBGENIXQT=qt/libgenixqt.a
+BLS_LIBS=-lchiabls -lgmp
+
+LIBBITCOIN_SERVER=libgenix_server.a
+LIBBITCOIN_COMMON=libgenix_common.a
+LIBBITCOIN_CONSENSUS=libgenix_consensus.a
+LIBBITCOIN_CLI=libgenix_cli.a
+LIBBITCOIN_UTIL=libgenix_util.a
+LIBBITCOIN_CRYPTO_BASE=crypto/libgenix_crypto_base.a
+LIBBITCOINQT=qt/libgenixqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
+
+if ENABLE_ZMQ
+LIBBITCOIN_ZMQ=libgenix_zmq.a
+endif
+if BUILD_BITCOIN_LIBS
+LIBBITCOINCONSENSUS=libgenixconsensus.la
+endif
+if ENABLE_WALLET
+LIBBITCOIN_WALLET=libgenix_wallet.a
+endif
+
+LIBBITCOIN_CRYPTO= $(LIBBITCOIN_CRYPTO_BASE)
+if ENABLE_SSE41
+LIBBITCOIN_CRYPTO_SSE41 = crypto/libgenix_crypto_sse41.a
+LIBBITCOIN_CRYPTO += $(LIBBITCOIN_CRYPTO_SSE41)
+endif
+if ENABLE_AVX2
+LIBBITCOIN_CRYPTO_AVX2 = crypto/libgenix_crypto_avx2.a
+LIBBITCOIN_CRYPTO += $(LIBBITCOIN_CRYPTO_AVX2)
+endif
+if ENABLE_SHANI
+LIBBITCOIN_CRYPTO_SHANI = crypto/libgenix_crypto_shani.a
+LIBBITCOIN_CRYPTO += $(LIBBITCOIN_CRYPTO_SHANI)
+endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
 	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C $(@D) $(@F)
@@ -35,52 +84,42 @@ $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
-  crypto/libgenix_crypto.a \
-  libgenix_util.a \
-  libgenix_common.a \
-  libgenix_server.a \
-  libgenix_cli.a
-if ENABLE_WALLET
-GENIX_INCLUDES += $(BDB_CPPFLAGS)
-EXTRA_LIBRARIES += libgenix_wallet.a
-endif
-if ENABLE_ZMQ
-EXTRA_LIBRARIES += libgenix_zmq.a
-endif
+  $(LIBBITCOIN_CRYPTO) \
+  $(LIBBITCOIN_UTIL) \
+  $(LIBBITCOIN_COMMON) \
+  $(LIBBITCOIN_CONSENSUS) \
+  $(LIBBITCOIN_SERVER) \
+  $(LIBBITCOIN_CLI) \
+  $(LIBBITCOIN_WALLET) \
+  $(LIBBITCOIN_ZMQ)
 
-if BUILD_GENIX_LIBS
-lib_LTLIBRARIES = libgenixconsensus.la
-LIBGENIX_CONSENSUS=libgenixconsensus.la
-else
-LIBGENIX_CONSENSUS=
-endif
+lib_LTLIBRARIES = $(LIBBITCOINCONSENSUS)
 
 bin_PROGRAMS =
+noinst_PROGRAMS =
 TESTS =
 BENCHMARKS =
 
-if BUILD_GENIXD
+if BUILD_BITCOIND
   bin_PROGRAMS += genixd
 endif
 
-if BUILD_GENIX_UTILS
+if BUILD_BITCOIN_UTILS
   bin_PROGRAMS += genix-cli genix-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
 # genix core #
-GENIX_CORE_H = \
+BITCOIN_CORE_H = \
   addrdb.h \
-  activemasternode.h \
   addressindex.h \
   spentindex.h \
   addrman.h \
-  alert.h \
-  amount.h \
-  arith_uint256.h \
   base58.h \
+  batchedlogger.h \
   bip39.h \
   bip39_english.h \
+  blockencodings.h \
   bloom.h \
   cachemap.h \
   cachemultimap.h \
@@ -91,7 +130,6 @@ GENIX_CORE_H = \
   checkpoints.h \
   checkqueue.h \
   clientversion.h \
-  coincontrol.h \
   coins.h \
   compat.h \
   compat/byteswap.h \
@@ -99,40 +137,61 @@ GENIX_CORE_H = \
   compat/sanity.h \
   compressor.h \
   consensus/consensus.h \
-  consensus/merkle.h \
-  consensus/params.h \
-  consensus/validation.h \
+  consensus/tx_verify.h \
   core_io.h \
   core_memusage.h \
-  privatesend.h \
-  privatesend-client.h \
-  privatesend-server.h \
-  privatesend-util.h \
+  cuckoocache.h \
+  ctpl.h \
+  cxxtimer.hpp \
+  evo/cbtx.h \
+  evo/deterministicmns.h \
+  evo/evodb.h \
+  evo/mnauth.h \
+  evo/providertx.h \
+  evo/simplifiedmns.h \
+  evo/specialtx.h \
+  privatesend/privatesend.h \
+  privatesend/privatesend-client.h \
+  privatesend/privatesend-server.h \
+  privatesend/privatesend-util.h \
   dsnotificationinterface.h \
-  governance.h \
-  governance-classes.h \
-  governance-exceptions.h \
-  governance-object.h \
-  governance-validators.h \
-  governance-vote.h \
-  governance-votedb.h \
+  governance/governance.h \
+  governance/governance-classes.h \
+  governance/governance-exceptions.h \
+  governance/governance-object.h \
+  governance/governance-validators.h \
+  governance/governance-vote.h \
+  governance/governance-votedb.h \
   flat-database.h \
-  hash.h \
   hdchain.h \
+  fs.h \
   httprpc.h \
   httpserver.h \
+  indirectmap.h \
   init.h \
-  instantx.h \
   key.h \
   keepass.h \
   keystore.h \
   dbwrapper.h \
   limitedmap.h \
-  masternode.h \
-  masternode-payments.h \
-  masternode-sync.h \
-  masternodeman.h \
-  masternodeconfig.h \
+  llmq/quorums.h \
+  llmq/quorums_blockprocessor.h \
+  llmq/quorums_commitment.h \
+  llmq/quorums_chainlocks.h \
+  llmq/quorums_debug.h \
+  llmq/quorums_dkgsessionhandler.h \
+  llmq/quorums_dkgsessionmgr.h \
+  llmq/quorums_dkgsession.h \
+  llmq/quorums_init.h \
+  llmq/quorums_instantsend.h \
+  llmq/quorums_signing.h \
+  llmq/quorums_signing_shares.h \
+  llmq/quorums_utils.h \
+  masternode/activemasternode.h \
+  masternode/masternode-meta.h \
+  masternode/masternode-payments.h \
+  masternode/masternode-sync.h \
+  masternode/masternode-utils.h \
   memusage.h \
   merkleblock.h \
   messagesigner.h \
@@ -142,59 +201,61 @@ GENIX_CORE_H = \
   netaddress.h \
   netbase.h \
   netfulfilledman.h \
+  netmessagemaker.h \
   noui.h \
+  policy/feerate.h \
   policy/fees.h \
   policy/policy.h \
-  policy/rbf.h \
   pow.h \
-  prevector.h \
-  primitives/block.h \
-  primitives/transaction.h \
   protocol.h \
-  pubkey.h \
   random.h \
+  reverse_iterator.h \
   reverselock.h \
+  rpc/blockchain.h \
   rpc/client.h \
+  rpc/mining.h \
   rpc/protocol.h \
   rpc/server.h \
+  rpc/register.h \
+  saltedhasher.h \
   scheduler.h \
-  script/interpreter.h \
-  script/script.h \
-  script/script_error.h \
   script/sigcache.h \
   script/sign.h \
   script/standard.h \
-  serialize.h \
+  script/ismine.h \
   spork.h \
+  stacktraces.h \
   streams.h \
+  support/allocators/mt_pooled_secure.h \
+  support/allocators/pooled_secure.h \
   support/allocators/secure.h \
   support/allocators/zeroafterfree.h \
   support/cleanse.h \
-  support/pagelocker.h \
+  support/events.h \
+  support/lockedpool.h \
   sync.h \
   threadsafety.h \
   threadinterrupt.h \
   timedata.h \
-  tinyformat.h \
   torcontrol.h \
   txdb.h \
   txmempool.h \
   ui_interface.h \
-  uint256.h \
   undo.h \
+  unordered_lru_cache.h \
   util.h \
   utilmoneystr.h \
-  utilstrencodings.h \
   utiltime.h \
   validation.h \
   validationinterface.h \
-  version.h \
   versionbits.h \
+  wallet/coincontrol.h \
   wallet/crypter.h \
   wallet/db.h \
+  wallet/rpcwallet.h \
   wallet/wallet.h \
-  wallet/wallet_ismine.h \
   wallet/walletdb.h \
+  warnings.h \
   zmq/zmqabstractnotifier.h \
   zmq/zmqconfig.h\
   zmq/zmqnotificationinterface.h \
@@ -203,38 +264,58 @@ GENIX_CORE_H = \
 
 obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj
-	@$(top_srcdir)/share/genbuild.sh $(abs_top_builddir)/src/obj/build.h \
-	  $(abs_top_srcdir)
+	@$(top_srcdir)/share/genbuild.sh "$(abs_top_builddir)/src/obj/build.h" \
+	  "$(abs_top_srcdir)"
 libgenix_util_a-clientversion.$(OBJEXT): obj/build.h
 
 # server: shared between genixd and genix-qt
-libgenix_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(GENIX_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libgenix_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libgenix_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libgenix_server_a_SOURCES = \
-  activemasternode.cpp \
-  addrman.cpp \
   addrdb.cpp \
-  alert.cpp \
+  addrman.cpp \
+  batchedlogger.cpp \
   bloom.cpp \
+  blockencodings.cpp \
   chain.cpp \
   checkpoints.cpp \
+  consensus/tx_verify.cpp \
   dsnotificationinterface.cpp \
+  evo/cbtx.cpp \
+  evo/deterministicmns.cpp \
+  evo/evodb.cpp \
+  evo/mnauth.cpp \
+  evo/providertx.cpp \
+  evo/simplifiedmns.cpp \
+  evo/specialtx.cpp \
   httprpc.cpp \
   httpserver.cpp \
   init.cpp \
-  instantx.cpp \
   dbwrapper.cpp \
-  governance.cpp \
-  governance-classes.cpp \
-  governance-object.cpp \
-  governance-validators.cpp \
-  governance-vote.cpp \
-  governance-votedb.cpp \
-  masternode.cpp \
-  masternode-payments.cpp \
-  masternode-sync.cpp \
-  masternodeconfig.cpp \
-  masternodeman.cpp \
+  governance/governance.cpp \
+  governance/governance-classes.cpp \
+  governance/governance-object.cpp \
+  governance/governance-validators.cpp \
+  governance/governance-vote.cpp \
+  governance/governance-votedb.cpp \
+  llmq/quorums.cpp \
+  llmq/quorums_blockprocessor.cpp \
+  llmq/quorums_commitment.cpp \
+  llmq/quorums_chainlocks.cpp \
+  llmq/quorums_debug.cpp \
+  llmq/quorums_dkgsessionhandler.cpp \
+  llmq/quorums_dkgsessionmgr.cpp \
+  llmq/quorums_dkgsession.cpp \
+  llmq/quorums_init.cpp \
+  llmq/quorums_instantsend.cpp \
+  llmq/quorums_signing.cpp \
+  llmq/quorums_signing_shares.cpp \
+  llmq/quorums_utils.cpp \
+  masternode/activemasternode.cpp \
+  masternode/masternode-meta.cpp \
+  masternode/masternode-payments.cpp \
+  masternode/masternode-sync.cpp \
+  masternode/masternode-utils.cpp \
   merkleblock.cpp \
   messagesigner.cpp \
   miner.cpp \
@@ -245,8 +326,8 @@ libgenix_server_a_SOURCES = \
   policy/fees.cpp \
   policy/policy.cpp \
   pow.cpp \
-  privatesend.cpp \
-  privatesend-server.cpp \
+  privatesend/privatesend.cpp \
+  privatesend/privatesend-server.cpp \
   rest.cpp \
   rpc/blockchain.cpp \
   rpc/masternode.cpp \
@@ -255,23 +336,24 @@ libgenix_server_a_SOURCES = \
   rpc/misc.cpp \
   rpc/net.cpp \
   rpc/rawtransaction.cpp \
+  rpc/rpcevo.cpp \
+  rpc/rpcquorums.cpp \
   rpc/server.cpp \
   script/sigcache.cpp \
-  sendalert.cpp \
+  script/ismine.cpp \
   spork.cpp \
   timedata.cpp \
   torcontrol.cpp \
   txdb.cpp \
   txmempool.cpp \
+  ui_interface.cpp \
   validation.cpp \
   validationinterface.cpp \
   versionbits.cpp \
-  $(GENIX_CORE_H)
+  $(BITCOIN_CORE_H)
 
 if ENABLE_ZMQ
-LIBGENIX_ZMQ=libgenix_zmq.a
-
-libgenix_zmq_a_CPPFLAGS = $(GENIX_INCLUDES) $(ZMQ_CFLAGS)
+libgenix_zmq_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(ZMQ_CFLAGS)
 libgenix_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libgenix_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
@@ -282,31 +364,37 @@ endif
 
 # wallet: shared between genixd and genix-qt, but only linked
 # when wallet enabled
-libgenix_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(GENIX_INCLUDES)
+libgenix_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libgenix_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libgenix_wallet_a_SOURCES = \
   keepass.cpp \
-  privatesend-client.cpp \
-  privatesend-util.cpp \
+  privatesend/privatesend-client.cpp \
+  privatesend/privatesend-util.cpp \
   wallet/crypter.cpp \
   wallet/db.cpp \
   wallet/rpcdump.cpp \
   wallet/rpcwallet.cpp \
   wallet/wallet.cpp \
-  wallet/wallet_ismine.cpp \
   wallet/walletdb.cpp \
-  policy/rbf.cpp \
-  $(GENIX_CORE_H)
+  $(BITCOIN_CORE_H)
 
 # crypto primitives library
-crypto_libgenix_crypto_a_CPPFLAGS = $(AM_CPPFLAGS) $(GENIX_CONFIG_INCLUDES) $(PIC_FLAGS)
-crypto_libgenix_crypto_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) $(PIC_FLAGS)
-crypto_libgenix_crypto_a_SOURCES = \
+crypto_libgenix_crypto_base_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_CONFIG_INCLUDES) $(PIC_FLAGS)
+crypto_libgenix_crypto_base_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) $(PIC_FLAGS)
+crypto_libgenix_crypto_base_a_SOURCES = \
+  crypto/aes.cpp \
+  crypto/aes.h \
+  crypto/chacha_poly_aead.h \
+  crypto/chacha_poly_aead.cpp \
+  crypto/chacha20.h \
+  crypto/chacha20.cpp \
   crypto/common.h \
   crypto/hmac_sha256.cpp \
   crypto/hmac_sha256.h \
   crypto/hmac_sha512.cpp \
   crypto/hmac_sha512.h \
+  crypto/poly1305.h \
+  crypto/poly1305.cpp \
   crypto/ripemd160.cpp \
   crypto/aes_helper.c \
   crypto/ripemd160.h \
@@ -317,8 +405,24 @@ crypto_libgenix_crypto_a_SOURCES = \
   crypto/sha512.cpp \
   crypto/sha512.h
 
+if USE_ASM
+crypto_libgenix_crypto_base_a_SOURCES += crypto/sha256_sse4.cpp
+endif
+
+crypto_libgenix_crypto_sse41_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libgenix_crypto_sse41_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libgenix_crypto_sse41_a_CXXFLAGS += $(SSE41_CXXFLAGS)
+crypto_libgenix_crypto_sse41_a_CPPFLAGS += -DENABLE_SSE41
+crypto_libgenix_crypto_sse41_a_SOURCES = crypto/sha256_sse41.cpp
+
+crypto_libgenix_crypto_avx2_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libgenix_crypto_avx2_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libgenix_crypto_avx2_a_CXXFLAGS += $(AVX2_CXXFLAGS)
+crypto_libgenix_crypto_avx2_a_CPPFLAGS += -DENABLE_AVX2
+crypto_libgenix_crypto_avx2_a_SOURCES = crypto/sha256_avx2.cpp
+
 # x16r
-crypto_libgenix_crypto_a_SOURCES += \
+crypto_libgenix_crypto_base_a_SOURCES += \
   crypto/blake.c \
   crypto/bmw.c \
   crypto/cubehash.c \
@@ -355,128 +459,169 @@ crypto_libgenix_crypto_a_SOURCES += \
   crypto/sph_sha2.h \
   crypto/sph_types.h
 
+crypto_libgenix_crypto_shani_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libgenix_crypto_shani_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libgenix_crypto_shani_a_CXXFLAGS += $(SHANI_CXXFLAGS)
+crypto_libgenix_crypto_shani_a_CPPFLAGS += -DENABLE_SHANI
+crypto_libgenix_crypto_shani_a_SOURCES = crypto/sha256_shani.cpp
+
+# consensus: shared between all executables that validate any consensus rules.
+libgenix_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libgenix_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libgenix_consensus_a_SOURCES = \
+  amount.h \
+  arith_uint256.cpp \
+  arith_uint256.h \
+  bls/bls.cpp \
+  bls/bls.h \
+  consensus/merkle.cpp \
+  consensus/merkle.h \
+  consensus/params.h \
+  consensus/validation.h \
+  hash.cpp \
+  hash.h \
+  prevector.h \
+  primitives/block.cpp \
+  primitives/block.h \
+  primitives/transaction.cpp \
+  primitives/transaction.h \
+  pubkey.cpp \
+  pubkey.h \
+  script/genixconsensus.cpp \
+  script/interpreter.cpp \
+  script/interpreter.h \
+  script/script.cpp \
+  script/script.h \
+  script/script_error.cpp \
+  script/script_error.h \
+  serialize.h \
+  streams.h \
+  tinyformat.h \
+  uint256.cpp \
+  uint256.h \
+  utilstrencodings.cpp \
+  utilstrencodings.h \
+  version.h
+
 # common: shared between genixd, and genix-qt and non-server tools
-libgenix_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(GENIX_INCLUDES)
+libgenix_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libgenix_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libgenix_common_a_SOURCES = \
-  amount.cpp \
-  arith_uint256.cpp \
   base58.cpp \
   bip39.cpp \
   chainparams.cpp \
   coins.cpp \
   compressor.cpp \
-  consensus/merkle.cpp \
   core_read.cpp \
   core_write.cpp \
-  hash.cpp \
   hdchain.cpp \
   key.cpp \
   keystore.cpp \
   netaddress.cpp \
   netbase.cpp \
-  primitives/block.cpp \
-  primitives/transaction.cpp \
+  policy/feerate.cpp \
   protocol.cpp \
-  pubkey.cpp \
+  saltedhasher.cpp \
   scheduler.cpp \
-  script/interpreter.cpp \
-  script/script.cpp \
-  script/script_error.cpp \
   script/sign.cpp \
   script/standard.cpp \
-  $(GENIX_CORE_H)
+  warnings.cpp \
+  $(BITCOIN_CORE_H)
 
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libgenix_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(GENIX_INCLUDES)
+libgenix_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libgenix_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libgenix_util_a_SOURCES = \
-  support/pagelocker.cpp \
+  bls/bls_batchverifier.h \
+  bls/bls_ies.cpp \
+  bls/bls_ies.h \
+  bls/bls_worker.cpp \
+  bls/bls_worker.h \
+  support/lockedpool.cpp \
   chainparamsbase.cpp \
   clientversion.cpp \
   compat/glibc_sanity.cpp \
   compat/glibcxx_sanity.cpp \
   compat/strnlen.cpp \
+  fs.cpp \
   random.cpp \
   rpc/protocol.cpp \
+  stacktraces.cpp \
   support/cleanse.cpp \
   sync.cpp \
-  uint256.cpp \
   threadinterrupt.cpp \
   util.cpp \
   utilmoneystr.cpp \
   utilstrencodings.cpp \
   utiltime.cpp \
-  $(GENIX_CORE_H)
+  $(BITCOIN_CORE_H)
 
 if GLIBC_BACK_COMPAT
 libgenix_util_a_SOURCES += compat/glibc_compat.cpp
+AM_LDFLAGS += -Wl,--wrap=log2f -Wl,--wrap=__divmoddi4
 endif
 
 # cli: shared between genix-cli and genix-qt
-libgenix_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(GENIX_INCLUDES)
+libgenix_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libgenix_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libgenix_cli_a_SOURCES = \
   rpc/client.cpp \
-  $(GENIX_CORE_H)
+  $(BITCOIN_CORE_H)
 
 nodist_libgenix_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # genixd binary #
 genixd_SOURCES = genixd.cpp
-genixd_CPPFLAGS = $(AM_CPPFLAGS) $(GENIX_INCLUDES)
+genixd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 genixd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-genixd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+genixd_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
 genixd_SOURCES += genixd-res.rc
 endif
 
 genixd_LDADD = \
-  $(LIBGENIX_SERVER) \
-  $(LIBGENIX_COMMON) \
+  $(LIBBITCOIN_SERVER) \
+  $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
-  $(LIBGENIX_UTIL) \
-  $(LIBGENIX_CRYPTO) \
+  $(LIBBITCOIN_UTIL) \
+  $(LIBBITCOIN_WALLET) \
+  $(LIBBITCOIN_ZMQ) \
+  $(LIBBITCOIN_CONSENSUS) \
+  $(LIBBITCOIN_CRYPTO) \
   $(LIBLEVELDB) \
+  $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-if ENABLE_ZMQ
-genixd_LDADD += $(LIBGENIX_ZMQ) $(ZMQ_LIBS)
-endif
-
-if ENABLE_WALLET
-genixd_LDADD += libgenix_wallet.a
-endif
-
-genixd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+genixd_LDADD += $(BACKTRACE_LIB) $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(BLS_LIBS)
 
 # genix-cli binary #
 genix_cli_SOURCES = genix-cli.cpp
-genix_cli_CPPFLAGS = $(AM_CPPFLAGS) $(GENIX_INCLUDES) $(EVENT_CFLAGS)
+genix_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 genix_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-genix_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+genix_cli_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
 genix_cli_SOURCES += genix-cli-res.rc
 endif
 
 genix_cli_LDADD = \
-  $(LIBGENIX_CLI) \
+  $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
-  $(LIBGENIX_UTIL)
-genix_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+  $(LIBBITCOIN_UTIL) \
+  $(LIBBITCOIN_CRYPTO)
+genix_cli_LDADD += $(BACKTRACE_LIB) $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS) $(BLS_LIBS)
 #
 
 # genix-tx binary #
 genix_tx_SOURCES = genix-tx.cpp
-genix_tx_CPPFLAGS = $(AM_CPPFLAGS) $(GENIX_INCLUDES)
+genix_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 genix_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-genix_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+genix_tx_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
 genix_tx_SOURCES += genix-tx-res.rc
@@ -484,45 +629,40 @@ endif
 
 genix_tx_LDADD = \
   $(LIBUNIVALUE) \
-  $(LIBGENIX_COMMON) \
-  $(LIBGENIX_UTIL) \
-  $(LIBGENIX_CRYPTO) \
+  $(LIBBITCOIN_COMMON) \
+  $(LIBBITCOIN_UTIL) \
+  $(LIBBITCOIN_CONSENSUS) \
+  $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-genix_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+genix_tx_LDADD += $(BACKTRACE_LIB) $(BOOST_LIBS) $(CRYPTO_LIBS) $(BLS_LIBS)
 #
 
 # genixconsensus library #
-if BUILD_GENIX_LIBS
+if BUILD_BITCOIN_LIBS
 include_HEADERS = script/genixconsensus.h
-libgenixconsensus_la_SOURCES = \
-  crypto/hmac_sha512.cpp \
-  crypto/ripemd160.cpp \
-  crypto/sha1.cpp \
-  crypto/sha256.cpp \
-  crypto/sha512.cpp \
-  hash.cpp \
-  primitives/transaction.cpp \
-  pubkey.cpp \
-  script/genixconsensus.cpp \
-  script/interpreter.cpp \
-  script/script.cpp \
-  uint256.cpp \
-  utilstrencodings.cpp
+libgenixconsensus_la_SOURCES = support/cleanse.cpp $(crypto_libgenix_crypto_base_a_SOURCES) $(libgenix_consensus_a_SOURCES)
 
 if GLIBC_BACK_COMPAT
   libgenixconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
 libgenixconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libgenixconsensus_la_LIBADD = $(LIBSECP256K1)
-libgenixconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_GENIX_INTERNAL
+libgenixconsensus_la_LIBADD = $(LIBSECP256K1) $(BLS_LIBS)
+libgenixconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
 libgenixconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #
 
-CLEANFILES = leveldb/libleveldb.a leveldb/libmemenv.a
+CTAES_DIST =  crypto/ctaes/bench.c
+CTAES_DIST += crypto/ctaes/ctaes.c
+CTAES_DIST += crypto/ctaes/ctaes.h
+CTAES_DIST += crypto/ctaes/README.md
+CTAES_DIST += crypto/ctaes/test.c
+
+CLEANFILES = $(EXTRA_LIBRARIES)
+
 CLEANFILES += *.gcda *.gcno
 CLEANFILES += compat/*.gcda compat/*.gcno
 CLEANFILES += consensus/*.gcda consensus/*.gcno
@@ -536,20 +676,34 @@ CLEANFILES += wallet/*.gcda wallet/*.gcno
 CLEANFILES += wallet/test/*.gcda wallet/test/*.gcno
 CLEANFILES += zmq/*.gcda zmq/*.gcno
 
+IMMER_DIST = immer
+
 DISTCLEANFILES = obj/build.h
 
-EXTRA_DIST = leveldb
+EXTRA_DIST = $(CTAES_DIST)
+EXTRA_DIST += $(IMMER_DIST)
+
+
+config/genix-config.h: config/stamp-h1
+	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)
+config/stamp-h1: $(top_srcdir)/$(subdir)/config/genix-config.h.in $(top_builddir)/config.status
+	$(AM_V_at)$(MAKE) -C $(top_builddir) $(subdir)/$(@)
+$(top_srcdir)/$(subdir)/config/genix-config.h.in:  $(am__configure_deps)
+	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/genix-config.h.in
+
 
 clean-local:
-	-$(MAKE) -C leveldb clean
 	-$(MAKE) -C secp256k1 clean
 	-$(MAKE) -C univalue clean
 	-rm -f leveldb/*/*.gcda leveldb/*/*.gcno leveldb/helpers/memenv/*.gcda leveldb/helpers/memenv/*.gcno
 	-rm -f config.h
+	-rm -rf test/__pycache__
+	-rm -rf *.dSYM test/*.dSYM bench/*.dSYM qt/*.dSYM qt/test/*.dSYM
 
 .rc.o:
 	@test -f $(WINDRES)
-	$(AM_V_GEN) $(WINDRES) -DWINDRES_PREPROC -i $< -o $@
+	## FIXME: How to get the appropriate modulename_CPPFLAGS in here?
+	$(AM_V_GEN) $(WINDRES) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(CPPFLAGS) -DWINDRES_PREPROC -i $< -o $@
 
 .mm.o:
 	$(AM_V_CXX) $(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
@@ -567,9 +721,13 @@ if HARDEN
 	$(AM_V_at) READELF=$(READELF) OBJDUMP=$(OBJDUMP) $(top_srcdir)/contrib/devtools/security-check.py < $(bin_PROGRAMS)
 endif
 
+
+osx_debug: $(bin_PROGRAMS)
+	for i in $(bin_PROGRAMS); do mkdir -p $$i.dSYM/Contents/Resources/DWARF && $(DSYMUTIL_FLAT) -o $$i.dSYM/Contents/Resources/DWARF/$$(basename $$i) $$i &> /dev/null ; done
+
 %.pb.cc %.pb.h: %.proto
 	@test -f $(PROTOC)
-	$(AM_V_GEN) $(PROTOC) --cpp_out=$(@D) --proto_path=$(abspath $(<D) $<)
+	$(AM_V_GEN) $(PROTOC) --cpp_out=$(@D) --proto_path=$(<D) $<
 
 if EMBEDDED_LEVELDB
 include Makefile.leveldb.include

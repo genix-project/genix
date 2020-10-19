@@ -68,9 +68,9 @@ can then be controlled by group membership.
 3b) Mac OS X
 
 Binary:              `/usr/local/bin/genixd`  
-Configuration file:  `~/Library/Application Support/GENIXCore/genix.conf`  
-Data directory:      `~/Library/Application Support/GENIXCore`
-Lock file:           `~/Library/Application Support/GENIXCore/.lock`
+Configuration file:  `~/Library/Application Support/genixCore/genix.conf`  
+Data directory:      `~/Library/Application Support/genixCore`
+Lock file:           `~/Library/Application Support/genixCore/.lock`
 
 4. Installing Service Configuration
 -----------------------------------
@@ -104,7 +104,7 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 Copy genixd.init to /etc/init.d/genixd. Test by running `service genixd start`.
 
 Using this script, you can adjust the path and flags to the genixd program by
-setting the GENIXD and FLAGS environment variables in the file
+setting the genixD and FLAGS environment variables in the file
 /etc/sysconfig/genixd. You can also use the DAEMONOPTS environment variable here.
 
 4e) Mac OS X

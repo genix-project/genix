@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GENIX_QT_ASKPASSPHRASEDIALOG_H
-#define GENIX_QT_ASKPASSPHRASEDIALOG_H
+#ifndef BITCOIN_QT_ASKPASSPHRASEDIALOG_H
+#define BITCOIN_QT_ASKPASSPHRASEDIALOG_H
 
 #include <QDialog>
 
@@ -50,4 +50,4 @@ protected:
     bool eventFilter(QObject *object, QEvent *event);
 };
 
-#endif // GENIX_QT_ASKPASSPHRASEDIALOG_H
+#endif // BITCOIN_QT_ASKPASSPHRASEDIALOG_H
