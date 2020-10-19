@@ -1,7 +1,7 @@
-genix Core
+Genix Core
 ==========
 
-This is the official reference wallet for genix digital currency and comprises the backbone of the genix peer-to-peer network. You can [download genix Core](https://www.genix.cx/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for genix digital currency and comprises the backbone of the genix peer-to-peer network. You can [download Genix Core](https://www.genix.cx/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
@@ -33,7 +33,7 @@ for technical specifications and implementation details.
 
 Building
 ---------------------
-The following are developer notes on how to build genix Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Genix Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -43,7 +43,7 @@ The following are developer notes on how to build genix Core on your native plat
 
 Development
 ---------------------
-The genix Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Genix Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)

@@ -242,11 +242,11 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. genix Core can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. Genix Core can no longer continue safely and will quit.</source>
         <translation>خطأ فادح حدث . لا يمكن اتمام داش بامان سيتم الخروج</translation>
     </message>
     <message>
-        <source>genix Core</source>
+        <source>Genix Core</source>
         <translation>جوهر الداش</translation>
     </message>
     <message>
@@ -306,7 +306,7 @@
         <translation>الخروج من التطبيق</translation>
     </message>
     <message>
-        <source>Show information about genix Core</source>
+        <source>Show information about Genix Core</source>
         <translation>أظهر المعلومات حولة داش الأساسية</translation>
     </message>
     <message>
@@ -1251,7 +1251,7 @@
         <translation>يعمل هذا المقدار كعتبة لإيقاف تشغيل الإرسال المخفي بمجرد الوصول إليه.</translation>
     </message>
     <message>
-        <source>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>فتح منفذ عميل داش كور تلقائيًا على جهاز التوجيه. هذا يعمل فقط عندما يدعم جهاز التوجيه الخاص بك UPnP وتمكينه.</translation>
     </message>
     <message>
@@ -4567,7 +4567,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>خيارات خادم RPC:</translation>
     </message>
     <message>
-        <source>genix Core</source>
+        <source>Genix Core</source>
         <translation>جوهر الداش</translation>
     </message>
     <message>

@@ -1,7 +1,7 @@
 Translation Strings Policy
 ===========================
 
-This document provides guidelines for internationalization of the genix Core software.
+This document provides guidelines for internationalization of the Genix Core software.
 
 How to translate?
 ------------------

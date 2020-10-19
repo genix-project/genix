@@ -258,12 +258,12 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. genix Core can no longer continue safely and will quit.</source>
-        <translation>Se produjo un error fatal. genix Core no puede continuar de forma segura y se cerrará.</translation>
+        <source>A fatal error occurred. Genix Core can no longer continue safely and will quit.</source>
+        <translation>Se produjo un error fatal. Genix Core no puede continuar de forma segura y se cerrará.</translation>
     </message>
     <message>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -322,8 +322,8 @@
         <translation>Salir de la aplicación</translation>
     </message>
     <message>
-        <source>Show information about genix Core</source>
-        <translation>Mostrar información acerca de genix Core</translation>
+        <source>Show information about Genix Core</source>
+        <translation>Mostrar información acerca de Genix Core</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -1331,8 +1331,8 @@
         <translation>Saldo objetivo de PrivateSend</translation>
     </message>
     <message>
-        <source>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente el puerto del cliente genix Core en el enrutador. Esto solo funciona cuando su enrutador admite UPnP y está habilitado.</translation>
+        <source>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente el puerto del cliente Genix Core en el enrutador. Esto solo funciona cuando su enrutador admite UPnP y está habilitado.</translation>
     </message>
     <message>
         <source>Connect to the genix network through a SOCKS5 proxy.</source>
@@ -4823,8 +4823,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Opciones de servidor RPC:</translation>
     </message>
     <message>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

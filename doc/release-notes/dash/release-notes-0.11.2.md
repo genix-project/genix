@@ -1,7 +1,7 @@
 0.11.2 Release notes
 ====================
 
-genix Core version 0.11.2 is now available from:
+Genix Core version 0.11.2 is now available from:
 
   https://genix-project.io/downloads
 
@@ -21,10 +21,10 @@ functionality will not be available for you)
 Mining and relay policy enhancements
 ------------------------------------
 
-genix Core's block templates are now for version 3 blocks only, and any
+Genix Core's block templates are now for version 3 blocks only, and any
 mining software relying on its `getblocktemplate` must be updated in parallel
 to use libblkmaker either version 0.4.2 or any version from 0.5.1 onward. If you
-are solo mining, this will affect you the moment you upgrade genix Core,
+are solo mining, this will affect you the moment you upgrade Genix Core,
 which must be done prior to BIP66 achieving its 951/1001 status. If you are
 mining with the stratum mining protocol: this does not affect you. If you are
 mining with the getblocktemplate protocol to a pool: this will affect you at the
@@ -35,7 +35,7 @@ pool operator's discretion, which must be no later than BIP66 achieving its
 BIP 66: strict DER encoding for signatures
 ------------------------------------------
 
-genix Core 0.11.2 implements BIP 66, which introduces block version 3, and a
+Genix Core 0.11.2 implements BIP 66, which introduces block version 3, and a
 new consensus rule, which prohibits non-DER signatures. Such transactions have
 been non-standard since genix 0.8, but were technically still permitted
 inside blocks.

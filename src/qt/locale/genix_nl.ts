@@ -258,12 +258,12 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. genix Core can no longer continue safely and will quit.</source>
-        <translation>Er heeft zich een fatale fout voorgedaan. genix Core kan niet veilig worden voortgezet en zal worden afgesloten.</translation>
+        <source>A fatal error occurred. Genix Core can no longer continue safely and will quit.</source>
+        <translation>Er heeft zich een fatale fout voorgedaan. Genix Core kan niet veilig worden voortgezet en zal worden afgesloten.</translation>
     </message>
     <message>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -322,8 +322,8 @@
         <translation>Sluit applicatie</translation>
     </message>
     <message>
-        <source>Show information about genix Core</source>
-        <translation>Toon informatie over genix Core</translation>
+        <source>Show information about Genix Core</source>
+        <translation>Toon informatie over Genix Core</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -1332,7 +1332,7 @@ Dit heeft ook invloed op de manier waarop uw saldo wordt berekend.</translation>
         <translation>Target PrivateSend Saldo</translation>
     </message>
     <message>
-        <source>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Open automatisch de genix client poort op de router. Dit werkt alleen als uw router UPnP ondersteunt en dit is ingeschakeld.</translation>
     </message>
     <message>
@@ -4828,8 +4828,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het genix netwe
         <translation>RPC-serveropties:</translation>
     </message>
     <message>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

@@ -1,6 +1,6 @@
 GENERIC BUILD NOTES
 ====================
-Some notes on how to build genix Core based on the [depends](../depends/README.md) build system.
+Some notes on how to build Genix Core based on the [depends](../depends/README.md) build system.
 
 Note on old build instructions
 ------------------------------
@@ -10,7 +10,7 @@ is supported today.
 
 Required build tools and environment
 ------------------------------------
-Building the dependencies and genix Core requires some essential build tools to be installed before. Please see
+Building the dependencies and Genix Core requires some essential build tools to be installed before. Please see
 [build-unix](build-unix.md), [build-osx](build-osx.md) and [build-windows](build-windows.md) for details.
 
 Building dependencies
@@ -24,7 +24,7 @@ $ make -j4 # Choose a good -j value, depending on the number of CPU cores availa
 $ cd ..
 ```
 
-This will download and build all dependencies required to build genix Core. Caching of build results will ensure that only
+This will download and build all dependencies required to build Genix Core. Caching of build results will ensure that only
 the packages are rebuilt which have changed since the last depends build.
 
 It is required to re-run the above commands from time to time when dependencies have been updated or added. If this is
@@ -34,7 +34,7 @@ Please read the [depends](../depends/README.md) documentation for more details o
 options. If no host is specified (as in the above example) when calling `make`, the depends system will default to your
 local host system. 
 
-Building genix Core
+Building Genix Core
 ---------------------
 
 ```bash
@@ -61,7 +61,7 @@ If you want to build for the same host but different distro, add `--enable-glibc
 
 ccache
 ------
-`./configure` of genix Core will autodetect the presence of ccache and enable use of it. To disable ccache, use
+`./configure` of Genix Core will autodetect the presence of ccache and enable use of it. To disable ccache, use
 `./configure --prefix=<prefix> --disable-ccache`. When installed and enabled, [ccache](https://ccache.samba.org/) will
 cache build results on source->object level.
 

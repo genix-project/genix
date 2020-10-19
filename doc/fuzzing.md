@@ -1,4 +1,4 @@
-Fuzz-testing genix Core
+Fuzz-testing Genix Core
 ==========================
 
 A special test harness `test_genix_fuzzy` is provided to provide an easy
@@ -20,7 +20,7 @@ export AFLPATH=$PWD
 Instrumentation
 ----------------
 
-To build genix Core using AFL instrumentation (this assumes that the
+To build Genix Core using AFL instrumentation (this assumes that the
 `AFLPATH` was set as above):
 ```
 ./configure --disable-ccache --disable-shared --enable-tests CC=${AFLPATH}/afl-gcc CXX=${AFLPATH}/afl-g++

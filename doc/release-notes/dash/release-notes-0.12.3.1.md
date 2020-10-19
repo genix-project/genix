@@ -1,4 +1,4 @@
-genix Core version 0.12.3.1
+Genix Core version 0.12.3.1
 ==========================
 
 Release is now available from:
@@ -148,7 +148,7 @@ Command-line options
 --------------------
 
 New cmd-line options:
-- introduced in genix Core 0.12.3.1: `allowprivatenet`, `bip9params`, `sporkaddr`, `devnet`;
+- introduced in Genix Core 0.12.3.1: `allowprivatenet`, `bip9params`, `sporkaddr`, `devnet`;
 - backported from Bitcoin Core 0.13/0.14: `blockreconstructionextratxn`, `maxtimeadjustment`, `maxtipage`,
 `incrementalrelayfee`, `dustrelayfee`, `blockmintxfee`.
 
@@ -175,7 +175,7 @@ case of future ASIC uses on testnet.
 Using masternode lists for initial peers discovery
 --------------------------------------------------
 
-We now use a recent masternode list to feed the hardcoded seed nodes list in genix Core. This list was previously
+We now use a recent masternode list to feed the hardcoded seed nodes list in Genix Core. This list was previously
 unmaintained as we fully relied on DNS based discovery on startup. DNS discovery is still used as the main discovery
 method, but the hardcoded seed list should now be able to serve as a proper backup in case DNS fails for some reason.
 
@@ -478,12 +478,12 @@ the 0.8.x tree and was first released on Mar/13/2014.
 Darkcoin tree 0.10.x used to be the closed source implementation of Darksend
 which was released open source on Sep/25/2014.
 
-genix Core tree 0.11.x was a fork of Bitcoin Core tree 0.9,
+Genix Core tree 0.11.x was a fork of Bitcoin Core tree 0.9,
 Darkcoin was rebranded to genix.
 
-genix Core tree 0.12.0.x was a fork of Bitcoin Core tree 0.10.
+Genix Core tree 0.12.0.x was a fork of Bitcoin Core tree 0.10.
 
-genix Core tree 0.12.1.x was a fork of Bitcoin Core tree 0.12.
+Genix Core tree 0.12.1.x was a fork of Bitcoin Core tree 0.12.
 
 These release are considered obsolete. Old release notes can be found here:
 

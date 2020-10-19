@@ -37,7 +37,7 @@ Description: peer-to-peer network based digital currency - daemon
  genix is an experimental new digital currency that enables instant, private
  payments to anyone, anywhere in the world. genix uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. genix Core
+ and issuing money are carried out collectively by the network. Genix Core
  is the name of the open source software which enables the use of this currency.
  .
  This package provides the daemon, genixd, and the CLI tool
@@ -50,7 +50,7 @@ Description: peer-to-peer network based digital currency - Qt GUI
  genix is an experimental new digital currency that enables instant, private
  payments to anyone, anywhere in the world. genix uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. genix Core
+ and issuing money are carried out collectively by the network. Genix Core
  is the name of the open source software which enables the use of this currency.
  .
  This package provides genix-Qt, a GUI for genix based on Qt.
@@ -62,7 +62,7 @@ Description: peer-to-peer digital currency - standalone transaction tool
  genix is an experimental new digital currency that enables instant, private
  payments to anyone, anywhere in the world. genix uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. genix Core
+ and issuing money are carried out collectively by the network. Genix Core
  is the name of the open source software which enables the use of this currency.
  .
  This package provides genix-tx, a command-line transaction creation

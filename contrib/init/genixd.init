@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  genixd The genix Core server.
+#  genixd The Genix Core server.
 #
 #
 # chkconfig: 345 80 20

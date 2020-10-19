@@ -1,4 +1,4 @@
-genix Core version 0.15
+Genix Core version 0.15
 ======================
 
 Release is now available from:
@@ -27,7 +27,7 @@ or -reindex) to make sure your wallet has all the new data synced. Upgrading fro
 version 0.13 should not require any additional actions.
 
 When upgrading from a version prior to 0.14.0.3, the
-first startup of genix Core will run a migration process which can take a few minutes
+first startup of Genix Core will run a migration process which can take a few minutes
 to finish. After the migration, a downgrade to an older version is only possible with
 a reindex (or reindex-chainstate).
 
@@ -213,7 +213,7 @@ option (default is `no`). When using this option on macOS make sure to build bin
 Backports from Bitcoin Core 0.15
 --------------------------------
 
-Most of the changes between Bitcoin Core 0.14 and Bitcoin Core 0.15 have been backported into genix Core 0.15.
+Most of the changes between Bitcoin Core 0.14 and Bitcoin Core 0.15 have been backported into Genix Core 0.15.
 We only excluded backports which do not align with genix, like SegWit or RBF related changes.
 
 You can read about changes brought by backporting from Bitcoin Core 0.15 in following docs:
@@ -410,7 +410,7 @@ See detailed [set of changes](https://github.com/genix-project/genix/compare/v0.
 - [`02f6188e8`](https://github.com/genix-project/genix/commit/02f6188e8) Do not count 0-fee txes for fee estimation (#3037)
 - [`f0c73f5ce`](https://github.com/genix-project/genix/commit/f0c73f5ce) Revert "Skip mempool.dat when wallet is starting in "zap" mode (#2782)"
 - [`be3bc48c9`](https://github.com/genix-project/genix/commit/be3bc48c9) Fix broken link in PrivateSend info dialog (#3031)
-- [`acab8c552`](https://github.com/genix-project/genix/commit/acab8c552) Add genix Core Group codesign certificate (#3027)
+- [`acab8c552`](https://github.com/genix-project/genix/commit/acab8c552) Add Genix Core Group codesign certificate (#3027)
 - [`a1c4321e9`](https://github.com/genix-project/genix/commit/a1c4321e9) Fix osslsigncode compile issue in gitian-build (#3026)
 - [`2f21e5551`](https://github.com/genix-project/genix/commit/2f21e5551) Remove legacy InstantSend code (#3020)
 - [`7a440d626`](https://github.com/genix-project/genix/commit/7a440d626) Optimize on-disk deterministic masternode storage to reduce size of evodb (#3017)
@@ -498,12 +498,12 @@ the 0.8.x tree and was first released on Mar/13/2014.
 Darkcoin tree 0.10.x used to be the closed source implementation of Darksend
 which was released open source on Sep/25/2014.
 
-genix Core tree 0.11.x was a fork of Bitcoin Core tree 0.9,
+Genix Core tree 0.11.x was a fork of Bitcoin Core tree 0.9,
 Darkcoin was rebranded to genix.
 
-genix Core tree 0.12.0.x was a fork of Bitcoin Core tree 0.10.
+Genix Core tree 0.12.0.x was a fork of Bitcoin Core tree 0.10.
 
-genix Core tree 0.12.1.x was a fork of Bitcoin Core tree 0.12.
+Genix Core tree 0.12.1.x was a fork of Bitcoin Core tree 0.12.
 
 These release are considered obsolete. Old release notes can be found here:
 

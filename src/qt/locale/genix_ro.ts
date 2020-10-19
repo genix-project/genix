@@ -258,12 +258,12 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. genix Core can no longer continue safely and will quit.</source>
-        <translation>A apărut o eroare fatală. genix Core nu mai poate continua în siguranță și se va opri.</translation>
+        <source>A fatal error occurred. Genix Core can no longer continue safely and will quit.</source>
+        <translation>A apărut o eroare fatală. Genix Core nu mai poate continua în siguranță și se va opri.</translation>
     </message>
     <message>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -322,8 +322,8 @@
         <translation>Închide aplicaţia</translation>
     </message>
     <message>
-        <source>Show information about genix Core</source>
-        <translation>Arată informații despre genix Core</translation>
+        <source>Show information about Genix Core</source>
+        <translation>Arată informații despre Genix Core</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -1275,8 +1275,8 @@
         <translation>Această sumă acționează ca un prag pentru a dezactiva TrimitePrivat după ce a fost atins.</translation>
     </message>
     <message>
-        <source>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Deschide automat portul client genix Core de pe router. Asta funcționează numai atunci când routerul dvs. acceptă UPnP și este activat.</translation>
+        <source>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Deschide automat portul client Genix Core de pe router. Asta funcționează numai atunci când routerul dvs. acceptă UPnP și este activat.</translation>
     </message>
     <message>
         <source>Connect to the genix network through a SOCKS5 proxy.</source>
@@ -4695,8 +4695,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Opțiuni server RPC:</translation>
     </message>
     <message>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

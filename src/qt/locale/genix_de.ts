@@ -258,12 +258,12 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. genix Core can no longer continue safely and will quit.</source>
-        <translation>Ein kritischer Fehler ist aufgetreten. genix Core kann nicht mehr ausgeführt werden und wird nun beendet.</translation>
+        <source>A fatal error occurred. Genix Core can no longer continue safely and will quit.</source>
+        <translation>Ein kritischer Fehler ist aufgetreten. Genix Core kann nicht mehr ausgeführt werden und wird nun beendet.</translation>
     </message>
     <message>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -322,8 +322,8 @@
         <translation>Anwendung beenden</translation>
     </message>
     <message>
-        <source>Show information about genix Core</source>
-        <translation>Informationen über genix Core anzeigen</translation>
+        <source>Show information about Genix Core</source>
+        <translation>Informationen über Genix Core anzeigen</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -1332,8 +1332,8 @@ Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es is
         <translation>PrivateSend-Guthaben auswählen</translation>
     </message>
     <message>
-        <source>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatisch den genix Core Clientport auf dem Router öffnen. Dies funktioniert nur, wenn Ihr Router UPnP unterstützt und dies aktiviert ist.</translation>
+        <source>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatisch den Genix Core Clientport auf dem Router öffnen. Dies funktioniert nur, wenn Ihr Router UPnP unterstützt und dies aktiviert ist.</translation>
     </message>
     <message>
         <source>Connect to the genix network through a SOCKS5 proxy.</source>
@@ -4825,8 +4825,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>RPC-Serveroptionen:</translation>
     </message>
     <message>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

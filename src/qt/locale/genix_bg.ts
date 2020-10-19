@@ -258,11 +258,11 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. genix Core can no longer continue safely and will quit.</source>
-        <translation>Възникна фатална грешка. genix Core не може да продължи безопасно и ще се изключи.</translation>
+        <source>A fatal error occurred. Genix Core can no longer continue safely and will quit.</source>
+        <translation>Възникна фатална грешка. Genix Core не може да продължи безопасно и ще се изключи.</translation>
     </message>
     <message>
-        <source>genix Core</source>
+        <source>Genix Core</source>
         <translation>genix Ядро</translation>
     </message>
     <message>
@@ -322,8 +322,8 @@
         <translation>Изход от приложението</translation>
     </message>
     <message>
-        <source>Show information about genix Core</source>
-        <translation>Покаци информация за genix Core</translation>
+        <source>Show information about Genix Core</source>
+        <translation>Покаци информация за Genix Core</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -1331,8 +1331,8 @@
         <translation>Желан PrivateSend баланс</translation>
     </message>
     <message>
-        <source>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматично отваря порта за genix Core клиента в маршрутизатора. Това работи само когато вашият маршрутизатор поддържа UPnP и той е разрешен.</translation>
+        <source>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Автоматично отваря порта за Genix Core клиента в маршрутизатора. Това работи само когато вашият маршрутизатор поддържа UPnP и той е разрешен.</translation>
     </message>
     <message>
         <source>Connect to the genix network through a SOCKS5 proxy.</source>
@@ -4823,8 +4823,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>Опции на RPC сървъра:</translation>
     </message>
     <message>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

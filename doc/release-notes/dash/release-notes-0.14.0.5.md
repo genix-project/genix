@@ -1,4 +1,4 @@
-genix Core version 0.14.0.5
+Genix Core version 0.14.0.5
 ==========================
 
 Release is now available from:
@@ -29,7 +29,7 @@ or -reindex) to make sure your wallet has all the new data synced. Upgrading fro
 version 0.13 should not require any additional actions.
 
 When upgrading from a version prior to 0.14.0.3, the
-first startup of genix Core will run a migration process which can take a few minutes
+first startup of Genix Core will run a migration process which can take a few minutes
 to finish. After the migration, a downgrade to an older version is only possible with
 a reindex (or reindex-chainstate).
 
@@ -106,12 +106,12 @@ the 0.8.x tree and was first released on Mar/13/2014.
 Darkcoin tree 0.10.x used to be the closed source implementation of Darksend
 which was released open source on Sep/25/2014.
 
-genix Core tree 0.11.x was a fork of Bitcoin Core tree 0.9,
+Genix Core tree 0.11.x was a fork of Bitcoin Core tree 0.9,
 Darkcoin was rebranded to genix.
 
-genix Core tree 0.12.0.x was a fork of Bitcoin Core tree 0.10.
+Genix Core tree 0.12.0.x was a fork of Bitcoin Core tree 0.10.
 
-genix Core tree 0.12.1.x was a fork of Bitcoin Core tree 0.12.
+Genix Core tree 0.12.1.x was a fork of Bitcoin Core tree 0.12.
 
 These release are considered obsolete. Old release notes can be found here:
 

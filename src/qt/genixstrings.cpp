@@ -9,7 +9,7 @@
 #define UNUSED
 #endif
 static const char UNUSED *genix_strings[] = {
-QT_TRANSLATE_NOOP("genix-core", "genix Core"),
+QT_TRANSLATE_NOOP("genix-core", "Genix Core"),
 QT_TRANSLATE_NOOP("genix-core", "The %s developers"),
 QT_TRANSLATE_NOOP("genix-core", ""
 "%s file contains all private keys from this wallet. Do not share it with "

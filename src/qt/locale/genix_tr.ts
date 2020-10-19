@@ -258,12 +258,12 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. genix Core can no longer continue safely and will quit.</source>
-        <translation>Kritik bir hata oluştu. genix Core artık güvenli şekilde devam edemez ve kapanacak.</translation>
+        <source>A fatal error occurred. Genix Core can no longer continue safely and will quit.</source>
+        <translation>Kritik bir hata oluştu. Genix Core artık güvenli şekilde devam edemez ve kapanacak.</translation>
     </message>
     <message>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -322,8 +322,8 @@
         <translation>Uygulamadan çık</translation>
     </message>
     <message>
-        <source>Show information about genix Core</source>
-        <translation>genix Core hakkında bilgileri göster</translation>
+        <source>Show information about Genix Core</source>
+        <translation>Genix Core hakkında bilgileri göster</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -1331,8 +1331,8 @@
         <translation>ÖzelGönder bakiyesi hedefle</translation>
     </message>
     <message>
-        <source>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Router'da otomatik olarak genix Core istemcisi portu aç. Bu sadece router'ınız UPnP destekliyorsa ve etkinse çalışır.</translation>
+        <source>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Router'da otomatik olarak Genix Core istemcisi portu aç. Bu sadece router'ınız UPnP destekliyorsa ve etkinse çalışır.</translation>
     </message>
     <message>
         <source>Connect to the genix network through a SOCKS5 proxy.</source>
@@ -4823,8 +4823,8 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>RPC sunucu seçenekleri:</translation>
     </message>
     <message>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

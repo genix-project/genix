@@ -258,11 +258,11 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. genix Core can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. Genix Core can no longer continue safely and will quit.</source>
         <translation>发生致命错误。达世币核心钱包不再能安全地运行下去，程序将会关闭。</translation>
     </message>
     <message>
-        <source>genix Core</source>
+        <source>Genix Core</source>
         <translation>达世币核心</translation>
     </message>
     <message>
@@ -322,7 +322,7 @@
         <translation>退出程序</translation>
     </message>
     <message>
-        <source>Show information about genix Core</source>
+        <source>Show information about Genix Core</source>
         <translation>显示关于达世币核心信息</translation>
     </message>
     <message>
@@ -1331,7 +1331,7 @@
         <translation>目标混币数额</translation>
     </message>
     <message>
-        <source>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>自动在路由器打开达世币核心客户端端口。此项只在路由器支持UPnP且开启时有效。</translation>
     </message>
     <message>
@@ -4823,7 +4823,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>RPC服务器选项：</translation>
     </message>
     <message>
-        <source>genix Core</source>
+        <source>Genix Core</source>
         <translation>达世币核心</translation>
     </message>
     <message>

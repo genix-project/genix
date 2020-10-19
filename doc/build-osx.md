@@ -33,7 +33,7 @@ Follow the instructions in [build-generic](build-generic.md)
 Running
 -------
 
-genix Core is now available at `./src/genixd`
+Genix Core is now available at `./src/genixd`
 
 Before running, it's recommended you create an RPC configuration file.
 

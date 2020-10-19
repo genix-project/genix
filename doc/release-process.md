@@ -36,7 +36,7 @@ Check out the source code in the following directory hierarchy.
 	git clone https://github.com/devrandom/gitian-builder.git
 	git clone https://github.com/genix-project/genix.git
 
-### genix Core maintainers/release engineers, suggestion for writing release notes
+### Genix Core maintainers/release engineers, suggestion for writing release notes
 
 Write release notes. git shortlog helps a lot, for example:
 
@@ -104,7 +104,7 @@ NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from 
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign genix Core for Linux, Windows, and OS X:
+### Build and sign Genix Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
     ./bin/gbuild --num-make 2 --memory 3000 --commit genix=v${VERSION} ../genix/contrib/gitian-descriptors/gitian-linux.yml

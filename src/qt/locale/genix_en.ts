@@ -333,13 +333,13 @@
     <name>BitcoinGUI</name>
     <message>
         <location filename="../genix.cpp" line="+567"/>
-        <source>A fatal error occurred. genix Core can no longer continue safely and will quit.</source>
-        <translation>A fatal error occurred. genix Core can no longer continue safely and will quit.</translation>
+        <source>A fatal error occurred. Genix Core can no longer continue safely and will quit.</source>
+        <translation>A fatal error occurred. Genix Core can no longer continue safely and will quit.</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="+1164"/>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <location line="-1016"/>
@@ -413,8 +413,8 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about genix Core</source>
-        <translation>Show information about genix Core</translation>
+        <source>Show information about Genix Core</source>
+        <translation>Show information about Genix Core</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1679,8 +1679,8 @@
     </message>
     <message>
         <location line="+45"/>
-        <source>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -6188,8 +6188,8 @@ https://www.transifex.com/projects/p/genix/</translation>
     </message>
     <message>
         <location line="-497"/>
-        <source>genix Core</source>
-        <translation>genix Core</translation>
+        <source>Genix Core</source>
+        <translation>Genix Core</translation>
     </message>
     <message>
         <location line="+1"/>

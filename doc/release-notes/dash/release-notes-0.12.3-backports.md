@@ -338,7 +338,7 @@
 - [`f831710f4`](https://github.com/genix-project/genix/commit/f831710f4) Merge #9139: Change sync_blocks to pick smarter maxheight (on top of #9196)
 - [`b6ea01e07`](https://github.com/genix-project/genix/commit/b6ea01e07) Remove namespace alert_tests when including alert test data
 - [`7939a23e3`](https://github.com/genix-project/genix/commit/7939a23e3) Use std::move when calling MakeTransactionRef
-- [`d0a39fbcf`](https://github.com/genix-project/genix/commit/d0a39fbcf) Use "genix Core" instead of "genix-core" in some places and genixify
+- [`d0a39fbcf`](https://github.com/genix-project/genix/commit/d0a39fbcf) Use "Genix Core" instead of "genix-core" in some places and genixify
 - [`9170c0e9c`](https://github.com/genix-project/genix/commit/9170c0e9c) Fix rpc tests
 - [`76d7730a5`](https://github.com/genix-project/genix/commit/76d7730a5) genixify ISSUE_TEMPLATE.md
 - [`07cd44c0e`](https://github.com/genix-project/genix/commit/07cd44c0e) Use MakeTransactionRef in CreateDevNetGenesisBlock

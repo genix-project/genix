@@ -258,11 +258,11 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. genix Core can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. Genix Core can no longer continue safely and will quit.</source>
         <translation>치명적인 오류가 발생하였습니다. 더 이상 대시 코어가 안전하지 않을 가능성이 있으며 대시 코어는 곧 종료될 예정입니다.</translation>
     </message>
     <message>
-        <source>genix Core</source>
+        <source>Genix Core</source>
         <translation>대시 코어</translation>
     </message>
     <message>
@@ -322,7 +322,7 @@
         <translation>어플리케이션 종료</translation>
     </message>
     <message>
-        <source>Show information about genix Core</source>
+        <source>Show information about Genix Core</source>
         <translation>대시 코어에 관한 정보를 표시합니다.</translation>
     </message>
     <message>
@@ -1331,7 +1331,7 @@
         <translation>타깃 프라이빗샌드 잔고</translation>
     </message>
     <message>
-        <source>Automatically open the genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Genix Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>라우터에서 대시 코어 클라이언트를 자동으로 엽니다. 이 기능은 당신의 라우터가 UPnP를 지원하고 해당 기능이 작동하는 경우에만 가능합니다.</translation>
     </message>
     <message>
@@ -4823,7 +4823,7 @@ https://www.transifex.com/projects/p/genix/</translation>
         <translation>RPC 서버 설정</translation>
     </message>
     <message>
-        <source>genix Core</source>
+        <source>Genix Core</source>
         <translation>대시 코어</translation>
     </message>
     <message>

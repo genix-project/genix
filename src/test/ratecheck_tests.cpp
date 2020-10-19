@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019 The genix Core developers
+// Copyright (c) 2014-2019 The Genix Core developers
 
 #include "governance/governance.h"
 

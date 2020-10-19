@@ -1,10 +1,10 @@
 Benchmarking
 ============
 
-genix Core has an internal benchmarking framework, with benchmarks
+Genix Core has an internal benchmarking framework, with benchmarks
 for cryptographic algorithms such as SHA1, SHA256, SHA512 and RIPEMD160. As well as the rolling bloom filter.
 
-After compiling genix Core, the benchmarks can be run with:
+After compiling Genix Core, the benchmarks can be run with:
 `src/bench/bench_genix`
 
 The output will look similar to:

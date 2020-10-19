@@ -1,4 +1,4 @@
-genix Core version 0.12.2.2
+Genix Core version 0.12.2.2
 ==========================
 
 Release is now available from:
@@ -51,7 +51,7 @@ can cause nodes to allocate excessive amounts of memory, which leads them to a
 halt. You can read more about the fix in the original Bitcoin Core pull request
 https://github.com/bitcoin/bitcoin/pull/10195
 
-To fix this issue in genix Core however, we had to backport a lot of other
+To fix this issue in Genix Core however, we had to backport a lot of other
 improvements from Bitcoin Core, see full list of backports in the detailed
 change log below.
 
@@ -92,7 +92,7 @@ Other improvements and bug fixes
 --------------------------------
 
 As a result of previous intensive refactoring and some additional fixes,
-it should be possible to compile genix Core with `--disable-wallet` option now.
+it should be possible to compile Genix Core with `--disable-wallet` option now.
 
 This release also improves sync process and significantly lowers the time after
 which `getblocktemplate` rpc becomes available on node start.
@@ -240,12 +240,12 @@ the 0.8.x tree and was first released on Mar/13/2014.
 Darkcoin tree 0.10.x used to be the closed source implementation of Darksend
 which was released open source on Sep/25/2014.
 
-genix Core tree 0.11.x was a fork of Bitcoin Core tree 0.9,
+Genix Core tree 0.11.x was a fork of Bitcoin Core tree 0.9,
 Darkcoin was rebranded to genix.
 
-genix Core tree 0.12.0.x was a fork of Bitcoin Core tree 0.10.
+Genix Core tree 0.12.0.x was a fork of Bitcoin Core tree 0.10.
 
-genix Core tree 0.12.1.x was a fork of Bitcoin Core tree 0.12.
+Genix Core tree 0.12.1.x was a fork of Bitcoin Core tree 0.12.
 
 These release are considered obsolete. Old release notes can be found here:
 

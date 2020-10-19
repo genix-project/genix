@@ -28,7 +28,7 @@ enum HTTPStatusCode
     HTTP_SERVICE_UNAVAILABLE   = 503,
 };
 
-//! genix Core RPC error codes
+//! Genix Core RPC error codes
 enum RPCErrorCode
 {
     //! Standard JSON-RPC 2.0 errors
