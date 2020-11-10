@@ -2032,6 +2032,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
         activeMasternodeInfo.blsPubKeyOperator = std::make_unique<CBLSPublicKey>();
     }
 
+
     // ********************************************************* Step 10b: setup PrivateSend
 
 #ifdef ENABLE_WALLET
