@@ -46,9 +46,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case genix: return QString("genix");
-            case mgenix: return QString("mgenix");
-            case ugenix: return QString::fromUtf8("μgenix");
+            case genix: return QString("GENIX");
+            case mgenix: return QString("mGENIX");
+            case ugenix: return QString::fromUtf8("μGENIX");
             case twigs: return QString("twigs");
             default: return QString("???");
         }
@@ -57,9 +57,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case genix: return QString("tgenix");
-            case mgenix: return QString("mtgenix");
-            case ugenix: return QString::fromUtf8("μtgenix");
+            case genix: return QString("tGENIX");
+            case mgenix: return QString("mtGENIX");
+            case ugenix: return QString::fromUtf8("μtGENIX");
             case twigs: return QString("ttwigs");
             default: return QString("???");
         }
@@ -72,10 +72,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case genix: return QString("genix");
-            case mgenix: return QString("Milli-genix (1 / 1" THIN_SP_UTF8 "000)");
-            case ugenix: return QString("Micro-genix (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case twigs: return QString("Ten Nano-genix (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case genix: return QString("GENIX");
+            case mgenix: return QString("Milli-GENIX (1 / 1" THIN_SP_UTF8 "000)");
+            case ugenix: return QString("Micro-GENIX (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case twigs: return QString("Ten Nano-GENIX (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -83,10 +83,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case genix: return QString("Testgenixs");
-            case mgenix: return QString("Milli-Testgenix (1 / 1" THIN_SP_UTF8 "000)");
-            case ugenix: return QString("Micro-Testgenix (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case twigs: return QString("Ten Nano-Testgenix (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case genix: return QString("TestGENIXs");
+            case mgenix: return QString("Milli-TestGENIX (1 / 1" THIN_SP_UTF8 "000)");
+            case ugenix: return QString("Micro-TestGENIX (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case twigs: return QString("Ten Nano-TestGENIX (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }

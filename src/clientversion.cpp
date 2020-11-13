@@ -13,7 +13,7 @@
  * for both genixd and genix-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("genix Core");
+const std::string CLIENT_NAME("Genix Core");
 
 /**
  * Client version number

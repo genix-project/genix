@@ -596,7 +596,7 @@ std::string HelpMessage(HelpMessageMode mode)
     }
     strUsage += HelpMessageOpt("-shrinkdebugfile", _("Shrink debug.log file on client startup (default: 1 when no -debug)"));
     AppendParamsHelpMessages(strUsage, showDebug);
-    strUsage += HelpMessageOpt("-litemode", strprintf(_("Disable all genix specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)"), 0));
+    strUsage += HelpMessageOpt("-litemode", strprintf(_("Disable all genix specific functionality (Masternodes, InstantSend, Governance) (0-1, default: %u)"), 0));
     strUsage += HelpMessageOpt("-sporkaddr=<genixaddress>", strprintf(_("Override spork address. Only useful for regtest and devnet. Using this on mainnet or testnet will ban you.")));
     strUsage += HelpMessageOpt("-minsporkkeys=<n>", strprintf(_("Overrides minimum spork signers to change spork value. Only useful for regtest and devnet. Using this on mainnet or testnet will ban you.")));
 
@@ -2031,6 +2031,36 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     if (activeMasternodeInfo.blsPubKeyOperator == nullptr) {
         activeMasternodeInfo.blsPubKeyOperator = std::make_unique<CBLSPublicKey>();
     }
+
+
+    // ********************************************************* Step 10b: setup PrivateSend
+
+#ifdef ENABLE_WALLET
+    // int nMaxRounds = MAX_PRIVATESEND_ROUNDS;
+
+    // if (vpwallets.empty()) {
+    //     privateSendClient.fEnablePrivateSend = privateSendClient.fPrivateSendRunning = false;
+    // } else {
+    //     privateSendClient.fEnablePrivateSend = gArgs.GetBoolArg("-enableprivatesend", !fLiteMode);
+    //     privateSendClient.fPrivateSendRunning = vpwallets[0]->IsLocked() ? false : gArgs.GetBoolArg("-privatesendautostart", DEFAULT_PRIVATESEND_AUTOSTART);
+    // }
+    // privateSendClient.fPrivateSendMultiSession = gArgs.GetBoolArg("-privatesendmultisession", DEFAULT_PRIVATESEND_MULTISESSION);
+    // privateSendClient.nPrivateSendSessions = std::min(std::max((int)gArgs.GetArg("-privatesendsessions", DEFAULT_PRIVATESEND_SESSIONS), MIN_PRIVATESEND_SESSIONS), MAX_PRIVATESEND_SESSIONS);
+    // privateSendClient.nPrivateSendRounds = std::min(std::max((int)gArgs.GetArg("-privatesendrounds", DEFAULT_PRIVATESEND_ROUNDS), MIN_PRIVATESEND_ROUNDS), nMaxRounds);
+    // privateSendClient.nPrivateSendAmount = std::min(std::max((int)gArgs.GetArg("-privatesendamount", DEFAULT_PRIVATESEND_AMOUNT), MIN_PRIVATESEND_AMOUNT), MAX_PRIVATESEND_AMOUNT);
+    // privateSendClient.nPrivateSendDenoms = std::min(std::max((int)gArgs.GetArg("-privatesenddenoms", DEFAULT_PRIVATESEND_DENOMS), MIN_PRIVATESEND_DENOMS), MAX_PRIVATESEND_DENOMS);
+
+    // if (privateSendClient.fEnablePrivateSend) {
+    //     LogPrintf("PrivateSend: autostart=%d, multisession=%d, "
+    //         "sessions=%d, rounds=%d, amount=%d, denoms=%d\n",
+    //         privateSendClient.fPrivateSendRunning, privateSendClient.fPrivateSendMultiSession,
+    //         privateSendClient.nPrivateSendSessions, privateSendClient.nPrivateSendRounds,
+    //         privateSendClient.nPrivateSendAmount, privateSendClient.nPrivateSendDenoms);
+    // }
+    privateSendClient.fEnablePrivateSend = false;
+#endif // ENABLE_WALLET
+
+    CPrivateSend::InitStandardDenominations();
 
     // ********************************************************* Step 10b: Load cache data
 
