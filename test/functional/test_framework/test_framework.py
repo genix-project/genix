@@ -466,7 +466,7 @@ class BitcoinTestFramework(object):
         for i in range(self.num_nodes):
             initialize_datadir(self.options.tmpdir, i)
 
-MASTERNODE_COLLATERAL = 1000
+MASTERNODE_COLLATERAL = 100000
 
 
 class MasternodeInfo:
