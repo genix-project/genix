@@ -38,7 +38,7 @@ jobs:
     - name: Prepare Files for Artifact
       run: |
         mkdir -p $ARTIFACT_DIR
-        mv depends.tar.gz genix-*.tar.gz $ARTIFACT_DIR
+        mv depends.tar.gz genixcore-*.tar.gz $ARTIFACT_DIR
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
@@ -59,7 +59,7 @@ jobs:
     - name: Extract Archives
       run: |
         tar -xzf depends.tar.gz
-        tar -xzf genix-*.tar.gz --strip-components=1
+        tar -xzf genixcore-*.tar.gz --strip-components=1
       working-directory: ${{ env.SOURCE_ARTIFACT }}
     - name: Install Required Packages
       run: |
@@ -96,7 +96,7 @@ jobs:
     - name: Extract Archives
       run: |
         tar -xzf depends.tar.gz
-        tar -xzf genix-*.tar.gz --strip-components=1
+        tar -xzf genixcore-*.tar.gz --strip-components=1
       working-directory: ${{ env.SOURCE_ARTIFACT }}
     - name: Install Required Packages
       run: |
@@ -137,7 +137,7 @@ jobs:
   #   - name: Extract Archives
   #     run: |
   #       tar -xzf depends.tar.gz
-  #       tar -xzf genix-*.tar.gz --strip-components=1
+  #       tar -xzf genixcore-*.tar.gz --strip-components=1
   #     working-directory: ${{ env.SOURCE_ARTIFACT }}
   #   - name: Use Xcode instead of Command Line Tools
   #     run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
