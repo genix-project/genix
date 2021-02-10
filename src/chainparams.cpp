@@ -238,12 +238,12 @@ public:
         consensus.nMasternodePaymentsIncreasePeriod = 100001;
         consensus.nInstantSendConfirmationsRequired = 6;
         consensus.nInstantSendKeepLock = 24;
-        consensus.nBudgetPaymentsStartBlock = 9999999999; // Disabled
-        consensus.nBudgetPaymentsCycleBlocks = 9999999999; // Disabled
-        consensus.nBudgetPaymentsWindowBlocks = 9999999999; // Disabled
-        consensus.nSuperblockStartBlock = 9999999999; // Disabled
+        consensus.nBudgetPaymentsStartBlock = 480000;
+        consensus.nBudgetPaymentsCycleBlocks = 21600 // 720*30=21600 1 super block per month.
+        consensus.nBudgetPaymentsWindowBlocks = 100;
+        consensus.nSuperblockStartBlock = 481000;
         consensus.nSuperblockStartHash = uint256S("0x00");
-        consensus.nSuperblockCycle = 9999999999; // Disabled
+        consensus.nSuperblockCycle = 21600 // 720*30=21600 1 super block per month.
         consensus.nGovernanceMinQuorum = 10;
         consensus.nGovernanceFilterElements = 20000;
         consensus.nMasternodeMinimumConfirmations = 15;
@@ -254,7 +254,7 @@ public:
         consensus.DIP0001Height = 16128;
         consensus.DIP0003Height = 445000;
         consensus.DIP0003EnforcementHeight = 450000;
-        consensus.DIP0003EnforcementHash = uint256S("0x00");
+        consensus.DIP0003EnforcementHash = uint256S("0x000000001267505023dcc5c9d4920c045b1291fb4d1bca97c839653f3731cc0e");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 1 * 60; // Genix: 1 hour
         consensus.nPowTargetSpacing = 2 * 60; // Genix: 2 minutes
