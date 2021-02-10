@@ -239,11 +239,11 @@ public:
         consensus.nInstantSendConfirmationsRequired = 6;
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = 480000;
-        consensus.nBudgetPaymentsCycleBlocks = 21600 // 720*30=21600 1 super block per month.
+        consensus.nBudgetPaymentsCycleBlocks = 21600; // 720*30=21600 1 super block per month.
         consensus.nBudgetPaymentsWindowBlocks = 100;
         consensus.nSuperblockStartBlock = 481000;
         consensus.nSuperblockStartHash = uint256S("0x00");
-        consensus.nSuperblockCycle = 21600 // 720*30=21600 1 super block per month.
+        consensus.nSuperblockCycle = 21600; // 720*30=21600 1 super block per month.
         consensus.nGovernanceMinQuorum = 10;
         consensus.nGovernanceFilterElements = 20000;
         consensus.nMasternodeMinimumConfirmations = 15;
