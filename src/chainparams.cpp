@@ -324,15 +324,19 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0000038977617c01646209e33e354174ef916df8284346b29aecfbc98fa43dd0"));
         assert(genesis.hashMerkleRoot == uint256S("93113cc5a2df97b20bbe91731578c6722080355be0b4b83b60c6b9ac535d5d15"));
 
-        vSeeds.emplace_back("161.43.201.255", true);
-        vSeeds.emplace_back("164.68.76.122", true);
-        vSeeds.emplace_back("192.99.55.111", true);
-        vSeeds.emplace_back("45.77.125.15", true);
-        vSeeds.emplace_back("167.99.75.36", true);
-        vSeeds.emplace_back("206.189.34.157", true);
-        vSeeds.emplace_back("178.128.96.216", true);
-        vSeeds.emplace_back("167.71.220.78", true);
-
+        vSeeds.emplace_back("207.148.3.153", true);
+        vSeeds.emplace_back("209.126.81.147", true);
+        vSeeds.emplace_back("95.217.140.136", true);
+        vSeeds.emplace_back("46.4.205.27", true);
+        vSeeds.emplace_back("45.138.73.11", true);
+        vSeeds.emplace_back("95.217.166.254", true);  
+	vSeeds.emplace_back("45.138.73.123", true);
+        vSeeds.emplace_back("198.74.110.185", true);
+        vSeeds.emplace_back("95.217.67.241", true);
+        vSeeds.emplace_back("134.255.88.142", true);
+        vSeeds.emplace_back("173.208.77.7", true);
+        vSeeds.emplace_back("51.15.117.199", true);
+	   
         // Genix addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
         // Genix script addresses start with '6'
