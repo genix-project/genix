@@ -260,8 +260,6 @@ public:
         consensus.nPowTargetSpacing = 2 * 60; // Genix: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-//        consensus.nPowKGWHeight = 9999999999;
-//        consensus.nPowDGWHeight = 1000;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
@@ -326,16 +324,17 @@ public:
 
         vSeeds.emplace_back("207.148.3.153", true);
         vSeeds.emplace_back("209.126.81.147", true);
+        vSeeds.emplace_back("95.217.97.197", true);
+        vSeeds.emplace_back("37.102.49.40", true);
         vSeeds.emplace_back("95.217.140.136", true);
-        vSeeds.emplace_back("46.4.205.27", true);
-        vSeeds.emplace_back("45.138.73.11", true);
         vSeeds.emplace_back("95.217.166.254", true);
-	    vSeeds.emplace_back("45.138.73.123", true);
-        vSeeds.emplace_back("198.74.110.185", true);
         vSeeds.emplace_back("95.217.67.241", true);
-        vSeeds.emplace_back("134.255.88.142", true);
-        vSeeds.emplace_back("173.208.77.7", true);
-        vSeeds.emplace_back("51.15.117.199", true);
+        vSeeds.emplace_back("37.102.49.31", true);
+        vSeeds.emplace_back("95.217.140.162", true);
+        vSeeds.emplace_back("209.126.81.54", true);
+        vSeeds.emplace_back("173.208.77.54", true);
+        vSeeds.emplace_back("46.4.205.26", true);
+        vSeeds.emplace_back("37.102.49.29", true);
 	   
         // Genix addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
@@ -431,8 +430,6 @@ public:
         consensus.nPowTargetSpacing = 2.5 * 60; // Genix: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
-        consensus.nPowKGWHeight = 4002; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
-        consensus.nPowDGWHeight = 4002;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
@@ -485,34 +482,6 @@ public:
         nDefaultPort = 32538;
         nPruneAfterHeight = 1000;
 
-/*  
-	        // calculate Genesis Block
-        hashGenesisBlock = genesis.GetHash();
-        if(genesis.GetHash() != uint256("0x"))
-        {
-        printf("MSearching for genesis block...\n");
-        uint256 hashTarget;
-        hashTarget.SetCompact(genesis.nBits);
-        while(uint256(genesis.GetHash()) > uint256(hashTarget))
-        {
-            ++genesis.nNonce;
-            if (genesis.nNonce == 0)
-            {
-                printf("Mainnet NONCE WRAPPED, incrementing time");
-                std::cout << std::string("Mainnet NONCE WRAPPED, incrementing time:\n");
-                ++genesis.nTime;
-            }
-            if (genesis.nNonce % 10000 == 0)
-            {
-               printf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
-            }
-        }
-        printf("Mainnet block.nTime = %u \n", genesis.nTime);
-        printf("Mainnet block.nNonce = %u \n", genesis.nNonce);
-        printf("Mainnet block.hashMerkleRoot: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-        printf("Mainnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-        }
-*/
         genesis = CreateGenesisBlock(1551279600, 2084647557, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0000038977617c01646209e33e354174ef916df8284346b29aecfbc98fa43dd0"));
@@ -611,8 +580,6 @@ public:
         consensus.nPowTargetSpacing = 2.5 * 60; // Genix: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
-        consensus.nPowKGWHeight = 4001; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
-        consensus.nPowDGWHeight = 4001;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
@@ -763,8 +730,6 @@ public:
         consensus.nPowTargetSpacing = 2.5 * 60; // Genix: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
-        consensus.nPowKGWHeight = 15200; // same as mainnet
-        consensus.nPowDGWHeight = 34140; // same as mainnet
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
         consensus.nMinerConfirmationWindow = 144; // Faster than normal for regtest (144 instead of 2016)
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
