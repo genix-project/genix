@@ -322,6 +322,7 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0000038977617c01646209e33e354174ef916df8284346b29aecfbc98fa43dd0"));
         assert(genesis.hashMerkleRoot == uint256S("93113cc5a2df97b20bbe91731578c6722080355be0b4b83b60c6b9ac535d5d15"));
 
+	vSeeds.emplace_back("dnsseed.genix.cc", true);
         vSeeds.emplace_back("207.148.3.153", true);
         vSeeds.emplace_back("209.126.81.147", true);
         vSeeds.emplace_back("95.217.97.197", true);
